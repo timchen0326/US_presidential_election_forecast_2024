@@ -11,42 +11,48 @@
 
 #### Workspace setup ####
 library(tidyverse)
-set.seed(853)
-
 
 #### Simulate data ####
-# State names
-states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
-)
-
-# Political parties
-parties <- c("Labor", "Liberal", "Greens", "National", "Other")
 
 # Create a dataset by randomly assigning states and parties to divisions
-analysis_data <- tibble(
-  division = paste("Division", 1:151),  # Add "Division" to make it a character
-  state = sample(
-    states,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025) # Rough state population distribution
+# Load necessary libraries
+library(tidyverse)
+
+# Set seed for reproducibility
+set.seed(853)
+
+# Number of observations for the simulation
+num_obs <- 1000
+
+# Simulating data based on variables in the provided president polls CSV
+president_poll_simulation <- tibble(
+  pollster = sample(c("InsiderAdvantage", "YouGov", "ActiVote"), size = num_obs, replace = TRUE),
+  state = sample(c("Pennsylvania", "Arizona", "Texas", "Florida", "Ohio"), size = num_obs, replace = TRUE),
+  sample_size = sample(400:1500, size = num_obs, replace = TRUE),
+  methodology = sample(c("Text", "App Panel", "Online Panel"), size = num_obs, replace = TRUE),
+  population = sample(c("lv", "rv"), size = num_obs, replace = TRUE), # Likely Voters (lv), Registered Voters (rv)
+  candidate_name = sample(c("Kamala Harris", "Donald Trump", "Jill Stein"), size = num_obs, replace = TRUE),
+  party = case_when(
+    candidate_name == "Kamala Harris" ~ "DEM",
+    candidate_name == "Donald Trump" ~ "REP",
+    candidate_name == "Jill Stein" ~ "GRE"
   ),
-  party = sample(
-    parties,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.40, 0.40, 0.05, 0.1, 0.05) # Rough party distribution
+  pct = rnorm(num_obs, mean = 50, sd = 5), # Simulating percentage of support
+  pollster_rating_name = sample(c("A+", "A", "B", "C"), size = num_obs, replace = TRUE),
+  election_date = as.Date("2024-11-05"), # Fixed election date
+  poll_start_date = sample(seq(as.Date("2024-09-01"), as.Date("2024-10-07"), by = "day"), size = num_obs, replace = TRUE),
+  poll_end_date = sample(seq(as.Date("2024-10-08"), as.Date("2024-10-10"), by = "day"), size = num_obs, replace = TRUE)
+) %>%
+  mutate(
+    supports_candidate = if_else(pct > 50, "yes", "no")
   )
-)
+
+# Show the first few rows of the simulated data
+head(president_poll_simulation)
+
+
+
 
 
 #### Save data ####
-write_csv(analysis_data, "data/00-simulated_data/simulated_data.csv")
+write_csv(president_poll_simulation, "data/00-simulated_data/simulated_data.csv")

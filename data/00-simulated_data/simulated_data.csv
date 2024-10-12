@@ -1,152 +1,1001 @@
-division,state,party
-Division 1,Victoria,Liberal
-Division 2,New South Wales,Liberal
-Division 3,Tasmania,Liberal
-Division 4,New South Wales,Liberal
-Division 5,Queensland,Liberal
-Division 6,New South Wales,Labor
-Division 7,Victoria,Liberal
-Division 8,Western Australia,Labor
-Division 9,Western Australia,Greens
-Division 10,Queensland,Labor
-Division 11,Queensland,Labor
-Division 12,Northern Territory,Liberal
-Division 13,New South Wales,Labor
-Division 14,Western Australia,Labor
-Division 15,Western Australia,National
-Division 16,Victoria,Liberal
-Division 17,South Australia,Liberal
-Division 18,Victoria,Liberal
-Division 19,Western Australia,Labor
-Division 20,South Australia,Labor
-Division 21,New South Wales,Liberal
-Division 22,Queensland,Greens
-Division 23,New South Wales,Liberal
-Division 24,New South Wales,Liberal
-Division 25,Queensland,Labor
-Division 26,Victoria,National
-Division 27,New South Wales,Liberal
-Division 28,Queensland,Liberal
-Division 29,Tasmania,Liberal
-Division 30,South Australia,Liberal
-Division 31,New South Wales,Liberal
-Division 32,Victoria,Labor
-Division 33,Tasmania,Liberal
-Division 34,New South Wales,Liberal
-Division 35,Western Australia,Labor
-Division 36,New South Wales,Liberal
-Division 37,Tasmania,Greens
-Division 38,Tasmania,Labor
-Division 39,Victoria,Greens
-Division 40,South Australia,Labor
-Division 41,New South Wales,Other
-Division 42,New South Wales,Other
-Division 43,Tasmania,Labor
-Division 44,Tasmania,National
-Division 45,Queensland,Liberal
-Division 46,Australian Capital Territory,Other
-Division 47,Queensland,Labor
-Division 48,Queensland,Other
-Division 49,South Australia,Liberal
-Division 50,Victoria,National
-Division 51,South Australia,Liberal
-Division 52,Victoria,Labor
-Division 53,South Australia,National
-Division 54,Queensland,Liberal
-Division 55,Queensland,Labor
-Division 56,South Australia,Liberal
-Division 57,New South Wales,Other
-Division 58,Northern Territory,Liberal
-Division 59,New South Wales,Labor
-Division 60,Western Australia,Labor
-Division 61,New South Wales,Liberal
-Division 62,South Australia,Liberal
-Division 63,Queensland,Labor
-Division 64,Tasmania,Labor
-Division 65,South Australia,Labor
-Division 66,Victoria,Labor
-Division 67,Queensland,Liberal
-Division 68,Queensland,Liberal
-Division 69,Tasmania,Labor
-Division 70,South Australia,National
-Division 71,Australian Capital Territory,Labor
-Division 72,Western Australia,Labor
-Division 73,Queensland,National
-Division 74,Victoria,Labor
-Division 75,Western Australia,Labor
-Division 76,Tasmania,Labor
-Division 77,Queensland,Liberal
-Division 78,Western Australia,Liberal
-Division 79,Queensland,Labor
-Division 80,Queensland,Liberal
-Division 81,Victoria,Labor
-Division 82,New South Wales,Liberal
-Division 83,Victoria,Liberal
-Division 84,Queensland,National
-Division 85,Western Australia,Liberal
-Division 86,New South Wales,Labor
-Division 87,Queensland,Liberal
-Division 88,New South Wales,Liberal
-Division 89,Tasmania,Liberal
-Division 90,South Australia,Labor
-Division 91,Victoria,Liberal
-Division 92,New South Wales,Labor
-Division 93,Tasmania,Labor
-Division 94,South Australia,Labor
-Division 95,Victoria,Liberal
-Division 96,Victoria,Labor
-Division 97,Western Australia,Liberal
-Division 98,Queensland,Liberal
-Division 99,South Australia,Liberal
-Division 100,New South Wales,Labor
-Division 101,South Australia,Labor
-Division 102,New South Wales,Labor
-Division 103,Victoria,Labor
-Division 104,Victoria,Labor
-Division 105,South Australia,Other
-Division 106,Western Australia,Labor
-Division 107,Tasmania,Liberal
-Division 108,Victoria,Labor
-Division 109,Queensland,Liberal
-Division 110,Victoria,Labor
-Division 111,Australian Capital Territory,Labor
-Division 112,Victoria,Liberal
-Division 113,Victoria,Liberal
-Division 114,Victoria,Liberal
-Division 115,Tasmania,Labor
-Division 116,Victoria,Labor
-Division 117,New South Wales,Labor
-Division 118,Victoria,Labor
-Division 119,Victoria,Greens
-Division 120,Northern Territory,Labor
-Division 121,South Australia,Liberal
-Division 122,New South Wales,Liberal
-Division 123,New South Wales,Labor
-Division 124,New South Wales,Liberal
-Division 125,New South Wales,National
-Division 126,New South Wales,Labor
-Division 127,Queensland,Labor
-Division 128,New South Wales,Other
-Division 129,Queensland,Labor
-Division 130,Australian Capital Territory,Liberal
-Division 131,Tasmania,Greens
-Division 132,New South Wales,National
-Division 133,New South Wales,Labor
-Division 134,Northern Territory,Labor
-Division 135,South Australia,National
-Division 136,Victoria,Labor
-Division 137,Tasmania,National
-Division 138,South Australia,Liberal
-Division 139,New South Wales,Labor
-Division 140,Victoria,Other
-Division 141,Queensland,Greens
-Division 142,Victoria,National
-Division 143,Western Australia,Labor
-Division 144,Victoria,Labor
-Division 145,Queensland,Liberal
-Division 146,Tasmania,Liberal
-Division 147,South Australia,Liberal
-Division 148,Victoria,Labor
-Division 149,New South Wales,National
-Division 150,New South Wales,Labor
-Division 151,Victoria,Liberal
+pollster,state,sample_size,methodology,population,candidate_name,party,pct,pollster_rating_name,election_date,poll_start_date,poll_end_date,supports_candidate
+InsiderAdvantage,Arizona,1172,App Panel,rv,Kamala Harris,DEM,46.9378139641456,A,2024-11-05,2024-09-01,2024-10-09,no
+YouGov,Pennsylvania,415,App Panel,lv,Jill Stein,GRE,44.98355844968206,A+,2024-11-05,2024-09-19,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1122,Online Panel,rv,Kamala Harris,DEM,48.18160143541391,A,2024-11-05,2024-09-18,2024-10-10,no
+InsiderAdvantage,Arizona,1372,Online Panel,lv,Jill Stein,GRE,44.72382620766968,B,2024-11-05,2024-09-16,2024-10-10,no
+InsiderAdvantage,Ohio,1240,Text,lv,Kamala Harris,DEM,52.687098657139785,A,2024-11-05,2024-09-15,2024-10-09,yes
+ActiVote,Texas,1408,Text,rv,Kamala Harris,DEM,54.01409537230906,C,2024-11-05,2024-09-17,2024-10-08,yes
+InsiderAdvantage,Texas,511,App Panel,lv,Kamala Harris,DEM,46.002574492614535,A,2024-11-05,2024-09-19,2024-10-08,no
+YouGov,Pennsylvania,1123,App Panel,rv,Kamala Harris,DEM,46.66010212382388,A+,2024-11-05,2024-10-02,2024-10-09,no
+ActiVote,Florida,1350,Text,lv,Jill Stein,GRE,46.30506254303187,A+,2024-11-05,2024-09-26,2024-10-08,no
+ActiVote,Pennsylvania,1472,Text,rv,Jill Stein,GRE,47.007280370675176,B,2024-11-05,2024-09-29,2024-10-09,no
+InsiderAdvantage,Ohio,1301,App Panel,lv,Jill Stein,GRE,52.59021680119354,A+,2024-11-05,2024-10-07,2024-10-10,yes
+ActiVote,Texas,1298,Text,rv,Donald Trump,REP,45.822485935578875,C,2024-11-05,2024-09-08,2024-10-10,no
+ActiVote,Arizona,635,Online Panel,lv,Kamala Harris,DEM,56.07464863139388,A,2024-11-05,2024-09-26,2024-10-10,yes
+ActiVote,Texas,1232,Online Panel,lv,Donald Trump,REP,49.71275905984673,C,2024-11-05,2024-09-01,2024-10-09,no
+ActiVote,Ohio,757,Online Panel,rv,Jill Stein,GRE,46.53890486085755,C,2024-11-05,2024-09-08,2024-10-09,no
+ActiVote,Ohio,1190,App Panel,lv,Jill Stein,GRE,47.17783471060439,B,2024-11-05,2024-09-19,2024-10-10,no
+YouGov,Texas,1485,Text,rv,Kamala Harris,DEM,51.3089118772715,A,2024-11-05,2024-09-29,2024-10-10,yes
+InsiderAdvantage,Ohio,1051,App Panel,lv,Kamala Harris,DEM,48.509137053659124,A,2024-11-05,2024-09-06,2024-10-10,no
+YouGov,Texas,487,App Panel,rv,Kamala Harris,DEM,54.81992013308673,A+,2024-11-05,2024-10-05,2024-10-10,yes
+InsiderAdvantage,Ohio,406,Online Panel,rv,Jill Stein,GRE,39.69463434131199,A+,2024-11-05,2024-10-04,2024-10-08,no
+YouGov,Texas,411,App Panel,rv,Jill Stein,GRE,52.34571200449522,B,2024-11-05,2024-09-06,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,1449,Online Panel,rv,Kamala Harris,DEM,60.10899966589035,A,2024-11-05,2024-09-08,2024-10-09,yes
+YouGov,Ohio,1457,Online Panel,rv,Kamala Harris,DEM,50.875574016759074,A,2024-11-05,2024-09-08,2024-10-10,yes
+InsiderAdvantage,Ohio,878,Text,rv,Jill Stein,GRE,48.17498723257472,C,2024-11-05,2024-09-14,2024-10-09,no
+InsiderAdvantage,Florida,637,Text,rv,Kamala Harris,DEM,49.60505993885906,B,2024-11-05,2024-10-02,2024-10-10,no
+ActiVote,Arizona,913,App Panel,lv,Kamala Harris,DEM,56.059239160168985,C,2024-11-05,2024-09-29,2024-10-09,yes
+YouGov,Florida,1224,Online Panel,rv,Jill Stein,GRE,45.01167002611044,C,2024-11-05,2024-09-23,2024-10-08,no
+InsiderAdvantage,Arizona,821,Online Panel,lv,Donald Trump,REP,55.1127468612281,C,2024-11-05,2024-09-15,2024-10-10,yes
+ActiVote,Texas,1023,Text,lv,Jill Stein,GRE,46.19405127561187,A,2024-11-05,2024-10-05,2024-10-10,no
+ActiVote,Florida,1336,Online Panel,rv,Kamala Harris,DEM,47.994065797989634,A,2024-11-05,2024-09-09,2024-10-08,no
+YouGov,Texas,926,App Panel,lv,Jill Stein,GRE,47.23690776592211,C,2024-11-05,2024-09-21,2024-10-09,no
+ActiVote,Pennsylvania,764,App Panel,lv,Donald Trump,REP,55.80873923318288,C,2024-11-05,2024-10-06,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,555,App Panel,rv,Donald Trump,REP,49.185757569152685,B,2024-11-05,2024-09-22,2024-10-10,no
+ActiVote,Pennsylvania,1238,Text,rv,Jill Stein,GRE,52.46185134780406,A,2024-11-05,2024-09-15,2024-10-09,yes
+YouGov,Florida,598,Text,lv,Kamala Harris,DEM,52.12959907609869,B,2024-11-05,2024-09-08,2024-10-08,yes
+YouGov,Texas,1277,App Panel,rv,Donald Trump,REP,50.67097495212029,A+,2024-11-05,2024-09-07,2024-10-10,yes
+InsiderAdvantage,Florida,825,Online Panel,rv,Kamala Harris,DEM,44.47858356505873,B,2024-11-05,2024-10-03,2024-10-08,no
+YouGov,Ohio,532,Text,lv,Kamala Harris,DEM,47.03340437549989,B,2024-11-05,2024-10-02,2024-10-08,no
+InsiderAdvantage,Florida,1406,Text,rv,Kamala Harris,DEM,53.2459514388383,C,2024-11-05,2024-09-28,2024-10-08,yes
+YouGov,Ohio,768,Online Panel,rv,Jill Stein,GRE,44.38977115542058,A+,2024-11-05,2024-09-05,2024-10-09,no
+InsiderAdvantage,Arizona,1122,App Panel,rv,Donald Trump,REP,47.31693197870605,A,2024-11-05,2024-09-07,2024-10-09,no
+YouGov,Arizona,1325,Online Panel,rv,Kamala Harris,DEM,52.73287408408248,A+,2024-11-05,2024-09-27,2024-10-10,yes
+ActiVote,Pennsylvania,1015,Text,lv,Jill Stein,GRE,51.21850383347515,C,2024-11-05,2024-09-05,2024-10-09,yes
+InsiderAdvantage,Florida,479,Online Panel,rv,Kamala Harris,DEM,55.07779747278825,B,2024-11-05,2024-09-05,2024-10-10,yes
+InsiderAdvantage,Arizona,456,App Panel,rv,Jill Stein,GRE,51.92400269449671,B,2024-11-05,2024-09-19,2024-10-08,yes
+InsiderAdvantage,Arizona,499,Text,rv,Jill Stein,GRE,48.46026311001956,C,2024-11-05,2024-09-12,2024-10-08,no
+InsiderAdvantage,Pennsylvania,1150,App Panel,lv,Kamala Harris,DEM,40.29278742164194,A,2024-11-05,2024-10-06,2024-10-10,no
+InsiderAdvantage,Pennsylvania,793,Text,lv,Kamala Harris,DEM,57.10271985375327,C,2024-11-05,2024-09-17,2024-10-10,yes
+ActiVote,Ohio,904,Online Panel,lv,Kamala Harris,DEM,41.26243175462091,C,2024-11-05,2024-09-09,2024-10-08,no
+YouGov,Texas,1240,App Panel,rv,Kamala Harris,DEM,48.505696261308586,A,2024-11-05,2024-09-23,2024-10-08,no
+InsiderAdvantage,Pennsylvania,1368,Online Panel,rv,Jill Stein,GRE,51.62358358885743,A+,2024-11-05,2024-09-09,2024-10-09,yes
+YouGov,Ohio,930,Online Panel,lv,Donald Trump,REP,43.92914089981677,C,2024-11-05,2024-09-04,2024-10-09,no
+InsiderAdvantage,Ohio,836,Online Panel,rv,Kamala Harris,DEM,48.22255349614773,B,2024-11-05,2024-09-14,2024-10-08,no
+InsiderAdvantage,Ohio,1193,Text,lv,Kamala Harris,DEM,51.298888673245706,C,2024-11-05,2024-09-27,2024-10-08,yes
+YouGov,Texas,1415,Text,lv,Donald Trump,REP,55.60801919525452,C,2024-11-05,2024-09-25,2024-10-08,yes
+ActiVote,Florida,470,App Panel,lv,Kamala Harris,DEM,51.28333190019682,A+,2024-11-05,2024-09-20,2024-10-10,yes
+InsiderAdvantage,Texas,691,Online Panel,lv,Jill Stein,GRE,46.015846678137926,B,2024-11-05,2024-09-16,2024-10-08,no
+YouGov,Ohio,948,Text,rv,Donald Trump,REP,56.952980028636986,A+,2024-11-05,2024-09-10,2024-10-10,yes
+InsiderAdvantage,Ohio,1363,App Panel,rv,Donald Trump,REP,51.609108204988715,C,2024-11-05,2024-09-08,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,1063,Online Panel,rv,Jill Stein,GRE,53.08907311244115,A+,2024-11-05,2024-09-02,2024-10-09,yes
+ActiVote,Arizona,1000,Online Panel,lv,Kamala Harris,DEM,47.112448916819005,A+,2024-11-05,2024-09-01,2024-10-09,no
+ActiVote,Pennsylvania,441,Online Panel,lv,Donald Trump,REP,53.34561939956356,B,2024-11-05,2024-09-06,2024-10-08,yes
+ActiVote,Texas,879,Text,rv,Jill Stein,GRE,51.78472557655647,C,2024-11-05,2024-09-16,2024-10-08,yes
+InsiderAdvantage,Ohio,597,App Panel,lv,Kamala Harris,DEM,51.07313369417737,C,2024-11-05,2024-09-26,2024-10-10,yes
+ActiVote,Arizona,923,App Panel,rv,Kamala Harris,DEM,53.604042671510626,A,2024-11-05,2024-09-24,2024-10-10,yes
+YouGov,Arizona,1288,App Panel,rv,Kamala Harris,DEM,50.647290744050196,C,2024-11-05,2024-09-08,2024-10-09,yes
+ActiVote,Arizona,1028,Online Panel,lv,Kamala Harris,DEM,49.63422524890992,B,2024-11-05,2024-09-01,2024-10-08,no
+InsiderAdvantage,Florida,1110,Text,rv,Kamala Harris,DEM,54.16704802901076,C,2024-11-05,2024-09-03,2024-10-10,yes
+YouGov,Pennsylvania,420,Online Panel,lv,Jill Stein,GRE,51.53038607557045,A+,2024-11-05,2024-10-06,2024-10-09,yes
+ActiVote,Arizona,1110,Online Panel,rv,Jill Stein,GRE,48.73323839355378,C,2024-11-05,2024-09-03,2024-10-09,no
+ActiVote,Arizona,748,Online Panel,rv,Kamala Harris,DEM,51.538895261808484,A,2024-11-05,2024-09-05,2024-10-08,yes
+YouGov,Florida,1355,Online Panel,lv,Donald Trump,REP,45.972936657969505,C,2024-11-05,2024-09-02,2024-10-09,no
+InsiderAdvantage,Ohio,1193,Text,rv,Kamala Harris,DEM,49.60010426651202,C,2024-11-05,2024-10-02,2024-10-09,no
+InsiderAdvantage,Florida,534,Online Panel,rv,Jill Stein,GRE,42.273483886789826,A+,2024-11-05,2024-09-20,2024-10-09,no
+ActiVote,Arizona,725,Online Panel,rv,Kamala Harris,DEM,57.58848016982689,A+,2024-11-05,2024-09-10,2024-10-10,yes
+InsiderAdvantage,Arizona,779,Online Panel,rv,Donald Trump,REP,43.08444426874608,B,2024-11-05,2024-09-11,2024-10-08,no
+InsiderAdvantage,Texas,916,Online Panel,rv,Jill Stein,GRE,49.61352751200203,A,2024-11-05,2024-09-15,2024-10-08,no
+ActiVote,Arizona,847,Online Panel,rv,Donald Trump,REP,48.90778311264347,C,2024-11-05,2024-09-04,2024-10-10,no
+ActiVote,Arizona,409,Online Panel,rv,Donald Trump,REP,38.13317396556769,A,2024-11-05,2024-09-22,2024-10-10,no
+YouGov,Florida,674,App Panel,rv,Kamala Harris,DEM,52.893111497133745,A+,2024-11-05,2024-09-05,2024-10-10,yes
+InsiderAdvantage,Arizona,704,Online Panel,lv,Jill Stein,GRE,42.786178970758485,C,2024-11-05,2024-09-18,2024-10-10,no
+InsiderAdvantage,Ohio,535,App Panel,rv,Jill Stein,GRE,48.91547646738667,B,2024-11-05,2024-10-02,2024-10-10,no
+InsiderAdvantage,Florida,1397,Text,rv,Kamala Harris,DEM,49.22993239514791,B,2024-11-05,2024-09-15,2024-10-09,no
+YouGov,Pennsylvania,439,App Panel,lv,Jill Stein,GRE,44.99537045860781,A,2024-11-05,2024-09-23,2024-10-09,no
+ActiVote,Texas,902,Text,rv,Jill Stein,GRE,50.17634839342391,A,2024-11-05,2024-09-30,2024-10-08,yes
+InsiderAdvantage,Arizona,869,Text,rv,Donald Trump,REP,51.056654806096944,B,2024-11-05,2024-09-06,2024-10-08,yes
+ActiVote,Florida,854,Online Panel,lv,Jill Stein,GRE,47.729212301664674,A,2024-11-05,2024-09-24,2024-10-10,no
+ActiVote,Ohio,1224,Online Panel,rv,Donald Trump,REP,46.186728422287274,A,2024-11-05,2024-10-05,2024-10-08,no
+InsiderAdvantage,Texas,1272,Text,rv,Jill Stein,GRE,50.25847990772867,C,2024-11-05,2024-09-02,2024-10-08,yes
+InsiderAdvantage,Texas,1494,Online Panel,rv,Kamala Harris,DEM,45.87846590706327,C,2024-11-05,2024-09-17,2024-10-09,no
+InsiderAdvantage,Arizona,791,Text,lv,Donald Trump,REP,53.38988369429172,B,2024-11-05,2024-09-27,2024-10-08,yes
+InsiderAdvantage,Ohio,419,Online Panel,rv,Kamala Harris,DEM,45.748047103135484,B,2024-11-05,2024-09-19,2024-10-08,no
+ActiVote,Pennsylvania,970,Online Panel,rv,Donald Trump,REP,55.12737110391482,A,2024-11-05,2024-09-08,2024-10-10,yes
+ActiVote,Arizona,579,Online Panel,lv,Donald Trump,REP,51.05383112892097,B,2024-11-05,2024-10-05,2024-10-08,yes
+YouGov,Arizona,643,App Panel,lv,Donald Trump,REP,54.80791859831224,B,2024-11-05,2024-10-04,2024-10-08,yes
+InsiderAdvantage,Ohio,898,Text,lv,Kamala Harris,DEM,45.513499762761256,A+,2024-11-05,2024-09-20,2024-10-10,no
+InsiderAdvantage,Arizona,854,Online Panel,lv,Jill Stein,GRE,47.83684983138193,C,2024-11-05,2024-09-11,2024-10-10,no
+YouGov,Texas,1372,App Panel,lv,Kamala Harris,DEM,53.362855211898896,B,2024-11-05,2024-09-16,2024-10-10,yes
+YouGov,Pennsylvania,999,App Panel,lv,Donald Trump,REP,52.419772870264374,A+,2024-11-05,2024-09-26,2024-10-09,yes
+InsiderAdvantage,Ohio,525,Online Panel,lv,Donald Trump,REP,48.9626156298163,B,2024-11-05,2024-09-24,2024-10-10,no
+ActiVote,Florida,1423,Online Panel,rv,Jill Stein,GRE,48.48956041464416,A,2024-11-05,2024-09-04,2024-10-08,no
+InsiderAdvantage,Texas,512,App Panel,rv,Jill Stein,GRE,47.82234740610141,A+,2024-11-05,2024-09-09,2024-10-10,no
+InsiderAdvantage,Florida,922,App Panel,lv,Kamala Harris,DEM,49.14989498520607,A+,2024-11-05,2024-09-02,2024-10-08,no
+ActiVote,Ohio,1376,App Panel,lv,Kamala Harris,DEM,47.30557401204103,A,2024-11-05,2024-09-27,2024-10-08,no
+ActiVote,Florida,476,App Panel,rv,Donald Trump,REP,46.82290981564467,A,2024-11-05,2024-09-22,2024-10-10,no
+ActiVote,Florida,999,Online Panel,rv,Jill Stein,GRE,53.71324406548936,C,2024-11-05,2024-09-30,2024-10-10,yes
+ActiVote,Arizona,742,App Panel,lv,Kamala Harris,DEM,50.40134444466202,C,2024-11-05,2024-10-05,2024-10-10,yes
+InsiderAdvantage,Ohio,1237,Text,lv,Kamala Harris,DEM,42.494837240976196,A+,2024-11-05,2024-09-15,2024-10-09,no
+YouGov,Florida,620,Text,lv,Kamala Harris,DEM,51.563952173520406,C,2024-11-05,2024-10-01,2024-10-09,yes
+ActiVote,Pennsylvania,635,Online Panel,lv,Jill Stein,GRE,48.39232630633948,A,2024-11-05,2024-09-24,2024-10-08,no
+YouGov,Ohio,712,Online Panel,rv,Kamala Harris,DEM,60.41419311658539,B,2024-11-05,2024-10-02,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,473,Online Panel,rv,Jill Stein,GRE,54.86908518862735,C,2024-11-05,2024-10-02,2024-10-09,yes
+InsiderAdvantage,Texas,1030,App Panel,lv,Jill Stein,GRE,47.529862938451956,A+,2024-11-05,2024-09-11,2024-10-09,no
+ActiVote,Florida,1442,Online Panel,rv,Kamala Harris,DEM,50.48424179624951,C,2024-11-05,2024-10-03,2024-10-09,yes
+InsiderAdvantage,Texas,1256,Text,lv,Kamala Harris,DEM,43.423309643648786,B,2024-11-05,2024-09-22,2024-10-09,no
+ActiVote,Arizona,1025,App Panel,lv,Jill Stein,GRE,48.30334350809085,A,2024-11-05,2024-09-23,2024-10-10,no
+YouGov,Florida,748,App Panel,lv,Kamala Harris,DEM,51.71752199125376,C,2024-11-05,2024-09-10,2024-10-10,yes
+YouGov,Texas,1496,App Panel,lv,Kamala Harris,DEM,52.233646650596114,A,2024-11-05,2024-09-04,2024-10-10,yes
+YouGov,Texas,1422,Online Panel,lv,Donald Trump,REP,45.241518777136555,A,2024-11-05,2024-10-04,2024-10-09,no
+ActiVote,Pennsylvania,917,Text,rv,Jill Stein,GRE,47.58091485619598,C,2024-11-05,2024-09-11,2024-10-09,no
+YouGov,Texas,1205,Online Panel,lv,Jill Stein,GRE,54.15665485819759,A+,2024-11-05,2024-09-27,2024-10-10,yes
+InsiderAdvantage,Florida,593,App Panel,lv,Donald Trump,REP,54.102341780911146,B,2024-11-05,2024-09-02,2024-10-10,yes
+InsiderAdvantage,Ohio,868,Online Panel,rv,Jill Stein,GRE,45.33287336555325,C,2024-11-05,2024-09-23,2024-10-10,no
+InsiderAdvantage,Texas,625,App Panel,lv,Kamala Harris,DEM,51.22323426152411,B,2024-11-05,2024-09-18,2024-10-08,yes
+ActiVote,Arizona,1208,App Panel,rv,Jill Stein,GRE,48.653681765081416,B,2024-11-05,2024-10-03,2024-10-10,no
+YouGov,Arizona,544,App Panel,rv,Donald Trump,REP,42.28091769296045,B,2024-11-05,2024-09-08,2024-10-10,no
+InsiderAdvantage,Texas,770,Online Panel,lv,Kamala Harris,DEM,53.48436448383686,A,2024-11-05,2024-09-15,2024-10-10,yes
+InsiderAdvantage,Florida,1043,Online Panel,lv,Jill Stein,GRE,50.41720806567067,C,2024-11-05,2024-10-01,2024-10-08,yes
+YouGov,Arizona,498,Text,rv,Donald Trump,REP,42.010932901633566,B,2024-11-05,2024-09-30,2024-10-09,no
+InsiderAdvantage,Texas,711,Text,rv,Kamala Harris,DEM,44.970177647815355,C,2024-11-05,2024-10-01,2024-10-08,no
+InsiderAdvantage,Florida,1345,App Panel,lv,Kamala Harris,DEM,51.24219391039156,A,2024-11-05,2024-10-07,2024-10-08,yes
+InsiderAdvantage,Arizona,731,Online Panel,lv,Donald Trump,REP,53.27648944776685,A,2024-11-05,2024-10-06,2024-10-09,yes
+ActiVote,Ohio,1288,Text,lv,Jill Stein,GRE,52.05276320732198,A,2024-11-05,2024-09-14,2024-10-10,yes
+YouGov,Arizona,499,App Panel,rv,Donald Trump,REP,51.41999329131731,C,2024-11-05,2024-10-04,2024-10-10,yes
+ActiVote,Texas,740,Text,lv,Kamala Harris,DEM,52.169532055573946,B,2024-11-05,2024-09-29,2024-10-09,yes
+ActiVote,Texas,864,App Panel,lv,Kamala Harris,DEM,55.1631842168693,B,2024-11-05,2024-09-26,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,1411,App Panel,lv,Jill Stein,GRE,37.19325045713909,B,2024-11-05,2024-10-01,2024-10-10,no
+InsiderAdvantage,Pennsylvania,629,Text,rv,Jill Stein,GRE,54.31314263548999,B,2024-11-05,2024-09-13,2024-10-09,yes
+YouGov,Texas,898,App Panel,rv,Kamala Harris,DEM,53.128484334006885,A+,2024-11-05,2024-09-25,2024-10-10,yes
+ActiVote,Ohio,600,Text,rv,Donald Trump,REP,47.26829970758734,A+,2024-11-05,2024-09-30,2024-10-09,no
+ActiVote,Pennsylvania,505,App Panel,rv,Kamala Harris,DEM,56.47493010295026,A+,2024-11-05,2024-09-16,2024-10-09,yes
+YouGov,Pennsylvania,1160,Online Panel,rv,Kamala Harris,DEM,51.75302530741016,A+,2024-11-05,2024-09-21,2024-10-10,yes
+ActiVote,Florida,1478,Text,rv,Donald Trump,REP,49.67428853541395,A+,2024-11-05,2024-09-15,2024-10-08,no
+ActiVote,Arizona,544,Online Panel,rv,Jill Stein,GRE,41.246705940275646,C,2024-11-05,2024-10-03,2024-10-08,no
+InsiderAdvantage,Ohio,696,Online Panel,rv,Kamala Harris,DEM,57.29821742358148,B,2024-11-05,2024-09-22,2024-10-09,yes
+YouGov,Florida,900,Text,lv,Kamala Harris,DEM,48.53579471523963,B,2024-11-05,2024-09-19,2024-10-10,no
+InsiderAdvantage,Texas,1162,Text,rv,Kamala Harris,DEM,43.750519625201036,B,2024-11-05,2024-09-21,2024-10-09,no
+YouGov,Texas,472,App Panel,rv,Jill Stein,GRE,52.687697065778394,A,2024-11-05,2024-09-10,2024-10-08,yes
+InsiderAdvantage,Texas,1450,Online Panel,lv,Kamala Harris,DEM,52.31181986256219,A,2024-11-05,2024-09-19,2024-10-09,yes
+InsiderAdvantage,Arizona,410,Text,lv,Jill Stein,GRE,49.43545705209086,B,2024-11-05,2024-09-04,2024-10-08,no
+YouGov,Ohio,1477,Online Panel,lv,Kamala Harris,DEM,55.58937299382434,A,2024-11-05,2024-09-27,2024-10-09,yes
+YouGov,Pennsylvania,1165,Online Panel,rv,Donald Trump,REP,58.5577138528663,B,2024-11-05,2024-09-02,2024-10-08,yes
+ActiVote,Texas,1369,Text,lv,Kamala Harris,DEM,52.119235273030945,C,2024-11-05,2024-09-20,2024-10-10,yes
+InsiderAdvantage,Arizona,440,App Panel,lv,Donald Trump,REP,45.94425853105335,C,2024-11-05,2024-10-01,2024-10-09,no
+InsiderAdvantage,Florida,641,Online Panel,rv,Jill Stein,GRE,48.57448735782728,B,2024-11-05,2024-09-16,2024-10-08,no
+YouGov,Ohio,892,Text,rv,Donald Trump,REP,54.55955090637636,A+,2024-11-05,2024-09-09,2024-10-09,yes
+InsiderAdvantage,Texas,767,App Panel,lv,Donald Trump,REP,43.33847261830944,A+,2024-11-05,2024-09-25,2024-10-09,no
+InsiderAdvantage,Texas,552,Text,rv,Donald Trump,REP,43.13219686277712,A+,2024-11-05,2024-09-14,2024-10-08,no
+InsiderAdvantage,Pennsylvania,1119,Text,lv,Kamala Harris,DEM,51.27479388947956,A,2024-11-05,2024-09-09,2024-10-09,yes
+YouGov,Texas,721,App Panel,rv,Jill Stein,GRE,46.12787484690643,A,2024-11-05,2024-09-28,2024-10-09,no
+YouGov,Ohio,1013,App Panel,lv,Kamala Harris,DEM,58.93101422367967,C,2024-11-05,2024-09-01,2024-10-09,yes
+ActiVote,Pennsylvania,423,Online Panel,lv,Jill Stein,GRE,54.62303121975932,A+,2024-11-05,2024-09-25,2024-10-09,yes
+ActiVote,Pennsylvania,533,Online Panel,rv,Donald Trump,REP,55.61233827453738,C,2024-11-05,2024-10-02,2024-10-08,yes
+YouGov,Arizona,1230,App Panel,lv,Jill Stein,GRE,52.3381480057553,C,2024-11-05,2024-09-02,2024-10-08,yes
+YouGov,Arizona,1269,App Panel,rv,Donald Trump,REP,49.66280898952219,A+,2024-11-05,2024-09-01,2024-10-08,no
+YouGov,Arizona,1110,Online Panel,lv,Kamala Harris,DEM,51.34639778086873,C,2024-11-05,2024-09-03,2024-10-09,yes
+ActiVote,Pennsylvania,1069,App Panel,lv,Donald Trump,REP,52.21001361827087,C,2024-11-05,2024-10-06,2024-10-08,yes
+YouGov,Florida,617,Text,lv,Kamala Harris,DEM,46.26696134840435,A,2024-11-05,2024-09-08,2024-10-10,no
+YouGov,Ohio,1338,Text,lv,Donald Trump,REP,42.61623005791502,C,2024-11-05,2024-10-05,2024-10-08,no
+ActiVote,Ohio,1160,Online Panel,rv,Jill Stein,GRE,49.74917002005537,A+,2024-11-05,2024-09-27,2024-10-08,no
+InsiderAdvantage,Florida,778,App Panel,lv,Jill Stein,GRE,54.2567124511286,C,2024-11-05,2024-09-12,2024-10-09,yes
+YouGov,Arizona,590,Online Panel,rv,Jill Stein,GRE,52.69062830869741,B,2024-11-05,2024-09-14,2024-10-09,yes
+InsiderAdvantage,Ohio,515,Text,lv,Kamala Harris,DEM,45.45286663203077,A+,2024-11-05,2024-09-17,2024-10-10,no
+ActiVote,Arizona,733,Text,lv,Kamala Harris,DEM,40.22004213520998,A+,2024-11-05,2024-09-23,2024-10-08,no
+ActiVote,Texas,508,App Panel,lv,Donald Trump,REP,54.575723750135936,A+,2024-11-05,2024-09-08,2024-10-09,yes
+ActiVote,Texas,732,Online Panel,lv,Donald Trump,REP,46.62398398982916,A+,2024-11-05,2024-09-05,2024-10-09,no
+ActiVote,Pennsylvania,945,Text,lv,Jill Stein,GRE,45.935532315240096,A+,2024-11-05,2024-09-22,2024-10-08,no
+InsiderAdvantage,Arizona,696,App Panel,lv,Jill Stein,GRE,52.69754509502027,B,2024-11-05,2024-10-05,2024-10-08,yes
+ActiVote,Pennsylvania,1109,Text,lv,Donald Trump,REP,49.724341608907125,B,2024-11-05,2024-09-12,2024-10-10,no
+YouGov,Texas,432,App Panel,rv,Donald Trump,REP,59.32479517751533,C,2024-11-05,2024-09-14,2024-10-09,yes
+YouGov,Ohio,726,Text,rv,Kamala Harris,DEM,52.6499828704016,C,2024-11-05,2024-09-11,2024-10-09,yes
+InsiderAdvantage,Arizona,1465,App Panel,rv,Kamala Harris,DEM,50.764659433826495,A,2024-11-05,2024-10-07,2024-10-10,yes
+YouGov,Pennsylvania,1291,Text,lv,Donald Trump,REP,48.87965937668823,B,2024-11-05,2024-09-30,2024-10-09,no
+InsiderAdvantage,Florida,892,Text,lv,Kamala Harris,DEM,47.561947340078376,A,2024-11-05,2024-09-04,2024-10-09,no
+YouGov,Florida,1073,Text,rv,Jill Stein,GRE,59.61583929346138,A,2024-11-05,2024-09-07,2024-10-09,yes
+InsiderAdvantage,Texas,453,Online Panel,lv,Jill Stein,GRE,50.282265952448036,A+,2024-11-05,2024-10-01,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,1155,App Panel,lv,Kamala Harris,DEM,49.2034950463227,B,2024-11-05,2024-09-07,2024-10-08,no
+InsiderAdvantage,Arizona,1245,App Panel,lv,Donald Trump,REP,58.57807918681757,C,2024-11-05,2024-10-06,2024-10-09,yes
+ActiVote,Arizona,1225,Online Panel,rv,Jill Stein,GRE,47.61899457808775,A+,2024-11-05,2024-10-06,2024-10-10,no
+ActiVote,Pennsylvania,1202,Online Panel,lv,Kamala Harris,DEM,44.479173990040444,B,2024-11-05,2024-09-02,2024-10-08,no
+YouGov,Texas,636,App Panel,lv,Donald Trump,REP,45.64121254399121,A,2024-11-05,2024-09-13,2024-10-08,no
+YouGov,Texas,777,App Panel,lv,Kamala Harris,DEM,52.5102575182824,A,2024-11-05,2024-09-04,2024-10-09,yes
+ActiVote,Texas,1445,App Panel,lv,Kamala Harris,DEM,57.757385871239315,A,2024-11-05,2024-10-04,2024-10-10,yes
+YouGov,Ohio,1460,Text,rv,Jill Stein,GRE,51.65508874171644,B,2024-11-05,2024-10-05,2024-10-08,yes
+ActiVote,Arizona,998,Online Panel,rv,Donald Trump,REP,50.921235883775346,A+,2024-11-05,2024-09-28,2024-10-08,yes
+InsiderAdvantage,Arizona,543,Online Panel,rv,Jill Stein,GRE,47.13659462173443,C,2024-11-05,2024-09-06,2024-10-09,no
+ActiVote,Florida,1383,Text,lv,Donald Trump,REP,49.69935141619145,A+,2024-11-05,2024-09-26,2024-10-10,no
+ActiVote,Florida,1206,Online Panel,rv,Donald Trump,REP,58.257624706075745,A+,2024-11-05,2024-09-27,2024-10-08,yes
+ActiVote,Ohio,890,App Panel,rv,Jill Stein,GRE,42.561488830932255,C,2024-11-05,2024-09-09,2024-10-10,no
+ActiVote,Ohio,752,App Panel,lv,Donald Trump,REP,49.934430538934826,A,2024-11-05,2024-09-04,2024-10-09,no
+ActiVote,Florida,1367,Online Panel,rv,Kamala Harris,DEM,51.515705003554295,A,2024-11-05,2024-09-25,2024-10-08,yes
+ActiVote,Pennsylvania,595,Text,lv,Jill Stein,GRE,46.11465286163714,A+,2024-11-05,2024-10-01,2024-10-08,no
+YouGov,Arizona,804,Text,rv,Donald Trump,REP,50.54901336494744,C,2024-11-05,2024-10-03,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,997,Online Panel,lv,Jill Stein,GRE,50.79912788899361,C,2024-11-05,2024-09-07,2024-10-10,yes
+YouGov,Arizona,1357,Text,rv,Kamala Harris,DEM,53.186758903392196,A+,2024-11-05,2024-09-28,2024-10-09,yes
+YouGov,Ohio,728,Text,rv,Donald Trump,REP,50.93717905269068,B,2024-11-05,2024-09-23,2024-10-08,yes
+ActiVote,Florida,765,App Panel,lv,Kamala Harris,DEM,44.751892659444174,B,2024-11-05,2024-09-22,2024-10-10,no
+YouGov,Texas,587,Online Panel,rv,Donald Trump,REP,46.46810368173044,A,2024-11-05,2024-09-30,2024-10-08,no
+ActiVote,Ohio,790,App Panel,rv,Jill Stein,GRE,48.83056813686863,B,2024-11-05,2024-09-19,2024-10-08,no
+InsiderAdvantage,Ohio,1468,App Panel,lv,Donald Trump,REP,44.54596831763952,C,2024-11-05,2024-09-06,2024-10-08,no
+InsiderAdvantage,Arizona,911,App Panel,lv,Donald Trump,REP,50.01280278407362,B,2024-11-05,2024-09-20,2024-10-08,yes
+ActiVote,Ohio,756,Text,lv,Donald Trump,REP,59.01161743426069,C,2024-11-05,2024-09-13,2024-10-10,yes
+ActiVote,Florida,679,Text,rv,Jill Stein,GRE,39.421116769285504,A+,2024-11-05,2024-09-16,2024-10-10,no
+InsiderAdvantage,Texas,594,App Panel,lv,Jill Stein,GRE,53.574185593902754,A,2024-11-05,2024-09-27,2024-10-09,yes
+InsiderAdvantage,Florida,491,Online Panel,lv,Jill Stein,GRE,52.70602648917396,A,2024-11-05,2024-09-03,2024-10-08,yes
+ActiVote,Texas,1402,Text,rv,Donald Trump,REP,57.128070627974175,A+,2024-11-05,2024-10-05,2024-10-08,yes
+InsiderAdvantage,Ohio,777,Text,lv,Donald Trump,REP,60.842575200812774,C,2024-11-05,2024-09-30,2024-10-09,yes
+InsiderAdvantage,Ohio,1433,App Panel,rv,Kamala Harris,DEM,41.000639958032664,B,2024-11-05,2024-09-27,2024-10-09,no
+YouGov,Texas,1088,Online Panel,lv,Kamala Harris,DEM,43.38338923348505,A,2024-11-05,2024-09-10,2024-10-09,no
+ActiVote,Florida,829,Online Panel,lv,Jill Stein,GRE,45.99578805661317,B,2024-11-05,2024-09-29,2024-10-10,no
+InsiderAdvantage,Pennsylvania,1272,App Panel,lv,Donald Trump,REP,56.788943139076025,C,2024-11-05,2024-09-12,2024-10-09,yes
+ActiVote,Arizona,1192,Text,lv,Donald Trump,REP,56.346081775935005,B,2024-11-05,2024-10-06,2024-10-08,yes
+ActiVote,Ohio,816,Online Panel,lv,Donald Trump,REP,46.912245892475134,A+,2024-11-05,2024-09-08,2024-10-08,no
+YouGov,Florida,1290,App Panel,rv,Jill Stein,GRE,50.13455690619447,C,2024-11-05,2024-09-01,2024-10-09,yes
+ActiVote,Ohio,1158,App Panel,rv,Jill Stein,GRE,55.333322480907476,A,2024-11-05,2024-09-15,2024-10-08,yes
+YouGov,Arizona,1424,Text,rv,Donald Trump,REP,45.67106136382701,C,2024-11-05,2024-09-25,2024-10-08,no
+YouGov,Ohio,1420,Online Panel,rv,Donald Trump,REP,58.00431758688286,B,2024-11-05,2024-09-25,2024-10-10,yes
+ActiVote,Pennsylvania,505,App Panel,lv,Jill Stein,GRE,54.84880669554643,A,2024-11-05,2024-09-25,2024-10-08,yes
+InsiderAdvantage,Arizona,1189,Online Panel,rv,Jill Stein,GRE,48.20443139561691,C,2024-11-05,2024-09-17,2024-10-09,no
+YouGov,Arizona,1201,Text,lv,Donald Trump,REP,47.80457495464861,A,2024-11-05,2024-09-09,2024-10-09,no
+InsiderAdvantage,Texas,1157,Text,rv,Kamala Harris,DEM,51.17405462118609,A,2024-11-05,2024-09-13,2024-10-10,yes
+YouGov,Florida,1177,Online Panel,lv,Kamala Harris,DEM,54.44569991563743,A+,2024-11-05,2024-09-17,2024-10-10,yes
+YouGov,Arizona,944,Text,lv,Kamala Harris,DEM,46.77753711131773,A,2024-11-05,2024-09-21,2024-10-10,no
+YouGov,Florida,1230,Online Panel,rv,Donald Trump,REP,49.56259424182922,A,2024-11-05,2024-09-12,2024-10-10,no
+ActiVote,Arizona,1457,Text,lv,Donald Trump,REP,52.03324288276268,B,2024-11-05,2024-09-04,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,882,Text,lv,Jill Stein,GRE,55.9777470301585,A,2024-11-05,2024-09-12,2024-10-10,yes
+YouGov,Florida,507,App Panel,rv,Jill Stein,GRE,46.544306082394264,A+,2024-11-05,2024-09-29,2024-10-10,no
+InsiderAdvantage,Arizona,1268,Text,lv,Kamala Harris,DEM,54.462826775416005,B,2024-11-05,2024-09-01,2024-10-10,yes
+YouGov,Pennsylvania,750,Online Panel,rv,Kamala Harris,DEM,46.0890248533494,A+,2024-11-05,2024-09-05,2024-10-09,no
+InsiderAdvantage,Texas,705,App Panel,lv,Jill Stein,GRE,48.089840260921726,A,2024-11-05,2024-09-12,2024-10-10,no
+InsiderAdvantage,Pennsylvania,757,Online Panel,rv,Donald Trump,REP,42.39565875816384,C,2024-11-05,2024-09-13,2024-10-08,no
+YouGov,Pennsylvania,1462,Online Panel,rv,Donald Trump,REP,54.66433172324459,B,2024-11-05,2024-09-26,2024-10-10,yes
+ActiVote,Florida,673,Online Panel,lv,Donald Trump,REP,48.63631787114854,C,2024-11-05,2024-09-04,2024-10-08,no
+InsiderAdvantage,Ohio,878,Online Panel,lv,Kamala Harris,DEM,57.780273371783295,B,2024-11-05,2024-09-19,2024-10-08,yes
+ActiVote,Texas,859,App Panel,rv,Jill Stein,GRE,46.89540432627922,C,2024-11-05,2024-09-23,2024-10-08,no
+ActiVote,Arizona,1370,Text,lv,Kamala Harris,DEM,56.73368417065307,A,2024-11-05,2024-09-27,2024-10-08,yes
+InsiderAdvantage,Ohio,598,Text,lv,Jill Stein,GRE,45.51087521687201,A,2024-11-05,2024-09-29,2024-10-08,no
+InsiderAdvantage,Ohio,1179,Text,rv,Donald Trump,REP,37.44449677453346,C,2024-11-05,2024-09-20,2024-10-08,no
+InsiderAdvantage,Ohio,686,Text,lv,Kamala Harris,DEM,49.72774271707731,A+,2024-11-05,2024-09-15,2024-10-10,no
+ActiVote,Pennsylvania,1004,Online Panel,lv,Jill Stein,GRE,55.11142206330551,A,2024-11-05,2024-09-03,2024-10-08,yes
+YouGov,Texas,1256,Online Panel,rv,Donald Trump,REP,48.0312651426787,A+,2024-11-05,2024-09-25,2024-10-10,no
+YouGov,Texas,655,Text,lv,Donald Trump,REP,43.02048120776029,B,2024-11-05,2024-09-02,2024-10-09,no
+ActiVote,Arizona,764,Text,rv,Kamala Harris,DEM,53.26195152400644,A+,2024-11-05,2024-10-07,2024-10-09,yes
+InsiderAdvantage,Ohio,1399,Text,lv,Kamala Harris,DEM,46.17543009673087,A+,2024-11-05,2024-09-07,2024-10-08,no
+ActiVote,Ohio,1446,Text,lv,Jill Stein,GRE,54.9561373136768,C,2024-11-05,2024-09-16,2024-10-10,yes
+YouGov,Texas,1257,Online Panel,rv,Jill Stein,GRE,56.845780947351756,C,2024-11-05,2024-09-12,2024-10-09,yes
+InsiderAdvantage,Arizona,544,Online Panel,rv,Jill Stein,GRE,43.74030912480331,C,2024-11-05,2024-10-05,2024-10-10,no
+ActiVote,Ohio,870,App Panel,rv,Donald Trump,REP,43.536425464495366,A+,2024-11-05,2024-10-01,2024-10-10,no
+ActiVote,Texas,463,App Panel,lv,Kamala Harris,DEM,47.0404478743051,B,2024-11-05,2024-09-26,2024-10-10,no
+InsiderAdvantage,Arizona,881,Text,lv,Donald Trump,REP,46.96488583113879,B,2024-11-05,2024-09-26,2024-10-08,no
+InsiderAdvantage,Arizona,686,Online Panel,rv,Donald Trump,REP,48.5853559653606,B,2024-11-05,2024-09-19,2024-10-09,no
+YouGov,Pennsylvania,1153,Online Panel,rv,Donald Trump,REP,54.934219597944264,A+,2024-11-05,2024-09-20,2024-10-10,yes
+YouGov,Arizona,749,Online Panel,rv,Donald Trump,REP,57.09732295539765,B,2024-11-05,2024-09-06,2024-10-09,yes
+ActiVote,Pennsylvania,1371,Online Panel,lv,Kamala Harris,DEM,45.07084577641939,A+,2024-11-05,2024-09-22,2024-10-08,no
+ActiVote,Ohio,1365,Online Panel,rv,Kamala Harris,DEM,53.33643371001642,A+,2024-11-05,2024-10-07,2024-10-10,yes
+ActiVote,Ohio,1237,Online Panel,lv,Donald Trump,REP,55.071774211933366,A,2024-11-05,2024-09-24,2024-10-09,yes
+ActiVote,Pennsylvania,1108,Online Panel,lv,Jill Stein,GRE,43.76229947137033,A,2024-11-05,2024-09-05,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1317,Text,lv,Kamala Harris,DEM,43.26794623256043,C,2024-11-05,2024-09-11,2024-10-08,no
+ActiVote,Texas,1211,Text,rv,Donald Trump,REP,56.41431915979193,A,2024-11-05,2024-09-08,2024-10-08,yes
+ActiVote,Pennsylvania,1142,Online Panel,lv,Donald Trump,REP,51.088777565055906,A,2024-11-05,2024-09-02,2024-10-09,yes
+ActiVote,Arizona,1474,Online Panel,lv,Donald Trump,REP,48.657087759287066,C,2024-11-05,2024-10-04,2024-10-08,no
+YouGov,Pennsylvania,1026,App Panel,rv,Jill Stein,GRE,51.511388518612044,C,2024-11-05,2024-10-07,2024-10-09,yes
+YouGov,Ohio,1242,Text,rv,Donald Trump,REP,46.90053485364333,B,2024-11-05,2024-09-18,2024-10-08,no
+YouGov,Arizona,875,Text,rv,Donald Trump,REP,53.330567779563964,A+,2024-11-05,2024-09-17,2024-10-10,yes
+InsiderAdvantage,Arizona,1065,App Panel,lv,Kamala Harris,DEM,45.483079530597145,C,2024-11-05,2024-09-18,2024-10-09,no
+ActiVote,Pennsylvania,1244,Online Panel,rv,Jill Stein,GRE,49.4934904654099,A,2024-11-05,2024-09-04,2024-10-09,no
+InsiderAdvantage,Texas,1342,Online Panel,rv,Donald Trump,REP,54.094569645014,A,2024-11-05,2024-09-24,2024-10-08,yes
+ActiVote,Arizona,996,App Panel,rv,Kamala Harris,DEM,58.511907662645825,A,2024-11-05,2024-09-12,2024-10-08,yes
+YouGov,Pennsylvania,710,Online Panel,lv,Kamala Harris,DEM,49.21154912616057,C,2024-11-05,2024-09-26,2024-10-09,no
+ActiVote,Texas,570,Text,rv,Jill Stein,GRE,56.10826585651412,C,2024-11-05,2024-10-06,2024-10-08,yes
+YouGov,Texas,1326,Online Panel,rv,Jill Stein,GRE,50.939716199420374,A,2024-11-05,2024-09-18,2024-10-08,yes
+ActiVote,Ohio,647,Online Panel,rv,Donald Trump,REP,53.0819566091562,A,2024-11-05,2024-09-20,2024-10-08,yes
+YouGov,Ohio,427,Text,lv,Jill Stein,GRE,45.63224609200514,A,2024-11-05,2024-10-03,2024-10-09,no
+ActiVote,Ohio,1166,Text,rv,Jill Stein,GRE,52.40273653525192,C,2024-11-05,2024-09-27,2024-10-08,yes
+YouGov,Pennsylvania,1129,App Panel,rv,Kamala Harris,DEM,48.82889221592696,C,2024-11-05,2024-09-23,2024-10-09,no
+ActiVote,Pennsylvania,811,App Panel,rv,Donald Trump,REP,47.424955387656134,A+,2024-11-05,2024-10-03,2024-10-09,no
+InsiderAdvantage,Pennsylvania,792,Online Panel,rv,Jill Stein,GRE,48.25792316127666,B,2024-11-05,2024-10-03,2024-10-09,no
+YouGov,Texas,1040,Online Panel,lv,Donald Trump,REP,41.92733364611991,B,2024-11-05,2024-09-24,2024-10-09,no
+YouGov,Ohio,591,App Panel,rv,Donald Trump,REP,63.45709732271578,B,2024-11-05,2024-09-24,2024-10-10,yes
+InsiderAdvantage,Arizona,438,Online Panel,rv,Jill Stein,GRE,45.5373547192886,B,2024-11-05,2024-09-26,2024-10-10,no
+YouGov,Arizona,447,Text,lv,Jill Stein,GRE,52.72821362326607,A,2024-11-05,2024-09-06,2024-10-08,yes
+YouGov,Florida,534,Online Panel,rv,Kamala Harris,DEM,47.124871315577266,A,2024-11-05,2024-09-26,2024-10-09,no
+YouGov,Texas,971,App Panel,rv,Jill Stein,GRE,48.58899496614192,C,2024-11-05,2024-09-02,2024-10-09,no
+ActiVote,Pennsylvania,628,App Panel,lv,Donald Trump,REP,52.7115574955283,B,2024-11-05,2024-09-03,2024-10-09,yes
+ActiVote,Ohio,684,App Panel,lv,Donald Trump,REP,50.14242287571554,C,2024-11-05,2024-09-22,2024-10-09,yes
+ActiVote,Ohio,1214,Text,lv,Kamala Harris,DEM,48.424988994346045,C,2024-11-05,2024-09-22,2024-10-10,no
+YouGov,Texas,1340,Text,lv,Donald Trump,REP,48.04497735283956,B,2024-11-05,2024-09-07,2024-10-10,no
+InsiderAdvantage,Texas,1019,Text,rv,Jill Stein,GRE,57.13642360910105,B,2024-11-05,2024-09-19,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,912,Online Panel,rv,Jill Stein,GRE,41.9087903592039,C,2024-11-05,2024-09-12,2024-10-10,no
+YouGov,Pennsylvania,898,Text,lv,Donald Trump,REP,41.85420701018167,A,2024-11-05,2024-09-21,2024-10-09,no
+YouGov,Florida,636,App Panel,lv,Jill Stein,GRE,49.952689836911205,A,2024-11-05,2024-09-28,2024-10-08,no
+InsiderAdvantage,Arizona,550,Online Panel,rv,Jill Stein,GRE,52.33473465508126,B,2024-11-05,2024-10-06,2024-10-08,yes
+ActiVote,Texas,711,App Panel,lv,Jill Stein,GRE,59.2586762746013,C,2024-11-05,2024-09-25,2024-10-08,yes
+ActiVote,Florida,794,Online Panel,rv,Donald Trump,REP,43.45378881009749,A+,2024-11-05,2024-09-02,2024-10-08,no
+InsiderAdvantage,Arizona,708,Text,rv,Donald Trump,REP,43.68996269311623,C,2024-11-05,2024-10-05,2024-10-09,no
+ActiVote,Pennsylvania,1007,Online Panel,lv,Jill Stein,GRE,50.48342214831132,B,2024-11-05,2024-09-02,2024-10-10,yes
+ActiVote,Florida,612,Online Panel,rv,Jill Stein,GRE,52.12786937868979,C,2024-11-05,2024-10-03,2024-10-08,yes
+ActiVote,Ohio,863,App Panel,rv,Kamala Harris,DEM,45.959478594517826,B,2024-11-05,2024-09-25,2024-10-10,no
+YouGov,Arizona,982,App Panel,rv,Jill Stein,GRE,47.46367485581099,C,2024-11-05,2024-09-26,2024-10-10,no
+ActiVote,Arizona,507,Text,rv,Kamala Harris,DEM,55.37441578804115,C,2024-11-05,2024-09-08,2024-10-10,yes
+ActiVote,Texas,994,App Panel,lv,Jill Stein,GRE,51.8532304557336,A,2024-11-05,2024-10-07,2024-10-10,yes
+InsiderAdvantage,Texas,681,App Panel,lv,Donald Trump,REP,40.03611215453502,A,2024-11-05,2024-10-04,2024-10-09,no
+InsiderAdvantage,Texas,1293,Online Panel,rv,Jill Stein,GRE,48.73784774094469,C,2024-11-05,2024-09-18,2024-10-10,no
+InsiderAdvantage,Pennsylvania,866,Text,lv,Jill Stein,GRE,41.65111843329127,B,2024-11-05,2024-09-16,2024-10-08,no
+ActiVote,Texas,429,Online Panel,lv,Kamala Harris,DEM,51.67764793142944,A+,2024-11-05,2024-09-10,2024-10-10,yes
+YouGov,Pennsylvania,606,App Panel,rv,Kamala Harris,DEM,57.17624017995692,C,2024-11-05,2024-10-06,2024-10-08,yes
+ActiVote,Pennsylvania,976,Text,lv,Donald Trump,REP,56.00185847495118,C,2024-11-05,2024-09-14,2024-10-10,yes
+InsiderAdvantage,Arizona,880,Text,rv,Kamala Harris,DEM,42.99043163263705,B,2024-11-05,2024-09-28,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1023,Text,rv,Kamala Harris,DEM,43.45302235417183,C,2024-11-05,2024-09-02,2024-10-10,no
+InsiderAdvantage,Texas,957,Text,lv,Jill Stein,GRE,47.66154179435942,B,2024-11-05,2024-09-15,2024-10-09,no
+YouGov,Florida,422,App Panel,rv,Jill Stein,GRE,52.51391859582361,C,2024-11-05,2024-10-06,2024-10-10,yes
+InsiderAdvantage,Florida,1132,Text,lv,Jill Stein,GRE,62.22254649237338,B,2024-11-05,2024-09-06,2024-10-08,yes
+ActiVote,Ohio,860,Online Panel,rv,Kamala Harris,DEM,59.84632850342523,C,2024-11-05,2024-09-04,2024-10-10,yes
+ActiVote,Texas,1454,Text,lv,Jill Stein,GRE,51.43977432386143,A,2024-11-05,2024-09-25,2024-10-10,yes
+InsiderAdvantage,Florida,1131,Online Panel,lv,Jill Stein,GRE,44.4044256983886,C,2024-11-05,2024-09-12,2024-10-09,no
+InsiderAdvantage,Florida,921,Online Panel,rv,Kamala Harris,DEM,42.471727877716596,A+,2024-11-05,2024-09-21,2024-10-09,no
+InsiderAdvantage,Florida,1006,Text,lv,Jill Stein,GRE,49.46684250429451,A+,2024-11-05,2024-10-02,2024-10-10,no
+InsiderAdvantage,Pennsylvania,1204,App Panel,rv,Donald Trump,REP,47.25893256384936,C,2024-11-05,2024-09-21,2024-10-10,no
+YouGov,Pennsylvania,651,App Panel,rv,Donald Trump,REP,47.670823058599105,A+,2024-11-05,2024-09-19,2024-10-10,no
+ActiVote,Ohio,709,App Panel,lv,Kamala Harris,DEM,54.1488233211863,A,2024-11-05,2024-09-05,2024-10-09,yes
+ActiVote,Pennsylvania,1437,App Panel,rv,Jill Stein,GRE,50.72437875200183,C,2024-11-05,2024-09-25,2024-10-10,yes
+ActiVote,Ohio,740,Online Panel,rv,Donald Trump,REP,48.45401313140878,B,2024-11-05,2024-09-01,2024-10-08,no
+ActiVote,Arizona,1373,Text,lv,Kamala Harris,DEM,43.36755288406613,A,2024-11-05,2024-09-06,2024-10-09,no
+YouGov,Florida,1391,App Panel,lv,Kamala Harris,DEM,48.680499783121284,A+,2024-11-05,2024-09-25,2024-10-09,no
+InsiderAdvantage,Pennsylvania,769,Text,lv,Kamala Harris,DEM,41.87887171296566,A,2024-11-05,2024-09-21,2024-10-08,no
+InsiderAdvantage,Florida,1001,Text,rv,Kamala Harris,DEM,49.743472116306236,A,2024-11-05,2024-09-11,2024-10-09,no
+YouGov,Arizona,655,App Panel,lv,Jill Stein,GRE,49.79069670510133,B,2024-11-05,2024-09-05,2024-10-10,no
+InsiderAdvantage,Florida,423,Online Panel,lv,Donald Trump,REP,49.00005720460086,A+,2024-11-05,2024-09-25,2024-10-08,no
+ActiVote,Arizona,745,Online Panel,rv,Kamala Harris,DEM,57.45217736636472,A,2024-11-05,2024-09-14,2024-10-10,yes
+InsiderAdvantage,Texas,448,App Panel,lv,Kamala Harris,DEM,47.77082285859213,B,2024-11-05,2024-09-30,2024-10-08,no
+YouGov,Pennsylvania,1431,Online Panel,lv,Kamala Harris,DEM,50.38775444495511,A,2024-11-05,2024-09-06,2024-10-09,yes
+ActiVote,Ohio,1442,Text,lv,Donald Trump,REP,49.70307181248185,C,2024-11-05,2024-09-20,2024-10-08,no
+ActiVote,Arizona,770,Online Panel,lv,Kamala Harris,DEM,45.808088876561484,A,2024-11-05,2024-10-03,2024-10-08,no
+YouGov,Florida,1079,Online Panel,lv,Jill Stein,GRE,54.00185569532105,A,2024-11-05,2024-09-26,2024-10-09,yes
+YouGov,Ohio,1176,Text,lv,Donald Trump,REP,41.379957485008376,B,2024-11-05,2024-10-07,2024-10-10,no
+InsiderAdvantage,Texas,942,App Panel,rv,Kamala Harris,DEM,50.68269408330908,A+,2024-11-05,2024-09-03,2024-10-09,yes
+InsiderAdvantage,Texas,908,Text,lv,Donald Trump,REP,58.18063595971621,C,2024-11-05,2024-09-21,2024-10-08,yes
+InsiderAdvantage,Texas,444,Online Panel,lv,Kamala Harris,DEM,41.484193183832744,A+,2024-11-05,2024-09-25,2024-10-08,no
+YouGov,Pennsylvania,437,Text,lv,Jill Stein,GRE,47.65937586163623,A+,2024-11-05,2024-09-05,2024-10-10,no
+ActiVote,Florida,915,Online Panel,rv,Donald Trump,REP,34.42919659463646,A+,2024-11-05,2024-09-13,2024-10-10,no
+ActiVote,Pennsylvania,965,Online Panel,lv,Kamala Harris,DEM,48.458872435703164,A,2024-11-05,2024-10-04,2024-10-08,no
+ActiVote,Pennsylvania,411,App Panel,rv,Kamala Harris,DEM,55.96430465121429,C,2024-11-05,2024-09-07,2024-10-09,yes
+ActiVote,Pennsylvania,1019,App Panel,lv,Kamala Harris,DEM,44.01462357395242,B,2024-11-05,2024-09-17,2024-10-08,no
+InsiderAdvantage,Texas,1251,Online Panel,lv,Jill Stein,GRE,54.63877455124721,A,2024-11-05,2024-10-01,2024-10-10,yes
+ActiVote,Pennsylvania,1252,Text,rv,Kamala Harris,DEM,49.785305444822846,C,2024-11-05,2024-09-10,2024-10-10,no
+YouGov,Ohio,1431,Text,rv,Jill Stein,GRE,53.35221673185018,A,2024-11-05,2024-09-06,2024-10-08,yes
+InsiderAdvantage,Arizona,906,Online Panel,lv,Jill Stein,GRE,49.281651985701316,A+,2024-11-05,2024-09-13,2024-10-10,no
+InsiderAdvantage,Arizona,1430,App Panel,rv,Kamala Harris,DEM,53.49917281893558,B,2024-11-05,2024-09-04,2024-10-08,yes
+ActiVote,Arizona,901,Text,rv,Jill Stein,GRE,49.57517074265102,C,2024-11-05,2024-09-28,2024-10-10,no
+ActiVote,Pennsylvania,950,Online Panel,rv,Jill Stein,GRE,45.7803421202373,A,2024-11-05,2024-09-16,2024-10-10,no
+YouGov,Pennsylvania,695,Online Panel,lv,Jill Stein,GRE,53.03938332715312,C,2024-11-05,2024-09-14,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,1177,App Panel,rv,Donald Trump,REP,43.677753163505,C,2024-11-05,2024-09-11,2024-10-08,no
+InsiderAdvantage,Ohio,1013,Text,rv,Jill Stein,GRE,42.525257367701215,A+,2024-11-05,2024-09-23,2024-10-08,no
+YouGov,Pennsylvania,934,App Panel,rv,Kamala Harris,DEM,37.491273066163416,C,2024-11-05,2024-09-29,2024-10-08,no
+InsiderAdvantage,Florida,447,Text,rv,Donald Trump,REP,55.12943543463704,A+,2024-11-05,2024-09-08,2024-10-08,yes
+YouGov,Ohio,1047,Online Panel,lv,Jill Stein,GRE,36.49038172786851,A,2024-11-05,2024-09-29,2024-10-08,no
+ActiVote,Texas,1074,Text,lv,Jill Stein,GRE,54.8199774815817,A,2024-11-05,2024-10-05,2024-10-10,yes
+YouGov,Ohio,1359,App Panel,lv,Kamala Harris,DEM,55.85425287181405,C,2024-11-05,2024-09-16,2024-10-09,yes
+YouGov,Texas,1392,App Panel,lv,Donald Trump,REP,50.91699160824627,C,2024-11-05,2024-09-20,2024-10-10,yes
+ActiVote,Texas,1275,Online Panel,lv,Donald Trump,REP,39.55158871052049,A,2024-11-05,2024-10-02,2024-10-08,no
+InsiderAdvantage,Florida,498,Text,rv,Kamala Harris,DEM,54.718655133257556,A,2024-11-05,2024-09-08,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,488,App Panel,lv,Jill Stein,GRE,46.429266191850814,A+,2024-11-05,2024-10-06,2024-10-10,no
+YouGov,Ohio,949,Text,rv,Kamala Harris,DEM,47.673218745648896,B,2024-11-05,2024-09-07,2024-10-09,no
+YouGov,Texas,488,App Panel,rv,Jill Stein,GRE,42.26759164540512,A,2024-11-05,2024-09-28,2024-10-10,no
+InsiderAdvantage,Texas,1013,App Panel,rv,Jill Stein,GRE,52.86011094950564,A,2024-11-05,2024-10-05,2024-10-08,yes
+InsiderAdvantage,Arizona,1146,Online Panel,rv,Kamala Harris,DEM,52.042284192245965,A+,2024-11-05,2024-09-26,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,1289,App Panel,lv,Kamala Harris,DEM,49.069343340516774,B,2024-11-05,2024-09-11,2024-10-10,no
+YouGov,Arizona,1385,Text,rv,Kamala Harris,DEM,60.053449728396856,A,2024-11-05,2024-09-18,2024-10-10,yes
+InsiderAdvantage,Texas,410,Text,rv,Donald Trump,REP,58.82414348295552,B,2024-11-05,2024-09-30,2024-10-08,yes
+ActiVote,Ohio,721,Online Panel,lv,Donald Trump,REP,48.43241521869321,A+,2024-11-05,2024-09-06,2024-10-09,no
+InsiderAdvantage,Arizona,518,Online Panel,lv,Kamala Harris,DEM,44.91030296815963,A,2024-11-05,2024-09-05,2024-10-10,no
+YouGov,Texas,737,Text,lv,Jill Stein,GRE,58.7042021634104,C,2024-11-05,2024-09-13,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,847,Online Panel,rv,Jill Stein,GRE,44.711456900411434,A+,2024-11-05,2024-10-04,2024-10-09,no
+ActiVote,Pennsylvania,787,Online Panel,lv,Donald Trump,REP,44.92687347773547,A+,2024-11-05,2024-09-28,2024-10-10,no
+YouGov,Texas,1283,App Panel,rv,Jill Stein,GRE,43.38807182376085,A+,2024-11-05,2024-09-08,2024-10-08,no
+ActiVote,Pennsylvania,1274,Text,lv,Jill Stein,GRE,50.729593347271994,B,2024-11-05,2024-09-17,2024-10-09,yes
+YouGov,Arizona,1153,Online Panel,rv,Kamala Harris,DEM,55.52516003294284,A,2024-11-05,2024-10-04,2024-10-08,yes
+InsiderAdvantage,Ohio,999,Text,lv,Jill Stein,GRE,53.0011925229719,C,2024-11-05,2024-09-04,2024-10-08,yes
+InsiderAdvantage,Arizona,1283,App Panel,rv,Kamala Harris,DEM,51.834445000403264,C,2024-11-05,2024-09-18,2024-10-09,yes
+YouGov,Florida,503,Text,lv,Kamala Harris,DEM,55.603048846176605,C,2024-11-05,2024-09-17,2024-10-09,yes
+InsiderAdvantage,Texas,844,Text,rv,Donald Trump,REP,49.683884126704186,C,2024-11-05,2024-09-15,2024-10-08,no
+YouGov,Florida,789,App Panel,lv,Jill Stein,GRE,51.04665087788764,A+,2024-11-05,2024-09-12,2024-10-10,yes
+InsiderAdvantage,Ohio,554,Text,rv,Kamala Harris,DEM,50.82333409087712,B,2024-11-05,2024-09-24,2024-10-08,yes
+YouGov,Florida,1100,Text,lv,Kamala Harris,DEM,42.934171958038014,C,2024-11-05,2024-09-29,2024-10-09,no
+YouGov,Texas,518,Text,rv,Kamala Harris,DEM,47.83635340741421,A+,2024-11-05,2024-09-26,2024-10-09,no
+ActiVote,Florida,931,App Panel,lv,Donald Trump,REP,46.785342639124224,A+,2024-11-05,2024-09-30,2024-10-08,no
+InsiderAdvantage,Pennsylvania,499,Online Panel,rv,Donald Trump,REP,42.13406177008986,C,2024-11-05,2024-09-28,2024-10-09,no
+ActiVote,Arizona,927,Text,rv,Jill Stein,GRE,48.367774335899085,B,2024-11-05,2024-09-12,2024-10-09,no
+ActiVote,Texas,640,Online Panel,rv,Jill Stein,GRE,47.88218727341641,A+,2024-11-05,2024-09-18,2024-10-10,no
+ActiVote,Texas,640,App Panel,lv,Jill Stein,GRE,53.44082092451894,A+,2024-11-05,2024-09-04,2024-10-09,yes
+YouGov,Pennsylvania,751,App Panel,rv,Kamala Harris,DEM,50.51282375766901,A,2024-11-05,2024-09-23,2024-10-08,yes
+ActiVote,Ohio,570,Online Panel,lv,Donald Trump,REP,42.01345209308392,B,2024-11-05,2024-09-14,2024-10-09,no
+InsiderAdvantage,Arizona,561,Text,rv,Jill Stein,GRE,51.43278334721515,B,2024-11-05,2024-09-02,2024-10-08,yes
+YouGov,Florida,1434,Text,lv,Jill Stein,GRE,39.55787044307348,C,2024-11-05,2024-09-17,2024-10-09,no
+YouGov,Arizona,1483,App Panel,rv,Jill Stein,GRE,46.707114459386794,A+,2024-11-05,2024-09-01,2024-10-08,no
+ActiVote,Texas,1375,App Panel,lv,Jill Stein,GRE,47.02869955844578,C,2024-11-05,2024-09-09,2024-10-08,no
+YouGov,Arizona,1091,Online Panel,rv,Kamala Harris,DEM,51.206364110455404,A,2024-11-05,2024-09-13,2024-10-09,yes
+InsiderAdvantage,Ohio,1475,Text,rv,Kamala Harris,DEM,51.35663320669656,A,2024-11-05,2024-09-28,2024-10-10,yes
+InsiderAdvantage,Ohio,583,Online Panel,lv,Kamala Harris,DEM,46.83844756028021,C,2024-11-05,2024-09-03,2024-10-09,no
+InsiderAdvantage,Ohio,665,Text,rv,Jill Stein,GRE,51.05930973050468,C,2024-11-05,2024-10-03,2024-10-09,yes
+YouGov,Florida,919,Text,rv,Jill Stein,GRE,40.935254126585974,A,2024-11-05,2024-09-18,2024-10-08,no
+InsiderAdvantage,Florida,793,Text,lv,Kamala Harris,DEM,51.72936140826231,B,2024-11-05,2024-10-07,2024-10-08,yes
+InsiderAdvantage,Ohio,659,Online Panel,rv,Donald Trump,REP,59.22073913362039,C,2024-11-05,2024-09-15,2024-10-09,yes
+ActiVote,Florida,1270,Text,lv,Jill Stein,GRE,52.12669949704027,A+,2024-11-05,2024-09-04,2024-10-08,yes
+ActiVote,Pennsylvania,731,Online Panel,lv,Kamala Harris,DEM,49.108100279549646,C,2024-11-05,2024-09-08,2024-10-08,no
+InsiderAdvantage,Arizona,516,App Panel,rv,Kamala Harris,DEM,47.77260519168182,A,2024-11-05,2024-09-08,2024-10-10,no
+InsiderAdvantage,Ohio,873,Online Panel,lv,Kamala Harris,DEM,49.12340192043304,C,2024-11-05,2024-09-20,2024-10-09,no
+InsiderAdvantage,Ohio,1229,App Panel,lv,Jill Stein,GRE,53.673667161608265,A,2024-11-05,2024-10-03,2024-10-08,yes
+YouGov,Florida,1468,App Panel,lv,Jill Stein,GRE,49.27192776464528,A,2024-11-05,2024-09-09,2024-10-10,no
+YouGov,Pennsylvania,690,App Panel,lv,Kamala Harris,DEM,45.938615118801025,C,2024-11-05,2024-09-08,2024-10-10,no
+InsiderAdvantage,Ohio,795,Online Panel,rv,Donald Trump,REP,48.58666125378791,B,2024-11-05,2024-10-06,2024-10-10,no
+InsiderAdvantage,Texas,758,Text,lv,Kamala Harris,DEM,45.84307146673636,A,2024-11-05,2024-10-05,2024-10-08,no
+YouGov,Arizona,779,App Panel,lv,Jill Stein,GRE,50.174708209562965,A,2024-11-05,2024-09-26,2024-10-09,yes
+ActiVote,Arizona,579,Text,rv,Kamala Harris,DEM,49.82769858260734,A,2024-11-05,2024-09-05,2024-10-09,no
+InsiderAdvantage,Ohio,861,Online Panel,lv,Jill Stein,GRE,55.137060107371674,B,2024-11-05,2024-09-26,2024-10-08,yes
+InsiderAdvantage,Florida,493,Text,lv,Jill Stein,GRE,46.28183282454019,A+,2024-11-05,2024-09-24,2024-10-10,no
+YouGov,Pennsylvania,638,App Panel,rv,Kamala Harris,DEM,40.16508999887549,A,2024-11-05,2024-09-23,2024-10-09,no
+YouGov,Arizona,1232,App Panel,rv,Jill Stein,GRE,50.23635757315179,A+,2024-11-05,2024-09-10,2024-10-10,yes
+InsiderAdvantage,Florida,549,Text,rv,Jill Stein,GRE,62.652106130860226,C,2024-11-05,2024-09-18,2024-10-10,yes
+YouGov,Arizona,470,Text,rv,Donald Trump,REP,50.65373720466463,A,2024-11-05,2024-10-05,2024-10-08,yes
+InsiderAdvantage,Ohio,1283,App Panel,lv,Kamala Harris,DEM,49.590554611906335,A+,2024-11-05,2024-10-06,2024-10-09,no
+ActiVote,Florida,1330,App Panel,rv,Kamala Harris,DEM,51.67901519762043,B,2024-11-05,2024-09-21,2024-10-08,yes
+InsiderAdvantage,Texas,1468,Text,lv,Donald Trump,REP,50.37702941818177,A,2024-11-05,2024-09-03,2024-10-08,yes
+InsiderAdvantage,Ohio,705,App Panel,lv,Jill Stein,GRE,37.46669134545024,A,2024-11-05,2024-09-02,2024-10-10,no
+ActiVote,Florida,1081,App Panel,lv,Jill Stein,GRE,41.63680672275925,B,2024-11-05,2024-10-04,2024-10-08,no
+ActiVote,Arizona,785,App Panel,rv,Jill Stein,GRE,50.8263637987447,A,2024-11-05,2024-09-18,2024-10-10,yes
+ActiVote,Texas,1307,Text,rv,Jill Stein,GRE,57.41932401633311,C,2024-11-05,2024-09-17,2024-10-09,yes
+YouGov,Florida,597,Text,rv,Jill Stein,GRE,53.763734159972955,B,2024-11-05,2024-09-15,2024-10-09,yes
+InsiderAdvantage,Ohio,1387,Text,lv,Donald Trump,REP,48.47056205670945,A+,2024-11-05,2024-09-27,2024-10-09,no
+ActiVote,Florida,729,Online Panel,lv,Kamala Harris,DEM,43.73218628379069,A,2024-11-05,2024-09-10,2024-10-08,no
+YouGov,Texas,1076,Text,lv,Kamala Harris,DEM,47.0311516928478,A,2024-11-05,2024-09-12,2024-10-10,no
+YouGov,Texas,976,App Panel,lv,Donald Trump,REP,52.24288134984263,A+,2024-11-05,2024-09-29,2024-10-10,yes
+ActiVote,Texas,1371,Online Panel,rv,Donald Trump,REP,42.661671188525574,B,2024-11-05,2024-10-05,2024-10-10,no
+YouGov,Florida,1450,Text,rv,Donald Trump,REP,56.21436573473038,C,2024-11-05,2024-10-04,2024-10-08,yes
+YouGov,Texas,1455,Online Panel,lv,Donald Trump,REP,53.561146450444035,A+,2024-11-05,2024-09-11,2024-10-09,yes
+ActiVote,Florida,1256,Text,lv,Kamala Harris,DEM,51.04807657992053,C,2024-11-05,2024-09-17,2024-10-09,yes
+InsiderAdvantage,Ohio,569,Text,lv,Donald Trump,REP,51.629396969064665,A,2024-11-05,2024-09-10,2024-10-08,yes
+InsiderAdvantage,Florida,1376,Text,lv,Jill Stein,GRE,48.74438807828552,A,2024-11-05,2024-09-13,2024-10-08,no
+YouGov,Texas,482,Online Panel,rv,Kamala Harris,DEM,49.43425094120279,A+,2024-11-05,2024-10-05,2024-10-10,no
+InsiderAdvantage,Florida,617,Online Panel,rv,Kamala Harris,DEM,47.957934852149705,A+,2024-11-05,2024-09-05,2024-10-09,no
+ActiVote,Pennsylvania,817,App Panel,lv,Jill Stein,GRE,49.951022968043226,B,2024-11-05,2024-09-06,2024-10-10,no
+YouGov,Ohio,1313,Text,lv,Kamala Harris,DEM,48.49215570290198,B,2024-11-05,2024-09-26,2024-10-10,no
+InsiderAdvantage,Arizona,1105,Online Panel,lv,Donald Trump,REP,46.3622728078807,A,2024-11-05,2024-09-01,2024-10-09,no
+YouGov,Texas,1239,Online Panel,lv,Kamala Harris,DEM,47.889151873095194,B,2024-11-05,2024-09-24,2024-10-08,no
+YouGov,Ohio,583,App Panel,lv,Kamala Harris,DEM,50.94362670588314,A,2024-11-05,2024-09-13,2024-10-08,yes
+InsiderAdvantage,Arizona,1405,Online Panel,lv,Jill Stein,GRE,48.638100136967296,A,2024-11-05,2024-10-02,2024-10-08,no
+YouGov,Texas,1390,Online Panel,lv,Kamala Harris,DEM,57.51507970179856,A+,2024-11-05,2024-10-06,2024-10-09,yes
+InsiderAdvantage,Florida,414,App Panel,rv,Kamala Harris,DEM,49.67180718075661,A+,2024-11-05,2024-09-06,2024-10-08,no
+YouGov,Florida,1467,Text,lv,Kamala Harris,DEM,45.32052395366083,B,2024-11-05,2024-09-14,2024-10-08,no
+ActiVote,Pennsylvania,450,App Panel,lv,Jill Stein,GRE,56.85899379507376,C,2024-11-05,2024-09-07,2024-10-10,yes
+YouGov,Ohio,1130,App Panel,lv,Kamala Harris,DEM,60.08892441264383,B,2024-11-05,2024-09-23,2024-10-09,yes
+ActiVote,Texas,990,App Panel,lv,Donald Trump,REP,54.30808683309918,C,2024-11-05,2024-10-05,2024-10-08,yes
+InsiderAdvantage,Texas,489,App Panel,lv,Donald Trump,REP,56.03313312289811,A,2024-11-05,2024-09-09,2024-10-09,yes
+YouGov,Ohio,1085,App Panel,rv,Jill Stein,GRE,51.09730260862871,A,2024-11-05,2024-09-08,2024-10-09,yes
+ActiVote,Pennsylvania,754,App Panel,rv,Jill Stein,GRE,49.701887223704894,B,2024-11-05,2024-09-19,2024-10-08,no
+ActiVote,Texas,1020,Text,rv,Kamala Harris,DEM,54.983657634948024,C,2024-11-05,2024-09-05,2024-10-09,yes
+ActiVote,Florida,1142,Online Panel,lv,Jill Stein,GRE,43.31260631811808,B,2024-11-05,2024-10-02,2024-10-08,no
+YouGov,Pennsylvania,749,App Panel,rv,Donald Trump,REP,48.69058325550105,A,2024-11-05,2024-09-07,2024-10-09,no
+YouGov,Ohio,1226,App Panel,rv,Jill Stein,GRE,45.68008959741208,C,2024-11-05,2024-09-15,2024-10-10,no
+InsiderAdvantage,Arizona,405,App Panel,rv,Kamala Harris,DEM,54.63584601352403,A+,2024-11-05,2024-09-13,2024-10-10,yes
+InsiderAdvantage,Arizona,1159,App Panel,lv,Kamala Harris,DEM,50.30934789728971,B,2024-11-05,2024-10-06,2024-10-10,yes
+InsiderAdvantage,Arizona,1494,App Panel,lv,Donald Trump,REP,57.110374131006196,A+,2024-11-05,2024-09-25,2024-10-09,yes
+ActiVote,Florida,479,Online Panel,lv,Donald Trump,REP,46.2576207186674,A,2024-11-05,2024-10-07,2024-10-10,no
+YouGov,Pennsylvania,1319,Text,rv,Donald Trump,REP,46.65197158498309,A+,2024-11-05,2024-09-26,2024-10-10,no
+ActiVote,Arizona,797,Online Panel,lv,Donald Trump,REP,50.93438527536577,B,2024-11-05,2024-09-25,2024-10-08,yes
+YouGov,Pennsylvania,1432,App Panel,rv,Kamala Harris,DEM,48.7562343005924,A,2024-11-05,2024-09-11,2024-10-09,no
+YouGov,Texas,656,Text,rv,Donald Trump,REP,53.31691597096958,A+,2024-11-05,2024-10-06,2024-10-09,yes
+ActiVote,Pennsylvania,929,Text,lv,Kamala Harris,DEM,49.919354526277516,C,2024-11-05,2024-09-02,2024-10-08,no
+YouGov,Arizona,528,Text,rv,Donald Trump,REP,50.344530527365805,B,2024-11-05,2024-09-05,2024-10-10,yes
+InsiderAdvantage,Texas,1139,App Panel,rv,Jill Stein,GRE,47.6324171531961,B,2024-11-05,2024-09-22,2024-10-10,no
+InsiderAdvantage,Arizona,960,App Panel,rv,Donald Trump,REP,58.00067163584113,A,2024-11-05,2024-09-28,2024-10-09,yes
+YouGov,Ohio,555,Text,lv,Jill Stein,GRE,52.011323091174305,B,2024-11-05,2024-09-05,2024-10-10,yes
+YouGov,Florida,1255,Text,lv,Donald Trump,REP,42.26764779345302,A,2024-11-05,2024-10-05,2024-10-08,no
+ActiVote,Texas,709,Online Panel,rv,Kamala Harris,DEM,49.7469262128992,A+,2024-11-05,2024-09-27,2024-10-09,no
+YouGov,Florida,966,Online Panel,rv,Kamala Harris,DEM,48.13985235593052,C,2024-11-05,2024-10-06,2024-10-08,no
+InsiderAdvantage,Ohio,499,Online Panel,rv,Jill Stein,GRE,38.84746571629819,A+,2024-11-05,2024-09-01,2024-10-10,no
+ActiVote,Arizona,1480,Text,lv,Donald Trump,REP,57.88149110033064,B,2024-11-05,2024-09-09,2024-10-08,yes
+InsiderAdvantage,Texas,671,Online Panel,rv,Kamala Harris,DEM,48.77701453483967,B,2024-11-05,2024-10-07,2024-10-10,no
+YouGov,Pennsylvania,1445,Online Panel,rv,Jill Stein,GRE,47.81672871278669,B,2024-11-05,2024-09-11,2024-10-08,no
+InsiderAdvantage,Florida,1344,App Panel,rv,Kamala Harris,DEM,52.357375487087,C,2024-11-05,2024-09-06,2024-10-09,yes
+ActiVote,Pennsylvania,474,App Panel,lv,Donald Trump,REP,54.91782114499791,A+,2024-11-05,2024-10-02,2024-10-09,yes
+InsiderAdvantage,Florida,772,App Panel,lv,Jill Stein,GRE,47.25643437474702,B,2024-11-05,2024-09-17,2024-10-09,no
+ActiVote,Pennsylvania,1271,App Panel,rv,Jill Stein,GRE,54.20262062909499,C,2024-11-05,2024-09-07,2024-10-08,yes
+InsiderAdvantage,Texas,1105,App Panel,lv,Jill Stein,GRE,59.772669768332996,A,2024-11-05,2024-09-25,2024-10-08,yes
+InsiderAdvantage,Florida,449,Text,rv,Jill Stein,GRE,55.271452068504985,A+,2024-11-05,2024-09-23,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,974,App Panel,rv,Kamala Harris,DEM,61.08449857380615,C,2024-11-05,2024-09-30,2024-10-09,yes
+InsiderAdvantage,Texas,1128,Text,rv,Jill Stein,GRE,52.61050408905015,C,2024-11-05,2024-09-21,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,1447,Text,rv,Donald Trump,REP,51.02924363356726,C,2024-11-05,2024-09-03,2024-10-10,yes
+InsiderAdvantage,Florida,767,Text,lv,Kamala Harris,DEM,54.346644285307626,A+,2024-11-05,2024-09-07,2024-10-08,yes
+InsiderAdvantage,Ohio,1031,Text,rv,Jill Stein,GRE,37.29364614771548,B,2024-11-05,2024-10-01,2024-10-09,no
+InsiderAdvantage,Arizona,922,Text,lv,Jill Stein,GRE,52.01659585554323,A,2024-11-05,2024-09-09,2024-10-09,yes
+InsiderAdvantage,Arizona,810,Online Panel,lv,Donald Trump,REP,48.73514482262713,A,2024-11-05,2024-10-06,2024-10-09,no
+InsiderAdvantage,Arizona,879,Text,lv,Donald Trump,REP,41.340638245630885,C,2024-11-05,2024-10-07,2024-10-09,no
+ActiVote,Florida,472,App Panel,lv,Jill Stein,GRE,54.01709481212219,B,2024-11-05,2024-09-14,2024-10-10,yes
+ActiVote,Florida,1323,Text,lv,Kamala Harris,DEM,49.985582698876314,B,2024-11-05,2024-09-11,2024-10-08,no
+YouGov,Arizona,465,Text,rv,Jill Stein,GRE,49.24518903300958,A+,2024-11-05,2024-10-07,2024-10-09,no
+InsiderAdvantage,Texas,1058,Text,lv,Jill Stein,GRE,43.07965549498511,B,2024-11-05,2024-09-26,2024-10-08,no
+InsiderAdvantage,Arizona,1152,Text,rv,Kamala Harris,DEM,55.69829846054236,A+,2024-11-05,2024-09-29,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,971,App Panel,lv,Donald Trump,REP,43.661645515176055,A,2024-11-05,2024-09-04,2024-10-10,no
+ActiVote,Texas,1147,App Panel,lv,Donald Trump,REP,47.3358726535935,C,2024-11-05,2024-10-05,2024-10-10,no
+ActiVote,Arizona,948,Online Panel,rv,Donald Trump,REP,50.359575921388974,A,2024-11-05,2024-10-01,2024-10-08,yes
+InsiderAdvantage,Florida,959,App Panel,rv,Donald Trump,REP,50.5780097063435,A+,2024-11-05,2024-09-02,2024-10-09,yes
+InsiderAdvantage,Florida,445,App Panel,rv,Donald Trump,REP,50.16107814196439,A,2024-11-05,2024-09-03,2024-10-09,yes
+ActiVote,Texas,537,Online Panel,lv,Kamala Harris,DEM,46.22709000612063,A,2024-11-05,2024-09-24,2024-10-08,no
+YouGov,Arizona,1236,App Panel,lv,Donald Trump,REP,52.33295966534378,B,2024-11-05,2024-10-07,2024-10-09,yes
+YouGov,Florida,1338,Online Panel,lv,Jill Stein,GRE,50.626881528964375,A,2024-11-05,2024-09-17,2024-10-08,yes
+InsiderAdvantage,Florida,868,Text,lv,Kamala Harris,DEM,44.15502793527433,C,2024-11-05,2024-10-04,2024-10-10,no
+YouGov,Florida,499,Online Panel,rv,Donald Trump,REP,43.47358912661859,B,2024-11-05,2024-10-04,2024-10-09,no
+ActiVote,Florida,1295,App Panel,rv,Donald Trump,REP,54.41624193934423,A+,2024-11-05,2024-10-05,2024-10-08,yes
+InsiderAdvantage,Florida,1039,Text,rv,Kamala Harris,DEM,48.156412103380205,A+,2024-11-05,2024-09-26,2024-10-09,no
+YouGov,Florida,1345,App Panel,rv,Kamala Harris,DEM,53.1474600526504,A,2024-11-05,2024-09-05,2024-10-09,yes
+InsiderAdvantage,Arizona,1180,Online Panel,rv,Jill Stein,GRE,43.964272258773185,C,2024-11-05,2024-09-21,2024-10-10,no
+YouGov,Texas,677,Online Panel,rv,Jill Stein,GRE,52.10363578368498,B,2024-11-05,2024-09-29,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,1018,App Panel,lv,Donald Trump,REP,45.92634025673101,A+,2024-11-05,2024-09-06,2024-10-10,no
+InsiderAdvantage,Arizona,596,Online Panel,rv,Donald Trump,REP,47.94925788360249,A,2024-11-05,2024-09-16,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1197,Online Panel,rv,Donald Trump,REP,47.99609312895451,A,2024-11-05,2024-09-06,2024-10-08,no
+InsiderAdvantage,Arizona,436,App Panel,lv,Kamala Harris,DEM,51.634138866459246,A+,2024-11-05,2024-09-19,2024-10-09,yes
+ActiVote,Florida,816,Text,rv,Kamala Harris,DEM,50.386990414469786,C,2024-11-05,2024-10-05,2024-10-10,yes
+ActiVote,Florida,1261,Online Panel,rv,Donald Trump,REP,53.38011520508128,A,2024-11-05,2024-09-18,2024-10-08,yes
+ActiVote,Arizona,1052,App Panel,lv,Jill Stein,GRE,58.27530025799993,C,2024-11-05,2024-09-16,2024-10-09,yes
+InsiderAdvantage,Arizona,882,App Panel,lv,Donald Trump,REP,52.65270195674122,A+,2024-11-05,2024-10-02,2024-10-10,yes
+InsiderAdvantage,Texas,607,Text,lv,Jill Stein,GRE,48.00874717169805,C,2024-11-05,2024-09-15,2024-10-10,no
+InsiderAdvantage,Texas,1102,Text,lv,Kamala Harris,DEM,53.58781279307121,C,2024-11-05,2024-09-09,2024-10-09,yes
+YouGov,Texas,579,Online Panel,rv,Donald Trump,REP,58.867854736416916,A,2024-11-05,2024-09-25,2024-10-08,yes
+InsiderAdvantage,Arizona,1063,Text,rv,Donald Trump,REP,47.37399754960963,B,2024-11-05,2024-09-25,2024-10-08,no
+ActiVote,Texas,1390,Text,lv,Kamala Harris,DEM,48.965520331927884,A,2024-11-05,2024-09-17,2024-10-10,no
+YouGov,Ohio,728,Online Panel,lv,Jill Stein,GRE,45.35951328251684,B,2024-11-05,2024-09-03,2024-10-09,no
+YouGov,Florida,405,Online Panel,rv,Kamala Harris,DEM,57.94994846451694,B,2024-11-05,2024-09-15,2024-10-09,yes
+ActiVote,Pennsylvania,1322,Online Panel,lv,Donald Trump,REP,47.93294096617593,A,2024-11-05,2024-09-11,2024-10-08,no
+ActiVote,Florida,833,Online Panel,rv,Donald Trump,REP,46.179961956730665,B,2024-11-05,2024-09-07,2024-10-10,no
+ActiVote,Arizona,460,Text,rv,Jill Stein,GRE,48.22063373690399,B,2024-11-05,2024-09-11,2024-10-09,no
+ActiVote,Ohio,643,App Panel,rv,Jill Stein,GRE,48.9318409997886,C,2024-11-05,2024-09-02,2024-10-09,no
+ActiVote,Texas,769,Text,rv,Donald Trump,REP,51.593694999117034,A,2024-11-05,2024-09-09,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,1329,Online Panel,rv,Kamala Harris,DEM,54.6553041351115,A+,2024-11-05,2024-09-28,2024-10-10,yes
+ActiVote,Arizona,677,App Panel,lv,Kamala Harris,DEM,55.57193489826317,A,2024-11-05,2024-09-23,2024-10-09,yes
+YouGov,Florida,1223,Text,rv,Jill Stein,GRE,49.312015637937286,B,2024-11-05,2024-10-07,2024-10-10,no
+YouGov,Arizona,485,Online Panel,rv,Jill Stein,GRE,54.39039349059338,C,2024-11-05,2024-09-23,2024-10-09,yes
+ActiVote,Ohio,419,Text,lv,Kamala Harris,DEM,53.679677038109304,B,2024-11-05,2024-09-20,2024-10-10,yes
+ActiVote,Arizona,1473,App Panel,lv,Donald Trump,REP,50.863206115965546,A+,2024-11-05,2024-09-21,2024-10-09,yes
+YouGov,Texas,796,Text,rv,Donald Trump,REP,50.280887627942626,A,2024-11-05,2024-09-13,2024-10-10,yes
+YouGov,Ohio,1088,App Panel,lv,Kamala Harris,DEM,42.47902493266906,B,2024-11-05,2024-09-17,2024-10-09,no
+InsiderAdvantage,Pennsylvania,887,Text,lv,Donald Trump,REP,54.673422179948716,C,2024-11-05,2024-09-11,2024-10-10,yes
+ActiVote,Arizona,1145,Text,rv,Kamala Harris,DEM,44.77665327338015,B,2024-11-05,2024-09-02,2024-10-09,no
+ActiVote,Arizona,1192,Text,rv,Kamala Harris,DEM,49.944349064037155,A+,2024-11-05,2024-10-01,2024-10-09,no
+ActiVote,Pennsylvania,702,Text,lv,Kamala Harris,DEM,46.26731992074014,C,2024-11-05,2024-09-06,2024-10-09,no
+YouGov,Florida,629,Online Panel,lv,Jill Stein,GRE,52.11212562597186,B,2024-11-05,2024-10-01,2024-10-10,yes
+InsiderAdvantage,Florida,1274,App Panel,rv,Donald Trump,REP,42.38570481953042,A,2024-11-05,2024-09-17,2024-10-10,no
+YouGov,Texas,616,Text,lv,Kamala Harris,DEM,49.56493750442369,C,2024-11-05,2024-09-30,2024-10-08,no
+YouGov,Ohio,1192,App Panel,rv,Donald Trump,REP,49.945280662743855,A+,2024-11-05,2024-09-22,2024-10-10,no
+YouGov,Pennsylvania,485,Online Panel,lv,Kamala Harris,DEM,47.057989644930984,B,2024-11-05,2024-09-11,2024-10-08,no
+YouGov,Florida,722,App Panel,lv,Donald Trump,REP,60.20855877723086,C,2024-11-05,2024-10-03,2024-10-08,yes
+YouGov,Texas,659,Online Panel,lv,Jill Stein,GRE,45.54947580911322,B,2024-11-05,2024-09-29,2024-10-08,no
+InsiderAdvantage,Ohio,1066,Text,rv,Jill Stein,GRE,47.16052458004293,A+,2024-11-05,2024-09-19,2024-10-08,no
+YouGov,Ohio,1010,Online Panel,rv,Jill Stein,GRE,48.295225250765924,C,2024-11-05,2024-10-01,2024-10-09,no
+InsiderAdvantage,Texas,1420,Text,lv,Kamala Harris,DEM,45.723336959172855,B,2024-11-05,2024-09-12,2024-10-10,no
+ActiVote,Ohio,433,Text,rv,Jill Stein,GRE,52.965658105092324,A+,2024-11-05,2024-10-01,2024-10-08,yes
+ActiVote,Florida,689,Text,rv,Jill Stein,GRE,48.00488153378312,A+,2024-11-05,2024-09-18,2024-10-10,no
+InsiderAdvantage,Arizona,1113,App Panel,rv,Jill Stein,GRE,45.89168125805064,A,2024-11-05,2024-09-19,2024-10-09,no
+ActiVote,Arizona,640,Text,lv,Donald Trump,REP,52.56230400469083,C,2024-11-05,2024-09-14,2024-10-08,yes
+YouGov,Arizona,481,Online Panel,rv,Jill Stein,GRE,49.03319604729365,A+,2024-11-05,2024-09-17,2024-10-09,no
+YouGov,Arizona,568,Text,lv,Kamala Harris,DEM,47.51160106462314,C,2024-11-05,2024-09-13,2024-10-08,no
+InsiderAdvantage,Pennsylvania,468,App Panel,lv,Kamala Harris,DEM,38.26977538063512,A,2024-11-05,2024-10-03,2024-10-09,no
+ActiVote,Arizona,1327,App Panel,lv,Jill Stein,GRE,46.16741032507391,A+,2024-11-05,2024-09-16,2024-10-09,no
+YouGov,Arizona,709,App Panel,lv,Donald Trump,REP,55.43812191681799,A+,2024-11-05,2024-09-30,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,1484,App Panel,lv,Jill Stein,GRE,43.93703352120536,A+,2024-11-05,2024-09-28,2024-10-09,no
+ActiVote,Ohio,507,App Panel,lv,Kamala Harris,DEM,50.12460058759549,A,2024-11-05,2024-09-29,2024-10-09,yes
+InsiderAdvantage,Arizona,589,Text,lv,Jill Stein,GRE,53.41363125328974,C,2024-11-05,2024-09-19,2024-10-09,yes
+InsiderAdvantage,Florida,1204,App Panel,rv,Donald Trump,REP,44.97705516877164,A+,2024-11-05,2024-10-03,2024-10-08,no
+YouGov,Ohio,852,Online Panel,lv,Donald Trump,REP,43.33073722177953,A+,2024-11-05,2024-09-03,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1329,Online Panel,rv,Donald Trump,REP,41.80451428745604,A,2024-11-05,2024-09-11,2024-10-09,no
+InsiderAdvantage,Ohio,1445,Text,lv,Kamala Harris,DEM,47.392310253661,B,2024-11-05,2024-09-22,2024-10-10,no
+InsiderAdvantage,Pennsylvania,1064,Online Panel,lv,Kamala Harris,DEM,42.95547550011029,C,2024-11-05,2024-09-09,2024-10-09,no
+YouGov,Arizona,1010,Text,lv,Kamala Harris,DEM,44.87498905080106,C,2024-11-05,2024-09-03,2024-10-09,no
+InsiderAdvantage,Texas,541,Online Panel,lv,Jill Stein,GRE,44.62245064084958,B,2024-11-05,2024-09-24,2024-10-10,no
+InsiderAdvantage,Arizona,613,Online Panel,lv,Jill Stein,GRE,49.55880151607399,B,2024-11-05,2024-09-19,2024-10-09,no
+ActiVote,Ohio,1193,Online Panel,rv,Donald Trump,REP,50.684403804673295,A,2024-11-05,2024-09-19,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,742,App Panel,lv,Donald Trump,REP,47.484394785540815,A,2024-11-05,2024-09-25,2024-10-10,no
+ActiVote,Ohio,1406,App Panel,rv,Donald Trump,REP,50.74907268093065,A+,2024-11-05,2024-09-23,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,594,App Panel,lv,Jill Stein,GRE,44.346777788322726,A+,2024-11-05,2024-09-22,2024-10-08,no
+YouGov,Ohio,1092,App Panel,lv,Kamala Harris,DEM,55.34679518233038,B,2024-11-05,2024-09-12,2024-10-10,yes
+YouGov,Ohio,1032,Text,rv,Jill Stein,GRE,41.74463110920982,B,2024-11-05,2024-09-03,2024-10-08,no
+InsiderAdvantage,Pennsylvania,611,App Panel,rv,Donald Trump,REP,46.80414124978637,A+,2024-11-05,2024-09-12,2024-10-10,no
+ActiVote,Ohio,1241,Online Panel,lv,Donald Trump,REP,47.35112287358226,C,2024-11-05,2024-09-13,2024-10-08,no
+InsiderAdvantage,Pennsylvania,829,Online Panel,rv,Kamala Harris,DEM,51.65769933533446,A+,2024-11-05,2024-10-05,2024-10-10,yes
+YouGov,Florida,933,App Panel,lv,Kamala Harris,DEM,46.194868814689,A,2024-11-05,2024-09-28,2024-10-10,no
+ActiVote,Pennsylvania,520,Text,lv,Donald Trump,REP,38.94469041304919,A,2024-11-05,2024-10-07,2024-10-09,no
+InsiderAdvantage,Ohio,465,Online Panel,rv,Jill Stein,GRE,46.74380879859606,A+,2024-11-05,2024-09-16,2024-10-09,no
+InsiderAdvantage,Arizona,1202,Text,rv,Donald Trump,REP,52.89614640526863,B,2024-11-05,2024-09-12,2024-10-10,yes
+InsiderAdvantage,Florida,511,Text,lv,Jill Stein,GRE,46.40066969903752,B,2024-11-05,2024-09-11,2024-10-09,no
+ActiVote,Pennsylvania,807,Online Panel,rv,Jill Stein,GRE,56.77097071678852,C,2024-11-05,2024-10-03,2024-10-10,yes
+ActiVote,Arizona,1057,Online Panel,lv,Jill Stein,GRE,58.98161274197375,C,2024-11-05,2024-09-09,2024-10-10,yes
+ActiVote,Ohio,413,Text,rv,Donald Trump,REP,43.5552528163317,C,2024-11-05,2024-10-01,2024-10-09,no
+ActiVote,Texas,933,App Panel,lv,Jill Stein,GRE,50.550878731773665,A+,2024-11-05,2024-09-26,2024-10-08,yes
+ActiVote,Ohio,682,Text,lv,Donald Trump,REP,46.677629847839924,B,2024-11-05,2024-09-28,2024-10-10,no
+ActiVote,Texas,713,App Panel,lv,Donald Trump,REP,49.93129851151595,C,2024-11-05,2024-09-22,2024-10-10,no
+ActiVote,Arizona,915,App Panel,lv,Kamala Harris,DEM,44.29254233827038,A,2024-11-05,2024-09-14,2024-10-10,no
+ActiVote,Florida,1202,Online Panel,lv,Kamala Harris,DEM,48.23879000716008,B,2024-11-05,2024-09-14,2024-10-09,no
+ActiVote,Pennsylvania,1332,Text,rv,Kamala Harris,DEM,46.225868489793655,A+,2024-11-05,2024-10-07,2024-10-08,no
+ActiVote,Arizona,482,Online Panel,lv,Jill Stein,GRE,48.094334220598356,A+,2024-11-05,2024-09-10,2024-10-09,no
+InsiderAdvantage,Florida,844,App Panel,rv,Jill Stein,GRE,48.70516025224252,B,2024-11-05,2024-10-05,2024-10-08,no
+YouGov,Pennsylvania,1201,Online Panel,rv,Jill Stein,GRE,44.67974064230678,B,2024-11-05,2024-09-07,2024-10-08,no
+YouGov,Texas,874,App Panel,rv,Donald Trump,REP,54.900621720331,A+,2024-11-05,2024-09-04,2024-10-09,yes
+InsiderAdvantage,Florida,417,Text,lv,Kamala Harris,DEM,44.24019320111284,A+,2024-11-05,2024-09-15,2024-10-08,no
+ActiVote,Arizona,1068,App Panel,rv,Donald Trump,REP,50.32570230392462,A+,2024-11-05,2024-09-05,2024-10-10,yes
+ActiVote,Arizona,1434,Text,rv,Donald Trump,REP,52.167707427280185,C,2024-11-05,2024-09-06,2024-10-10,yes
+YouGov,Arizona,421,App Panel,rv,Kamala Harris,DEM,51.09447030819466,B,2024-11-05,2024-09-09,2024-10-08,yes
+InsiderAdvantage,Texas,882,Text,rv,Donald Trump,REP,52.866838628285805,B,2024-11-05,2024-09-16,2024-10-10,yes
+YouGov,Ohio,1390,Text,lv,Jill Stein,GRE,47.37970302519111,C,2024-11-05,2024-09-09,2024-10-08,no
+InsiderAdvantage,Ohio,923,App Panel,lv,Jill Stein,GRE,45.938209021448145,A+,2024-11-05,2024-09-07,2024-10-08,no
+YouGov,Texas,1128,Text,rv,Donald Trump,REP,48.77837198885641,A,2024-11-05,2024-09-18,2024-10-10,no
+YouGov,Texas,1279,Text,rv,Jill Stein,GRE,46.256009961845,C,2024-11-05,2024-09-04,2024-10-10,no
+InsiderAdvantage,Arizona,567,Online Panel,lv,Jill Stein,GRE,47.399289699266326,A,2024-11-05,2024-10-05,2024-10-09,no
+ActiVote,Texas,1446,Text,rv,Kamala Harris,DEM,47.02091491327384,A,2024-11-05,2024-09-06,2024-10-08,no
+ActiVote,Arizona,666,Text,rv,Donald Trump,REP,50.58436694196985,A+,2024-11-05,2024-09-12,2024-10-08,yes
+InsiderAdvantage,Texas,1296,Text,rv,Jill Stein,GRE,47.77164873132055,B,2024-11-05,2024-09-02,2024-10-09,no
+ActiVote,Arizona,1153,App Panel,rv,Kamala Harris,DEM,54.408062016755395,A+,2024-11-05,2024-09-11,2024-10-08,yes
+YouGov,Arizona,1107,Text,lv,Jill Stein,GRE,56.30180643345105,C,2024-11-05,2024-09-18,2024-10-10,yes
+InsiderAdvantage,Texas,817,App Panel,rv,Donald Trump,REP,57.92908556797217,A+,2024-11-05,2024-09-08,2024-10-08,yes
+ActiVote,Ohio,1190,App Panel,lv,Jill Stein,GRE,51.44369375851881,A+,2024-11-05,2024-09-05,2024-10-10,yes
+InsiderAdvantage,Texas,492,Text,lv,Jill Stein,GRE,44.94633773565987,C,2024-11-05,2024-09-13,2024-10-09,no
+InsiderAdvantage,Ohio,1046,Online Panel,lv,Kamala Harris,DEM,52.12631195585858,A,2024-11-05,2024-10-04,2024-10-10,yes
+ActiVote,Pennsylvania,815,Text,rv,Donald Trump,REP,50.41864138268574,A,2024-11-05,2024-10-04,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,1011,Online Panel,rv,Jill Stein,GRE,56.030120781867595,A+,2024-11-05,2024-09-26,2024-10-09,yes
+InsiderAdvantage,Arizona,967,Online Panel,lv,Donald Trump,REP,45.73427024521579,C,2024-11-05,2024-09-17,2024-10-10,no
+InsiderAdvantage,Arizona,915,Text,rv,Kamala Harris,DEM,54.295436539533995,A,2024-11-05,2024-09-16,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,1459,App Panel,rv,Donald Trump,REP,46.43697523960128,A+,2024-11-05,2024-10-06,2024-10-08,no
+ActiVote,Texas,741,Text,lv,Kamala Harris,DEM,49.715943311038835,B,2024-11-05,2024-09-02,2024-10-09,no
+ActiVote,Florida,458,Online Panel,lv,Kamala Harris,DEM,53.717861762348,A,2024-11-05,2024-09-06,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,1277,App Panel,lv,Kamala Harris,DEM,60.213066673725386,A+,2024-11-05,2024-10-02,2024-10-09,yes
+YouGov,Pennsylvania,1189,App Panel,rv,Jill Stein,GRE,59.67505007141218,B,2024-11-05,2024-09-21,2024-10-10,yes
+YouGov,Arizona,480,Online Panel,lv,Jill Stein,GRE,51.56699897186387,A+,2024-11-05,2024-10-07,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,610,Online Panel,rv,Donald Trump,REP,51.20152694421371,B,2024-11-05,2024-09-13,2024-10-10,yes
+InsiderAdvantage,Florida,982,Online Panel,lv,Jill Stein,GRE,43.48264762533823,A+,2024-11-05,2024-09-13,2024-10-09,no
+InsiderAdvantage,Ohio,1160,Online Panel,lv,Jill Stein,GRE,52.16190882949674,C,2024-11-05,2024-09-19,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,1470,Online Panel,rv,Kamala Harris,DEM,59.328082273099476,C,2024-11-05,2024-09-08,2024-10-09,yes
+YouGov,Texas,1218,App Panel,rv,Kamala Harris,DEM,37.923868711646065,B,2024-11-05,2024-09-08,2024-10-08,no
+ActiVote,Texas,1381,App Panel,rv,Kamala Harris,DEM,56.30680274943807,A,2024-11-05,2024-09-26,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,870,App Panel,lv,Donald Trump,REP,48.25928203918056,A,2024-11-05,2024-10-03,2024-10-08,no
+YouGov,Pennsylvania,781,Text,lv,Jill Stein,GRE,47.14161172459981,A+,2024-11-05,2024-10-03,2024-10-08,no
+YouGov,Ohio,1335,Text,rv,Kamala Harris,DEM,59.84705572327038,B,2024-11-05,2024-09-27,2024-10-10,yes
+InsiderAdvantage,Ohio,682,App Panel,lv,Jill Stein,GRE,39.36809076613289,B,2024-11-05,2024-09-02,2024-10-10,no
+InsiderAdvantage,Texas,661,Online Panel,lv,Jill Stein,GRE,52.59902103315376,B,2024-11-05,2024-09-21,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,1160,Online Panel,lv,Kamala Harris,DEM,40.733383057087735,A,2024-11-05,2024-10-02,2024-10-09,no
+YouGov,Florida,454,Text,rv,Kamala Harris,DEM,53.64790217280399,C,2024-11-05,2024-10-02,2024-10-09,yes
+YouGov,Arizona,621,Text,rv,Donald Trump,REP,43.79385627995605,A,2024-11-05,2024-09-29,2024-10-10,no
+InsiderAdvantage,Florida,1423,Online Panel,lv,Donald Trump,REP,55.36419130895585,A+,2024-11-05,2024-10-06,2024-10-10,yes
+ActiVote,Pennsylvania,1089,Online Panel,lv,Jill Stein,GRE,44.408212115411935,A+,2024-11-05,2024-10-02,2024-10-08,no
+ActiVote,Pennsylvania,742,Text,rv,Donald Trump,REP,46.3140719985452,B,2024-11-05,2024-09-29,2024-10-08,no
+YouGov,Arizona,1018,Online Panel,rv,Donald Trump,REP,43.323957758822225,A,2024-11-05,2024-09-29,2024-10-09,no
+YouGov,Ohio,888,Online Panel,lv,Donald Trump,REP,48.87406523678424,A+,2024-11-05,2024-10-07,2024-10-10,no
+InsiderAdvantage,Texas,405,Text,lv,Kamala Harris,DEM,39.902311305762424,A+,2024-11-05,2024-09-22,2024-10-10,no
+ActiVote,Arizona,1388,Online Panel,rv,Donald Trump,REP,47.48786315133668,B,2024-11-05,2024-09-19,2024-10-08,no
+ActiVote,Ohio,1144,Online Panel,lv,Donald Trump,REP,47.92218445604688,A,2024-11-05,2024-10-04,2024-10-08,no
+InsiderAdvantage,Florida,1123,Text,rv,Kamala Harris,DEM,49.52380445398574,C,2024-11-05,2024-09-23,2024-10-10,no
+YouGov,Pennsylvania,1024,Text,lv,Kamala Harris,DEM,55.656364837277394,B,2024-11-05,2024-09-26,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,866,Text,lv,Jill Stein,GRE,55.81113457360151,A,2024-11-05,2024-09-06,2024-10-09,yes
+YouGov,Texas,568,App Panel,lv,Kamala Harris,DEM,51.70301760357994,C,2024-11-05,2024-09-23,2024-10-10,yes
+InsiderAdvantage,Florida,978,Text,lv,Jill Stein,GRE,53.01210348905932,A,2024-11-05,2024-09-17,2024-10-10,yes
+YouGov,Florida,1475,Online Panel,rv,Donald Trump,REP,44.653834142017814,A+,2024-11-05,2024-09-02,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1392,Online Panel,lv,Jill Stein,GRE,42.53810904528584,A+,2024-11-05,2024-10-02,2024-10-09,no
+InsiderAdvantage,Texas,469,Text,rv,Donald Trump,REP,41.69402690833734,A,2024-11-05,2024-10-05,2024-10-09,no
+YouGov,Pennsylvania,1122,App Panel,lv,Jill Stein,GRE,49.6563504841464,A+,2024-11-05,2024-10-02,2024-10-09,no
+InsiderAdvantage,Texas,1212,Text,rv,Kamala Harris,DEM,46.950379755915854,C,2024-11-05,2024-09-25,2024-10-08,no
+YouGov,Florida,483,App Panel,lv,Donald Trump,REP,46.07079367061254,A+,2024-11-05,2024-09-08,2024-10-08,no
+InsiderAdvantage,Pennsylvania,851,Online Panel,lv,Kamala Harris,DEM,47.126353124189336,A+,2024-11-05,2024-10-06,2024-10-09,no
+YouGov,Pennsylvania,734,Text,rv,Jill Stein,GRE,54.15262067659025,A,2024-11-05,2024-09-04,2024-10-10,yes
+InsiderAdvantage,Texas,464,Online Panel,rv,Kamala Harris,DEM,45.13906887544165,A+,2024-11-05,2024-10-01,2024-10-10,no
+ActiVote,Arizona,617,Text,rv,Jill Stein,GRE,44.745779692798365,A+,2024-11-05,2024-09-24,2024-10-09,no
+YouGov,Pennsylvania,1466,Text,rv,Jill Stein,GRE,55.29662741037077,A,2024-11-05,2024-10-05,2024-10-10,yes
+ActiVote,Texas,958,Text,rv,Jill Stein,GRE,47.44197784350104,B,2024-11-05,2024-09-12,2024-10-08,no
+YouGov,Florida,734,App Panel,lv,Jill Stein,GRE,46.70987819244863,B,2024-11-05,2024-09-13,2024-10-10,no
+ActiVote,Ohio,1473,Text,rv,Donald Trump,REP,51.80443284975453,A+,2024-11-05,2024-09-15,2024-10-08,yes
+YouGov,Florida,1056,Text,rv,Donald Trump,REP,53.620038027037374,A,2024-11-05,2024-09-14,2024-10-09,yes
+YouGov,Ohio,1278,Text,lv,Donald Trump,REP,43.33934915834871,B,2024-11-05,2024-09-02,2024-10-09,no
+InsiderAdvantage,Arizona,416,Online Panel,rv,Kamala Harris,DEM,41.480222512773594,A+,2024-11-05,2024-09-15,2024-10-08,no
+YouGov,Ohio,1141,Online Panel,lv,Jill Stein,GRE,61.34249132808427,A+,2024-11-05,2024-09-21,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,788,Online Panel,rv,Jill Stein,GRE,54.35423163205583,C,2024-11-05,2024-09-09,2024-10-09,yes
+ActiVote,Arizona,1450,App Panel,rv,Jill Stein,GRE,52.48988972921897,A,2024-11-05,2024-09-27,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,1174,Online Panel,lv,Donald Trump,REP,43.278316152675224,B,2024-11-05,2024-09-03,2024-10-08,no
+InsiderAdvantage,Florida,508,App Panel,rv,Kamala Harris,DEM,54.133837969900874,B,2024-11-05,2024-09-15,2024-10-08,yes
+YouGov,Florida,607,Text,lv,Kamala Harris,DEM,53.07212818755989,C,2024-11-05,2024-09-09,2024-10-08,yes
+YouGov,Florida,841,Text,rv,Jill Stein,GRE,51.79823177888064,A+,2024-11-05,2024-09-23,2024-10-09,yes
+YouGov,Arizona,675,Text,lv,Jill Stein,GRE,45.40207300833016,A+,2024-11-05,2024-09-24,2024-10-08,no
+ActiVote,Pennsylvania,1102,Text,lv,Jill Stein,GRE,49.65036731181367,A,2024-11-05,2024-09-05,2024-10-08,no
+ActiVote,Florida,542,Text,rv,Jill Stein,GRE,45.00126290140501,C,2024-11-05,2024-09-13,2024-10-10,no
+InsiderAdvantage,Florida,527,App Panel,lv,Jill Stein,GRE,45.1884369545443,B,2024-11-05,2024-09-23,2024-10-10,no
+ActiVote,Pennsylvania,1428,App Panel,lv,Jill Stein,GRE,47.58793843206383,A,2024-11-05,2024-09-15,2024-10-09,no
+YouGov,Florida,506,Online Panel,lv,Donald Trump,REP,43.452930732504385,B,2024-11-05,2024-09-27,2024-10-08,no
+ActiVote,Texas,465,App Panel,rv,Jill Stein,GRE,45.10541174704496,C,2024-11-05,2024-09-26,2024-10-10,no
+YouGov,Ohio,1457,Online Panel,rv,Donald Trump,REP,56.21830552478459,B,2024-11-05,2024-09-29,2024-10-08,yes
+ActiVote,Ohio,946,Text,lv,Donald Trump,REP,44.04254404292121,A,2024-11-05,2024-09-02,2024-10-10,no
+ActiVote,Pennsylvania,925,App Panel,lv,Donald Trump,REP,54.560589242587064,A+,2024-11-05,2024-09-18,2024-10-08,yes
+ActiVote,Texas,457,App Panel,lv,Jill Stein,GRE,55.73567681983385,C,2024-11-05,2024-09-18,2024-10-08,yes
+ActiVote,Arizona,833,Online Panel,lv,Donald Trump,REP,47.70221433550446,A+,2024-11-05,2024-09-12,2024-10-09,no
+InsiderAdvantage,Arizona,541,Text,lv,Donald Trump,REP,47.390219055632876,A+,2024-11-05,2024-10-05,2024-10-10,no
+ActiVote,Ohio,992,App Panel,rv,Donald Trump,REP,53.14100112853668,A+,2024-11-05,2024-09-16,2024-10-09,yes
+YouGov,Florida,856,Text,lv,Jill Stein,GRE,44.41860655106428,A,2024-11-05,2024-09-17,2024-10-08,no
+YouGov,Pennsylvania,1000,App Panel,lv,Jill Stein,GRE,48.04836692013003,A,2024-11-05,2024-10-02,2024-10-08,no
+InsiderAdvantage,Pennsylvania,638,Text,lv,Kamala Harris,DEM,56.816948570670064,B,2024-11-05,2024-09-03,2024-10-08,yes
+YouGov,Pennsylvania,1444,Online Panel,rv,Donald Trump,REP,43.938796017872036,A+,2024-11-05,2024-09-10,2024-10-10,no
+ActiVote,Ohio,502,Online Panel,lv,Kamala Harris,DEM,45.9239133571742,A,2024-11-05,2024-09-18,2024-10-08,no
+YouGov,Pennsylvania,1106,App Panel,rv,Donald Trump,REP,50.45775426271155,B,2024-11-05,2024-10-06,2024-10-10,yes
+ActiVote,Florida,436,Text,rv,Donald Trump,REP,54.55214306410832,A,2024-11-05,2024-09-13,2024-10-10,yes
+YouGov,Arizona,507,Online Panel,lv,Jill Stein,GRE,51.01861375522435,A+,2024-11-05,2024-09-02,2024-10-10,yes
+ActiVote,Arizona,479,App Panel,lv,Donald Trump,REP,48.29797386038621,A,2024-11-05,2024-09-30,2024-10-10,no
+YouGov,Florida,1079,Online Panel,rv,Jill Stein,GRE,44.58366424363308,C,2024-11-05,2024-09-03,2024-10-08,no
+YouGov,Pennsylvania,760,App Panel,lv,Jill Stein,GRE,50.68203604127136,C,2024-11-05,2024-09-11,2024-10-10,yes
+YouGov,Texas,779,Text,lv,Kamala Harris,DEM,48.27955009264477,C,2024-11-05,2024-09-19,2024-10-09,no
+YouGov,Arizona,665,App Panel,rv,Donald Trump,REP,51.80203999857927,C,2024-11-05,2024-09-18,2024-10-08,yes
+ActiVote,Florida,478,App Panel,lv,Kamala Harris,DEM,46.22863808142678,C,2024-11-05,2024-10-02,2024-10-10,no
+ActiVote,Florida,994,Text,lv,Donald Trump,REP,41.989800974601636,C,2024-11-05,2024-09-14,2024-10-08,no
+InsiderAdvantage,Arizona,1337,App Panel,rv,Donald Trump,REP,50.235658329539355,B,2024-11-05,2024-09-10,2024-10-09,yes
+YouGov,Arizona,1446,App Panel,lv,Kamala Harris,DEM,39.758783539877776,A+,2024-11-05,2024-10-06,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1354,App Panel,lv,Jill Stein,GRE,50.741521430055776,A+,2024-11-05,2024-09-17,2024-10-08,yes
+ActiVote,Ohio,1308,App Panel,rv,Kamala Harris,DEM,47.15923421762393,A,2024-11-05,2024-09-12,2024-10-08,no
+ActiVote,Texas,1101,App Panel,lv,Donald Trump,REP,48.434197499323425,A,2024-11-05,2024-09-19,2024-10-09,no
+YouGov,Florida,1294,Text,lv,Jill Stein,GRE,47.6324883059862,A+,2024-11-05,2024-10-03,2024-10-10,no
+InsiderAdvantage,Ohio,643,Online Panel,rv,Kamala Harris,DEM,56.738728637431706,A,2024-11-05,2024-09-26,2024-10-08,yes
+YouGov,Ohio,746,Text,lv,Kamala Harris,DEM,56.67499848706201,C,2024-11-05,2024-10-02,2024-10-08,yes
+ActiVote,Arizona,557,Text,rv,Donald Trump,REP,40.34677691798515,A,2024-11-05,2024-09-19,2024-10-10,no
+YouGov,Ohio,1138,Text,rv,Jill Stein,GRE,54.479934579746896,A,2024-11-05,2024-09-14,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,950,Text,rv,Kamala Harris,DEM,53.44218568145214,A,2024-11-05,2024-09-01,2024-10-10,yes
+InsiderAdvantage,Arizona,1468,App Panel,rv,Kamala Harris,DEM,49.9422024722578,B,2024-11-05,2024-09-27,2024-10-08,no
+InsiderAdvantage,Ohio,1172,Text,rv,Donald Trump,REP,46.48172479277257,C,2024-11-05,2024-09-24,2024-10-08,no
+YouGov,Arizona,614,App Panel,rv,Jill Stein,GRE,54.888058508676735,B,2024-11-05,2024-09-24,2024-10-10,yes
+InsiderAdvantage,Ohio,811,Text,rv,Jill Stein,GRE,53.23194987135347,A,2024-11-05,2024-09-11,2024-10-08,yes
+ActiVote,Pennsylvania,823,Online Panel,rv,Kamala Harris,DEM,41.57661778359801,A,2024-11-05,2024-10-03,2024-10-08,no
+InsiderAdvantage,Florida,1436,App Panel,rv,Kamala Harris,DEM,50.720218148909055,C,2024-11-05,2024-09-23,2024-10-09,yes
+ActiVote,Florida,1186,Online Panel,rv,Jill Stein,GRE,46.72592819731062,B,2024-11-05,2024-09-26,2024-10-09,no
+YouGov,Pennsylvania,1115,Online Panel,rv,Jill Stein,GRE,57.93631732438617,A,2024-11-05,2024-09-08,2024-10-08,yes
+ActiVote,Florida,1047,Online Panel,rv,Donald Trump,REP,49.399457514287185,B,2024-11-05,2024-09-14,2024-10-10,no
+YouGov,Texas,914,Text,rv,Jill Stein,GRE,45.88945791588269,B,2024-11-05,2024-09-29,2024-10-08,no
+YouGov,Ohio,772,Text,lv,Jill Stein,GRE,44.96478157052519,A,2024-11-05,2024-09-02,2024-10-08,no
+ActiVote,Pennsylvania,1201,Text,lv,Jill Stein,GRE,54.4307326964104,A+,2024-11-05,2024-10-05,2024-10-08,yes
+YouGov,Ohio,934,App Panel,rv,Jill Stein,GRE,47.959016296582234,A+,2024-11-05,2024-09-19,2024-10-09,no
+InsiderAdvantage,Florida,859,Text,rv,Jill Stein,GRE,46.37954041415282,C,2024-11-05,2024-09-02,2024-10-08,no
+YouGov,Arizona,1407,App Panel,rv,Kamala Harris,DEM,50.02310607759431,B,2024-11-05,2024-09-29,2024-10-09,yes
+YouGov,Pennsylvania,684,Text,rv,Donald Trump,REP,46.976321126824836,C,2024-11-05,2024-09-18,2024-10-08,no
+InsiderAdvantage,Texas,776,Text,rv,Kamala Harris,DEM,53.83370833977253,A+,2024-11-05,2024-09-24,2024-10-08,yes
+YouGov,Ohio,1117,Online Panel,lv,Donald Trump,REP,52.62061861052664,B,2024-11-05,2024-10-05,2024-10-10,yes
+InsiderAdvantage,Florida,835,App Panel,lv,Jill Stein,GRE,49.043508750087476,A+,2024-11-05,2024-09-29,2024-10-10,no
+ActiVote,Pennsylvania,622,App Panel,rv,Donald Trump,REP,43.34223267246515,B,2024-11-05,2024-10-01,2024-10-08,no
+InsiderAdvantage,Ohio,812,Online Panel,lv,Jill Stein,GRE,47.25872974135821,A+,2024-11-05,2024-10-04,2024-10-08,no
+InsiderAdvantage,Arizona,1120,Text,lv,Kamala Harris,DEM,54.42368468233806,A+,2024-11-05,2024-09-20,2024-10-09,yes
+ActiVote,Arizona,564,App Panel,rv,Jill Stein,GRE,54.3839384087276,A+,2024-11-05,2024-09-08,2024-10-09,yes
+InsiderAdvantage,Arizona,647,Text,lv,Jill Stein,GRE,50.08248864579441,B,2024-11-05,2024-10-06,2024-10-10,yes
+YouGov,Ohio,1117,Online Panel,lv,Kamala Harris,DEM,45.0841574097401,A+,2024-11-05,2024-10-05,2024-10-09,no
+YouGov,Arizona,430,Text,rv,Donald Trump,REP,61.318404524626864,B,2024-11-05,2024-09-05,2024-10-10,yes
+InsiderAdvantage,Arizona,1177,Text,rv,Jill Stein,GRE,45.98071942041293,A+,2024-11-05,2024-09-23,2024-10-10,no
+YouGov,Texas,1492,Online Panel,lv,Kamala Harris,DEM,45.23908425323703,B,2024-11-05,2024-09-23,2024-10-10,no
+InsiderAdvantage,Pennsylvania,688,App Panel,rv,Jill Stein,GRE,50.52637153419616,B,2024-11-05,2024-10-06,2024-10-08,yes
+ActiVote,Ohio,901,App Panel,rv,Kamala Harris,DEM,43.6670406849543,A+,2024-11-05,2024-09-28,2024-10-08,no
+YouGov,Texas,904,Online Panel,lv,Jill Stein,GRE,53.116209421809806,C,2024-11-05,2024-10-06,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,459,Text,lv,Kamala Harris,DEM,52.71359570681844,C,2024-11-05,2024-09-13,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,928,Text,rv,Jill Stein,GRE,49.32964627436161,A,2024-11-05,2024-09-14,2024-10-10,no
+ActiVote,Arizona,1216,Text,rv,Jill Stein,GRE,46.57319228824058,B,2024-11-05,2024-10-01,2024-10-10,no
+InsiderAdvantage,Ohio,818,Text,lv,Donald Trump,REP,49.7896168211319,A,2024-11-05,2024-09-02,2024-10-09,no
+ActiVote,Florida,951,Text,lv,Donald Trump,REP,56.3258345980319,B,2024-11-05,2024-10-04,2024-10-09,yes
+YouGov,Pennsylvania,1485,App Panel,lv,Kamala Harris,DEM,42.90417918790939,A+,2024-11-05,2024-09-28,2024-10-09,no
+YouGov,Florida,955,Online Panel,rv,Kamala Harris,DEM,40.83809333582735,C,2024-11-05,2024-09-14,2024-10-08,no
+ActiVote,Ohio,1029,Online Panel,rv,Jill Stein,GRE,59.549587922247284,B,2024-11-05,2024-09-24,2024-10-08,yes
+InsiderAdvantage,Ohio,754,Text,rv,Donald Trump,REP,57.466342153689,A+,2024-11-05,2024-09-15,2024-10-08,yes
+YouGov,Florida,1122,Online Panel,rv,Kamala Harris,DEM,47.64572917736281,A+,2024-11-05,2024-09-21,2024-10-09,no
+ActiVote,Ohio,406,Text,lv,Kamala Harris,DEM,50.72982722634257,A,2024-11-05,2024-09-18,2024-10-08,yes
+InsiderAdvantage,Florida,908,Text,lv,Donald Trump,REP,49.50223781764379,A+,2024-11-05,2024-09-26,2024-10-10,no
+ActiVote,Texas,1245,Online Panel,rv,Jill Stein,GRE,49.17049271579258,A,2024-11-05,2024-10-04,2024-10-09,no
+YouGov,Arizona,1023,Online Panel,rv,Donald Trump,REP,55.20482359474052,A+,2024-11-05,2024-09-20,2024-10-09,yes
+ActiVote,Arizona,1280,App Panel,rv,Kamala Harris,DEM,51.37901625819823,C,2024-11-05,2024-09-11,2024-10-10,yes
+InsiderAdvantage,Florida,1460,Online Panel,rv,Kamala Harris,DEM,48.35782035291123,A+,2024-11-05,2024-09-25,2024-10-10,no
+ActiVote,Pennsylvania,1422,Text,rv,Kamala Harris,DEM,52.06289190805771,A,2024-11-05,2024-09-25,2024-10-08,yes
+YouGov,Pennsylvania,611,Text,rv,Kamala Harris,DEM,57.32419261410364,B,2024-11-05,2024-10-03,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,440,Text,rv,Jill Stein,GRE,40.131018358099524,A+,2024-11-05,2024-10-06,2024-10-10,no
+YouGov,Florida,783,Text,lv,Jill Stein,GRE,43.171724162622716,B,2024-11-05,2024-09-22,2024-10-09,no
+InsiderAdvantage,Ohio,1004,Text,rv,Jill Stein,GRE,49.51688333118311,A,2024-11-05,2024-10-06,2024-10-10,no
+InsiderAdvantage,Texas,956,Text,lv,Kamala Harris,DEM,49.53990604733927,A+,2024-11-05,2024-09-12,2024-10-08,no
+YouGov,Texas,799,App Panel,lv,Kamala Harris,DEM,47.51731282166564,A+,2024-11-05,2024-09-23,2024-10-08,no
+YouGov,Florida,797,Online Panel,rv,Kamala Harris,DEM,63.26798214009773,A+,2024-11-05,2024-09-27,2024-10-09,yes
+YouGov,Ohio,726,Text,lv,Kamala Harris,DEM,47.81449848190732,C,2024-11-05,2024-09-03,2024-10-10,no
+InsiderAdvantage,Texas,1040,Online Panel,lv,Donald Trump,REP,51.078553879084275,A,2024-11-05,2024-09-25,2024-10-10,yes
+ActiVote,Arizona,753,Online Panel,rv,Donald Trump,REP,55.807770685379964,A,2024-11-05,2024-09-09,2024-10-10,yes
+YouGov,Pennsylvania,571,App Panel,rv,Jill Stein,GRE,47.12165843111979,A,2024-11-05,2024-09-06,2024-10-09,no
+ActiVote,Ohio,1345,App Panel,rv,Jill Stein,GRE,53.73422025362996,A+,2024-11-05,2024-09-30,2024-10-10,yes
+YouGov,Pennsylvania,1380,App Panel,rv,Kamala Harris,DEM,47.84166488567527,A+,2024-11-05,2024-09-01,2024-10-10,no
+ActiVote,Texas,1412,Online Panel,rv,Kamala Harris,DEM,57.63293801020088,A,2024-11-05,2024-09-07,2024-10-08,yes
+YouGov,Ohio,1039,Online Panel,lv,Jill Stein,GRE,50.71343922622902,C,2024-11-05,2024-09-29,2024-10-09,yes
+YouGov,Arizona,1159,Online Panel,lv,Jill Stein,GRE,48.81646133620034,B,2024-11-05,2024-09-17,2024-10-10,no
+ActiVote,Ohio,832,App Panel,lv,Kamala Harris,DEM,59.88732863343292,B,2024-11-05,2024-10-07,2024-10-10,yes
+ActiVote,Florida,868,App Panel,rv,Kamala Harris,DEM,49.624692235406314,A,2024-11-05,2024-09-04,2024-10-10,no
+ActiVote,Ohio,1465,App Panel,lv,Donald Trump,REP,55.834354727672064,A+,2024-11-05,2024-09-18,2024-10-10,yes
+InsiderAdvantage,Florida,1458,Text,lv,Kamala Harris,DEM,56.142374982713,A,2024-11-05,2024-09-12,2024-10-10,yes
+ActiVote,Texas,973,Online Panel,rv,Jill Stein,GRE,56.928251568757815,C,2024-11-05,2024-09-16,2024-10-10,yes
+InsiderAdvantage,Florida,1222,Online Panel,lv,Kamala Harris,DEM,49.391582003882355,C,2024-11-05,2024-09-16,2024-10-08,no
+YouGov,Ohio,1377,App Panel,lv,Kamala Harris,DEM,48.27796133004072,A+,2024-11-05,2024-09-12,2024-10-09,no
+ActiVote,Pennsylvania,779,Text,lv,Kamala Harris,DEM,42.06600189395254,A,2024-11-05,2024-10-02,2024-10-08,no
+YouGov,Florida,1322,Online Panel,rv,Jill Stein,GRE,46.28693496315505,C,2024-11-05,2024-09-21,2024-10-10,no
+ActiVote,Florida,1121,App Panel,rv,Kamala Harris,DEM,53.81178074750722,C,2024-11-05,2024-09-14,2024-10-09,yes
+InsiderAdvantage,Florida,1107,App Panel,rv,Jill Stein,GRE,49.54935122309249,A,2024-11-05,2024-09-10,2024-10-09,no
+InsiderAdvantage,Pennsylvania,834,Online Panel,lv,Donald Trump,REP,48.23726061236265,C,2024-11-05,2024-09-14,2024-10-09,no
+YouGov,Florida,774,Text,lv,Kamala Harris,DEM,50.69008640254805,A+,2024-11-05,2024-09-11,2024-10-08,yes
+ActiVote,Texas,932,Online Panel,rv,Kamala Harris,DEM,57.30646696561751,A+,2024-11-05,2024-09-21,2024-10-08,yes
+ActiVote,Texas,1089,App Panel,lv,Kamala Harris,DEM,47.108344642613325,C,2024-11-05,2024-09-14,2024-10-10,no
+InsiderAdvantage,Pennsylvania,881,Online Panel,lv,Donald Trump,REP,50.821458031988804,A+,2024-11-05,2024-09-20,2024-10-10,yes
+YouGov,Arizona,787,Text,rv,Kamala Harris,DEM,49.38746549487778,A+,2024-11-05,2024-09-20,2024-10-10,no
+YouGov,Texas,761,Text,lv,Jill Stein,GRE,47.76704352011859,A,2024-11-05,2024-09-02,2024-10-08,no
+YouGov,Ohio,814,App Panel,rv,Kamala Harris,DEM,58.693708885109224,B,2024-11-05,2024-10-07,2024-10-08,yes
+YouGov,Ohio,1152,Online Panel,rv,Donald Trump,REP,43.40712370131729,A+,2024-11-05,2024-09-22,2024-10-10,no
+InsiderAdvantage,Ohio,1015,Text,rv,Donald Trump,REP,54.75323604221001,B,2024-11-05,2024-09-27,2024-10-08,yes
+ActiVote,Arizona,1332,Online Panel,rv,Donald Trump,REP,59.141550217470915,A+,2024-11-05,2024-09-17,2024-10-08,yes
+ActiVote,Arizona,1048,Text,lv,Donald Trump,REP,45.09600994631957,C,2024-11-05,2024-09-22,2024-10-09,no
+YouGov,Ohio,673,Text,rv,Jill Stein,GRE,48.41103211994741,A+,2024-11-05,2024-09-05,2024-10-08,no
+InsiderAdvantage,Florida,884,Online Panel,rv,Kamala Harris,DEM,46.53904399317187,C,2024-11-05,2024-09-26,2024-10-09,no
+InsiderAdvantage,Pennsylvania,525,Online Panel,lv,Jill Stein,GRE,49.500589863028445,C,2024-11-05,2024-09-25,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1189,Text,lv,Jill Stein,GRE,55.804103376234046,A+,2024-11-05,2024-09-11,2024-10-08,yes
+ActiVote,Pennsylvania,780,Online Panel,lv,Kamala Harris,DEM,50.18474854295372,B,2024-11-05,2024-09-24,2024-10-08,yes
+InsiderAdvantage,Florida,1012,Online Panel,rv,Jill Stein,GRE,52.2170894434838,B,2024-11-05,2024-09-15,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,1430,Online Panel,rv,Donald Trump,REP,56.02434272148077,B,2024-11-05,2024-09-08,2024-10-10,yes
+YouGov,Texas,781,Text,rv,Kamala Harris,DEM,50.84804956099072,A,2024-11-05,2024-09-24,2024-10-09,yes
+ActiVote,Texas,639,Online Panel,rv,Donald Trump,REP,46.779699964679374,B,2024-11-05,2024-09-11,2024-10-10,no
+YouGov,Ohio,1437,App Panel,lv,Kamala Harris,DEM,42.088822878413374,A+,2024-11-05,2024-09-21,2024-10-08,no
+InsiderAdvantage,Florida,742,Text,lv,Donald Trump,REP,48.710974211391644,C,2024-11-05,2024-09-17,2024-10-10,no
+YouGov,Texas,1346,Text,lv,Kamala Harris,DEM,54.379442946887835,B,2024-11-05,2024-09-07,2024-10-10,yes
+YouGov,Pennsylvania,714,App Panel,rv,Kamala Harris,DEM,51.184916176751116,A,2024-11-05,2024-09-08,2024-10-08,yes
+YouGov,Arizona,1257,Online Panel,rv,Donald Trump,REP,61.25035613025958,C,2024-11-05,2024-09-06,2024-10-10,yes
+YouGov,Ohio,921,Online Panel,lv,Kamala Harris,DEM,49.779935476583184,C,2024-11-05,2024-09-06,2024-10-09,no
+YouGov,Arizona,995,App Panel,lv,Donald Trump,REP,46.863910786253065,A+,2024-11-05,2024-09-09,2024-10-10,no
+InsiderAdvantage,Florida,1054,Online Panel,lv,Donald Trump,REP,45.40703650378678,A,2024-11-05,2024-09-20,2024-10-08,no
+InsiderAdvantage,Ohio,638,Online Panel,rv,Donald Trump,REP,51.00992838521324,C,2024-11-05,2024-09-17,2024-10-10,yes
+InsiderAdvantage,Ohio,1099,App Panel,rv,Donald Trump,REP,50.64724301120173,A,2024-11-05,2024-09-11,2024-10-08,yes
+ActiVote,Pennsylvania,816,Text,lv,Jill Stein,GRE,56.99260565977476,B,2024-11-05,2024-10-01,2024-10-08,yes
+YouGov,Pennsylvania,425,Online Panel,lv,Jill Stein,GRE,49.93753231090929,A+,2024-11-05,2024-09-11,2024-10-09,no
+InsiderAdvantage,Texas,758,App Panel,lv,Kamala Harris,DEM,49.87607525968991,A+,2024-11-05,2024-09-29,2024-10-08,no
+ActiVote,Texas,1195,Online Panel,rv,Donald Trump,REP,43.98247552353102,A,2024-11-05,2024-10-01,2024-10-10,no
+InsiderAdvantage,Texas,1390,Online Panel,rv,Donald Trump,REP,48.922990609265845,B,2024-11-05,2024-10-05,2024-10-08,no
+ActiVote,Pennsylvania,1130,App Panel,rv,Kamala Harris,DEM,49.41728472808235,A,2024-11-05,2024-09-16,2024-10-08,no
+YouGov,Arizona,857,App Panel,rv,Jill Stein,GRE,57.53790650111344,A+,2024-11-05,2024-10-02,2024-10-10,yes
+ActiVote,Texas,1448,Online Panel,lv,Jill Stein,GRE,51.19865826571221,A+,2024-11-05,2024-10-02,2024-10-10,yes
+YouGov,Ohio,737,App Panel,rv,Donald Trump,REP,49.19842308563481,A,2024-11-05,2024-09-12,2024-10-10,no
+InsiderAdvantage,Ohio,1381,Online Panel,rv,Donald Trump,REP,62.08366521118656,B,2024-11-05,2024-10-02,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,1005,Online Panel,lv,Donald Trump,REP,46.900318564587266,C,2024-11-05,2024-09-08,2024-10-08,no
+YouGov,Pennsylvania,785,App Panel,lv,Jill Stein,GRE,48.93078312596498,B,2024-11-05,2024-09-27,2024-10-08,no
+YouGov,Florida,463,App Panel,rv,Kamala Harris,DEM,50.57325792784495,B,2024-11-05,2024-09-22,2024-10-09,yes
+YouGov,Ohio,1124,Text,lv,Kamala Harris,DEM,54.90856137704103,A,2024-11-05,2024-09-01,2024-10-08,yes
+ActiVote,Florida,950,App Panel,lv,Donald Trump,REP,47.675122616201236,A,2024-11-05,2024-09-20,2024-10-10,no
+ActiVote,Ohio,661,App Panel,rv,Jill Stein,GRE,57.42003774797332,C,2024-11-05,2024-09-18,2024-10-09,yes
+ActiVote,Texas,1240,Online Panel,lv,Donald Trump,REP,48.082650266950125,B,2024-11-05,2024-09-18,2024-10-10,no
+YouGov,Arizona,1165,App Panel,lv,Donald Trump,REP,48.7398735470472,A,2024-11-05,2024-09-03,2024-10-10,no
+YouGov,Arizona,1218,Text,lv,Kamala Harris,DEM,47.49264712275367,A,2024-11-05,2024-09-29,2024-10-08,no
+InsiderAdvantage,Arizona,1488,Online Panel,lv,Jill Stein,GRE,50.26555773939761,B,2024-11-05,2024-09-02,2024-10-10,yes
+ActiVote,Texas,858,Text,lv,Jill Stein,GRE,46.72254161338681,C,2024-11-05,2024-09-09,2024-10-08,no
+ActiVote,Arizona,914,App Panel,lv,Kamala Harris,DEM,51.973289169608556,A+,2024-11-05,2024-09-09,2024-10-10,yes
+ActiVote,Pennsylvania,1473,App Panel,lv,Kamala Harris,DEM,44.784484001009716,A,2024-11-05,2024-09-03,2024-10-08,no
+InsiderAdvantage,Ohio,702,App Panel,rv,Kamala Harris,DEM,53.607506684398,C,2024-11-05,2024-09-11,2024-10-10,yes
+ActiVote,Texas,984,Text,lv,Jill Stein,GRE,49.57878247218369,B,2024-11-05,2024-09-26,2024-10-10,no
+YouGov,Arizona,1226,Online Panel,rv,Donald Trump,REP,47.61875700553799,B,2024-11-05,2024-09-20,2024-10-09,no
+YouGov,Ohio,567,App Panel,lv,Donald Trump,REP,53.55656750585917,A+,2024-11-05,2024-09-08,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,1223,App Panel,lv,Donald Trump,REP,49.23088781375688,A,2024-11-05,2024-09-23,2024-10-09,no
+InsiderAdvantage,Florida,1090,Text,rv,Donald Trump,REP,47.96174019885475,B,2024-11-05,2024-09-13,2024-10-09,no
+InsiderAdvantage,Texas,1404,Text,lv,Donald Trump,REP,45.82559830224733,C,2024-11-05,2024-10-03,2024-10-09,no
+YouGov,Arizona,1391,Online Panel,rv,Jill Stein,GRE,51.67723953671836,B,2024-11-05,2024-09-13,2024-10-10,yes
+YouGov,Pennsylvania,874,App Panel,rv,Donald Trump,REP,57.84215064904048,C,2024-11-05,2024-09-15,2024-10-10,yes
+YouGov,Texas,578,App Panel,rv,Donald Trump,REP,52.338668070418755,A,2024-11-05,2024-09-24,2024-10-10,yes
+ActiVote,Texas,946,Online Panel,lv,Donald Trump,REP,49.01786439852649,A,2024-11-05,2024-09-22,2024-10-08,no
+YouGov,Pennsylvania,1342,Text,rv,Kamala Harris,DEM,48.85510630075434,C,2024-11-05,2024-09-26,2024-10-10,no
+YouGov,Florida,786,Online Panel,rv,Donald Trump,REP,52.97083328137045,A,2024-11-05,2024-09-07,2024-10-09,yes
+InsiderAdvantage,Florida,583,App Panel,lv,Donald Trump,REP,51.12204412637133,A+,2024-11-05,2024-09-21,2024-10-08,yes
+YouGov,Ohio,1319,App Panel,rv,Donald Trump,REP,55.459498345159,A,2024-11-05,2024-09-29,2024-10-10,yes
+InsiderAdvantage,Florida,545,App Panel,rv,Donald Trump,REP,53.357355077279884,A,2024-11-05,2024-10-07,2024-10-10,yes
+YouGov,Ohio,529,Text,rv,Jill Stein,GRE,46.051950238705636,C,2024-11-05,2024-09-10,2024-10-09,no
+InsiderAdvantage,Florida,725,Text,lv,Kamala Harris,DEM,39.99675492149079,A+,2024-11-05,2024-10-01,2024-10-08,no
+YouGov,Ohio,1213,Online Panel,rv,Jill Stein,GRE,55.20669294337055,C,2024-11-05,2024-09-30,2024-10-09,yes
+YouGov,Florida,551,App Panel,rv,Donald Trump,REP,51.06943011577567,A,2024-11-05,2024-09-24,2024-10-10,yes
+ActiVote,Pennsylvania,1448,Text,lv,Donald Trump,REP,50.66809915860267,A+,2024-11-05,2024-09-06,2024-10-10,yes
+ActiVote,Texas,1154,Text,lv,Donald Trump,REP,44.71267237703525,B,2024-11-05,2024-10-03,2024-10-08,no
+YouGov,Pennsylvania,1046,App Panel,rv,Jill Stein,GRE,43.63139836866257,C,2024-11-05,2024-10-04,2024-10-10,no
+YouGov,Florida,513,Online Panel,lv,Jill Stein,GRE,52.06489587789757,A+,2024-11-05,2024-09-08,2024-10-10,yes
+InsiderAdvantage,Pennsylvania,544,Text,rv,Jill Stein,GRE,47.36263473241355,A,2024-11-05,2024-09-18,2024-10-08,no
+InsiderAdvantage,Arizona,1183,App Panel,rv,Donald Trump,REP,48.44365552438174,A,2024-11-05,2024-09-01,2024-10-08,no
+ActiVote,Ohio,818,App Panel,lv,Jill Stein,GRE,46.24475166815141,B,2024-11-05,2024-09-30,2024-10-08,no
+YouGov,Ohio,1443,Online Panel,lv,Kamala Harris,DEM,55.77540226807608,A,2024-11-05,2024-09-20,2024-10-09,yes
+YouGov,Florida,898,Text,rv,Kamala Harris,DEM,54.29428465934454,A,2024-11-05,2024-09-07,2024-10-08,yes
+InsiderAdvantage,Ohio,1154,Text,lv,Kamala Harris,DEM,43.75650533690717,A,2024-11-05,2024-09-06,2024-10-09,no
+YouGov,Texas,722,Online Panel,rv,Jill Stein,GRE,49.664726470252084,A,2024-11-05,2024-09-06,2024-10-09,no
+ActiVote,Arizona,781,Online Panel,rv,Kamala Harris,DEM,52.65902829029132,A+,2024-11-05,2024-09-16,2024-10-09,yes
+InsiderAdvantage,Texas,494,Online Panel,rv,Kamala Harris,DEM,46.924125826941896,A,2024-11-05,2024-10-07,2024-10-10,no
+YouGov,Arizona,463,Text,rv,Kamala Harris,DEM,50.37553493347941,B,2024-11-05,2024-09-11,2024-10-08,yes
+ActiVote,Texas,1066,Online Panel,lv,Donald Trump,REP,56.77379520718878,A+,2024-11-05,2024-09-18,2024-10-09,yes
+ActiVote,Ohio,884,Online Panel,lv,Jill Stein,GRE,44.52543949468664,C,2024-11-05,2024-09-14,2024-10-10,no
+YouGov,Ohio,826,Online Panel,lv,Jill Stein,GRE,50.45560690070665,B,2024-11-05,2024-09-21,2024-10-09,yes
+ActiVote,Texas,825,Online Panel,lv,Jill Stein,GRE,52.841987993579856,A,2024-11-05,2024-09-25,2024-10-08,yes
+InsiderAdvantage,Ohio,634,Online Panel,lv,Donald Trump,REP,58.25519986298385,C,2024-11-05,2024-10-03,2024-10-08,yes
+ActiVote,Texas,1012,App Panel,lv,Donald Trump,REP,50.97260351048126,B,2024-11-05,2024-09-26,2024-10-10,yes
+ActiVote,Texas,1240,Text,lv,Jill Stein,GRE,49.95427202597594,A+,2024-11-05,2024-09-08,2024-10-09,no
+ActiVote,Ohio,1217,App Panel,rv,Kamala Harris,DEM,57.79878956332458,C,2024-11-05,2024-10-01,2024-10-10,yes
+ActiVote,Pennsylvania,1236,Text,rv,Jill Stein,GRE,53.113165149232,A+,2024-11-05,2024-10-06,2024-10-10,yes
+YouGov,Texas,1204,App Panel,rv,Donald Trump,REP,51.090248434567535,A,2024-11-05,2024-09-08,2024-10-09,yes
+YouGov,Ohio,1017,Text,lv,Jill Stein,GRE,49.94008546040419,C,2024-11-05,2024-10-06,2024-10-10,no
+ActiVote,Arizona,1094,Text,lv,Donald Trump,REP,51.18321569208405,C,2024-11-05,2024-09-16,2024-10-09,yes
+ActiVote,Arizona,743,Online Panel,rv,Jill Stein,GRE,54.29691727359471,C,2024-11-05,2024-09-26,2024-10-10,yes
+ActiVote,Texas,613,Online Panel,lv,Kamala Harris,DEM,48.25244706536845,A+,2024-11-05,2024-10-02,2024-10-08,no
+ActiVote,Ohio,1352,App Panel,lv,Jill Stein,GRE,48.53955859771124,C,2024-11-05,2024-09-17,2024-10-09,no
+InsiderAdvantage,Ohio,899,App Panel,rv,Jill Stein,GRE,50.99946225156932,A+,2024-11-05,2024-09-08,2024-10-10,yes
+InsiderAdvantage,Texas,1372,Online Panel,rv,Donald Trump,REP,51.31926987660108,A+,2024-11-05,2024-09-09,2024-10-09,yes
+YouGov,Arizona,1471,Online Panel,rv,Donald Trump,REP,56.33867197340281,C,2024-11-05,2024-09-03,2024-10-10,yes
+ActiVote,Pennsylvania,502,App Panel,rv,Jill Stein,GRE,52.26790963967762,A,2024-11-05,2024-09-19,2024-10-10,yes
+ActiVote,Texas,793,Text,rv,Donald Trump,REP,57.15741258345517,C,2024-11-05,2024-09-13,2024-10-10,yes
+ActiVote,Pennsylvania,854,Online Panel,rv,Jill Stein,GRE,48.80588130573014,A+,2024-11-05,2024-09-07,2024-10-08,no
+InsiderAdvantage,Arizona,501,Text,lv,Donald Trump,REP,51.72613351413159,A+,2024-11-05,2024-09-02,2024-10-08,yes
+InsiderAdvantage,Arizona,1364,Online Panel,lv,Kamala Harris,DEM,41.34315028773722,A+,2024-11-05,2024-09-04,2024-10-09,no
+ActiVote,Pennsylvania,1152,App Panel,lv,Donald Trump,REP,54.40722271149487,C,2024-11-05,2024-09-23,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,692,Online Panel,rv,Jill Stein,GRE,54.53303227960839,B,2024-11-05,2024-09-19,2024-10-08,yes
+InsiderAdvantage,Arizona,1411,App Panel,rv,Donald Trump,REP,42.36816314412117,A+,2024-11-05,2024-09-09,2024-10-08,no
+ActiVote,Ohio,1252,App Panel,rv,Jill Stein,GRE,45.715683309993146,C,2024-11-05,2024-10-05,2024-10-08,no
+ActiVote,Texas,835,Text,rv,Donald Trump,REP,40.84657173106536,C,2024-11-05,2024-09-14,2024-10-09,no
+YouGov,Florida,1486,Text,lv,Jill Stein,GRE,44.91112973608009,A+,2024-11-05,2024-09-26,2024-10-09,no
+ActiVote,Arizona,704,App Panel,rv,Jill Stein,GRE,51.051756305422444,A,2024-11-05,2024-09-17,2024-10-10,yes
+ActiVote,Pennsylvania,1114,Text,lv,Donald Trump,REP,57.065230727946314,C,2024-11-05,2024-09-28,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,1047,Text,lv,Donald Trump,REP,53.57680465270189,A+,2024-11-05,2024-09-07,2024-10-10,yes
+ActiVote,Florida,925,App Panel,lv,Kamala Harris,DEM,49.908397669594365,A,2024-11-05,2024-10-07,2024-10-10,no
+YouGov,Pennsylvania,705,App Panel,rv,Donald Trump,REP,62.10458726315336,C,2024-11-05,2024-09-13,2024-10-09,yes
+ActiVote,Arizona,948,Text,rv,Kamala Harris,DEM,56.454134145243756,A+,2024-11-05,2024-09-09,2024-10-08,yes
+YouGov,Texas,750,App Panel,rv,Jill Stein,GRE,53.029628919684036,A,2024-11-05,2024-10-04,2024-10-10,yes
+ActiVote,Florida,1065,App Panel,lv,Donald Trump,REP,52.16079639110506,B,2024-11-05,2024-09-19,2024-10-09,yes
+ActiVote,Florida,823,App Panel,rv,Donald Trump,REP,61.17760981799686,B,2024-11-05,2024-09-15,2024-10-10,yes
+InsiderAdvantage,Florida,815,App Panel,rv,Donald Trump,REP,54.07522999583372,B,2024-11-05,2024-09-14,2024-10-09,yes
+YouGov,Texas,983,Online Panel,lv,Donald Trump,REP,47.102210903877,C,2024-11-05,2024-09-02,2024-10-08,no
+InsiderAdvantage,Texas,1230,App Panel,lv,Donald Trump,REP,55.83848541763844,C,2024-11-05,2024-09-04,2024-10-10,yes
+ActiVote,Ohio,595,App Panel,lv,Donald Trump,REP,46.07761698571873,C,2024-11-05,2024-09-20,2024-10-10,no
+YouGov,Pennsylvania,650,Text,rv,Kamala Harris,DEM,50.90655425917471,C,2024-11-05,2024-09-25,2024-10-10,yes
+InsiderAdvantage,Arizona,1500,Text,lv,Jill Stein,GRE,50.55346952071806,B,2024-11-05,2024-10-03,2024-10-09,yes
+ActiVote,Texas,1262,App Panel,rv,Kamala Harris,DEM,49.68130511375408,B,2024-11-05,2024-10-01,2024-10-09,no
+YouGov,Ohio,1104,Text,lv,Donald Trump,REP,50.45863719393689,A+,2024-11-05,2024-10-07,2024-10-09,yes
+ActiVote,Pennsylvania,675,Online Panel,rv,Donald Trump,REP,47.65712980008794,C,2024-11-05,2024-10-03,2024-10-10,no
+ActiVote,Ohio,1186,App Panel,lv,Kamala Harris,DEM,51.608820166389016,A+,2024-11-05,2024-09-12,2024-10-09,yes
+ActiVote,Ohio,564,Online Panel,rv,Kamala Harris,DEM,61.295598562798816,A,2024-11-05,2024-09-11,2024-10-09,yes
+InsiderAdvantage,Pennsylvania,969,Online Panel,lv,Jill Stein,GRE,52.87609585091046,A,2024-11-05,2024-09-01,2024-10-08,yes
+InsiderAdvantage,Ohio,534,App Panel,lv,Donald Trump,REP,44.66307452768886,B,2024-11-05,2024-09-19,2024-10-08,no
+YouGov,Florida,1349,App Panel,rv,Kamala Harris,DEM,44.01147341153727,A,2024-11-05,2024-10-02,2024-10-08,no
+YouGov,Texas,646,Online Panel,lv,Donald Trump,REP,53.669428634505174,A+,2024-11-05,2024-09-30,2024-10-10,yes
+InsiderAdvantage,Florida,821,App Panel,rv,Jill Stein,GRE,44.933529309302365,B,2024-11-05,2024-09-28,2024-10-10,no
+ActiVote,Arizona,1360,Text,rv,Donald Trump,REP,50.23458080984656,B,2024-11-05,2024-10-07,2024-10-09,yes
+YouGov,Florida,1422,App Panel,rv,Donald Trump,REP,44.381492557045995,A,2024-11-05,2024-09-04,2024-10-08,no
+InsiderAdvantage,Pennsylvania,858,Online Panel,rv,Jill Stein,GRE,54.86035119574747,B,2024-11-05,2024-09-10,2024-10-09,yes
+InsiderAdvantage,Florida,976,Online Panel,rv,Donald Trump,REP,45.23554944155415,A+,2024-11-05,2024-10-07,2024-10-08,no
+YouGov,Arizona,1287,Online Panel,lv,Kamala Harris,DEM,52.31244348414969,A+,2024-11-05,2024-10-06,2024-10-10,yes
+ActiVote,Ohio,1467,Online Panel,rv,Kamala Harris,DEM,60.274055164315115,A,2024-11-05,2024-09-06,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,783,Online Panel,lv,Kamala Harris,DEM,42.60271845371963,A+,2024-11-05,2024-09-12,2024-10-09,no
+ActiVote,Florida,520,Online Panel,lv,Kamala Harris,DEM,46.68913558777159,A+,2024-11-05,2024-09-01,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1000,App Panel,lv,Jill Stein,GRE,53.012992451969744,A,2024-11-05,2024-09-23,2024-10-09,yes
+YouGov,Florida,538,Online Panel,lv,Jill Stein,GRE,51.3318183748212,A+,2024-11-05,2024-09-20,2024-10-09,yes
+ActiVote,Ohio,1175,App Panel,rv,Donald Trump,REP,48.214777266944054,B,2024-11-05,2024-09-07,2024-10-09,no
+ActiVote,Pennsylvania,945,Online Panel,lv,Kamala Harris,DEM,54.097169549809536,B,2024-11-05,2024-09-16,2024-10-08,yes
+InsiderAdvantage,Pennsylvania,1289,Online Panel,lv,Kamala Harris,DEM,51.01976933977509,B,2024-11-05,2024-09-21,2024-10-08,yes
+YouGov,Pennsylvania,1304,Online Panel,lv,Kamala Harris,DEM,54.83133793227408,C,2024-11-05,2024-09-24,2024-10-08,yes
+InsiderAdvantage,Florida,1410,App Panel,lv,Kamala Harris,DEM,52.16033118498564,A+,2024-11-05,2024-09-29,2024-10-09,yes
+YouGov,Arizona,539,App Panel,lv,Donald Trump,REP,46.69189299228036,A+,2024-11-05,2024-09-24,2024-10-09,no
+InsiderAdvantage,Pennsylvania,1276,Online Panel,rv,Donald Trump,REP,48.83602335861316,B,2024-11-05,2024-09-01,2024-10-08,no
+ActiVote,Pennsylvania,456,Text,lv,Donald Trump,REP,50.659539245813896,C,2024-11-05,2024-09-16,2024-10-08,yes
+YouGov,Arizona,1495,Online Panel,rv,Jill Stein,GRE,41.66778816560789,B,2024-11-05,2024-09-24,2024-10-08,no
+YouGov,Florida,808,Text,lv,Jill Stein,GRE,49.60737236896004,C,2024-11-05,2024-10-06,2024-10-10,no
+InsiderAdvantage,Texas,790,App Panel,lv,Donald Trump,REP,53.3337912785138,A,2024-11-05,2024-09-13,2024-10-10,yes
+YouGov,Arizona,559,Online Panel,rv,Kamala Harris,DEM,51.139070128264976,C,2024-11-05,2024-10-07,2024-10-10,yes
+YouGov,Arizona,848,Text,rv,Jill Stein,GRE,48.148987463469574,A,2024-11-05,2024-09-13,2024-10-09,no
+InsiderAdvantage,Texas,643,Online Panel,rv,Jill Stein,GRE,44.738988923975185,A+,2024-11-05,2024-09-21,2024-10-08,no
+InsiderAdvantage,Florida,701,Text,lv,Kamala Harris,DEM,46.783246807082065,A+,2024-11-05,2024-09-02,2024-10-08,no
+YouGov,Florida,1326,Text,lv,Kamala Harris,DEM,50.865061889357364,A+,2024-11-05,2024-09-08,2024-10-09,yes
+ActiVote,Ohio,1457,Text,rv,Kamala Harris,DEM,53.45047186086315,A,2024-11-05,2024-10-03,2024-10-09,yes
+YouGov,Texas,809,Text,rv,Kamala Harris,DEM,53.39727238209224,A,2024-11-05,2024-09-06,2024-10-08,yes
+ActiVote,Florida,1425,Online Panel,rv,Donald Trump,REP,48.59045016969226,A,2024-11-05,2024-09-16,2024-10-09,no
+ActiVote,Ohio,828,Text,rv,Kamala Harris,DEM,49.69012395719535,B,2024-11-05,2024-09-22,2024-10-10,no
+ActiVote,Ohio,604,Text,rv,Jill Stein,GRE,51.92871380084019,A,2024-11-05,2024-09-12,2024-10-08,yes
+InsiderAdvantage,Ohio,819,Online Panel,rv,Donald Trump,REP,43.81863849530676,A,2024-11-05,2024-09-14,2024-10-08,no
+ActiVote,Florida,1128,Text,lv,Kamala Harris,DEM,47.30387268146331,A+,2024-11-05,2024-09-06,2024-10-09,no
+InsiderAdvantage,Florida,465,Text,lv,Donald Trump,REP,54.829359030324724,A,2024-11-05,2024-10-02,2024-10-10,yes
+ActiVote,Texas,1461,App Panel,lv,Donald Trump,REP,47.1756420573646,A+,2024-11-05,2024-09-03,2024-10-09,no
+ActiVote,Florida,1292,Text,lv,Donald Trump,REP,37.82169621677756,B,2024-11-05,2024-09-12,2024-10-09,no
+YouGov,Pennsylvania,1476,Text,rv,Kamala Harris,DEM,47.773322568255445,A+,2024-11-05,2024-09-01,2024-10-10,no
+ActiVote,Pennsylvania,1366,Online Panel,lv,Donald Trump,REP,56.261987075372275,C,2024-11-05,2024-09-28,2024-10-10,yes
+ActiVote,Texas,699,Text,rv,Kamala Harris,DEM,45.56760394317453,C,2024-11-05,2024-10-04,2024-10-08,no
+ActiVote,Pennsylvania,1462,Online Panel,lv,Donald Trump,REP,51.844089097978184,A,2024-11-05,2024-09-19,2024-10-08,yes
+ActiVote,Texas,1388,Text,rv,Jill Stein,GRE,51.23235905839411,B,2024-11-05,2024-10-05,2024-10-09,yes
+ActiVote,Ohio,681,Text,rv,Kamala Harris,DEM,49.88164728175441,B,2024-11-05,2024-09-12,2024-10-09,no
+ActiVote,Florida,578,Text,rv,Donald Trump,REP,51.07183741324211,C,2024-11-05,2024-09-21,2024-10-08,yes
+InsiderAdvantage,Texas,1451,Text,lv,Jill Stein,GRE,52.7026651691754,A,2024-11-05,2024-09-30,2024-10-08,yes
+InsiderAdvantage,Ohio,1164,Text,lv,Donald Trump,REP,50.667778295907695,B,2024-11-05,2024-10-06,2024-10-09,yes
+YouGov,Ohio,1124,Online Panel,rv,Jill Stein,GRE,47.800044650341654,A,2024-11-05,2024-10-06,2024-10-09,no
+InsiderAdvantage,Florida,585,Text,rv,Kamala Harris,DEM,43.83026634088529,B,2024-11-05,2024-09-22,2024-10-09,no
+YouGov,Florida,640,App Panel,rv,Kamala Harris,DEM,49.846467938255536,A,2024-11-05,2024-09-12,2024-10-08,no
+YouGov,Florida,631,Text,lv,Kamala Harris,DEM,60.280969584720054,B,2024-11-05,2024-09-20,2024-10-08,yes
+InsiderAdvantage,Florida,496,Text,lv,Kamala Harris,DEM,43.32546991918856,A+,2024-11-05,2024-09-05,2024-10-08,no
+ActiVote,Florida,891,App Panel,rv,Jill Stein,GRE,52.00897715057986,B,2024-11-05,2024-09-30,2024-10-09,yes

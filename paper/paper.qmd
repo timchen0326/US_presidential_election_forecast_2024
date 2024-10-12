@@ -17,9 +17,30 @@ bibliography: references.bib
 #| include: false
 #| warning: false
 #| message: false
+# Set a CRAN mirror
+# Set a specific CRAN mirror (this example uses the US CRAN mirror)
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+# Example of installing a package after setting the mirror
+install.packages("tidyverse")
+
 
 library(tidyverse)
-library(palmerpenguins)
+# Install janitor package if not installed
+install.packages("janitor")
+
+# Load the janitor package
+library(janitor)
+
+install.packages("caret")
+install.packages("ROCR")
+install.packages("rstanarm")
+library(rstanarm)
+install.packages("modelsummary")
+library(modelsummary)
+
+
+
 ```
 
 
@@ -61,38 +82,132 @@ Add graphs, tables and text. Use sub-sub-headings for each outcome variable or u
 Some of our data is of penguins (@fig-bills), from @palmerpenguins.
 
 ```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
-#| echo: false
+# Load necessary libraries
+library(dplyr)
+library(tidyr)
 
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
+# Load the dataset
+polls <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
+
+
+
 ```
 
-Talk more about it.
+```{r}
 
-And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
+polls |>
+  ggplot(aes(x = population, fill = answer)) +
+  stat_count(position = "dodge") +
+  theme_minimal() +
+  labs(
+    x = "Population",
+    y = "Number of respondents",
+    fill = "Voted for"
+  ) +
+  coord_flip() +
+  scale_fill_brewer(palette = "Set1") +
+  theme(legend.position = "bottom")
+```
 
 ```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
-#| echo: false
-#| warning: false
-#| message: false
+# Finding Median of Sample Size
+median_sample_size <- median(polls$sample_size, na.rm = TRUE)
+print(median_sample_size)
 
-analysis_data <- read_csv(here::here("data/02-analysis_data/analysis_data.csv"))
+# The U.S. uses an Electoral College system, where each state is assigned a certain number of electoral votes based on its population (each state gets a number of electors equal to its total number of Senators and Representatives in Congress).
+# Most states use a winner-takes-all system, where the candidate who wins the popular vote in the state gets all its electoral votes. (Exceptions: Nebraska and Maine, which allocate electoral votes proportionally.)
+# A total of 538 electoral votes are available. To win the presidency, a candidate must secure at least 270 electoral votes.
 
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
+# Differentiating sample sizes in presidential election polls is important because larger samples generally provide more reliable results with smaller margins of error, while smaller samples may result in less precise and potentially skewed outcomes. Additionally, larger sample sizes better capture the diversity of key demographic groups, leading to more accurate reflections of voter behavior.
+```
+
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Define population levels (adjust based on your actual data)
+population_levels <- c("Adults", "Voters", "Likely Voters", "Registered Voters")  # Update these based on your dataset
+
+# Ensure all factor levels are present and handle missing combinations
+polls_clean <- polls %>%
+  mutate(
+    population = factor(population, levels = population_levels),
+    sample_category = ifelse(sample_size < 1006, "Less than 1006", "1006 or more"),
+    answer = as.factor(answer)  # Convert answer to factor if it represents candidates
+  ) %>%
+  complete(population, answer, sample_category, fill = list(n = 0))  # Fill missing combinations
+
+# Plot with facet_wrap
+polls_clean %>%
+  ggplot(aes(x = population, fill = answer)) +
+  stat_count(position = "dodge") +
   theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
+  labs(
+    x = "Population",
+    y = "Number of respondents",
+    fill = "Voted for"
+  ) +
+  coord_flip() +
+  scale_fill_brewer(palette = "Set1") +
+  theme(legend.position = "bottom") +
+  facet_wrap(~sample_category, scales = "free_y")
+
+
+```
+
+
+```{r}
+set.seed(304)
+
+polls_reduced <- 
+  polls_clean |> 
+  slice_sample(n = 1000)
+
+political_preferences <-
+  stan_glm(
+    answer ~  + sample_category + population,
+    data = polls_reduced,
+    family = binomial(link = "logit"),
+    prior = normal(location = 0, scale = 2.5, autoscale = TRUE),
+    prior_intercept = 
+      normal(location = 0, scale = 2.5, autoscale = TRUE),
+    seed = 853
+  )
+
+saveRDS(
+  political_preferences,
+  file = "political_preferences.rds"
+)
+
+```
+
+
+```{r}
+political_preferences <-
+  readRDS(file = "political_preferences.rds")
+
+```
+
+```{r}
+modelsummary(
+  list(
+    "Support Biden" = political_preferences
+  ),
+  statistic = "mad"
+  )
+
+```
+
+
+```{r}
+modelplot(political_preferences, conf_level = 0.9) +
+  labs(x = "90 per cent credibility interval")
 ```
 
 Talk way more about it. 
@@ -217,15 +332,6 @@ In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. Th
 #| fig-cap: "Examining how the model fits, and is affected by, the data"
 #| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
 
-pp_check(first_model) +
-  theme_classic() +
-  theme(legend.position = "bottom")
-
-posterior_vs_prior(first_model) +
-  theme_minimal() +
-  scale_color_brewer(palette = "Set1") +
-  theme(legend.position = "bottom") +
-  coord_flip()
 ```
 
 ## Diagnostics
@@ -244,9 +350,6 @@ posterior_vs_prior(first_model) +
 #| fig-subcap: ["Trace plot", "Rhat plot"]
 #| layout-ncol: 2
 
-plot(first_model, "trace")
-
-plot(first_model, "rhat")
 ```
 
 
