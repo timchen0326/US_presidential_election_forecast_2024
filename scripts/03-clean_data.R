@@ -1,44 +1,50 @@
 #### Preamble ####
-# Purpose: Cleans the raw plane data recorded by two observers..... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 6 April 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
-# License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Purpose: Prepare polling data for the multi-linear regression model
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites:
+# - Requires downloading presidential polls data as 'president_polls.csv' file in 'data/01-raw_data/'
+# - Packages `tidyverse`, `dplyr`, `janitor`, and `lubridate` must be installed and loaded
 
 #### Workspace setup ####
+# Load necessary libraries
+library(dplyr)
 library(tidyverse)
+library(janitor)
+library(lubridate)
 
-#### Clean data ####
-raw_data <- read_csv("inputs/data/plane_data.csv")
+########################### Data Import and Cleaning########################### 
+# Read the dataset and clean column names
+data <- read_csv("data/01-raw_data/president_polls.csv") |>
+  clean_names()
 
-cleaned_data <-
-  raw_data |>
-  janitor::clean_names() |>
-  select(wing_width_mm, wing_length_mm, flying_time_sec_first_timer) |>
-  filter(wing_width_mm != "caw") |>
-  mutate(
-    flying_time_sec_first_timer = if_else(flying_time_sec_first_timer == "1,35",
-                                   "1.35",
-                                   flying_time_sec_first_timer)
+###################### Filter Data for Both Candidates ########################
+# Filter data for Kamala Harris and Donald Trump based on high-quality polls
+filtered_data <- data |>
+  # Select only the specified columns
+  select(poll_id, pollster_id, pollster, numeric_grade, pollscore, methodology, 
+         transparency_score, sample_size, population, population_full, party, 
+         answer, pct, state, end_date
   ) |>
-  mutate(wing_width_mm = if_else(wing_width_mm == "490",
-                                 "49",
-                                 wing_width_mm)) |>
-  mutate(wing_width_mm = if_else(wing_width_mm == "6",
-                                 "60",
-                                 wing_width_mm)) |>
-  mutate(
-    wing_width_mm = as.numeric(wing_width_mm),
-    wing_length_mm = as.numeric(wing_length_mm),
-    flying_time_sec_first_timer = as.numeric(flying_time_sec_first_timer)
+  filter(
+    answer %in% c("Harris", "Trump"), # Keep only Harris and Trump
+    numeric_grade >= 2.7 # Filter high-quality polls
   ) |>
-  rename(flying_time = flying_time_sec_first_timer,
-         width = wing_width_mm,
-         length = wing_length_mm
-         ) |> 
-  tidyr::drop_na()
+  filter( # Filter polls after each candidate declared
+    (answer == "Harris" & end_date >= as.Date("2024-07-21")) | 
+      (answer == "Trump" & end_date >= as.Date("2024-07-21"))
+  ) |>
+  mutate(
+    state = if_else(is.na(state), "National", state), # Fix for national polls
+    end_date = mdy(end_date), # Convert end date to date format
+    num_supporters = round((pct / 100) * sample_size, 0), # Convert percentage to number of supporters
+    candidate_binary = ifelse(answer == "Harris", 1, 0) # Binary encoding for Harris (1) and Trump (0)
+  ) |>
+  drop_na()
 
-#### Save data ####
-write_csv(cleaned_data, "outputs/data/analysis_data.csv")
+# Save the cleaned dataset as a new CSV file
+write.csv(filtered_data, "data/02-analysis_data/analysis_data.csv", row.names = FALSE)
