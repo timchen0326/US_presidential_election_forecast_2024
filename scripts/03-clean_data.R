@@ -41,11 +41,14 @@ filtered_data <- data |>
   mutate(
     num_supporters = round((pct / 100) * sample_size, 0), # Convert percentage to number of supporters
     candidate_binary = ifelse(candidate_name == "Kamala Harris", 1, 0) # Binary encoding for Harris (1) and Trump (0)
-  )
-
+  ) |>
+  # Select only the specified columns
+  select(poll_id, pollster_id, pollster, numeric_grade, pollscore, methodology, 
+         transparency_score, sample_size, population, population_full, party, 
+         answer, pct, state, candidate_name, end_date, candidate_binary, num_supporters
+  ) |>
+  drop_na()
 
 # Save the cleaned dataset as a new CSV file
 write.csv(filtered_data, "data/02-analysis_data/analysis_data.csv", row.names = FALSE)
-
-
 

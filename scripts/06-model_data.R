@@ -13,47 +13,23 @@ library(tidyverse)
 library(rstanarm)
 
 #### Read data ####
-just_harris_high_quality <- read_csv("data/02-analysis_data/analysis_data.csv")
+analysis_data <- read_csv("data/02-analysis_data/analysis_data.csv")
 
 ### Model data ####
-model_date <- lm(pct ~ end_date, data = just_harris_high_quality)
-
-# Model 2: pct as a function of end_date and pollster
-model_date_pollster <- lm(pct ~ end_date + pollster, data = just_harris_high_quality)
-
-# Augment data with model predictions
-just_harris_high_quality <- just_harris_high_quality |>
-  mutate(
-    fitted_date = predict(model_date),
-    fitted_date_pollster = predict(model_date_pollster)
+glm_model <- 
+  stan_glm(
+    formula = candidate_binary ~ numeric_grade + pollscore + transparency_score + sample_size + party + state + num_supporters,
+    data = analysis_data,
+    family = binomial(),
+    prior = normal(location = 0, scale = 2.5, autoscale = TRUE),
+    prior_intercept = normal(location = 0, scale = 2.5, autoscale = TRUE),
+    prior_aux = exponential(rate = 1, autoscale = TRUE),
+    seed = 304
   )
-
-# Plot model predictions
-# Model 1
-ggplot(just_harris_high_quality, aes(x = end_date)) +
-  geom_point(aes(y = pct), color = "black") +
-  geom_line(aes(y = fitted_date), color = "blue", linetype = "dotted") +
-  theme_classic() +
-  labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date")
-
-# Model 2
-ggplot(just_harris_high_quality, aes(x = end_date)) +
-  geom_point(aes(y = pct), color = "black") +
-  geom_line(aes(y = fitted_date_pollster), color = "blue", linetype = "dotted") +
-  facet_wrap(vars(pollster)) +
-  theme_classic() +
-  labs(y = "Harris percent", x = "Date", title = "Linear Model: pct ~ end_date + pollster")
 
 #### Save model ####
 saveRDS(
-  model_date,
-  file = "models/first_model.rds"
+  glm_model,
+  file = "models/glm_model.rds"
 )
 
-saveRDS(
-  model_date_pollster,
-  file = "models/second_model.rds"
-)
-
-
-modelsummary(models = list("Model 1" = model_date, "Model 2" = model_date_pollster))
