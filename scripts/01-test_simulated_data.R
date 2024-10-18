@@ -1,89 +1,90 @@
 #### Preamble ####
-# Purpose: Tests the structure and validity of the simulated Australian 
-  #electoral divisions dataset.
-# Author: Rohan Alexander
-# Date: 26 September 2024
-# Contact: rohan.alexander@utoronto.ca
-# License: MIT
+# Purpose: Testing simulated pollster data for the 2024 US presidential election
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
 # Pre-requisites: 
-  # - The `tidyverse` package must be installed and loaded
   # - 00-simulate_data.R must have been run
-# Any other information needed? Make sure you are in the `starter_folder` rproj
-
+  # - The `tidyverse`, `lubridate`, and `testthat` package must be installed and loaded
 
 #### Workspace setup ####
 library(tidyverse)
+library(testthat)
+library(lubridate)
 
-analysis_data <- read_csv("data/00-simulated_data/simulated_data.csv")
+# Read in the data
+pollster_data <- read_csv("data/00-simulated_data/simulated_pollster_data.csv")
 
-# Test if the data was successfully loaded
-if (exists("analysis_data")) {
-  message("Test Passed: The dataset was successfully loaded.")
-} else {
-  stop("Test Failed: The dataset could not be loaded.")
-}
+########################### Tests for Pollster Data########################### 
 
+test_that("Pollster data has correct structure", {
+  expected_cols <- c("poll_id", "date", "pollster", "pollster_rating", "method", 
+                     "state", "voter_type", "party", "winner", "percentage")
+  expect_equal(colnames(pollster_data), expected_cols)
+  expect_true(is.numeric(pollster_data$poll_id))
+  expect_true(inherits(pollster_data$date, "Date"))
+  expect_true(is.character(pollster_data$pollster))
+  expect_true(is.numeric(pollster_data$pollster_rating))
+  expect_true(is.character(pollster_data$method))
+  expect_true(is.character(pollster_data$state))
+  expect_true(is.character(pollster_data$voter_type))
+  expect_true(is.character(pollster_data$party))
+  expect_true(is.character(pollster_data$winner))
+  expect_true(is.numeric(pollster_data$percentage))
+})
 
-#### Test data ####
+test_that("Pollster data has valid values", {
+  expect_true(all(!is.na(pollster_data)))
+  expect_true(all(pollster_data$date >= as.Date("2024-01-01") & 
+                    pollster_data$date <= as.Date("2024-10-18")))
+  expect_true(all(pollster_data$pollster_rating >= 1 & pollster_data$pollster_rating <= 5))
+  expect_true(all(pollster_data$percentage >= 0 & pollster_data$percentage <= 100))
+})
 
-# Check if the dataset has 151 rows
-if (nrow(analysis_data) == 151) {
-  message("Test Passed: The dataset has 151 rows.")
-} else {
-  stop("Test Failed: The dataset does not have 151 rows.")
-}
+test_that("Poll IDs are unique", {
+  expect_equal(length(unique(pollster_data$poll_id)), nrow(pollster_data))
+})
 
-# Check if the dataset has 3 columns
-if (ncol(analysis_data) == 3) {
-  message("Test Passed: The dataset has 3 columns.")
-} else {
-  stop("Test Failed: The dataset does not have 3 columns.")
-}
+test_that("Method values are valid", {
+  valid_methods <- c("Online", "Phone", "Mixed")
+  expect_true(all(pollster_data$method %in% valid_methods))
+})
 
-# Check if all values in the 'division' column are unique
-if (n_distinct(analysis_data$division) == nrow(analysis_data)) {
-  message("Test Passed: All values in 'division' are unique.")
-} else {
-  stop("Test Failed: The 'division' column contains duplicate values.")
-}
+test_that("State values are valid", {
+  expect_true(all(pollster_data$state %in% state.abb))
+})
 
-# Check if the 'state' column contains only valid Australian state names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", 
-                  "Western Australia", "Tasmania", "Northern Territory", 
-                  "Australian Capital Territory")
+test_that("Voter type values are valid", {
+  valid_voter_types <- c("Likely Voters", "Registered Voters", "All Adults")
+  expect_true(all(pollster_data$voter_type %in% valid_voter_types))
+})
 
-if (all(analysis_data$state %in% valid_states)) {
-  message("Test Passed: The 'state' column contains only valid Australian state names.")
-} else {
-  stop("Test Failed: The 'state' column contains invalid state names.")
-}
+test_that("Party values are valid", {
+  valid_parties <- c("Republican", "Democrat")
+  expect_true(all(pollster_data$party %in% valid_parties))
+})
 
-# Check if the 'party' column contains only valid party names
-valid_parties <- c("Labor", "Liberal", "Greens", "National", "Other")
+test_that("Winner values are valid", {
+  valid_winners <- c("Trump", "Harris")
+  expect_true(all(pollster_data$winner %in% valid_winners))
+})
 
-if (all(analysis_data$party %in% valid_parties)) {
-  message("Test Passed: The 'party' column contains only valid party names.")
-} else {
-  stop("Test Failed: The 'party' column contains invalid party names.")
-}
+test_that("Dataset has expected number of rows", {
+  expect_equal(nrow(pollster_data), 1000)
+})
 
-# Check if there are any missing values in the dataset
-if (all(!is.na(analysis_data))) {
-  message("Test Passed: The dataset contains no missing values.")
-} else {
-  stop("Test Failed: The dataset contains missing values.")
-}
+test_that("Dataset has expected number of columns", {
+  expect_equal(ncol(pollster_data), 10)
+})
 
-# Check if there are no empty strings in 'division', 'state', and 'party' columns
-if (all(analysis_data$division != "" & analysis_data$state != "" & analysis_data$party != "")) {
-  message("Test Passed: There are no empty strings in 'division', 'state', or 'party'.")
-} else {
-  stop("Test Failed: There are empty strings in one or more columns.")
-}
+test_that("There are no empty strings in character columns", {
+  char_cols <- c("pollster", "method", "state", "voter_type", "party", "winner")
+  expect_true(all(pollster_data[char_cols] != ""))
+})
 
-# Check if the 'party' column has at least two unique values
-if (n_distinct(analysis_data$party) >= 2) {
-  message("Test Passed: The 'party' column contains at least two unique values.")
-} else {
-  stop("Test Failed: The 'party' column contains less than two unique values.")
-}
+test_that("Pollster column has at least two unique values", {
+  expect_true(n_distinct(pollster_data$pollster) >= 2)
+})

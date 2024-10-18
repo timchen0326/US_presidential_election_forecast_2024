@@ -1,52 +1,95 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  #state and party that won each division.
-# Author: Rohan Alexander
-# Date: 26 September 2024
-# Contact: rohan.alexander@utoronto.ca
-# License: MIT
-# Pre-requisites: The `tidyverse` package must be installed
-# Any other information needed? Make sure you are in the `starter_folder` rproj
+# Purpose: Simulates a dataset of US pollster polling outcomes
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites:
+# - Packages `tidyverse`, and `lubridate` must be installed and loaded
 
 
 #### Workspace setup ####
 library(tidyverse)
-set.seed(853)
+library(lubridate)
 
+#### Data expectations ####
+# Pollster Data:
+# - Columns: poll_id, pollster, pollster_rating, method, state, voter_type, party, winner, percentage
+# - poll_id should be unique
+# - Date should be between 2024-01-01 and 2024-10-18
+# - pollster_rating should be between 1 and 5
+# - method should be one of: "Online", "Phone", "Mixed"
+# - state should be valid US state abbreviations
+# - voter_type should be one of: "Likely Voters", "Registered Voters", "All Adults"
+# - party should be one of: "Republican", "Democrat"
+# - winner should be one of: "Trump", "Harris"
+# - percentage should be between 0 and 100
 
-#### Simulate data ####
-# State names
-states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
+set.seed(2024)
+
+########################### Simulate Pollster Data ############################ 
+num_polls <- 1000
+
+pollster_data <- tibble(
+  poll_id = seq(1, num_polls),
+  date = sample(seq(as.Date('2024-01-01'), as.Date('2024-10-18'), by="day"), 
+                num_polls, replace=TRUE),
+  pollster = sample(c("PollsterA", "PollsterB", "PollsterC", 
+                      "PollsterD", "PollsterE"), num_polls, replace=TRUE),
+  pollster_rating = round(runif(num_polls, 1, 5), 1),
+  method = sample(c("Online", "Phone", "Mixed"), num_polls, replace=TRUE),
+  state = sample(state.abb, num_polls, replace=TRUE),
+  voter_type = sample(c("Likely Voters", "Registered Voters"), 
+                      num_polls, replace=TRUE),
+  party = sample(c("Republican", "Democrat"), num_polls, replace=TRUE),
+  winner = sample(c("Trump", "Harris"), num_polls, replace=TRUE),
+  percentage = round(runif(num_polls, 40, 60), 1)
 )
 
-# Political parties
-parties <- c("Labor", "Liberal", "Greens", "National", "Other")
+# Adjust percentages based on winner
+pollster_data <- pollster_data %>%
+  mutate(percentage = case_when(
+    winner == "Trump" ~ percentage,
+    winner == "Harris" ~ 100 - percentage
+  ))
 
-# Create a dataset by randomly assigning states and parties to divisions
-analysis_data <- tibble(
-  division = paste("Division", 1:151),  # Add "Division" to make it a character
-  state = sample(
-    states,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025) # Rough state population distribution
-  ),
-  party = sample(
-    parties,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.40, 0.40, 0.05, 0.1, 0.05) # Rough party distribution
-  )
-)
+############################## Visualizations  ##############################
+# Poll results over time
+pollster_data %>%
+  ggplot(aes(x = date, y = percentage, color = winner)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "loess", se = FALSE) +
+  labs(title = "Poll Results Over Time",
+       x = "Date",
+       y = "Percentage",
+       color = "Candidate") +
+  theme_minimal()
 
+# Distribution of poll methods
+pollster_data %>%
+  count(method) %>%
+  ggplot(aes(x = method, y = n, fill = method)) +
+  geom_col() +
+  labs(title = "Distribution of Poll Methods",
+       x = "Method",
+       y = "Count") +
+  theme_minimal()
 
-#### Save data ####
-write_csv(analysis_data, "data/00-simulated_data/simulated_data.csv")
+# Average poll results by state
+pollster_data %>%
+  group_by(state, winner) %>%
+  summarise(avg_percentage = mean(percentage)) %>%
+  ggplot(aes(x = reorder(state, avg_percentage), y = avg_percentage, 
+             fill = winner)) +
+  geom_col() +
+  coord_flip() +
+  labs(title = "Average Poll Results by State",
+       x = "State",
+       y = "Average Percentage",
+       fill = "Candidate") +
+  theme_minimal()
+
+# Save the simulated data
+write_csv(pollster_data, "data/00-simulated_data/simulated_pollster_data.csv")
