@@ -13,25 +13,22 @@ library(tidyverse)
 library(rstanarm)
 
 #### Read data ####
-analysis_data <- read_csv("data/analysis_data/analysis_data.csv")
+analysis_data <- read_csv("data/02-analysis_data/analysis_data.csv")
 
 ### Model data ####
-first_model <-
-  stan_glm(
-    formula = flying_time ~ length + width,
-    data = analysis_data,
-    family = gaussian(),
-    prior = normal(location = 0, scale = 2.5, autoscale = TRUE),
-    prior_intercept = normal(location = 0, scale = 2.5, autoscale = TRUE),
-    prior_aux = exponential(rate = 1, autoscale = TRUE),
-    seed = 853
+# Summary statistics for numeric variables
+summary(analysis_data)
+
+# Detailed summary of specific variables
+analysis_data %>%
+  summarize(
+    avg_pct = mean(pct, na.rm = TRUE),
+    median_pct = median(pct, na.rm = TRUE),
+    sd_pct = sd(pct, na.rm = TRUE),
+    avg_sample_size = mean(sample_size, na.rm = TRUE),
+    min_sample_size = min(sample_size, na.rm = TRUE),
+    max_sample_size = max(sample_size, na.rm = TRUE)
   )
 
-
-#### Save model ####
-saveRDS(
-  first_model,
-  file = "models/first_model.rds"
-)
-
+analysis_data
 

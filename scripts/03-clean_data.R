@@ -1,40 +1,51 @@
 #### Preamble ####
-# Purpose: Cleans the raw polling data, focusing on Kamala Harris and Donald Trump
+# Purpose: Prepare polling data and build a linear regression model to predict popular vote for Kamala Harris and Donald Trump.
 # Author: [Your Name]
 # Date: [Today's Date]
 # Contact: [Your Email]
 # License: MIT
 # Pre-requisites: Requires 'president_polls.csv' file in 'data/01-raw_data/'
-# Any other information needed? This script filters polling data for Harris and Trump only.
+# Any other information needed? This script builds an MLR model for Harris vs Trump using polling data.
+
+#### Install necessary libraries ####
 install.packages("janitor")
+install.packages("lubridate")
+
 #### Workspace setup ####
-# Load necessary library
+# Load necessary libraries
 library(dplyr)
 library(tidyverse)
 library(janitor)
+library(lubridate)
 
-# Read the dataset
+#### Data Import and Cleaning ####
+# Read the dataset and clean column names
 data <- read_csv("data/01-raw_data/president_polls.csv") |>
   clean_names()
 
-# Filter data to Harris estimates based on high-quality polls after she declared
-just_harris_high_quality <- data |>
+#### Filter Data for Both Candidates ####
+# Filter data for Kamala Harris and Donald Trump based on high-quality polls
+filtered_data <- data |>
   filter(
-    candidate_name == "Kamala Harris",
-    numeric_grade >= 2.7 # Need to investigate this choice - come back and fix. 
-    # Also need to look at whether the pollster has multiple polls or just one or two - filter out later
+    candidate_name %in% c("Kamala Harris", "Donald Trump"), # Keep only Harris and Trump
+    numeric_grade >= 2.7 # Filter high-quality polls
   ) |>
   mutate(
-    state = if_else(is.na(state), "National", state), # Hacky fix for national polls - come back and check
-    end_date = mdy(end_date)
+    state = if_else(is.na(state), "National", state), # Fix for national polls
+    end_date = mdy(end_date) # Convert end date to date format
   ) |>
-  filter(end_date >= as.Date("2024-07-21")) |> # When Harris declared
+  filter( # Filter polls after each candidate declared
+    (candidate_name == "Kamala Harris" & end_date >= as.Date("2024-07-21")) | 
+    (candidate_name == "Donald Trump" & end_date >= as.Date("2024-07-21"))
+  ) |>
   mutate(
-    num_harris = round((pct / 100) * sample_size, 0) # Need number not percent for some models
+    num_supporters = round((pct / 100) * sample_size, 0), # Convert percentage to number of supporters
+    candidate_binary = ifelse(candidate_name == "Kamala Harris", 1, 0) # Binary encoding for Harris (1) and Trump (0)
   )
 
+
 # Save the cleaned dataset as a new CSV file
-write.csv(just_harris_high_quality, "data/02-analysis_data/analysis_data.csv", row.names = FALSE)
+write.csv(filtered_data, "data/02-analysis_data/analysis_data.csv", row.names = FALSE)
 
 
 
