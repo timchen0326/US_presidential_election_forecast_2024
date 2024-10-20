@@ -7,10 +7,6 @@
 # Pre-requisites: Requires 'president_polls.csv' file in 'data/01-raw_data/'
 # Any other information needed? This script builds an MLR model for Harris vs Trump using polling data.
 
-#### Install necessary libraries ####
-install.packages("janitor")
-install.packages("lubridate")
-
 #### Workspace setup ####
 # Load necessary libraries
 library(dplyr)
