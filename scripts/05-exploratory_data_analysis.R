@@ -6,12 +6,6 @@
 # License: MIT
 # Pre-requisites: Requires cleaned 'analysis_data.csv' with filtered data for Harris and Trump
 
-#### Install necessary libraries ####
-install.packages("ggplot2")
-install.packages("dplyr")
-install.packages("naniar")
-install.packages("tidyverse")
-
 #### Workspace setup ####
 # Load necessary libraries
 library(dplyr)
