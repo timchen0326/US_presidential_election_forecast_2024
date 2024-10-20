@@ -1,58 +1,95 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  #state and party that won each division.
-# Author: Rohan Alexander
-# Date: 26 September 2024
-# Contact: rohan.alexander@utoronto.ca
-# License: MIT
-# Pre-requisites: The `tidyverse` package must be installed
-# Any other information needed? Make sure you are in the `starter_folder` rproj
+# Purpose: Simulates a dataset of US pollster polling outcomes
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites:
+# - Packages `tidyverse`, and `lubridate` must be installed and loaded
 
 
 #### Workspace setup ####
 library(tidyverse)
+library(lubridate)
 
-#### Simulate data ####
+#### Data expectations ####
+# Pollster Data:
+# - Columns: poll_id, pollster, pollster_rating, method, state, voter_type, party, winner, percentage
+# - poll_id should be unique
+# - Date should be between 2024-01-01 and 2024-10-18
+# - pollster_rating should be between 1 and 5
+# - method should be one of: "Online", "Phone", "Mixed"
+# - state should be valid US state abbreviations
+# - voter_type should be one of: "Likely Voters", "Registered Voters", "All Adults"
+# - party should be one of: "Republican", "Democrat"
+# - winner should be one of: "Trump", "Harris"
+# - percentage should be between 0 and 100
 
-# Create a dataset by randomly assigning states and parties to divisions
-# Load necessary libraries
-library(tidyverse)
+set.seed(2024)
 
-# Set seed for reproducibility
-set.seed(853)
+########################### Simulate Pollster Data ############################ 
+num_polls <- 1000
 
-# Number of observations for the simulation
-num_obs <- 1000
+pollster_data <- tibble(
+  poll_id = seq(1, num_polls),
+  date = sample(seq(as.Date('2024-01-01'), as.Date('2024-10-18'), by="day"), 
+                num_polls, replace=TRUE),
+  pollster = sample(c("PollsterA", "PollsterB", "PollsterC", 
+                      "PollsterD", "PollsterE"), num_polls, replace=TRUE),
+  pollster_rating = round(runif(num_polls, 1, 5), 1),
+  method = sample(c("Online", "Phone", "Mixed"), num_polls, replace=TRUE),
+  state = sample(state.abb, num_polls, replace=TRUE),
+  voter_type = sample(c("Likely Voters", "Registered Voters"), 
+                      num_polls, replace=TRUE),
+  party = sample(c("Republican", "Democrat"), num_polls, replace=TRUE),
+  winner = sample(c("Trump", "Harris"), num_polls, replace=TRUE),
+  percentage = round(runif(num_polls, 40, 60), 1)
+)
 
-# Simulating data based on variables in the provided president polls CSV
-president_poll_simulation <- tibble(
-  pollster = sample(c("InsiderAdvantage", "YouGov", "ActiVote"), size = num_obs, replace = TRUE),
-  state = sample(c("Pennsylvania", "Arizona", "Texas", "Florida", "Ohio"), size = num_obs, replace = TRUE),
-  sample_size = sample(400:1500, size = num_obs, replace = TRUE),
-  methodology = sample(c("Text", "App Panel", "Online Panel"), size = num_obs, replace = TRUE),
-  population = sample(c("lv", "rv"), size = num_obs, replace = TRUE), # Likely Voters (lv), Registered Voters (rv)
-  candidate_name = sample(c("Kamala Harris", "Donald Trump", "Jill Stein"), size = num_obs, replace = TRUE),
-  party = case_when(
-    candidate_name == "Kamala Harris" ~ "DEM",
-    candidate_name == "Donald Trump" ~ "REP",
-    candidate_name == "Jill Stein" ~ "GRE"
-  ),
-  pct = rnorm(num_obs, mean = 50, sd = 5), # Simulating percentage of support
-  pollster_rating_name = sample(c("A+", "A", "B", "C"), size = num_obs, replace = TRUE),
-  election_date = as.Date("2024-11-05"), # Fixed election date
-  poll_start_date = sample(seq(as.Date("2024-09-01"), as.Date("2024-10-07"), by = "day"), size = num_obs, replace = TRUE),
-  poll_end_date = sample(seq(as.Date("2024-10-08"), as.Date("2024-10-10"), by = "day"), size = num_obs, replace = TRUE)
-) %>%
-  mutate(
-    supports_candidate = if_else(pct > 50, "yes", "no")
-  )
+# Adjust percentages based on winner
+pollster_data <- pollster_data %>%
+  mutate(percentage = case_when(
+    winner == "Trump" ~ percentage,
+    winner == "Harris" ~ 100 - percentage
+  ))
 
-# Show the first few rows of the simulated data
-head(president_poll_simulation)
+############################## Visualizations  ##############################
+# Poll results over time
+pollster_data %>%
+  ggplot(aes(x = date, y = percentage, color = winner)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "loess", se = FALSE) +
+  labs(title = "Poll Results Over Time",
+       x = "Date",
+       y = "Percentage",
+       color = "Candidate") +
+  theme_minimal()
 
+# Distribution of poll methods
+pollster_data %>%
+  count(method) %>%
+  ggplot(aes(x = method, y = n, fill = method)) +
+  geom_col() +
+  labs(title = "Distribution of Poll Methods",
+       x = "Method",
+       y = "Count") +
+  theme_minimal()
 
+# Average poll results by state
+pollster_data %>%
+  group_by(state, winner) %>%
+  summarise(avg_percentage = mean(percentage)) %>%
+  ggplot(aes(x = reorder(state, avg_percentage), y = avg_percentage, 
+             fill = winner)) +
+  geom_col() +
+  coord_flip() +
+  labs(title = "Average Poll Results by State",
+       x = "State",
+       y = "Average Percentage",
+       fill = "Candidate") +
+  theme_minimal()
 
-
-
-#### Save data ####
-write_csv(president_poll_simulation, "data/00-simulated_data/simulated_data.csv")
+# Save the simulated data
+write_csv(pollster_data, "data/00-simulated_data/simulated_pollster_data.csv")

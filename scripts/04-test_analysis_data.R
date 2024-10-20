@@ -1,69 +1,92 @@
 #### Preamble ####
-# Purpose: Tests... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 26 September 2024 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
-# License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
-
+# Purpose: Testing cleaned pollster data for the 2024 US presidential election
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites: 
+# - 03-clean_data.R must have been run
+# - The `tidyverse`, `lubridate`, and `testthat` package must be installed and loaded
 
 #### Workspace setup ####
 library(tidyverse)
 library(testthat)
+library(lubridate)
 
-data <- read_csv("data/02-analysis_data/analysis_data.csv")
+# Read in the data
+pollster_data <- read_csv("data/02-analysis_data/analysis_data.csv")
 
+########################### Tests for Pollster Data########################### 
 
-#### Test data ####
-# Test that the dataset has 151 rows - there are 151 divisions in Australia
-test_that("dataset has 151 rows", {
-  expect_equal(nrow(analysis_data), 151)
+test_that("Pollster data has correct structure", {
+  expected_cols <- c("poll_id", "pollster_id", "pollster", "numeric_grade", "pollscore",
+                     "methodology", "transparency_score", "sample_size", "population",
+                     "population_full", "party", "answer", "pct", "state",
+                     "end_date", "num_supporters", "candidate_binary")
+  expect_equal(colnames(pollster_data), expected_cols)
 })
 
-# Test that the dataset has 3 columns
-test_that("dataset has 3 columns", {
-  expect_equal(ncol(analysis_data), 3)
+test_that("Data types are correct", {
+  expect_true(is.numeric(pollster_data$poll_id))
+  expect_true(is.numeric(pollster_data$pollster_id))
+  expect_true(is.character(pollster_data$pollster))
+  expect_true(is.numeric(pollster_data$numeric_grade))
+  expect_true(is.numeric(pollster_data$pollscore))
+  expect_true(is.character(pollster_data$methodology))
+  expect_true(is.numeric(pollster_data$transparency_score))
+  expect_true(is.numeric(pollster_data$sample_size))
+  expect_true(is.character(pollster_data$population))
+  expect_true(is.character(pollster_data$population_full))
+  expect_true(is.character(pollster_data$party))
+  expect_true(is.character(pollster_data$answer))
+  expect_true(is.numeric(pollster_data$pct))
+  expect_true(is.character(pollster_data$state))
+  expect_true(inherits(pollster_data$end_date, "Date"))
+  expect_true(is.numeric(pollster_data$num_supporters))
+  expect_true(is.numeric(pollster_data$candidate_binary))
 })
 
-# Test that the 'division' column is character type
-test_that("'division' is character", {
-  expect_type(analysis_data$division, "character")
+test_that("Numeric values are within expected ranges", {
+  expect_true(all(pollster_data$numeric_grade >= 0 & pollster_data$numeric_grade <= 5))
+  expect_true(all(pollster_data$pollscore >= -5 & pollster_data$pollscore <= 5))
+  expect_true(all(pollster_data$transparency_score >= 0 & pollster_data$transparency_score <= 10))
+  expect_true(all(pollster_data$sample_size > 0))
+  expect_true(all(pollster_data$pct >= 0 & pollster_data$pct <= 100))
+  expect_true(all(pollster_data$candidate_binary %in% c(0, 1)))
 })
 
-# Test that the 'party' column is character type
-test_that("'party' is character", {
-  expect_type(analysis_data$party, "character")
+test_that("Character values are valid", {
+  expect_true(all(pollster_data$population %in% c("rv", "lv", "a")))
+  expect_true(all(pollster_data$party %in% c("DEM", "REP")))
+  expect_true(all(pollster_data$answer %in% c("Harris", "Trump")))
 })
 
-# Test that the 'state' column is character type
-test_that("'state' is character", {
-  expect_type(analysis_data$state, "character")
+test_that("Dates are within expected range", {
+  expect_true(all(pollster_data$end_date >= as.Date("2024-01-01") & 
+                    pollster_data$end_date <= as.Date("2024-10-18")))
 })
 
-# Test that there are no missing values in the dataset
-test_that("no missing values in dataset", {
-  expect_true(all(!is.na(analysis_data)))
+test_that("No missing values in critical columns", {
+  critical_cols <- c("poll_id", "pollster", "pct", "answer", "end_date")
+  expect_true(all(!is.na(pollster_data[critical_cols])))
 })
 
-# Test that 'division' contains unique values (no duplicates)
-test_that("'division' column contains unique values", {
-  expect_equal(length(unique(analysis_data$division)), 151)
+test_that("Percentages sum to 100 (or close to it) for each poll", {
+  poll_totals <- pollster_data %>%
+    group_by(poll_id) %>%
+    summarize(total_pct = sum(pct))
+  expect_true(all(poll_totals$total_pct >= 99 & poll_totals$total_pct <= 101))
 })
 
-# Test that 'state' contains only valid Australian state or territory names
-valid_states <- c("New South Wales", "Victoria", "Queensland", "South Australia", "Western Australia", 
-                  "Tasmania", "Northern Territory", "Australian Capital Territory")
-test_that("'state' contains valid Australian state names", {
-  expect_true(all(analysis_data$state %in% valid_states))
+test_that("Candidate binary values match answer names", {
+  expect_true(all((pollster_data$answer == "Harris" & pollster_data$candidate_binary == 1) |
+                    (pollster_data$answer == "Trump" & pollster_data$candidate_binary == 0)))
 })
 
-# Test that there are no empty strings in 'division', 'party', or 'state' columns
-test_that("no empty strings in 'division', 'party', or 'state' columns", {
-  expect_false(any(analysis_data$division == "" | analysis_data$party == "" | analysis_data$state == ""))
-})
-
-# Test that the 'party' column contains at least 2 unique values
-test_that("'party' column contains at least 2 unique values", {
-  expect_true(length(unique(analysis_data$party)) >= 2)
+test_that("Number of supporters is consistent with percentage and sample size", {
+  pollster_data <- pollster_data %>%
+    mutate(calculated_supporters = round(pct * sample_size / 100))
+  expect_true(all(abs(pollster_data$num_supporters - pollster_data$calculated_supporters) <= 1))
 })
