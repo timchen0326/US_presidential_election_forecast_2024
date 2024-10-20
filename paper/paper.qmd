@@ -20,14 +20,14 @@ bibliography: references.bib
 #| message: false
 # Set a CRAN mirror
 # Set a specific CRAN mirror (this example uses the US CRAN mirror)
-install.packages("here")
+
 
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
 
 # Example of installing a package after setting the mirror
 install.packages("tidyverse")
 
-
+install.packages("here")
 library(tidyverse)
 # Install janitor package if not installed
 install.packages("janitor")
@@ -96,52 +96,224 @@ data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
 
 ```
 
+Simple Linear Regression for Kamala Harris and Donald Trump
+
+
+Kamala Harris
+We will perform a simple linear regression using pct (poll percentage) as the dependent variable and sample_size as the independent variable.
+
+
 ```{r}
-# Build the GLM model
-glm_model <- glm(candidate_binary ~ pct + sample_size + methodology + pollscore, 
-                 data = data, 
-                 family = binomial)
+# Load necessary library
+library(ggplot2)
+
+# Filter the data for only "Kamala Harris"
+harris_data <- subset(data, candidate_name == "Kamala Harris")
+
+# Perform a simple linear regression with pct as the dependent variable and sample_size as the independent variable
+model <- lm(pct ~ sample_size, data = harris_data)
 
 # Summary of the model
-summary(glm_model)
+summary(model)
 
-```
-
-```{r}
-# Make predictions
-predictions <- predict(glm_model, newdata = data, type = "response")
-
-# Convert probabilities into binary outcomes (1 for Harris win, 0 for Trump win)
-data$predicted_outcome <- ifelse(predictions > 0.5, 1, 0)
-
-# View the prediction results
-head(data)
-
-```
-
-
-```{r}
-# Confusion matrix
-table(data$candidate_binary, data$predicted_outcome)
-
-# Calculate accuracy
-accuracy <- mean(data$candidate_binary == data$predicted_outcome)
-accuracy
-
-
-```
-
-```{r}
-# Plot predicted probabilities
-ggplot(data, aes(x = pct, y = predictions, color = factor(candidate_binary))) +
+# Plot the relationship for Kamala Harris
+ggplot(harris_data, aes(x = sample_size, y = pct)) +
   geom_point() +
-  labs(title = "Predicted Probability of Harris Winning vs Poll Percentage",
-       x = "Polling Percentage", y = "Predicted Probability")
+  geom_smooth(method = "lm", col = "blue") +
+  labs(title = "Linear Regression of Percentage vs Sample Size for Kamala Harris",
+       x = "Sample Size",
+       y = "Percentage")
 
 
 ```
 
-Talk way more about it. 
+Donald Trump
+We will repeat the same process for Donald Trump.
+
+
+```{r}
+# Load necessary library
+library(ggplot2)
+
+# Filter the data for only "Kamala Harris"
+trump_data <- subset(data, candidate_name == "Donald Trump")
+
+# Perform a simple linear regression with pct as the dependent variable and sample_size as the independent variable
+model <- lm(pct ~ sample_size, data = trump_data)
+
+# Summary of the model
+summary(model)
+
+# Plot the relationship for Kamala Harris
+ggplot(trump_data, aes(x = sample_size, y = pct)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "blue") +
+  labs(title = "Linear Regression of Percentage vs Sample Size for Donald",
+       x = "Sample Size",
+       y = "Percentage")
+
+
+```
+
+
+Multiple Linear Regression (MLR) for Kamala Harris and Donald Trump
+
+
+Kamala Harris
+In this step, we will build a multiple linear regression (MLR) model for Kamala Harris using additional predictors like numeric_grade, pollscore, transparency_score, and state.
+
+```{r}
+# Convert categorical variables to factors for Kamala Harris
+harris_data$state <- as.factor(harris_data$state)
+harris_data$methodology <- as.factor(harris_data$methodology)
+
+# Build MLR model for Kamala Harris
+mlr_harris_model <- lm(pct ~ numeric_grade + pollscore + transparency_score + sample_size + state + methodology, data = harris_data)
+
+# Summary of the MLR model for Harris
+summary(mlr_harris_model)
+
+# Diagnostic plots for the MLR model
+par(mfrow = c(2, 2))
+plot(mlr_harris_model)
+par(mfrow = c(1, 1))  # Reset plot layout
+
+
+
+```
+
+Similarly, we build an MLR model for Donald Trump.
+```{r}
+# Convert categorical variables to factors for Trump
+trump_data$state <- as.factor(trump_data$state)
+trump_data$methodology <- as.factor(trump_data$methodology)
+
+# Build MLR model for Donald Trump
+mlr_trump_model <- lm(pct ~ numeric_grade + pollscore + transparency_score + sample_size + state + methodology, data = trump_data)
+
+# Summary of the MLR model for Trump
+summary(mlr_trump_model)
+
+# Diagnostic plots for the MLR model
+par(mfrow = c(2, 2))
+plot(mlr_trump_model)
+par(mfrow = c(1, 1))  # Reset plot layout
+```
+
+Check Multicollinearity using Variance Inflation Factor (VIF)
+
+```{r}
+# Load the car package for VIF
+if (!require(car)) install.packages("car")
+library(car)
+
+# Check VIF for Kamala Harris model
+vif(mlr_harris_model)
+
+# Refine the model by removing less significant predictors (e.g., methodology and transparency_score)
+mlr_harris_model_refined <- lm(pct ~ numeric_grade + pollscore + sample_size + state, data = harris_data)
+
+# Summary of the refined Harris model
+summary(mlr_harris_model_refined)
+
+# Check VIF for the refined model
+vif(mlr_harris_model_refined)
+
+# Plot diagnostic plots for the refined model
+par(mfrow = c(2, 2))
+plot(mlr_harris_model_refined)
+par(mfrow = c(1, 1))  # Reset plot layout
+
+```
+
+Stepwise Model Selection for Optimization
+
+```{r}
+# Perform stepwise selection to optimize the Harris model
+step_model <- step(mlr_harris_model_refined, direction = "both")
+
+# Summary of the stepwise model
+summary(step_model)
+
+# Plot diagnostic plots for the stepwise model
+par(mfrow = c(2, 2))
+plot(step_model)
+par(mfrow = c(1, 1))  # Reset layout
+
+```
+
+Final Models and Predictions for Kamala Harris and Donald Trump
+
+```{r}
+# Final models for Harris and Trump
+mlr_harris_model_final <- lm(pct ~ pollscore + log(sample_size) + state, data = harris_data)
+mlr_trump_model_final <- lm(pct ~ pollscore + log(sample_size) + state, data = trump_data)
+
+# Predict poll percentages for Kamala Harris
+harris_data$predicted_pct_harris <- predict(mlr_harris_model_final, newdata = harris_data)
+
+# Predict poll percentages for Donald Trump
+trump_data$predicted_pct_trump <- predict(mlr_trump_model_final, newdata = trump_data)
+
+```
+
+
+Electoral College Votes Prediction
+In this step, we aggregate the predictions for each state and determine the winner based on the electoral votes.
+
+```{r}
+# Define electoral votes for each state (and Washington, D.C.)
+electoral_votes <- data.frame(
+  state = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", 
+            "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", 
+            "Maine CD-1", "Maine CD-2", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", 
+            "Missouri", "Montana", "Nebraska", "Nebraska CD-1", "Nebraska CD-2", "Nebraska CD-3", "Nevada", 
+            "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", 
+            "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", 
+            "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming", 
+            "District of Columbia"),
+  electoral_votes = c(9, 3, 11, 6, 55, 9, 7, 3, 29, 16, 4, 4, 20, 11, 6, 6, 8, 8, 2, 1, 1, 10, 11, 15, 10, 6, 10, 
+                      3, 5, 1, 1, 2, 6, 4, 14, 5, 29, 16, 3, 18, 7, 6, 20, 4, 9, 3, 11, 38, 6, 3, 13, 12, 5, 10, 3, 3)
+)
+
+# Aggregate predictions by state for Harris and Trump
+harris_state_avg <- aggregate(predicted_pct_harris ~ state, data = harris_data, FUN = mean)
+trump_state_avg <- aggregate(predicted_pct_trump ~ state, data = trump_data, FUN = mean)
+
+# Merge predictions for both candidates
+prediction_comparison <- merge(harris_state_avg, trump_state_avg, by = "state", all.x = TRUE)
+
+# Merge the electoral votes with the predictions
+prediction_comparison <- merge(prediction_comparison, electoral_votes, by = "state", all.x = TRUE)
+
+# Determine the winner for each state
+prediction_comparison$winner <- ifelse(prediction_comparison$predicted_pct_harris > prediction_comparison$predicted_pct_trump, "Harris", "Trump")
+
+# Calculate total electoral votes for Kamala Harris
+harris_electoral_votes <- sum(prediction_comparison$electoral_votes[prediction_comparison$winner == "Harris"], na.rm = TRUE)
+
+# Calculate total electoral votes for Donald Trump
+trump_electoral_votes <- sum(prediction_comparison$electoral_votes[prediction_comparison$winner == "Trump"], na.rm = TRUE)
+
+# Print the results
+print(paste("Harris Electoral Votes:", harris_electoral_votes))
+print(paste("Trump Electoral Votes:", trump_electoral_votes))
+
+# Determine the predicted winner
+if (harris_electoral_votes >= 270) {
+  print("Kamala Harris is predicted to win the 2024 election.")
+} else if (trump_electoral_votes >= 270) {
+  print("Donald Trump is predicted to win the 2024 election.")
+} else {
+  print("No candidate reached 270 electoral votes.")
+}
+
+
+
+```
+
+
+
 
 ## Predictor variables
 
@@ -190,31 +362,31 @@ We can use maths by including latex between dollar signs, for instance $\theta$.
 Our results are summarized in @tbl-modelresults.
 
 ```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
+# #| echo: false
+# #| eval: true
+# #| warning: false
+# #| message: false
 
-library(rstanarm)
+# library(rstanarm)
 
-first_model <-
-  readRDS(file = here::here("models/first_model.rds"))
+# first_model <-
+#   readRDS(file = here::here("models/first_model.rds"))
 ```
 
 ```{r}
-#| echo: false
-#| eval: true
-#| label: tbl-modelresults
-#| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-#| warning: false
+# #| echo: false
+# #| eval: true
+# #| label: tbl-modelresults
+# #| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
+# #| warning: false
 
-modelsummary::modelsummary(
-  list(
-    "First model" = first_model
-  ),
-  statistic = "mad",
-  fmt = 2
-)
+# modelsummary::modelsummary(
+#   list(
+#     "First model" = first_model
+#   ),
+#   statistic = "mad",
+#   fmt = 2
+# )
 ```
 
 
