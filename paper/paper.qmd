@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
 date: today
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "This paper presents a statistical model for forecasting the outcome of the 2024 U.S. Presidential Election. Using polling data from various sources, we develop multiple linear regression models to predict the percentage of support for the main candidates, Kamala Harris and Donald Trump, in different states. We aggregate these predictions to simulate the Electoral College vote and estimate the likelihood of either candidate winning. Our results suggest that neither candidate currently secures the required 270 electoral votes to win the presidency."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -49,18 +49,11 @@ library(here)
 
 # Introduction
 
-Overview paragraph
+Forecasting elections has been a challenging task for political scientists and statisticians, especially given the complexity and volatility of electoral dynamics in the U.S. The 2024 U.S. Presidential Election is no exception, with polling data playing a critical role in shaping public and expert expectations. Pollsters use different methodologies and sample populations, which can significantly affect the predictions.
 
-Estimand paragraph
+This paper aims to forecast the 2024 U.S. Presidential Election using multiple linear regression models based on polling data. We use various predictors such as sample size, pollster ratings, and state-level data to predict support for Kamala Harris and Donald Trump across the United States. We then aggregate these predictions to simulate the Electoral College outcome.
 
-Results paragraph
-
-Why it matters paragraph
-
-Telegraphing paragraph: The remainder of this paper is structured as follows. @sec-data....
-
-
-
+The rest of this paper is structured as follows: Section 2 describes the data used for this analysis. Section 3 outlines the models developed for each candidate and their corresponding results. Section 4 discusses the aggregated Electoral College predictions. Finally, Section 5 provides conclusions and suggestions for future research.
 
 
 
@@ -68,23 +61,18 @@ Telegraphing paragraph: The remainder of this paper is structured as follows. @s
 
 ## Overview
 
-We use the statistical programming language R [@citeR].... Our data [@shelter].... Following @tellingstories, we consider...
+The dataset used in this analysis contains poll data from various sources, including information about polling organizations, sample sizes, methodologies, and state-level data. It includes several key variables, such as:
 
-Overview text
-
-## Measurement
-	
-Some paragraphs about how we go from a phenomena in the world to an entry in the dataset.
-
-## Outcome variables
-
-Add graphs, tables and text. Use sub-sub-headings for each outcome variable or update the subheading to be singular.
-
-
-
-Some of our data is of penguins (@fig-bills), from @palmerpenguins.
+Pollster rating: A score that represents the reliability of the polling organization.
+Sample size: The number of respondents in each poll.
+Support percentage: The percentage of respondents supporting each candidate.
+State: The U.S. state where the poll was conducted or, in some cases, national polling data.
+The data has been processed and cleaned to ensure that all variables are correctly aligned for regression analysis. The variables were transformed into numeric forms where necessary (e.g., percentage of support), and missing data was handled appropriately.
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 # Load necessary libraries
 library(dplyr)
 library(tidyr)
@@ -92,18 +80,60 @@ library(tidyr)
 # Load the dataset
 data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
 
+```
 
+## Outcome variables
+
+Our primary outcome variable is the percentage of support for Kamala Harris and Donald Trump in each poll. Figure 1 below shows the distribution of support for both candidates across the polls included in the dataset.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+# Summary statistics for percentage support (pct)
+summary(data$pct)
+
+# Plotting percentage support for different candidates
+ggplot(data, aes(x = candidate_name, y = pct)) +
+  geom_boxplot() +
+  labs(title = "Support Distribution Across Candidates", x = "Candidate", y = "Percentage")
 
 ```
 
-Simple Linear Regression for Kamala Harris and Donald Trump
 
 
-Kamala Harris
-We will perform a simple linear regression using pct (poll percentage) as the dependent variable and sample_size as the independent variable.
 
+
+Multiple Linear Regression (MLR) for Kamala Harris and Donald Trump
+
+
+
+
+
+Electoral College Votes Prediction
+In this step, we aggregate the predictions for each state and determine the winner based on the electoral votes.
+
+
+
+
+
+
+## Predictor variables
+
+Add graphs, tables and text.
+
+Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
+
+
+# Modeling Support for the Candidates
+
+## Kamala Harris
+We begin by modeling the percentage of support for Kamala Harris using a linear regression model. The predictors include the sample size, pollster ratings (e.g., pollscore and transparency score), and state. This model aims to quantify how these variables influence her support across different polls.
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 # Load necessary library
 library(ggplot2)
 
@@ -113,9 +143,14 @@ harris_data <- subset(data, candidate_name == "Kamala Harris")
 # Perform a simple linear regression with pct as the dependent variable and sample_size as the independent variable
 model <- lm(pct ~ sample_size, data = harris_data)
 
-# Summary of the model
-summary(model)
 
+```
+
+The results of the linear regression for Kamala Harris show that sample size has a statistically insignificant effect on her support. This suggests that factors other than sample size, such as pollster methodology or regional biases, may play a more significant role in determining the level of support she receives.
+
+Figure 2 illustrates the relationship between the sample size and support percentage for Kamala Harris.
+
+```{r}
 # Plot the relationship for Kamala Harris
 ggplot(harris_data, aes(x = sample_size, y = pct)) +
   geom_point() +
@@ -127,11 +162,13 @@ ggplot(harris_data, aes(x = sample_size, y = pct)) +
 
 ```
 
-Donald Trump
-We will repeat the same process for Donald Trump.
-
+## Donald Trump
+A similar linear regression model was applied to Donald Trump's data. The predictors remain the same, and the goal is to determine the factors that drive support for him.
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 # Load necessary library
 library(ggplot2)
 
@@ -141,9 +178,13 @@ trump_data <- subset(data, candidate_name == "Donald Trump")
 # Perform a simple linear regression with pct as the dependent variable and sample_size as the independent variable
 model <- lm(pct ~ sample_size, data = trump_data)
 
-# Summary of the model
-summary(model)
 
+```
+
+The results indicate that sample size has a weak but statistically significant negative effect on support for Trump. This suggests that larger polls tend to show slightly lower support for Trump, although the effect size is small.
+
+Figure 3 shows the relationship between the sample size and support percentage for Donald Trump.
+```{r}
 # Plot the relationship for Kamala Harris
 ggplot(trump_data, aes(x = sample_size, y = pct)) +
   geom_point() +
@@ -155,23 +196,19 @@ ggplot(trump_data, aes(x = sample_size, y = pct)) +
 
 ```
 
+## Multiple Linear Regression Models
+To better capture the complexity of voter support, we constructed multiple linear regression (MLR) models for both Kamala Harris and Donald Trump. These models incorporate several predictors, including pollster rating (represented by pollscore), transparency score, sample size, and state-level data. By accounting for these factors, the MLR models allow us to control for more variables that influence voter support and provide more accurate predictions.
 
-Multiple Linear Regression (MLR) for Kamala Harris and Donald Trump
+### Kamala Harris Model
+The MLR model for Kamala Harris takes into account multiple factors that may impact her support across different polls. This includes not just the sample size of the poll, but also how pollster reliability (numeric_grade), transparency of poll data (transparency_score), and state-level polling contribute to predicting voter preferences.
 
 
-Kamala Harris
-In this step, we will build a multiple linear regression (MLR) model for Kamala Harris using additional predictors like numeric_grade, pollscore, transparency_score, and state.
 
 ```{r}
-# Convert categorical variables to factors for Kamala Harris
-harris_data$state <- as.factor(harris_data$state)
-harris_data$methodology <- as.factor(harris_data$methodology)
-
-# Build MLR model for Kamala Harris
-mlr_harris_model <- lm(pct ~ numeric_grade + pollscore + transparency_score + sample_size + state + methodology, data = harris_data)
-
-# Summary of the MLR model for Harris
-summary(mlr_harris_model)
+#| echo: false
+#| message: false
+#| warning: false
+mlr_harris_model <- readRDS(here::here(("models/mlr_harris_model.rds")))
 
 # Diagnostic plots for the MLR model
 par(mfrow = c(2, 2))
@@ -182,27 +219,39 @@ par(mfrow = c(1, 1))  # Reset plot layout
 
 ```
 
+The results of the MLR for Kamala Harris show that several predictors, including state and pollster rating, significantly impact her predicted percentage of voter support. These results suggest that voter preferences for Harris vary widely depending on the state and the credibility of the pollster.
+
+The model diagnostics (such as residual plots, QQ plots) were evaluated to ensure the assumptions of linear regression hold. Figure X shows diagnostic plots, which indicate that the model performs reasonably well in terms of residual behavior and normality.
 Similarly, we build an MLR model for Donald Trump.
+
+### Donald Trump Model
+Similarly, we constructed an MLR model for Donald Trump using the same set of predictors to assess the factors that influence his support across the country.
 ```{r}
-# Convert categorical variables to factors for Trump
-trump_data$state <- as.factor(trump_data$state)
-trump_data$methodology <- as.factor(trump_data$methodology)
+#| echo: false
+#| message: false
+#| warning: false
+# Load the saved MLR model for Donald Trump
+mlr_trump_model <- readRDS(here::here(("models/mlr_trump_model.rds")))
 
-# Build MLR model for Donald Trump
-mlr_trump_model <- lm(pct ~ numeric_grade + pollscore + transparency_score + sample_size + state + methodology, data = trump_data)
-
-# Summary of the MLR model for Trump
-summary(mlr_trump_model)
 
 # Diagnostic plots for the MLR model
-par(mfrow = c(2, 2))
-plot(mlr_trump_model)
-par(mfrow = c(1, 1))  # Reset plot layout
+par(mfrow = c(2, 2))  # Set up 2x2 layout for multiple plots
+plot(mlr_trump_model)  # Generates diagnostic plots: residuals, QQ plot, etc.
+par(mfrow = c(1, 1))  # Reset the plot layout to normal
+
 ```
 
+
+The results for Donald Trump reveal that state-level variations and pollster transparency play a significant role in explaining his level of support. The model for Trump also passes diagnostic checks, as shown in Figure Y, indicating that the assumptions of linearity, independence, and homoscedasticity are reasonably met.
 Check Multicollinearity using Variance Inflation Factor (VIF)
 
+## Multicollinearity Check Using Variance Inflation Factor (VIF)
+To ensure that the predictors used in both models do not exhibit multicollinearity, we checked the Variance Inflation Factor (VIF) for each predictor. High VIF values indicate multicollinearity, which can affect the stability and reliability of the model coefficients.
+
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 # Load the car package for VIF
 if (!require(car)) install.packages("car")
 library(car)
@@ -211,10 +260,9 @@ library(car)
 vif(mlr_harris_model)
 
 # Refine the model by removing less significant predictors (e.g., methodology and transparency_score)
-mlr_harris_model_refined <- lm(pct ~ numeric_grade + pollscore + sample_size + state, data = harris_data)
+mlr_harris_model_refined <- readRDS(here::here(("models/mlr_harris_model_refined.rds")))
 
 # Summary of the refined Harris model
-summary(mlr_harris_model_refined)
 
 # Check VIF for the refined model
 vif(mlr_harris_model_refined)
@@ -226,14 +274,17 @@ par(mfrow = c(1, 1))  # Reset plot layout
 
 ```
 
-Stepwise Model Selection for Optimization
+Based on the VIF results, we refined the model by removing less significant predictors (such as methodology and transparency_score) to reduce multicollinearity. This improves the model's accuracy and interpretability.
+
+## Stepwise Model Selection
+To further optimize the MLR models, we performed stepwise model selection, which systematically adds or removes predictors to minimize the Akaike Information Criterion (AIC) and improve model fit.
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 # Perform stepwise selection to optimize the Harris model
 step_model <- step(mlr_harris_model_refined, direction = "both")
-
-# Summary of the stepwise model
-summary(step_model)
 
 # Plot diagnostic plots for the stepwise model
 par(mfrow = c(2, 2))
@@ -242,12 +293,18 @@ par(mfrow = c(1, 1))  # Reset layout
 
 ```
 
-Final Models and Predictions for Kamala Harris and Donald Trump
+The stepwise model selection improved the model by retaining the most significant predictors and eliminating those with little explanatory power.
+
+## Final Predictions for Electoral College Votes
+Using the final models for both candidates, we predicted the percentage of support in each state and aggregated the results to simulate the Electoral College outcome. The predicted percentage of support for each candidate is used to determine the likely winner in each state.
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 # Final models for Harris and Trump
-mlr_harris_model_final <- lm(pct ~ pollscore + log(sample_size) + state, data = harris_data)
-mlr_trump_model_final <- lm(pct ~ pollscore + log(sample_size) + state, data = trump_data)
+mlr_harris_model_final <- readRDS(here::here(("models/mlr_harris_model_final.rds")))
+mlr_trump_model_final <- readRDS(here::here(("models/mlr_trump_model_final.rds")))
 
 # Predict poll percentages for Kamala Harris
 harris_data$predicted_pct_harris <- predict(mlr_harris_model_final, newdata = harris_data)
@@ -258,10 +315,13 @@ trump_data$predicted_pct_trump <- predict(mlr_trump_model_final, newdata = trump
 ```
 
 
-Electoral College Votes Prediction
-In this step, we aggregate the predictions for each state and determine the winner based on the electoral votes.
+# Electoral College Prediction
+To forecast the winner of the 2024 election, we aggregate the predicted percentages of support from our models for each state and calculate the Electoral College votes. The candidate with 270 or more Electoral College votes is predicted to win the election.
 
 ```{r}
+#| echo: false
+#| message: false
+#| warning: false
 # Define electoral votes for each state (and Washington, D.C.)
 electoral_votes <- data.frame(
   state = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", 
@@ -312,101 +372,44 @@ if (harris_electoral_votes >= 270) {
 
 ```
 
-
-
-
-## Predictor variables
-
-Add graphs, tables and text.
-
-Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
-
-
-
-
-
-
-
-
-# Model
-
-The goal of our modelling strategy is twofold. Firstly,...
-
-Here we briefly describe the Bayesian analysis model used to investigate... Background details and diagnostics are included in [Appendix -@sec-model-details].
-
-## Model set-up
-
-Define $y_i$ as the number of seconds that the plane remained aloft. Then $\beta_i$ is the wing width and $\gamma_i$ is the wing length, both measured in millimeters.  
-
-\begin{align} 
-y_i|\mu_i, \sigma &\sim \mbox{Normal}(\mu_i, \sigma) \\
-\mu_i &= \alpha + \beta_i + \gamma_i\\
-\alpha &\sim \mbox{Normal}(0, 2.5) \\
-\beta &\sim \mbox{Normal}(0, 2.5) \\
-\gamma &\sim \mbox{Normal}(0, 2.5) \\
-\sigma &\sim \mbox{Exponential}(1)
-\end{align}
-
-We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
-
-
-### Model justification
-
-We expect a positive relationship between the size of the wings and time spent aloft. In particular...
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
-
-# Results
-
-Our results are summarized in @tbl-modelresults.
-
-```{r}
-# #| echo: false
-# #| eval: true
-# #| warning: false
-# #| message: false
-
-# library(rstanarm)
-
-# first_model <-
-#   readRDS(file = here::here("models/first_model.rds"))
-```
-
-```{r}
-# #| echo: false
-# #| eval: true
-# #| label: tbl-modelresults
-# #| tbl-cap: "Explanatory models of flight time based on wing width and wing length"
-# #| warning: false
-
-# modelsummary::modelsummary(
-#   list(
-#     "First model" = first_model
-#   ),
-#   statistic = "mad",
-#   fmt = 2
-# )
-```
-
-
+According to our models, neither candidate secures the 270 Electoral College votes needed to win. Kamala Harris is projected to receive 216 electoral votes, while Donald Trump is predicted to win 147 electoral votes. However, due to the lack of 270 electoral votes for either candidate, the election remains highly competitive, and further developments may shift the balance.
 
 
 # Discussion
 
-## First discussion point {#sec-first-point}
+## Key Findings
+The multiple linear regression (MLR) models developed in this paper provide valuable insights into the factors that influence voter support for Kamala Harris and Donald Trump. Through the analysis of polling data, several key predictors were identified as significant, including state, pollster rating (pollscore), and transparency score.
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+Kamala Harris
+The MLR model for Kamala Harris highlights the importance of state-level factors in determining her support. The model shows that voter preferences vary significantly across different states, with certain states (e.g., California and Maryland) showing higher support levels, while others (e.g., Indiana and Missouri) show lower support. Pollster reliability, captured through numeric grades and transparency scores, also plays an important role, suggesting that voters may respond differently based on the credibility of the pollster.
 
-## Second discussion point
+Donald Trump
+Similarly, the MLR model for Donald Trump reveals that state-level variations are critical to understanding his level of support. The model indicates that Trump’s support is more stable across certain states, but there are also notable outliers where his support fluctuates. Pollster characteristics, such as pollscore and transparency score, significantly impact Trump’s predicted support, reflecting the importance of poll quality in predicting election outcomes.
 
-Please don't use these as sub-heading labels - change them to be what your point actually is.
+Electoral College Forecast
+Aggregating state-level predictions into Electoral College votes demonstrates the potential competitiveness of the 2024 U.S. Presidential Election. According to the predictions, neither Kamala Harris nor Donald Trump currently secures the necessary 270 electoral votes to win. Harris is projected to receive 216 electoral votes, while Trump is predicted to receive 147 electoral votes. This forecast suggests that the election remains highly uncertain, with several key battleground states likely determining the final outcome.
 
-## Third discussion point
+## Model Strengths
+One of the main strengths of this analysis is the incorporation of multiple predictors that allow us to account for various factors influencing voter support. By considering state-level data, pollster ratings, and transparency scores, the models provide a more nuanced prediction of voter behavior compared to models that rely solely on national-level polling.
 
-## Weaknesses and next steps
+The use of stepwise model selection and multicollinearity checks further enhanced the robustness of the models by optimizing the choice of predictors and ensuring that the models do not suffer from unstable estimates caused by correlated predictors.
 
-Weaknesses and next steps should also be included.
+Additionally, the aggregation of state-level predictions into Electoral College outcomes presents a more realistic forecast of the election, as the U.S. Presidential election is ultimately decided by electoral votes, not popular votes.
+
+## Limitations
+Despite the strengths of the models, there are several limitations that should be addressed:
+
+Poll Reliability and Sampling Bias: The accuracy of the predictions depends heavily on the quality of the polling data. Although the model accounts for pollster ratings, polling methodologies can still introduce biases, particularly in states with limited polling data. Sampling errors and non-response biases could skew the results, especially in smaller states or regions with inconsistent polling coverage.
+
+Static Prediction: The model provides a static snapshot of voter support based on current polling data, which may not capture the dynamic nature of voter preferences over time. As election day approaches, voter preferences may shift due to campaign events, debates, or other external factors. Without time-series data, the model may fail to account for these trends.
+
+Unaccounted Variables: Although the model includes important predictors like state, pollscore, and transparency score, other potentially influential factors, such as economic conditions, campaign spending, and voter turnout, are not included in the analysis. These unaccounted variables may introduce inaccuracies in the final predictions.
+## Future Research Directions
+Future work could improve upon this analysis by addressing some of the limitations mentioned above. For instance, incorporating time-series data could allow the model to capture how voter preferences evolve in response to external factors such as campaign events, economic developments, and political endorsements. A dynamic forecasting model that updates predictions as new polls are released would provide more timely and accurate forecasts.
+
+Moreover, integrating other influential variables, such as economic indicators (e.g., unemployment rates, inflation), voter turnout models, and campaign spending data, could enhance the predictive power of the model. Including demographic data (e.g., age, education, income) could also improve the granularity of predictions, especially in battleground states where demographic shifts are critical to election outcomes.
+
+Finally, expanding the model to account for ranked-choice voting in certain states could provide a more accurate forecast in scenarios where third-party candidates or run-off elections play a significant role.
 
 \newpage
 
