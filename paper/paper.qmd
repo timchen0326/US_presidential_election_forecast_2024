@@ -79,22 +79,7 @@ Talk more about it.
 
 And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
 
-```{r}
-#| label: fig-planes
-#| fig-cap: Relationship between wing length and width
-#| echo: false
-#| warning: false
-#| message: false
 
-analysis_data <- read_csv(here::here("data/02-analysis_data/analysis_data.csv"))
-
-analysis_data |> 
-  ggplot(aes(x = width, y = length)) +
-  geom_point(alpha = 0.8) +
-  theme_minimal() +
-  labs(x = "Wing width (mm)",
-       y = "Wing length (mm)")
-```
 
 Talk way more about it. 
 
@@ -198,58 +183,119 @@ Weaknesses and next steps should also be included.
 # Appendix {-}
 
 
-# Additional data details
+## Idealized Methodology and Survey Design for Forecasting the US Presidential Election
 
-# Model details {#sec-model-details}
+Objective: The goal of this methodology is to forecast the outcome of the U.S. presidential election using a representative sample, ensuring accuracy, transparency, and cost-efficiency with a budget of $100,000.
 
-## Posterior predictive check
+1. Sampling Approach
+1.1. Target Population
+The target population is the U.S. voting-eligible population (VEP), which consists of all U.S. citizens over the age of 18 who are eligible to vote in the upcoming election. This includes both registered voters and likely voters, ensuring inclusivity in the survey while focusing more on likely voters, as they have the highest chance of participating in the election.
 
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check. This shows...
+1.2. Sample Size Calculation
+Given a total population of over 250 million U.S. adults and assuming a margin of error of ±2% at a 95% confidence level, we aim for a sample size of n = 2,500 respondents. This will provide adequate precision in estimating key outcomes, such as the overall percentage of votes for the candidates.
 
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior. This shows... 
+Budget considerations: We estimate that survey responses can be collected at a cost of approximately $25 per respondent (including recruitment, incentives, and data validation costs), which gives a budget allocation of approximately $62,500 for data collection.
+1.3. Sampling Frame
+We will use multi-stage stratified sampling to ensure a representative and balanced sample that reflects the demographics of the U.S. electorate.
+
+Stage 1: Stratification by state (to ensure geographic representativeness), including oversampling battleground states like Pennsylvania, Wisconsin, Michigan, and Florida.
+Stage 2: Stratification within each state by demographic variables such as age, gender, race/ethnicity, and education. These are key factors that influence voting behavior and must be accurately represented.
+Stage 3: Random sampling of individuals within each stratum using lists from voter registration databases and online panel recruitment for hard-to-reach groups.
+This method ensures that all relevant subpopulations are sufficiently represented, and weighting adjustments can be made later if necessary to correct for any sampling imbalances.
+
+2. Recruitment of Respondents
+2.1. Recruitment Channels
+We will employ a mixed-method recruitment strategy:
+
+Online Panels: Leveraging existing voter panels such as YouGov and Ipsos, we will recruit participants with a focus on capturing a diverse range of demographics.
+Random-Digit Dialing (RDD): To reach populations not heavily engaged online, especially older voters, we will conduct telephone interviews using RDD (both landline and cell phones).
+Incentives: Offering a small monetary incentive (e.g., $10 per completed survey) will encourage participation and increase response rates.
+2.2. Survey Mode
+A mixed-mode survey approach will be used to reach a broad range of participants:
+
+Online surveys for digitally engaged respondents.
+Telephone surveys (both live interviews and Interactive Voice Response (IVR)) for those less likely to respond online, particularly among older voters and rural populations.
+3. Survey Instrument Design
+3.1. Survey Questions
+The survey will consist of a mix of closed-ended and open-ended questions, focusing on:
+
+Voter preferences: Asking respondents whom they plan to vote for, using both traditional candidate name options and ranked-choice format (if applicable to state-specific elections).
+Voter likelihood: A question to assess how likely the respondent is to vote, with responses on a Likert scale (e.g., "How likely are you to vote in the upcoming election?").
+Demographics: Standard questions on age, gender, race/ethnicity, education, income, and region to ensure representativeness.
+Issue-based questions: Gathering respondents' positions on key policy issues (e.g., economy, healthcare, climate change), as this may correlate with candidate preference.
+3.2. Survey Length
+The survey will be concise to avoid fatigue, aiming for a completion time of no more than 10-15 minutes.
+
+4. Data Validation and Quality Control
+4.1. Response Validation
+Deduplication: Using respondent IP addresses, phone numbers, and other unique identifiers, we will ensure no duplicate responses are included.
+Screening questions: Filtering out respondents who are ineligible to vote or not part of the target population (e.g., non-U.S. citizens, individuals under 18).
+Attention checks: Including questions that help detect respondents who are not paying attention (e.g., “Select option 3 to continue”).
+4.2. Weighting and Post-Stratification
+We will employ post-stratification weighting to adjust the data to match known population benchmarks, using factors such as:
+
+Age
+Gender
+Race/Ethnicity
+Education level
+Geographic location (state)
+Voting history (using voter file data)
+This will help correct any sampling biases and ensure that our sample is demographically aligned with the general U.S. electorate.
+
+Weighting will be performed using R’s survey package, which allows us to adjust for complex survey designs.
+
+4.3. Polling Aggregation
+To improve the robustness of our forecast, we will aggregate our poll results with other reliable polls. Poll aggregation will use a Bayesian model, weighting polls based on:
+
+Sample size
+Methodology (online, IVR, live phone interviews)
+Pollster accuracy ratings (using metrics like FiveThirtyEight’s pollster ratings)
+The model will also account for the recency of the polls and house effects (consistent biases shown by particular pollsters).
+
+5. Data Analysis and Forecasting
+5.1. Predictive Model
+We will employ a multilevel regression and post-stratification (MRP) model to forecast election outcomes. This model will leverage both individual-level survey data and state-level covariates (e.g., past voting behavior, demographic composition) to make predictions for each state.
 
 ```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-ppcheckandposteriorvsprior
-#| layout-ncol: 2
-#| fig-cap: "Examining how the model fits, and is affected by, the data"
-#| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
+# # Loading necessary libraries
+# library(survey)
+# library(dplyr)
 
-pp_check(first_model) +
-  theme_classic() +
-  theme(legend.position = "bottom")
+# # Assuming 'poll_data' is a dataframe with survey responses
 
-posterior_vs_prior(first_model) +
-  theme_minimal() +
-  scale_color_brewer(palette = "Set1") +
-  theme(legend.position = "bottom") +
-  coord_flip()
+# # Define survey design
+# design <- svydesign(ids = ~1, strata = ~state, weights = ~weight, data = poll_data)
+
+# # Post-stratification weighting
+# # Assume we have a dataframe 'pop_data' with known population distributions
+# post_strat_weights <- postStratify(design, ~age + gender + race, pop_data)
+
+# # Run the weighted analysis (e.g., estimate support for candidate)
+# result <- svymean(~candidate_support, post_strat_weights)
+# print(result)
+
+# # Aggregate polls using Bayesian updating
+# # Assume 'aggregated_polls' is a dataframe with multiple polls' data
+# library(rstanarm)
+
+# # Fit Bayesian model
+# fit <- stan_glm(candidate_support ~ poll_method + recency, data = aggregated_polls, family = binomial())
+# summary(fit)
+
+# # Predict election outcome
+# predictions <- posterior_predict(fit, newdata = new_poll_data)
+# print(predictions)
+
 ```
 
-## Diagnostics
-
-@fig-stanareyouokay-1 is a trace plot. It shows... This suggests...
-
-@fig-stanareyouokay-2 is a Rhat plot. It shows... This suggests...
-
-```{r}
-#| echo: false
-#| eval: true
-#| message: false
-#| warning: false
-#| label: fig-stanareyouokay
-#| fig-cap: "Checking the convergence of the MCMC algorithm"
-#| fig-subcap: ["Trace plot", "Rhat plot"]
-#| layout-ncol: 2
-
-plot(first_model, "trace")
-
-plot(first_model, "rhat")
-```
-
+## Budget Allocation
+Category	Cost Estimate
+Survey recruitment & incentives	$62,500
+Data validation & quality control	$10,000
+Poll aggregation & modeling software	$7,500
+Statistical consulting & data analysis	$10,000
+Miscellaneous (overheads, report writing)	$10,000
+Total	$100,000
 
 
 \newpage
