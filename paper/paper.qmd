@@ -114,10 +114,15 @@ ggplot(data, aes(x = candidate_name, y = pct, fill = candidate_name)) +
 
 ## Predictor variables
 
-Add graphs, tables and text.
+In our analysis, we utilized several key predictor variables to model voter support for Kamala Harris and Donald Trump in the 2024 U.S. Presidential Election. These predictor variables were selected based on their expected influence on polling results and their ability to account for variations in polling accuracy and voter behavior across different states.
 
-Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
+One of the key predictors is numeric grade, which represents a composite measure of poll quality. This variable accounts for various aspects of a poll’s reliability, such as the transparency of its methodology and the pollster’s historical accuracy. Pollscore, another important predictor, provides a similar measure of poll reliability but focuses more on the specific performance of the polling organization in recent elections.
 
+Transparency score measures how openly polling organizations disclose their methodology and data, which can significantly impact the trustworthiness of the results. Polls with higher transparency scores are given more weight in the model, as they are generally considered more reliable. The sample size of each poll is also included, as larger sample sizes tend to reduce the margin of error and provide more precise estimates of voter support.
+
+Geographic differences in voter preferences are captured through the state variable, which accounts for regional variations in political culture, demographics, and historical voting patterns. Lastly, methodology refers to the techniques and approaches used by the polling organizations, such as whether the poll was conducted online, by phone, or through other means.
+
+All predictor variables—numeric grade, pollscore, transparency score, sample size, state, and methodology—are presented in @tbl-overview_data.
 
 ## Cleaning Process and Analysis
 
