@@ -83,15 +83,22 @@ data_overview %>%
 
 ```
 
-## Outcome variables
+## Measurement and Limitations
 
-Our primary outcome variable is the percentage of support for Kamala Harris and Donald Trump in each poll.
+The primary limitations of this analysis stem from the quality and variability of polling data, which can introduce biases through factors like sample size and pollster methodology. Additionally, the model provides a static snapshot of voter preferences, without accounting for the dynamic nature of elections For instance, shifts in public opinion over time or the impact of campaign events. The exclusion of key external factors, such as economic conditions or voter turnout, also limits the model's ability to fully capture the complexities of election outcomes. Furthermore, the simplified Electoral College simulation assumes that polling data will accurately predict state-level results, which may not always be the case, especially in battleground states with volatile voter behavior.
+
+
+
+## Outcome variables
+Our primary outcome variable is the percentage of support for Kamala Harris and Donald Trump in each poll. This variable is central to our analysis because it directly captures voter preference, which is the most relevant metric for forecasting election outcomes. By modeling the percentage of support, we can quantify how various factors—such as pollster quality, sample size, and state-level dynamics—influence the candidates' standings in the polls. This outcome variable also allows us to simulate the Electoral College results by aggregating predicted support across different states, which is crucial for determining the likelihood of either candidate winning the presidency.
+
 @fig-support below shows the distribution of support for both candidates across the polls included in the dataset.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+#| fig.pos: "H"
 #| label: fig-support
 #| fig-cap: Distribution of Support between Both Candidates
 
@@ -103,18 +110,23 @@ ggplot(data, aes(x = candidate_name, y = pct, fill = candidate_name)) +
        y = "Percentage of Support") +
   theme_minimal() +
   theme(legend.position = "none")
-
 ```
-
-Multiple Linear Regression (MLR) for Kamala Harris and Donald Trump
-
-Electoral College Votes Prediction In this step, we aggregate the predictions for each state and determine the winner based on the electoral votes.
 
 ## Predictor variables
 
 Add graphs, tables and text.
 
 Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
+
+
+## Cleaning Process and Analysis
+
+The data cleaning process uses R [@citeR] as well as other packages such as tidyverse [@tidyverse], dplyr [@dplyr], janitor [@janitor] and lubridate [@lubridate]. Begin by standardizing column name to ensure consistency and avoid errors during analysis. The dataset was filtered to focus solely on Kamala Harris and Donald Trump, with polls below a numeric grade of 2.7 excluded to maintain high-quality data. Missing state information was categorized as “National” polls, and the poll end dates were converted to a date format to include only polls conducted after the candidates officially declared their candidacies. This ensures the analysis reflects relevant, up-to-date voter preferences. Additionally, transformations such as calculating the number of supporters from the percentage support and encoding a binary variable for the candidates (Harris = 1, Trump = 0) were performed to enhance usability in the regression models.
+
+Some variables were excluded for simplicity and relevance. For example, **population_full** and **answer** were dropped as they provided redundant or unnecessary information for this analysis. However, key variables like **pollster**, **pollscore**, **numeric grade**, and **sample size** were retained because they provide essential insights into the quality and precision of the polls, directly influencing the reliability of the models. These steps ensured the cleaned dataset was ready for analysis, with a focus on the most important predictors of voter support while minimizing extraneous information.
+
+
+
 
 # Modeling Support for the Candidates {#sec-model}
 
@@ -181,7 +193,7 @@ model <- lm(pct ~ sample_size, data = trump_data)
 
 ```
 
-The results in @figure-2 indicate that sample size has a weak but statistically significant negative effect on support for Trump.
+The results in indicate that sample size has a weak but statistically significant negative effect on support for Trump.
 This suggests that larger polls tend to show slightly lower support for Trump, although the effect size is small.
 
 Figure 3 shows the relationship between the sample size and support percentage for Donald Trump.
@@ -190,7 +202,7 @@ Figure 3 shows the relationship between the sample size and support percentage f
 #| echo: false
 #| message: false
 #| warning: false
-#| label: figure-2
+
 # Plot the relationship for Kamala Harris
 ggplot(trump_data, aes(x = sample_size, y = pct)) +
   geom_point() +
