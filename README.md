@@ -53,7 +53,7 @@ The repository is structured as follows:
   - `07-replications.R`
 
 - `.gitignore`: Specifies files to ignore in version control.
-- `starter_folder.Rproj`: The R project file (to be renamed).
+- `us_presidential_election_forecast_2024.Rproj`: The R project file.
 - `README.md`: This file.
 
 ## Statement on LLM Usage
