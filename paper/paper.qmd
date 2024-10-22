@@ -213,7 +213,8 @@ ggplot(trump_data, aes(x = sample_size, y = pct)) +
   labs(x = "Sample Size",
        y = "Percentage")
 
-
+mlr_harris_model <- readRDS(here::here(("models/mlr_harris_model.rds")))
+mlr_trump_model <- readRDS(here::here(("models/mlr_trump_model.rds")))
 ```
 
 ## Multiple Linear Regression Models
@@ -226,21 +227,6 @@ By accounting for these factors, the MLR models allow us to control for more var
 
 The MLR model for Kamala Harris takes into account multiple factors that may impact her support across different polls. This includes not just the sample size of the poll, but also how pollster reliability (numeric_grade), transparency of poll data (transparency_score), and state-level polling contribute to predicting voter preferences.
 
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-mlr-harris
-#| fig-cap: Multi-Linear Regression model for Kamala Harris
-
-mlr_harris_model <- readRDS(here::here(("models/mlr_harris_model.rds")))
-
-# Diagnostic plots for the MLR model
-par(mfrow = c(2, 2))
-plot(mlr_harris_model)
-par(mfrow = c(1, 1))  # Reset plot layout
-```
-
 The results in @fig-mlr-harris show that several predictors, including state and pollster rating, significantly impact her predicted percentage of voter support.
 These results suggest that voter preferences for Harris vary widely depending on the state and the credibility of the pollster.
 
@@ -251,23 +237,6 @@ Similarly, we build an MLR model for Donald Trump.
 ### Donald Trump Model
 
 Similarly, we constructed an MLR model for Donald Trump using the same set of predictors to assess the factors that influence his support across the country.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-mlr-trump
-#| fig-cap: Multi-Linear Regression model for Donald Trump
-
-# Load the saved MLR model for Donald Trump
-mlr_trump_model <- readRDS(here::here(("models/mlr_trump_model.rds")))
-
-# Diagnostic plots for the MLR model
-par(mfrow = c(2, 2))  # Set up 2x2 layout for multiple plots
-plot(mlr_trump_model)  # Generates diagnostic plots: residuals, QQ plot, etc.
-par(mfrow = c(1, 1))  # Reset the plot layout to normal
-
-```
 
 The results for Donald Trump in @fig-mlr-trump reveal that state-level variations and pollster transparency play a significant role in explaining his level of support.
 The model for Trump also passes diagnostic checks, as shown in Figure Y, indicating that the assumptions of linearity, independence, and homoscedasticity are reasonably met.
@@ -286,27 +255,12 @@ To ensure that the predictors used in both models do not exhibit multi-collinear
 
 # Check VIF for Kamala Harris model
 kable(vif(mlr_harris_model), digits=3)
+
+mlr_harris_model_refined <- readRDS(here::here(("models/mlr_harris_model_refined.rds")))
 ```
 
 Based on the VIF results in @tbl-harris-vif, we refined the model by removing less significant predictors (such as methodology and transparency_score) to reduce multi-collinearity.This improves the model's accuracy and interpretability.
 
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-harris-vif
-#| fig-cap: Harris Refined Multi-Linear Regression Model
-
-
-# Refine the model by removing less significant predictors 
-# (e.g., methodology and transparency_score)
-mlr_harris_model_refined <- readRDS(here::here(("models/mlr_harris_model_refined.rds")))
-
-# Plot diagnostic plots for the refined model
-par(mfrow = c(2, 2))
-plot(mlr_harris_model_refined)
-par(mfrow = c(1, 1))  # Reset plot layout
-```
 
 ```{r}
 #| echo: false
@@ -320,27 +274,13 @@ par(mfrow = c(1, 1))  # Reset plot layout
 
 # Check VIF for the refined model
 kable(vif(mlr_harris_model_refined), digits=3)
+
+step_model <- step(mlr_harris_model_refined, direction = "both", trace=0)
 ```
 
 ## Stepwise Model Selection
 
 To further optimize the MLR models, we performed stepwise model selection, which systematically adds or removes predictors to minimize the Akaike Information Criterion (AIC) and improve model fit.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-bbb
-#| fig-cap: bbb
-
-# Perform stepwise selection to optimize the Harris model
-step_model <- step(mlr_harris_model_refined, direction = "both", trace=0)
-
-# Plot diagnostic plots for the stepwise model
-par(mfrow = c(2, 2))
-plot(step_model)
-par(mfrow = c(1, 1))  # Reset layout
-```
 
 The stepwise model selection improved the model by retaining the most significant predictors and eliminating those with little explanatory power.
 
@@ -566,6 +506,86 @@ A budget allocation of $100,000 ensures all aspects are adequately funded:
 ### Conclusion
 This methodology presents a feasible and thorough plan to forecast the US presidential election within the specified budget. By adhering to best practices in survey design and execution, and by carefully considering both the popular vote and electoral college implications, the survey aims to provide accurate and reliable insights into voter intentions.
 
+
+\newpage
+
+# Appendix 
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-mlr-harris
+#| fig-cap: Multi-Linear Regression model for Kamala Harris
+#| fig.width: 10
+#| fig.height: 4
+
+mlr_harris_model <- readRDS(here::here(("models/mlr_harris_model.rds")))
+
+# For Harris model
+par(mfrow = c(1, 2))  # Set layout for 1 row and 2 columns
+plot(mlr_harris_model, which = c(1, 2))  # 1: Residuals vs Fitted, 2: Normal Q-Q
+par(mfrow = c(1, 1))  # Reset plot layout
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-mlr-trump
+#| fig-cap: Multi-Linear Regression model for Donald Trump
+#| fig.width: 10
+#| fig.height: 4
+
+# Load the saved MLR model for Donald Trump
+mlr_trump_model <- readRDS(here::here(("models/mlr_trump_model.rds")))
+
+# For Trump model
+par(mfrow = c(1, 2))  # Set layout for 1 row and 2 columns
+plot(mlr_trump_model, which = c(1, 2))  # 1: Residuals vs Fitted, 2: Normal Q-Q
+par(mfrow = c(1, 1))  # Reset plot layout
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-harris-vif
+#| fig-cap: Harris Refined Multi-Linear Regression Model
+#| fig.width: 10
+#| fig.height: 4
+
+# Refine the model by removing less significant predictors 
+# (e.g., methodology and transparency_score)
+mlr_harris_model_refined <- readRDS(here::here(("models/mlr_harris_model_refined.rds")))
+
+# For Harris refined model
+par(mfrow = c(1, 2))  # Set layout for 1 row and 2 columns
+plot(mlr_harris_model_refined, which = c(1, 2))  # 1: Residuals vs Fitted, 2: Normal Q-Q
+par(mfrow = c(1, 1))  # Reset plot layout
+
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-harris-step
+#| fig-cap: Harris Final Multi-Linear Regression Model
+#| fig.width: 10
+#| fig.height: 4
+
+# Perform stepwise selection to optimize the Harris model
+step_model <- step(mlr_harris_model_refined, direction = "both", trace=0)
+
+# For Harris stepwise model
+par(mfrow = c(1, 2))  # Set layout for 1 row and 2 columns
+plot(step_model, which = c(1, 2))  # 1: Residuals vs Fitted, 2: Normal Q-Q
+par(mfrow = c(1, 1))  # Reset plot layout
+
+```
 
 \newpage
 
