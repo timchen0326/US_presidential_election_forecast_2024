@@ -5,7 +5,7 @@ author:
   - Tim Chen
   - Steven Li
   - Tommy Fu
-thanks: "Code and data are available at: https://github.com/timchen0326/US_presidential_election_forecast_2024.git."
+thanks: "Code and data are available at: https://github.com/timchen0326/US_presidential_election_forecast_2024.git"
 date: today
 date-format: long
 abstract: "This paper presents a statistical model for forecasting the outcome of the 2024 U.S. Presidential Election. Using polling data from various sources, we develop multiple linear regression models to predict the percentage of support for the main candidates, Kamala Harris and Donald Trump, in different states. We aggregate these predictions to simulate the Electoral College vote and estimate the likelihood of either candidate winning. Our results suggest that neither candidate currently secures the required 270 electoral votes to win the presidency."
@@ -30,17 +30,18 @@ options(repos = c(CRAN = "https://cran.rstudio.com/"))
 library(tidyverse)
 library(ggplot2)
 library(janitor)
-library(rstanarm)
 library(modelsummary)
 library(here)
 library(dplyr)
 library(knitr)
+library(car)
 
 # Load the dataset
 data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
 
 ```
 
+\newpage
 # Introduction
 
 Forecasting elections has long been one of the most challenging tasks for political scientists, statisticians, and analysts alike. The complexity of predicting voter behavior in large, diverse electorates like that of the United States stems from numerous factors, including ever-shifting public opinion, rapidly changing political climates, and varying levels of voter engagement. The 2024 U.S. Presidential Election is no exception. With polarized voter bases, unpredictable external factors, and the growing influence of non-traditional media, the race remains highly uncertain, making reliable forecasting models more important—and difficult—than ever.
@@ -58,14 +59,14 @@ The rest of this paper is structured as follows: @sec-data discusses the data us
 
 The dataset used in this analysis draws from a variety of polling sources, providing comprehensive information about polling organizations, sample sizes, methodologies, and state-level data. Several key variables are crucial to the analysis:
 
-- Pollster rating: A numerical score reflecting the reliability and historical accuracy of each polling organization.
-- Sample size: The number of respondents included in each poll, which influences the poll's margin of error.
-- Support percentage: The percentage of respondents expressing support for each candidate.
-- State: The U.S. state where the poll was conducted, or in some cases, national-level polling data.
+- **Pollster rating:** A numerical score reflecting the reliability and historical accuracy of each polling organization.
+- **Sample size:** The number of respondents included in each poll, which influences the poll's margin of error.
+- **Support percentage:** The percentage of respondents expressing support for each candidate.
+- **State:** The U.S. state where the poll was conducted, or in some cases, national-level polling data.
 
 To ensure accuracy and consistency, the data has been meticulously processed and cleaned. This involved aligning all variables for compatibility with regression analysis, converting relevant fields (e.g. support percentage) into numeric formats, and appropriately handling missing data to minimize potential biases. These reprocessing steps ensure the dataset is tidy and ready for model development.
 
-@tbl-overview_data shows a subset of the dataset. 
+@tbl-overview_data shows a sample of the dataset. 
 
 ```{r}
 #| echo: false
@@ -100,13 +101,12 @@ Our primary outcome variable is the percentage of support for Kamala Harris and 
 #| warning: false
 #| fig.pos: "H"
 #| label: fig-support
-#| fig-cap: Distribution of Support between Both Candidates
+#| fig-cap: Distribution of Support for Kamala Harris and Donald Trump
 
 # Create a boxplot showing the distribution of support for each candidate
 ggplot(data, aes(x = candidate_name, y = pct, fill = candidate_name)) +
   geom_boxplot() +
-  labs(title = "Distribution of Support for Kamala Harris and Donald Trump",
-       x = "Candidate",
+  labs(x = "Candidate",
        y = "Percentage of Support") +
   theme_minimal() +
   theme(legend.position = "none")
@@ -128,9 +128,7 @@ All predictor variables—numeric grade, pollscore, transparency score, sample s
 
 The data cleaning process uses R [@citeR] as well as other packages such as tidyverse [@tidyverse], dplyr [@dplyr], janitor [@janitor] and lubridate [@lubridate]. Begin by standardizing column name to ensure consistency and avoid errors during analysis. The dataset was filtered to focus solely on Kamala Harris and Donald Trump, with polls below a numeric grade of 2.7 excluded to maintain high-quality data. Missing state information was categorized as “National” polls, and the poll end dates were converted to a date format to include only polls conducted after the candidates officially declared their candidacies. This ensures the analysis reflects relevant, up-to-date voter preferences. Additionally, transformations such as calculating the number of supporters from the percentage support and encoding a binary variable for the candidates (Harris = 1, Trump = 0) were performed to enhance usability in the regression models.
 
-Some variables were excluded for simplicity and relevance. For example, **"population_full"** and **"answer"** were dropped as they provided redundant or unnecessary information for this analysis. However, key variables like **"pollster"**, **"pollscore"**, **"numeric grade"**, and **"sample size"** were retained because they provide essential insights into the quality and precision of the polls, directly influencing the reliability of the models. These steps ensured the cleaned dataset was ready for analysis, with a focus on the most important predictors of voter support while minimizing extraneous information.
-
-
+Some variables were excluded for simplicity and relevance. For example, **'population_full'** and **'answer'** were dropped as they provided redundant or unnecessary information for this analysis. However, key variables like **'pollster'**, **'pollscore'**, **'numeric grade'**, and **'sample size'** were retained because they provide essential insights into the quality and precision of the polls, directly influencing the reliability of the models. These steps ensured the cleaned dataset was ready for analysis, with a focus on the most important predictors of voter support while minimizing extraneous information.
 
 
 # Modeling Support for the Candidates {#sec-model}
@@ -153,28 +151,26 @@ harris_data <- subset(data, candidate_name == "Kamala Harris")
 
 # Perform a simple linear regression with pct as the dependent variable and sample_size as the independent variable
 model <- lm(pct ~ sample_size, data = harris_data)
-
-
 ```
 
 The results of the linear regression for Kamala Harris show that sample size has a statistically insignificant effect on her support.
 This suggests that factors other than sample size, such as pollster methodology or regional biases, may play a more significant role in determining the level of support she receives.
 
-Figure 2 illustrates the relationship between the sample size and support percentage for Kamala Harris.
+@fig-harris-samplesize-supportpct illustrates the relationship between the sample size and support percentage for Kamala Harris.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+#| label: fig-harris-samplesize-supportpct
+#| fig-cap: Linear Regression of Percentage vs Sample Size for Kamala Harris
+
 # Plot the relationship for Kamala Harris
 ggplot(harris_data, aes(x = sample_size, y = pct)) +
   geom_point() +
   geom_smooth(method = "lm", col = "blue") +
-  labs(title = "Linear Regression of Percentage vs Sample Size for Kamala Harris",
-       x = "Sample Size",
+  labs(x = "Sample Size",
        y = "Percentage")
-
-
 ```
 
 ## Donald Trump
@@ -201,19 +197,20 @@ model <- lm(pct ~ sample_size, data = trump_data)
 The results in indicate that sample size has a weak but statistically significant negative effect on support for Trump.
 This suggests that larger polls tend to show slightly lower support for Trump, although the effect size is small.
 
-Figure 3 shows the relationship between the sample size and support percentage for Donald Trump.
+@fig-trump-samplesize-supportpct shows the relationship between the sample size and support percentage for Donald Trump.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+#| label: fig-trump-samplesize-supportpct
+#| fig-cap: Linear Regression of Percentage vs Sample Size for Donald Trump
 
-# Plot the relationship for Kamala Harris
+# Plot the relationship for Trump
 ggplot(trump_data, aes(x = sample_size, y = pct)) +
   geom_point() +
   geom_smooth(method = "lm", col = "blue") +
-  labs(title = "Linear Regression of Percentage vs Sample Size for Donald Trump",
-       x = "Sample Size",
+  labs(x = "Sample Size",
        y = "Percentage")
 
 
@@ -227,25 +224,24 @@ By accounting for these factors, the MLR models allow us to control for more var
 
 ### Kamala Harris Model
 
-The MLR model for Kamala Harris takes into account multiple factors that may impact her support across different polls.
-This includes not just the sample size of the poll, but also how pollster reliability (numeric_grade), transparency of poll data (transparency_score), and state-level polling contribute to predicting voter preferences.
+The MLR model for Kamala Harris takes into account multiple factors that may impact her support across different polls. This includes not just the sample size of the poll, but also how pollster reliability (numeric_grade), transparency of poll data (transparency_score), and state-level polling contribute to predicting voter preferences.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
+#| label: fig-mlr-harris
+#| fig-cap: Multi-Linear Regression model for Kamala Harris
+
 mlr_harris_model <- readRDS(here::here(("models/mlr_harris_model.rds")))
 
 # Diagnostic plots for the MLR model
 par(mfrow = c(2, 2))
 plot(mlr_harris_model)
 par(mfrow = c(1, 1))  # Reset plot layout
-
-
-
 ```
 
-The results of the MLR for Kamala Harris show that several predictors, including state and pollster rating, significantly impact her predicted percentage of voter support.
+The results in @fig-mlr-harris show that several predictors, including state and pollster rating, significantly impact her predicted percentage of voter support.
 These results suggest that voter preferences for Harris vary widely depending on the state and the credibility of the pollster.
 
 The model diagnostics (such as residual plots, QQ plots) were evaluated to ensure the assumptions of linear regression hold.
@@ -260,9 +256,11 @@ Similarly, we constructed an MLR model for Donald Trump using the same set of pr
 #| echo: false
 #| message: false
 #| warning: false
+#| label: fig-mlr-trump
+#| fig-cap: Multi-Linear Regression model for Donald Trump
+
 # Load the saved MLR model for Donald Trump
 mlr_trump_model <- readRDS(here::here(("models/mlr_trump_model.rds")))
-
 
 # Diagnostic plots for the MLR model
 par(mfrow = c(2, 2))  # Set up 2x2 layout for multiple plots
@@ -271,43 +269,58 @@ par(mfrow = c(1, 1))  # Reset the plot layout to normal
 
 ```
 
-The results for Donald Trump reveal that state-level variations and pollster transparency play a significant role in explaining his level of support.
+The results for Donald Trump in @fig-mlr-trump reveal that state-level variations and pollster transparency play a significant role in explaining his level of support.
 The model for Trump also passes diagnostic checks, as shown in Figure Y, indicating that the assumptions of linearity, independence, and homoscedasticity are reasonably met.
-Check Multicollinearity using Variance Inflation Factor (VIF)
+Check Multi-collinearity using Variance Inflation Factor (VIF)
 
 ## Multicollinearity Check Using Variance Inflation Factor (VIF)
 
-To ensure that the predictors used in both models do not exhibit multicollinearity, we checked the Variance Inflation Factor (VIF) for each predictor.
-High VIF values indicate multicollinearity, which can affect the stability and reliability of the model coefficients.
+To ensure that the predictors used in both models do not exhibit multi-collinearity, we checked the Variance Inflation Factor (VIF) for each predictor. High VIF values indicate multi-collinearity, which can affect the stability and reliability of the model coefficients.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
-# Load the car package for VIF
-if (!require(car)) install.packages("car")
-library(car)
+#| label: tbl-harris-vif
+#| tbl-cap: Harris MLR model Variance Inflation Factor (VIF) 
 
 # Check VIF for Kamala Harris model
-vif(mlr_harris_model)
+kable(vif(mlr_harris_model), digits=3)
+```
 
-# Refine the model by removing less significant predictors (e.g., methodology and transparency_score)
+Based on the VIF results in @tbl-harris-vif, we refined the model by removing less significant predictors (such as methodology and transparency_score) to reduce multi-collinearity.This improves the model's accuracy and interpretability.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-harris-vif
+#| fig-cap: Harris Refined Multi-Linear Regression Model
+
+
+# Refine the model by removing less significant predictors 
+# (e.g., methodology and transparency_score)
 mlr_harris_model_refined <- readRDS(here::here(("models/mlr_harris_model_refined.rds")))
-
-# Summary of the refined Harris model
-
-# Check VIF for the refined model
-vif(mlr_harris_model_refined)
 
 # Plot diagnostic plots for the refined model
 par(mfrow = c(2, 2))
 plot(mlr_harris_model_refined)
 par(mfrow = c(1, 1))  # Reset plot layout
-
 ```
 
-Based on the VIF results, we refined the model by removing less significant predictors (such as methodology and transparency_score) to reduce multicollinearity.
-This improves the model's accuracy and interpretability.
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-harris-refined-vif
+#| tbl-cap: Harris Refined MLR model Variance Inflation Factor (VIF) 
+
+# Refine the model by removing less significant predictors 
+# (e.g., methodology and transparency_score)
+
+# Check VIF for the refined model
+kable(vif(mlr_harris_model_refined), digits=3)
+```
 
 ## Stepwise Model Selection
 
@@ -317,14 +330,16 @@ To further optimize the MLR models, we performed stepwise model selection, which
 #| echo: false
 #| message: false
 #| warning: false
+#| label: fig-bbb
+#| fig-cap: bbb
+
 # Perform stepwise selection to optimize the Harris model
-step_model <- step(mlr_harris_model_refined, direction = "both")
+step_model <- step(mlr_harris_model_refined, direction = "both", trace=0)
 
 # Plot diagnostic plots for the stepwise model
 par(mfrow = c(2, 2))
 plot(step_model)
 par(mfrow = c(1, 1))  # Reset layout
-
 ```
 
 The stepwise model selection improved the model by retaining the most significant predictors and eliminating those with little explanatory power.
@@ -338,6 +353,9 @@ The predicted percentage of support for each candidate is used to determine the 
 #| echo: false
 #| message: false
 #| warning: false
+#| label: fig-ccc
+#| fig-cap: ccc
+
 # Final models for Harris and Trump
 mlr_harris_model_final <- readRDS(here::here(("models/mlr_harris_model_final.rds")))
 mlr_trump_model_final <- readRDS(here::here(("models/mlr_trump_model_final.rds")))
@@ -359,6 +377,10 @@ The candidate with 270 or more Electoral College votes is predicted to win the e
 #| echo: false
 #| message: false
 #| warning: false
+#| label: fig-ddd
+#| fig-cap: ddd
+
+
 # Define electoral votes for each state (and Washington, D.C.)
 electoral_votes <- data.frame(
   state = c("Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", 
@@ -418,7 +440,7 @@ However, due to the lack of 270 electoral votes for either candidate, the electi
 The multiple linear regression (MLR) models developed in this paper provide valuable insights into the factors that influence voter support for Kamala Harris and Donald Trump.
 Through the analysis of polling data, several key predictors were identified as significant, including state, pollster rating (pollscore), and transparency score.
 
-Kamala Harris The MLR model for Kamala Harris highlights the importance of state-level factors in determining her support.
+The MLR model for Kamala Harris highlights the importance of state-level factors in determining her support.
 The model shows that voter preferences vary significantly across different states, with certain states (e.g., California and Maryland) showing higher support levels, while others (e.g., Indiana and Missouri) show lower support.
 Pollster reliability, captured through numeric grades and transparency scores, also plays an important role, suggesting that voters may respond differently based on the credibility of the pollster.
 
@@ -446,18 +468,15 @@ Presidential election is ultimately decided by electoral votes, not popular vote
 
 Despite the strengths of the models, there are several limitations that should be addressed:
 
-Poll Reliability and Sampling Bias: The accuracy of the predictions depends heavily on the quality of the polling data.
+- **Poll Reliability and Sampling Bias:** The accuracy of the predictions depends heavily on the quality of the polling data.
 Although the model accounts for pollster ratings, polling methodologies can still introduce biases, particularly in states with limited polling data.
 Sampling errors and non-response biases could skew the results, especially in smaller states or regions with inconsistent polling coverage.
-
-Static Prediction: The model provides a static snapshot of voter support based on current polling data, which may not capture the dynamic nature of voter preferences over time.
-As election day approaches, voter preferences may shift due to campaign events, debates, or other external factors.
+- **Static Prediction:** The model provides a static snapshot of voter support based on current polling data, which may not capture the dynamic nature of voter preferences over time. As election day approaches, voter preferences may shift due to campaign events, debates, or other external factors.
 Without time-series data, the model may fail to account for these trends.
+- **Unaccounted Variables:** Although the model includes important predictors like state, pollscore, and transparency score, other potentially influential factors, such as economic conditions, campaign spending, and voter turnout, are not included in the analysis.These unaccounted variables may introduce inaccuracies in the final predictions.
 
-Unaccounted Variables: Although the model includes important predictors like state, pollscore, and transparency score, other potentially influential factors, such as economic conditions, campaign spending, and voter turnout, are not included in the analysis.
-These unaccounted variables may introduce inaccuracies in the final predictions.
-## Future Research Directions Future work could improve upon this analysis by addressing some of the limitations mentioned above.
-For instance, incorporating time-series data could allow the model to capture how voter preferences evolve in response to external factors such as campaign events, economic developments, and political endorsements.
+## Future Research 
+Directions Future work could improve upon this analysis by addressing some of the limitations mentioned above. For instance, incorporating time-series data could allow the model to capture how voter preferences evolve in response to external factors such as campaign events, economic developments, and political endorsements.
 A dynamic forecasting model that updates predictions as new polls are released would provide more timely and accurate forecasts.
 
 Moreover, integrating other influential variables, such as economic indicators (e.g., unemployment rates, inflation), voter turnout models, and campaign spending data, could enhance the predictive power of the model.
@@ -469,54 +488,85 @@ Finally, expanding the model to account for ranked-choice voting in certain stat
 
 \appendix
 
-# Appendix {.unnumbered}
+# Appendix
 
-# Additional data details
+## YouGov Pollster Methodology Overview and Evaluation
+YouGov conducts online surveys through their proprietary panel of U.S. adults, using nonprobability sampling methods combined with sophisticated weighting procedures to achieve representative results. Their approach balances speed and cost-effectiveness with statistical rigor through careful sample selection and data quality controls.
 
-# Model details {#sec-model-details}
+### Survey Population and Sampling
+YouGov's target population typically comprises all U.S. adults or adult citizens, with their sampling frame consisting of their opt-in online panel covering approximately 95% of Americans. For general population surveys, they aim for 1,000-2,000 respondents, selected based on demographic and political characteristics to match the target population.
 
-## Posterior predictive check
+### Panel Recruitment and Participation
+Panel members are recruited through advertising and website partnerships, with surveys offered in multiple languages including Spanish to ensure broad representation. Participants receive points exchangeable for small monetary rewards, though many report being motivated by the desire to contribute to research.
 
-In @fig-ppcheckandposteriorvsprior-1 we implement a posterior predictive check.
-This shows...
+### Quality Control
+YouGov employs several measures to maintain data quality:
 
-In @fig-ppcheckandposteriorvsprior-2 we compare the posterior with the prior.
-This shows...
+- Verification of panelist identity through email and IP checks
+- Response quality surveys to gauge reliability
+- Monitoring of response times and patterns
+- Removal of respondents who fail quality checks
+- Question randomization to reduce bias
 
-```{r}
-#| eval: true
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-ppcheckandposteriorvsprior
-#| layout-ncol: 2
-#| fig-cap: "Examining how the model fits, and is affected by, the data"
-#| fig-subcap: ["Posterior prediction check", "Comparing the posterior with the prior"]
+### Non-response and Weighting
+To address potential biases, YouGov applies statistical weighting based on demographics (age, gender, race, education) and political factors (voting behavior, party identification). Their weighting process considers multiple characteristics simultaneously to better reflect real-world demographic intersections.
 
-```
+### Strengths and Limitations
+The methodology's primary strengths include rapid data collection, cost-effectiveness, and the ability to track opinions over time. However, the nonprobability sampling approach may introduce biases, and the online-only format could underrepresent certain populations. While weighting helps address these limitations, it cannot fully account for all potential sources of bias.
 
-## Diagnostics
 
-@fig-stanareyouokay-1 is a trace plot.
-It shows...
-This suggests...
+## Idealized Survey Methodology
+This idealized survey methodology outlines a comprehensive plan for forecasting the US presidential election within a budget of $100,000. The approach is designed to be statistically sound, practical, and capable of accurately predicting election outcomes by considering both the popular vote and electoral college implications.
 
-@fig-stanareyouokay-2 is a Rhat plot.
-It shows...
-This suggests...
+### Sampling Strategy
+The target population for this survey is eligible voters across the United States who are likely to participate in the upcoming presidential election. To achieve a representative sample:
 
-```{r}
-#| echo: false
-#| eval: true
-#| message: false
-#| warning: false
-#| label: fig-stanareyouokay
-#| fig-cap: "Checking the convergence of the MCMC algorithm"
-#| fig-subcap: ["Trace plot", "Rhat plot"]
-#| layout-ncol: 2
+- **Sampling Frame:** Utilize a combination of registered voter lists and demographic data from reputable sources such as the US Census Bureau.
+- **Sampling Method:** Implement stratified random sampling to ensure representation across key demographics, including age, gender, race, education level, and geographic location.
+- **Sample Size Calculation:** Aim for a sample size of approximately 10,000 respondents to achieve a margin of error of ±1% at a 95% confidence level.
+- **Geographical Distribution:** Allocate samples proportionally across all 50 states and the District of Columbia, with oversampling in swing states to better predict electoral college outcomes.
+- **Addressing Sampling Biases:** Apply weighting adjustments to account for underrepresented groups and ensure that the sample mirrors the overall voter population.
 
-```
+### Recruitment Plan
+To recruit respondents effectively, we will leverage online panels, social media advertising, and partnerships with community organizations to reach a diverse audience. Offering modest incentives, such as $5 digital gift cards, encourages participation while managing costs. Quota sampling within strata maintains demographic balance, and follow-up reminders along with mobile-friendly survey formats help reduce non-response bias. The data collection will occur over a two-week period to capture timely opinions without introducing temporal biases.
+
+### Survey Design Elements
+The survey is crafted to elicit accurate and meaningful responses:
+
+- **Question Types and Formats:** Use a mix of closed-ended questions and multiple-choice options for clarity and ease of analysis.
+- **Response Options:** Include balanced and neutral response choices, with options for "Undecided" or "Prefer not to say."
+- **Question Order and Flow:** Begin with general questions to build rapport, followed by more specific vote intention queries, and conclude with demographic questions.
+- **Demographic Information:** Collect data on age, gender, race, education, income, and geographic location.
+- **Political Affiliation and History:** Ask about party affiliation, past voting behavior, and political engagement.
+- **Likely Voter Screens:** Include questions to gauge voting likelihood, such as past voting frequency and intention to vote in the upcoming election.
+- **Vote Intention Questions:** Directly ask which candidate the respondent intends to vote for, ensuring confidentiality and anonymity.
+
+### Quality Control
+To maintain data integrity, we implement several quality control measures. Real-time validation checks within the survey prevent inconsistent or illogical responses. Attention-check questions identify disengaged respondents. We use unique survey links and track IP addresses to prevent duplicate submissions, while CAPTCHA verification deters automated responses. Incomplete or suspicious responses are excluded during data cleaning to ensure the final dataset is robust and reliable.
+
+### Data Processing
+These data processing steps will be taken to ensure accurate analysis:
+
+- **Weighting Methodology:** Adjust survey results using weighting factors based on demographic proportions in the voting population.
+- **Handling Missing Data:** Employ imputation techniques or exclude cases with significant missing information.
+- **Outlier Detection:** Identify and review outliers that may skew results, determining whether to retain or discard them.
+- **Response Validation:** Cross-check responses for consistency and plausibility.
+- **Poll Aggregation Approach:** Combine survey data with other reputable polls using meta-analytic techniques to enhance prediction accuracy.
+
+### Budget Allocation
+A budget allocation of $100,000 ensures all aspects are adequately funded:
+
+- **Recruitment Costs:** $40,000 for advertising and partnerships to reach potential respondents.
+- **Incentive Payments:** \$50,000 allocated for participant incentives ($5 x 10,000 respondents).
+- **Survey Platform Fees:** $2,000 for premium features on a survey platform like Google Forms or an equivalent.
+- **Data Analysis Tools:** $3,000 for statistical software licenses and data processing tools.
+- **Quality Control Measures:** $3,000 for implementing validation systems and CAPTCHA services.
+- **Administrative Costs:** $2,000 for project management and miscellaneous expenses.
+
+### Conclusion
+This methodology presents a feasible and thorough plan to forecast the US presidential election within the specified budget. By adhering to best practices in survey design and execution, and by carefully considering both the popular vote and electoral college implications, the survey aims to provide accurate and reliable insights into voter intentions.
+
 
 \newpage
 
-#References
+# References
