@@ -1,4 +1,4 @@
-# US_PRESIDENTIAL_ELECTION_FORECAST_2024
+# US Presidential Election Forecast 2024
 
 ## Overview
 
