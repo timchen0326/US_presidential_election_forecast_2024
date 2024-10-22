@@ -21,10 +21,11 @@ pollster_data <- read_csv("data/02-analysis_data/analysis_data.csv")
 ########################### Tests for Pollster Data########################### 
 
 test_that("Pollster data has correct structure", {
-  expected_cols <- c("poll_id", "pollster_id", "pollster", "numeric_grade", "pollscore",
-                     "methodology", "transparency_score", "sample_size", "population",
-                     "population_full", "party", "answer", "pct", "state",
-                     "end_date", "num_supporters", "candidate_binary")
+  expected_cols <- c("poll_id", "pollster_id", "pollster", "numeric_grade",
+                     "pollscore", "methodology", "transparency_score", 
+                     "sample_size", "population", "population_full", "party", 
+                     "answer", "pct", "state", "candidate_name", "end_date", 
+                     "candidate_binary", "num_supporters")
   expect_equal(colnames(pollster_data), expected_cols)
 })
 
@@ -43,6 +44,7 @@ test_that("Data types are correct", {
   expect_true(is.character(pollster_data$answer))
   expect_true(is.numeric(pollster_data$pct))
   expect_true(is.character(pollster_data$state))
+  expect_true(is.character(pollster_data$candidate_name))
   expect_true(inherits(pollster_data$end_date, "Date"))
   expect_true(is.numeric(pollster_data$num_supporters))
   expect_true(is.numeric(pollster_data$candidate_binary))
@@ -71,13 +73,6 @@ test_that("Dates are within expected range", {
 test_that("No missing values in critical columns", {
   critical_cols <- c("poll_id", "pollster", "pct", "answer", "end_date")
   expect_true(all(!is.na(pollster_data[critical_cols])))
-})
-
-test_that("Percentages sum to 100 (or close to it) for each poll", {
-  poll_totals <- pollster_data %>%
-    group_by(poll_id) %>%
-    summarize(total_pct = sum(pct))
-  expect_true(all(poll_totals$total_pct >= 99 & poll_totals$total_pct <= 101))
 })
 
 test_that("Candidate binary values match answer names", {

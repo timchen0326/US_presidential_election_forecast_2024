@@ -14,12 +14,12 @@ library(tidyverse)
 library(janitor)
 library(lubridate)
 
-#### Data Import and Cleaning ####
+########################### Data Import and Cleaning########################### 
 # Read the dataset and clean column names
 data <- read_csv("data/01-raw_data/president_polls.csv") |>
   clean_names()
 
-#### Filter Data for Both Candidates ####
+####################### Filter Data for Both Candidates #######################
 # Filter data for Kamala Harris and Donald Trump based on high-quality polls
 filtered_data <- data |>
   filter(
