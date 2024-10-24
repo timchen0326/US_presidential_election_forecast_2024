@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: https://github.com/timchen0326/US_presidential_election_forecast_2024.git"
 date: today
 date-format: long
-abstract: "This paper presents a statistical model for forecasting the outcome of the 2024 U.S. Presidential Election. Using polling data from FiveThirtyEight, we develop multiple linear regression models to predict the percentage of support for the main candidates, Kamala Harris and Donald Trump, in different states. We aggregate these predictions to simulate the Electoral College vote and estimate the likelihood of either candidate winning. Our results suggest that neither candidate currently secures the required 270 electoral votes to win the presidency."
+abstract: "Analysis of polling data from July to October 2024 reveals significant challenges in forecasting the U.S. presidential election between Kamala Harris and Donald Trump, with state-level variations and pollster methodology playing crucial roles in prediction accuracy. Using multi-linear regression models incorporating pollster ratings, sample sizes, and state-level data, we find that Harris is projected to receive 216 electoral votes while Trump is predicted to secure 147 electoral votes. State-level polling variations and methodological differences among pollsters significantly impact predicted outcomes, with pollster reliability metrics explaining substantial variance in candidate support levels. These findings highlight the continued importance of refining polling methodologies and expanding state-level coverage to improve electoral forecasting accuracy, particularly in an era of increasing political polarization."
 format: pdf
 number-sections: true
 toc: true
@@ -44,7 +44,6 @@ data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
 \newpage
 # Introduction
 
-
 The 2024 United States presidential election presents unprecedented challenges for electoral forecasting. As the country navigates increasing political polarization and evolving voting patterns, the reliability of traditional polling methods has come under intense scrutiny [@viala2024]. The task of predicting voter behavior in America's diverse electorate is complicated by numerous factors, including shifting public opinion, rapidly changing political landscapes, and varying levels of voter engagement across different demographic groups.
 
 Recent history has highlighted the complexities of election forecasting. The polling failures in 2016 and 2020—where polls significantly underestimated Republican support in key states—have prompted a fundamental reassessment of polling methodologies [@keeter2024]. These challenges are particularly acute in swing states, where margins of victory are often razor-thin and can determine the outcome of the entire election. The American Association for Public Opinion Research (AAPOR) identified several critical factors contributing to these polling errors, including the underrepresentation of Republican voters and difficulties in predicting voter turnout patterns [@viala2024].
@@ -65,6 +64,7 @@ Our study utilizes polling data from FiveThirtyEight's 2024 Presidential Electio
 - **Sample size:** The number of respondents included in each poll, which influences the poll's margin of error.
 - **Support percentage (pct):** The percentage of respondents expressing support for each candidate.
 - **State:** The U.S. state where the poll was conducted, or in some cases, national-level polling data.
+- ...
 
 @tbl-overview_data presents a sample of the processed dataset, showcasing the key variables necessary for the analysis.
 
@@ -78,11 +78,13 @@ Our study utilizes polling data from FiveThirtyEight's 2024 Presidential Electio
 set.seed(123)
 # Select key variables and sample for the table
 data_overview <- data %>%
-  select(poll_id, pollster, pollscore, sample_size, pct, state, 
-         candidate_name, end_date) %>% sample_n(5)
+  select(poll_id, pollster, pollscore, numeric_grade, transparency_score,
+         sample_size, pct, state, methodology, candidate_name, end_date
+         ) %>% sample_n(5)
 
-colnames(data_overview) <- c("Poll ID", "Pollster", "Pollscore", "Sample Size",
-                             "pct", "State", "Candidate", "End Date")
+colnames(data_overview) <- 
+  c("Poll ID", "Pollster", "Pollscore", "Numeric Grade", "Transparency Score", 
+    "Sample Size", "pct", "State", "Methodology", "Candidate", "End Date")
 
 kable(data_overview)
 ```
@@ -396,9 +398,7 @@ if (harris_electoral_votes >= 270) {
 
 ```
 
-According to our models, neither candidate secures the 270 Electoral College votes needed to win.
-Kamala Harris is projected to receive 216 electoral votes, while Donald Trump is predicted to win 147 electoral votes.
-However, due to the lack of 270 electoral votes for either candidate, the election remains highly competitive, and further developments may shift the balance.
+According to our models, Kamala Harris is projected to receive 216 electoral votes, while Donald Trump is predicted to win 147 electoral votes.
 
 # Discussion {#sec-discuss}
 
@@ -417,7 +417,6 @@ Pollster characteristics, such as pollscore and transparency score, significantl
 
 Electoral College Forecast Aggregating state-level predictions into Electoral College votes demonstrates the potential competitiveness of the 2024 U.S.
 Presidential Election.
-According to the predictions, neither Kamala Harris nor Donald Trump currently secures the necessary 270 electoral votes to win.
 Harris is projected to receive 216 electoral votes, while Trump is predicted to receive 147 electoral votes.
 This forecast suggests that the election remains highly uncertain, with several key battleground states likely determining the final outcome.
 
