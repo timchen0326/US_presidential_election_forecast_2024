@@ -103,13 +103,16 @@ Our primary outcome variable is the percentage of support for Kamala Harris and 
 #| label: fig-support
 #| fig-cap: Distribution of Support for Kamala Harris and Donald Trump
 
-# Create a boxplot showing the distribution of support for each candidate
-ggplot(data, aes(x = candidate_name, y = pct, fill = candidate_name)) +
-  geom_boxplot() +
-  labs(x = "Candidate",
-       y = "Percentage of Support") +
+ggplot(data, aes(x = pct, fill = candidate_name)) +
+  geom_histogram(bins = 30, alpha = 0.7, position = "identity") +
+  facet_wrap(~ candidate_name) +
+  labs(x = "Percentage of Support",
+       y = "Count") +
+  scale_fill_discrete(name = "Candidates") +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "bottom")
+
+
 ```
 
 ## Predictor variables
