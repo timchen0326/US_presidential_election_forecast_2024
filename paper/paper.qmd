@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: https://github.com/timchen0326/US_presidential_election_forecast_2024.git"
 date: today
 date-format: long
-abstract: "This paper presents a statistical model for forecasting the outcome of the 2024 U.S. Presidential Election. Using polling data from various sources, we develop multiple linear regression models to predict the percentage of support for the main candidates, Kamala Harris and Donald Trump, in different states. We aggregate these predictions to simulate the Electoral College vote and estimate the likelihood of either candidate winning. Our results suggest that neither candidate currently secures the required 270 electoral votes to win the presidency."
+abstract: "This paper presents a statistical model for forecasting the outcome of the 2024 U.S. Presidential Election. Using polling data from FiveThirtyEight, we develop multiple linear regression models to predict the percentage of support for the main candidates, Kamala Harris and Donald Trump, in different states. We aggregate these predictions to simulate the Electoral College vote and estimate the likelihood of either candidate winning. Our results suggest that neither candidate currently secures the required 270 electoral votes to win the presidency."
 format: pdf
 number-sections: true
 toc: true
@@ -44,95 +44,119 @@ data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
 \newpage
 # Introduction
 
-Forecasting elections has long been one of the most challenging tasks for political scientists, statisticians, and analysts alike. The complexity of predicting voter behavior in large, diverse electorates like that of the United States stems from numerous factors, including ever-shifting public opinion, rapidly changing political climates, and varying levels of voter engagement. The 2024 U.S. Presidential Election is no exception. With polarized voter bases, unpredictable external factors, and the growing influence of non-traditional media, the race remains highly uncertain, making reliable forecasting models more important—and difficult—than ever.
 
-Central to any electoral forecast is the use of polling data. Polls provide snapshots of voter intentions at specific points in time, shaping both public perceptions and expert expectations. Yet, polling comes with its own set of challenges. Pollsters employ different methodologies—ranging from online surveys to phone interviews—each with its own inherent biases. Sample populations may vary in size and representativeness, potentially skewing results in favor of certain demographic groups. Moreover, polling accuracy can be further complicated by factors such as non-response bias, the changing nature of the electorate, and the rise of unconventional voting patterns, particularly among younger and minority voters.
+The 2024 United States presidential election presents unprecedented challenges for electoral forecasting. As the country navigates increasing political polarization and evolving voting patterns, the reliability of traditional polling methods has come under intense scrutiny [@viala2024]. The task of predicting voter behavior in America's diverse electorate is complicated by numerous factors, including shifting public opinion, rapidly changing political landscapes, and varying levels of voter engagement across different demographic groups.
 
-In this paper, we attempt to forecast the outcome of the 2024 U.S. Presidential Election by developing statistical models based on polling data from a variety of sources. By leveraging multiple linear regression models, we aim to predict the percentage of support for the main candidates—Kamala Harris and Donald Trump—across different states. Our analysis incorporates key variables such as pollster reliability, sample size, and state-level demographics, all of which contribute to shaping the electoral landscape. Ultimately, we aggregate these state-level predictions to simulate the outcome of the Electoral College, providing insights into the likelihood of either candidate securing the 270 votes required to win the presidency.
+Recent history has highlighted the complexities of election forecasting. The polling failures in 2016 and 2020—where polls significantly underestimated Republican support in key states—have prompted a fundamental reassessment of polling methodologies [@keeter2024]. These challenges are particularly acute in swing states, where margins of victory are often razor-thin and can determine the outcome of the entire election. The American Association for Public Opinion Research (AAPOR) identified several critical factors contributing to these polling errors, including the underrepresentation of Republican voters and difficulties in predicting voter turnout patterns [@viala2024].
 
-The rest of this paper is structured as follows: @sec-data discusses the data used for this analysis, including key variables and sources. @sec-model outlines the models developed for each candidate and presents the corresponding results.
-@sec-predict discusses the aggregated Electoral College predictions based on the model outputs. Finally, @sec-discuss provides conclusions and offers suggestions for future research.
+Survey methodology plays a crucial role in addressing these challenges. Well-designed surveys require careful consideration of sampling strategies, questionnaire design, and data collection methods to ensure representative results. As Keeter [-@keeter2024] emphasizes, pollsters must now employ sophisticated weighting procedures and rigorous quality controls to overcome declining response rates and potential partisan non-response bias. Understanding the strengths and limitations of different polling approaches—from traditional probability sampling to newer online panels—is essential for accurate electoral forecasting.
+
+This paper develops statistical models to forecast the outcome of the 2024 presidential election between Kamala Harris and Donald Trump. By leveraging multi-linear regression models, we predict the percentage of support for each candidate across different states, incorporating key variables such as pollster rating, sample size, and state-level demographics. Through aggregating these state-level predictions, we simulate Electoral College outcomes to provide insights into each candidate's probability of securing the required 270 electoral votes. Our analysis also includes a detailed examination of YouGov's polling methodology and proposes an idealized survey approach that could enhance the accuracy of election forecasting.
+
+The remainder of this paper is structured as follows. @sec-data discusses the data used for this analysis, including key variables and sources, with particular attention to the quality metrics that affect polling accuracy. @sec-model outlines our modeling approach for each candidate, incorporating lessons learned from recent electoral cycles. @sec-predict presents our Electoral College predictions based on the model outputs. @sec-discuss discusses the implications of our findings and suggests directions for future research. Finally, @sec-appendix evaluates YouGov's polling methodology, and our idealized survey methodology.
+
 
 # Data {#sec-data}
 
 ## Overview
+Our study utilizes polling data from FiveThirtyEight's 2024 Presidential Election Forecast Database [@FiveThirtyEightPollingData2024], a comprehensive polling dataset maintained by ABC news. This database compiles and standardizes polling results from various organizations, applying quality metrics and assessments to each poll. Several key variables from this dataset are crucial to our analysis:
 
-The dataset used in this analysis draws from a variety of polling sources, providing comprehensive information about polling organizations, sample sizes, methodologies, and state-level data. Several key variables are crucial to the analysis:
-
-- **Pollster rating:** A numerical score reflecting the reliability and historical accuracy of each polling organization.
+- **Pollster rating (Pollscore):** A numerical score reflecting the reliability and historical accuracy of each polling organization.
 - **Sample size:** The number of respondents included in each poll, which influences the poll's margin of error.
-- **Support percentage:** The percentage of respondents expressing support for each candidate.
+- **Support percentage (pct):** The percentage of respondents expressing support for each candidate.
 - **State:** The U.S. state where the poll was conducted, or in some cases, national-level polling data.
 
-To ensure accuracy and consistency, the data has been meticulously processed and cleaned. This involved aligning all variables for compatibility with regression analysis, converting relevant fields (e.g. support percentage) into numeric formats, and appropriately handling missing data to minimize potential biases. These reprocessing steps ensure the dataset is tidy and ready for model development.
-
-@tbl-overview_data shows a sample of the dataset. 
+@tbl-overview_data presents a sample of the processed dataset, showcasing the key variables necessary for the analysis.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
 #| label: tbl-overview_data
-# Select key variables for the table
+#| tbl-cap: Sample Overview of Selected Variables in the Polling Dataset
+
+set.seed(123)
+# Select key variables and sample for the table
 data_overview <- data %>%
-  select(poll_id, pollster, pollscore, sample_size, pct, state, candidate_name, end_date)
+  select(poll_id, pollster, pollscore, sample_size, pct, state, 
+         candidate_name, end_date) %>% sample_n(5)
 
-# Show the first 5 rows of the dataset in a table
-data_overview %>%
-  head(5) %>%
-  kable(caption = "Sample Overview of Selected Variables in the Polling Dataset")
+colnames(data_overview) <- c("Poll ID", "Pollster", "Pollscore", "Sample Size",
+                             "pct", "State", "Candidate", "End Date")
 
+kable(data_overview)
 ```
 
 ## Measurement and Limitations
+There are several measurement and limitation considerations for our dataset:
 
-The primary limitations of this analysis stem from the quality and variability of polling data, which can introduce biases through factors like sample size and pollster methodology. Additionally, the model provides a static snapshot of voter preferences, without accounting for the dynamic nature of elections For instance, shifts in public opinion over time or the impact of campaign events. The exclusion of key external factors, such as economic conditions or voter turnout, also limits the model's ability to fully capture the complexities of election outcomes. Furthermore, the simplified Electoral College simulation assumes that polling data will accurately predict state-level results, which may not always be the case, especially in battleground states with volatile voter behavior.
-
+- **Poll Quality:** While we filter for high-quality polls using numeric grades, differences in polling methodologies may introduce systematic biases. The inclusion of pollster ratings helps account for historical accuracy but cannot completely eliminate these potential biases.
+- **Temporal Dynamics:** Our dataset provides a snapshot of voter preferences during a specific timeframe. This static nature means we cannot capture the full dynamics of voter preference evolution over the campaign period.
+- **Geographic Coverage:** Although we have national and state-level polling data, coverage varies by state. Battleground states typically have more frequent polling, while safer states may have sparse data, potentially affecting our state-level predictions.
+- **Response Bias:** Despite careful methodology by pollsters, self-selection bias in survey participation and social desirability bias in responses remain potential concerns.
 
 
 ## Outcome variables
-Our primary outcome variable is the percentage of support for Kamala Harris and Donald Trump in each poll. This variable is central to our analysis because it directly captures voter preference, which is the most relevant metric for forecasting election outcomes. By modeling the percentage of support, we can quantify how various factors—such as pollster quality, sample size, and state-level dynamics—influence the candidates' standings in the polls. This outcome variable also allows us to simulate the Electoral College results by aggregating predicted support across different states, which is crucial for determining the likelihood of either candidate winning the presidency.
+Our primary outcome variable is the percentage of support (*pct*) for Kamala Harris and Donald Trump in each poll. This measurement represents the proportion of respondents who indicate they would vote for each candidate if the election were held on the day of the poll. The variable directly captures voter preferences and serves as the foundation for our electoral predictions.
 
-@fig-support below shows the distribution of support for both candidates across the polls included in the dataset.
+@fig-support below illustrates the distribution of support for both candidates, revealing several notable patterns. First, the support percentages cluster between 40% and 60%, reflecting the competitive nature of the race. Second, the distributions show slight differences between candidates, with Harris's support displaying more variation than Trump's. This pattern might reflect differences in voter certainty or polling methodology across different states and time periods.
 
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
-#| fig.pos: "H"
 #| label: fig-support
 #| fig-cap: Distribution of Support for Kamala Harris and Donald Trump
 
 ggplot(data, aes(x = pct, fill = candidate_name)) +
-  geom_histogram(bins = 30, alpha = 0.7, position = "identity") +
+  geom_histogram(bins = 30, alpha = 0.8, position = "identity") +
   facet_wrap(~ candidate_name) +
   labs(x = "Percentage of Support",
        y = "Count") +
   scale_fill_discrete(name = "Candidates") +
   theme_minimal() +
   theme(legend.position = "bottom")
-
-
 ```
 
 ## Predictor variables
 
-In our analysis, we utilized several key predictor variables to model voter support for Kamala Harris and Donald Trump in the 2024 U.S. Presidential Election. These predictor variables were selected based on their expected influence on polling results and their ability to account for variations in polling accuracy and voter behavior across different states.
+Our model incorporates several key predictor variables, each chosen for its theoretical importance in explaining polling variations and electoral outcomes:
 
-One of the key predictors is numeric grade, which represents a composite measure of poll quality. This variable accounts for various aspects of a poll’s reliability, such as the transparency of its methodology and the pollster’s historical accuracy. Pollscore, another important predictor, provides a similar measure of poll reliability but focuses more on the specific performance of the polling organization in recent elections.
+- **Numeric Grade:** A composite measure (scale: 0-4) incorporating factors such as methodology rigor and historical accuracy
+- **Pollscore:** A measure of historical polling accuracy (range: -4 to +4, where negative scores indicate better performance)
+- **Transparency Score:** Quantifies the openness of polling methodology (scale: 0-10)
+- **Sample Size:** Number of respondents, typically ranging from 500 to 3000
+- **State:** State-level indicators capturing regional political variations
+- **Methodology:** Survey approach (e.g., online panel, phone interviews)
 
-Transparency score measures how openly polling organizations disclose their methodology and data, which can significantly impact the trustworthiness of the results. Polls with higher transparency scores are given more weight in the model, as they are generally considered more reliable. The sample size of each poll is also included, as larger sample sizes tend to reduce the margin of error and provide more precise estimates of voter support.
+The relationship between these predictors and polling outcomes is complex and often interconnected. For example, while larger sample sizes generally reduce sampling error, this effect may be moderated by the poll's methodology and quality metrics. Similarly, geographic variations in polling accuracy suggest that the relationship between predictors and outcomes may vary systematically across states.
 
-Geographic differences in voter preferences are captured through the state variable, which accounts for regional variations in political culture, demographics, and historical voting patterns. Lastly, methodology refers to the techniques and approaches used by the polling organizations, such as whether the poll was conducted online, by phone, or through other means.
+These variables were selected based on both theoretical foundations in electoral polling literature and practical considerations of data availability and quality. We focused on these core variables due to their consistent availability across polls and demonstrated importance in previous electoral forecasting efforts.
 
-All predictor variables—numeric grade, pollscore, transparency score, sample size, state, and methodology—are presented in @tbl-overview_data.
+**Edit note: Add a table in appendix to show sample with all variables used in model**
 
 ## Cleaning Process and Analysis
 
-The data cleaning process uses R [@citeR] as well as other packages such as tidyverse [@tidyverse], dplyr [@dplyr], janitor [@janitor] and lubridate [@lubridate]. Begin by standardizing column name to ensure consistency and avoid errors during analysis. The dataset was filtered to focus solely on Kamala Harris and Donald Trump, with polls below a numeric grade of 2.7 excluded to maintain high-quality data. Missing state information was categorized as “National” polls, and the poll end dates were converted to a date format to include only polls conducted after the candidates officially declared their candidacies. This ensures the analysis reflects relevant, up-to-date voter preferences. Additionally, transformations such as calculating the number of supporters from the percentage support and encoding a binary variable for the candidates (Harris = 1, Trump = 0) were performed to enhance usability in the regression models.
+The data cleaning process employed R [@citeR] along with several specialized packages: tidyverse [@tidyverse] for data manipulation, dplyr [@dplyr] for data transformation, janitor [@janitor] for consistent naming conventions, and lubridate [@lubridate] for date handling. 
 
-Some variables were excluded for simplicity and relevance. For example, **'population_full'** and **'answer'** were dropped as they provided redundant or unnecessary information for this analysis. However, key variables like **'pollster'**, **'pollscore'**, **'numeric grade'**, and **'sample size'** were retained because they provide essential insights into the quality and precision of the polls, directly influencing the reliability of the models. These steps ensured the cleaned dataset was ready for analysis, with a focus on the most important predictors of voter support while minimizing extraneous information.
+Our cleaning process followed several key steps:
 
+1. Filtered for high-quality polls using a minimum threshold (*numeric_grade* $≥$ 2.7)
+2. Limited temporal coverage to post-campaign announcement period (after July 21, 2024)
+3. Standardized geographic data:
+
+  > i. Coded missing state information as "National" polls
+  > ii. Verified state names for consistency
+  
+4. Transformed key variables:
+
+  > i. Converted end dates to standardized date format
+  > ii. Calculated absolute supporter numbers from percentages and sample sizes
+  > iii. Created binary candidate indicators (Harris = 1, Trump = 0)
+
+Our variable selection process prioritized measures essential for polling accuracy and electoral prediction while eliminating redundant or non-informative fields. We retained key poll quality metrics including *pollscore* and *numeric_grade*, which provide crucial information about the reliability of each survey. Sample characteristics such as *sample size* and *methodology* were preserved to account for differences in polling precision. *State* and polling *end_date* information were maintained to capture regional variations and time-dependent patterns in voter preferences. 
+
+We excluded several variables that offered little additional analytical value, such as *population_full*, which duplicated information available in other fields, and administrative data that did not directly influence predictions. This focused approach to variable selection allowed us to preserve all information necessary for accurate electoral forecasting.
 
 # Modeling Support for the Candidates {#sec-model}
 
@@ -230,7 +254,7 @@ By accounting for these factors, the MLR models allow us to control for more var
 
 The MLR model for Kamala Harris takes into account multiple factors that may impact her support across different polls. This includes not just the sample size of the poll, but also how pollster reliability (numeric_grade), transparency of poll data (transparency_score), and state-level polling contribute to predicting voter preferences.
 
-The results in @fig-mlr-harris show that several predictors, including state and pollster rating, significantly impact her predicted percentage of voter support.
+The results @fig-mlr-harris show that several predictors, including state and pollster rating, significantly impact her predicted percentage of voter support.
 These results suggest that voter preferences for Harris vary widely depending on the state and the credibility of the pollster.
 
 The model diagnostics (such as residual plots, QQ plots) were evaluated to ensure the assumptions of linear regression hold.
@@ -431,7 +455,7 @@ Finally, expanding the model to account for ranked-choice voting in certain stat
 
 \appendix
 
-# Appendix
+# Appendix {#sec-appendix}
 
 ## YouGov Pollster Methodology Overview and Evaluation
 YouGov conducts online surveys through their proprietary panel of U.S. adults, using nonprobability sampling methods combined with sophisticated weighting procedures to achieve representative results. Their approach balances speed and cost-effectiveness with statistical rigor through careful sample selection and data quality controls.
@@ -457,7 +481,7 @@ To address potential biases, YouGov applies statistical weighting based on demog
 ### Strengths and Limitations
 The methodology's primary strengths include rapid data collection, cost-effectiveness, and the ability to track opinions over time. However, the nonprobability sampling approach may introduce biases, and the online-only format could underrepresent certain populations. While weighting helps address these limitations, it cannot fully account for all potential sources of bias.
 
-
+\newpage
 ## Idealized Survey Methodology
 This idealized survey methodology outlines a comprehensive plan for forecasting the US presidential election within a budget of $100,000. The approach is designed to be statistically sound, practical, and capable of accurately predicting election outcomes by considering both the popular vote and electoral college implications.
 
@@ -512,7 +536,7 @@ This methodology presents a feasible and thorough plan to forecast the US presid
 
 \newpage
 
-# Appendix 
+## Multi-Linear Regression Models
 
 ```{r}
 #| echo: false
