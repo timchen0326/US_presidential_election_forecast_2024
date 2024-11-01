@@ -171,7 +171,7 @@ In contrast, the results for Donald Trump indicate a weak but statistically sign
 
 Figures @fig-harris-samplesize-supportpct and @fig-trump-samplesize-supportpct illustrate the relationship between sample size and support percentage for Kamala Harris and Donald Trump, respectively. These plots provide a visual representation of the trends observed in the linear regression models for each candidate.
 
-
+ 
 ```{r}
 #| echo: false
 #| message: false
@@ -412,6 +412,7 @@ This methodology presents a feasible and thorough plan to forecast the US presid
 \newpage
 
 # Appendix 
+
 
 
 ```{r}
