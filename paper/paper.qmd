@@ -56,73 +56,41 @@ The remainder of this paper is structured as follows. @sec-data discusses the da
 
 
 # Data {#sec-data}
-
 ## Overview
-Our study utilizes polling data from FiveThirtyEight's 2024 Presidential Election Forecast Database [@FiveThirtyEightPollingData2024], a comprehensive polling dataset maintained by ABC news. This database compiles and standardizes polling results from various organizations, applying quality metrics and assessments to each poll. Several key variables from this dataset are crucial to our analysis:
+Our study utilizes polling data from FiveThirtyEight's 2024 Presidential Election Forecast Database [@FiveThirtyEightPollingData2024], a comprehensive polling dataset maintained by ABC news. This database aggregates and standardizes polling results from various organizations, applying quality metrics and methodological assessments to each poll. In this section, we detail our selected variables, discuss key measurements, outline important limitations of our data, and our data cleaning process.
 
-The dataset employed in this analysis encompasses polling data from various reputable sources, capturing critical variables related to polling organizations, sample sizes, candidate support levels, and polling coverage (state-level or national). The primary variables of interest are outlined as follows:
+Our analysis focuses on several key variables that directly influence polling accuracy and electoral predictions. @tbl-overview_data presents a sample of our dataset.
 
-- **Poll ID**: A unique identifier for each poll entry, facilitating data tracking and management (e.g., 88590).
-- **Pollster**: The organization conducting the poll, which serves as a primary indicator of the poll’s methodological quality (e.g., YouGov, Ipsos).
-- **Pollscore**: A quantitative measure of the pollster’s reliability, where lower (negative) values suggest higher predictive accuracy (e.g., -1.1 for YouGov).
-- **Sample Size**: The number of respondents included in each poll, influencing the statistical precision and margin of error (e.g., 1414).
-- **Support Percentage (pct)**: The proportion of respondents expressing support for each candidate, serving as the dependent variable in subsequent analyses (e.g., 47% for Kamala Harris).
-- **State**: Indicates the geographical focus of the poll, either at the state level or nationwide (e.g., National).
-- **Candidate Name**: The candidate assessed in the poll, providing context for support levels and enabling candidate-specific analyses (e.g., Kamala Harris, Donald Trump).
-- **End Date**: The date on which the poll concluded, offering temporal alignment for longitudinal analyses (e.g., 2024-10-07).
+## Poll Quality Variables
 
-To ensure analytical rigor, the dataset underwent extensive preprocessing. This involved standardizing variable formats for compatibility with regression models, converting support percentages into numerical values, and systematically addressing missing data to minimize bias. These preprocessing steps ensured that the dataset adhered to the standards of a "tidy" dataset, enabling robust model development and enhancing interpretability of subsequent statistical analyses.
+@tbl-poll-metrics summarizes three primary metrics that assess poll quality in our dataset:
 
-@tbl-overview_data shows a sample of the dataset. 
+- **Pollscore**: Represents "the error and bias attributable to a pollster, where negative numbers indicate better performance." Our data shows a mean pollscore of -1.06 (SD = 0.28), with values ranging from -1.50 to -0.50, indicating generally high-quality polling organizations in our sample.
+- **Numeric Grade**: A rating given to pollsters to indicate their quality and reliability. With a mean of 2.89 (SD = 0.10) and a range of 2.70 to 3.00, our dataset maintains high standards. We established a minimum threshold of 2.7 to ensure methodological rigor.
+- **Transparency Score**: A measure reflecting pollsters' transparency about their methodology, with 10 being the highest possible score. The data shows strong overall transparency with a mean of 8.59 (SD = 1.04), indicating that most polls in our sample maintain high standards of methodological disclosure.
+
+## Methodological Variables
+
+- **Methodology**: @fig-methodology-dist shows the distribution of polling approaches used to conduct the polls. Live Phone methods and Online Panels are the predominant methods, with hybrid approaches combining multiple methods (such as IVR/Online Panel/Text-to-Web) representing evolving polling techniques adapting to changing communication patterns.
+- **Sample Size**: @fig-sample-size illustrates the distribution of poll sample sizes, representing the total number of respondents participating in each poll. Our dataset shows considerable variation, with a mean of 1,114.76 respondents (SD = 583.72). The right-skewed distribution ranges from 450 to 4,253 respondents, with larger sample sizes typically associated with national polls.
+
+## Geographic and Temporal Variables
+
+- **State Coverage**: @tbl-state-polls reveals the distribution of polls across different U.S. states. National polls lead with 261 surveys, followed by concentrated polling in key battleground states: Pennsylvania (86), Wisconsin (82), and North Carolina (64). This distribution reflects strategic focus on states where the electoral outcome is less certain.
+- **End Date**: @fig-temporal-polling tracks polling frequency from July through October 2024. We observe increased activity during September and early October, with weekly poll counts peaking in late September. This pattern reflects intensified polling efforts as the election approaches.
+
+## Outcome Variable
+
+- **Support Percentage**: @fig-candidate-support displays our primary dependent variable: the percentage of respondents expressing support for each candidate. The distribution reveals a competitive race between Donald Trump and Kamala Harris, with support levels typically ranging between 40-50% for both candidates.
 
 
 ## Measurement and Limitations
 There are several measurement and limitation considerations for our dataset:
 
-- **Poll Quality:** While we filter for high-quality polls using numeric grades, differences in polling methodologies may introduce systematic biases. The inclusion of pollster ratings helps account for historical accuracy but cannot completely eliminate these potential biases.
-- **Temporal Dynamics:** Our dataset provides a snapshot of voter preferences during a specific timeframe. This static nature means we cannot capture the full dynamics of voter preference evolution over the campaign period.
+- **Poll Quality:** While our pollscore and numeric grade filters help ensure data quality, these metrics are based on historical performance and may not fully capture current methodological improvements or deterioration.
+- **Temporal Dynamics:** Our dataset provides discrete snapshots of voter preferences rather than continuous measurement. This limitation is particularly relevant given the rapid evolution of political narratives and voter sentiment during presidential campaigns.
 - **Geographic Coverage:** Although we have national and state-level polling data, coverage varies by state. Battleground states typically have more frequent polling, while safer states may have sparse data, potentially affecting our state-level predictions.
 - **Response Bias:** Despite careful methodology by pollsters, self-selection bias in survey participation and social desirability bias in responses remain potential concerns.
-
-
-## Outcome variables
-Our primary outcome variable is the percentage of support (*pct*) for Kamala Harris and Donald Trump in each poll. This measurement represents the proportion of respondents who indicate they would vote for each candidate if the election were held on the day of the poll. The variable directly captures voter preferences and serves as the foundation for our electoral predictions.
-
-@fig-support below illustrates the distribution of support for both candidates, revealing several notable patterns. First, the support percentages cluster between 40% and 60%, reflecting the competitive nature of the race. Second, the distributions show slight differences between candidates, with Harris's support displaying more variation than Trump's. This pattern might reflect differences in voter certainty or polling methodology across different states and time periods.
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-support
-#| fig-cap: Distribution of Support for Kamala Harris and Donald Trump
-
-ggplot(data, aes(x = pct, fill = candidate_name)) +
-  geom_histogram(bins = 30, alpha = 0.8, position = "identity") +
-  facet_wrap(~ candidate_name) +
-  labs(x = "Percentage of Support",
-       y = "Count") +
-  scale_fill_discrete(name = "Candidates") +
-  theme_minimal() +
-  theme(legend.position = "bottom")
-```
-
-## Predictor variables
-
-Our model incorporates several key predictor variables, each chosen for its theoretical importance in explaining polling variations and electoral outcomes:
-
-- **Numeric Grade:** A composite measure (scale: 0-4) incorporating factors such as methodology rigor and historical accuracy
-- **Pollscore:** A measure of historical polling accuracy (range: -4 to +4, where negative scores indicate better performance)
-- **Transparency Score:** Quantifies the openness of polling methodology (scale: 0-10)
-- **Sample Size:** Number of respondents, typically ranging from 500 to 3000
-- **State:** State-level indicators capturing regional political variations
-- **Methodology:** Survey approach (e.g., online panel, phone interviews)
-
-The relationship between these predictors and polling outcomes is complex and often interconnected. For example, while larger sample sizes generally reduce sampling error, this effect may be moderated by the poll's methodology and quality metrics. Similarly, geographic variations in polling accuracy suggest that the relationship between predictors and outcomes may vary systematically across states.
-
-These variables were selected based on both theoretical foundations in electoral polling literature and practical considerations of data availability and quality. We focused on these core variables due to their consistent availability across polls and demonstrated importance in previous electoral forecasting efforts.
-
-**Edit note: Add a table in appendix to show sample with all variables used in model**
 
 ## Cleaning Process and Analysis
 
@@ -139,9 +107,11 @@ Our cleaning process followed several key steps:
   
 4. Transformed key variables:
 
-  > i. Converted end dates to standardized date format
+  > i. Converted *End Date* values to standardized date format
   > ii. Calculated absolute supporter numbers from percentages and sample sizes
   > iii. Created binary candidate indicators (Harris = 1, Trump = 0)
+
+Other variable such as ... were not selected for our analysis because ...
 
 Our variable selection process prioritized measures essential for polling accuracy and electoral prediction while eliminating redundant or non-informative fields. We retained key poll quality metrics including *pollscore* and *numeric_grade*, which provide crucial information about the reliability of each survey. Sample characteristics such as *sample size* and *methodology* were preserved to account for differences in polling precision. *State* and polling *end_date* information were maintained to capture regional variations and time-dependent patterns in voter preferences. 
 
@@ -418,20 +388,138 @@ This methodology presents a feasible and thorough plan to forecast the US presid
 #| message: false
 #| warning: false
 #| label: tbl-overview_data
+#| tbl-cap: Sample Overview of Selected Variables in the Polling Dataset
+
+set.seed(778) # For reproducability
 
 data_overview <- data %>%
-  select(poll_id, pollster, pollscore, sample_size, pct, state, candidate_name, end_date)
+  select(pollster, pollscore, numeric_grade, transparency_score, sample_size, 
+         methodology, pct, state, candidate_name, end_date)
 
 # Transpose the first 5 rows to display them vertically
-data_overview_transposed <- data_overview %>%
-  head(5) %>%
+data_overview <- data_overview %>%
+  sample_n(5) %>%
   t()
 
-# Display the transposed table with a caption
-data_overview_transposed %>%
-  kable(caption = "Sample Overview of Selected Variables in the Polling Dataset")
-
+# Display the transposed table
+kable(data_overview)
 ```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-poll-metrics
+#| tbl-cap: Summary Statistics of Key Poll Metrics
+
+data %>%
+  summarise(
+    across(c(sample_size, pollscore, numeric_grade, transparency_score),
+           list(
+             Mean = mean,
+             Median = median,
+             SD = sd,
+             Min = min,
+             Max = max
+           ), 
+           .names = "{.fn}_{.col}",
+           na.rm = TRUE)
+  ) %>%
+  pivot_longer(everything(), 
+               names_to = c("Statistic", "Variable"),
+               names_sep = "_",
+               values_to = "Value") %>%
+  pivot_wider(names_from = Variable,
+              values_from = Value) %>%
+  mutate(across(-Statistic, ~round(.x, 2))) %>%
+  kable()
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-methodology-dist
+#| fig-cap: Distribution of Polling Methodologies
+
+data %>%
+  ggplot(aes(x = fct_infreq(methodology))) +
+  geom_bar() +
+  coord_flip() +
+  theme_minimal() +
+  labs(x = "Methodology",
+       y = "Count") +
+  theme(axis.text.y = element_text(size = 8))
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-candidate-support
+#| fig-cap: Distribution of Support Percentages by Candidate
+
+ggplot(data, aes(x = pct, fill = candidate_name)) +
+  geom_histogram(bins = 30, position = "identity") +
+  facet_wrap(~ candidate_name) +
+  labs(x = "Percentage of Support",
+       y = "Count") +
+  scale_fill_discrete(name = "Candidates") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: tbl-state-polls
+#| tbl-cap: Polling Frequency by State
+
+data %>%
+  count(state) %>%
+  arrange(desc(n)) %>%
+  rename("State" = state,
+         "Number of Polls" = n) %>%
+  kable(format = "latex", booktabs = TRUE)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-temporal-polling
+#| fig-cap: Number of Polls Over Time
+
+data %>%
+  mutate(end_date = as.Date(end_date)) %>%
+  mutate(week = floor_date(end_date, "week")) %>%
+  count(week) %>%
+  ggplot(aes(x = week, y = n)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  labs(x = "Week",
+       y = "Number of Polls") +
+  scale_x_date(date_breaks = "2 weeks", date_labels = "%b %d")
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-sample-size
+#| fig-cap: Distribution of Poll Sample Sizes
+
+data %>%
+  ggplot(aes(x = sample_size)) +
+  geom_histogram(binwidth = 100) +
+  theme_minimal() +
+  labs(x = "Sample Size",
+       y = "Count") +
+  scale_x_continuous(breaks = seq(0, max(data$sample_size), by = 500))
+```
+
 
 ```{r}
 #| echo: false
@@ -544,7 +632,7 @@ par(mfrow = c(1, 1))  # Reset plot layout
 #| warning: false
 #| label: fig-predicted-vote-pct
 #| fig-cap: Predicted Vote Percentages by State
-knitr::include_graphics(here::here(("improved_vote_percentages_by_state.png")))
+# knitr::include_graphics(here::here(("improved_vote_percentages_by_state.png")))
 
 ```
 
