@@ -1,1001 +1,1001 @@
-poll_id,date,pollster,pollster_rating,method,state,voter_type,party,winner,percentage
-1,2024-03-06,PollsterA,3.8,Mixed,NY,Likely Voters,Democrat,Trump,45
-2,2024-02-06,PollsterE,2.6,Mixed,NM,Registered Voters,Republican,Trump,55.5
-3,2024-02-14,PollsterC,4.6,Mixed,RI,Likely Voters,Republican,Trump,57.5
-4,2024-07-06,PollsterB,3.8,Mixed,NY,Registered Voters,Democrat,Trump,47.3
-5,2024-09-11,PollsterE,1.4,Phone,ND,Likely Voters,Democrat,Trump,45.8
-6,2024-04-18,PollsterE,3.5,Mixed,OH,Likely Voters,Democrat,Trump,50.2
-7,2024-04-14,PollsterB,2.3,Online,GA,Registered Voters,Democrat,Trump,48
-8,2024-05-01,PollsterE,1.5,Phone,GA,Registered Voters,Republican,Harris,45.4
-9,2024-08-13,PollsterC,3.8,Mixed,TN,Likely Voters,Republican,Trump,52
-10,2024-01-29,PollsterB,4.1,Online,NM,Registered Voters,Democrat,Trump,44.7
-11,2024-01-11,PollsterA,4.4,Online,KS,Likely Voters,Republican,Harris,58.7
-12,2024-09-28,PollsterB,2.3,Online,MI,Registered Voters,Republican,Trump,51.5
-13,2024-03-02,PollsterD,2.9,Phone,WV,Likely Voters,Republican,Trump,49.5
-14,2024-09-08,PollsterE,4,Online,MI,Likely Voters,Republican,Trump,58.8
-15,2024-01-26,PollsterB,3.8,Online,VA,Likely Voters,Republican,Trump,46.8
-16,2024-06-20,PollsterA,4.9,Online,NY,Registered Voters,Democrat,Trump,56.8
-17,2024-02-19,PollsterC,3.3,Mixed,NM,Likely Voters,Republican,Trump,44.1
-18,2024-02-01,PollsterE,4.2,Mixed,WI,Likely Voters,Republican,Trump,57.1
-19,2024-07-31,PollsterA,1.1,Online,NY,Likely Voters,Republican,Harris,44.6
-20,2024-07-21,PollsterB,1.8,Mixed,NV,Likely Voters,Democrat,Trump,48.8
-21,2024-02-04,PollsterE,1.9,Mixed,SD,Registered Voters,Republican,Trump,51
-22,2024-08-25,PollsterA,3.3,Mixed,AZ,Registered Voters,Democrat,Harris,50.1
-23,2024-03-21,PollsterE,4.5,Online,NJ,Likely Voters,Democrat,Trump,48.5
-24,2024-10-10,PollsterC,2,Phone,NC,Registered Voters,Democrat,Trump,50.9
-25,2024-08-03,PollsterB,3.3,Mixed,NV,Registered Voters,Democrat,Trump,46
-26,2024-03-24,PollsterC,4.7,Online,IN,Registered Voters,Republican,Harris,57.7
-27,2024-10-02,PollsterA,1.2,Online,KY,Registered Voters,Republican,Trump,52.6
-28,2024-03-27,PollsterE,3.2,Online,NC,Likely Voters,Democrat,Trump,48.6
-29,2024-07-06,PollsterD,2.3,Mixed,GA,Registered Voters,Republican,Trump,49.5
-30,2024-04-15,PollsterA,4.9,Phone,IL,Likely Voters,Republican,Harris,53.5
-31,2024-05-14,PollsterC,1.8,Online,IN,Registered Voters,Democrat,Harris,42.4
-32,2024-07-30,PollsterC,1,Online,SD,Likely Voters,Republican,Trump,49.7
-33,2024-10-07,PollsterA,4.1,Mixed,IL,Likely Voters,Democrat,Harris,51.9
-34,2024-10-16,PollsterD,4.7,Mixed,AK,Likely Voters,Democrat,Harris,44.5
-35,2024-08-04,PollsterA,4.5,Mixed,MT,Likely Voters,Republican,Harris,52.3
-36,2024-05-10,PollsterB,4.2,Phone,AL,Registered Voters,Republican,Trump,55.7
-37,2024-06-01,PollsterA,1.5,Phone,WV,Likely Voters,Republican,Trump,52.4
-38,2024-07-11,PollsterB,1.6,Mixed,NV,Likely Voters,Democrat,Trump,52.7
-39,2024-01-06,PollsterA,3.2,Mixed,AZ,Likely Voters,Democrat,Harris,45.3
-40,2024-10-02,PollsterB,4.3,Phone,ID,Registered Voters,Democrat,Trump,59.8
-41,2024-07-25,PollsterE,2.6,Mixed,MT,Registered Voters,Republican,Trump,56
-42,2024-07-23,PollsterD,4.9,Online,MN,Registered Voters,Republican,Trump,43.9
-43,2024-07-04,PollsterD,4.7,Phone,AK,Likely Voters,Democrat,Trump,42.5
-44,2024-04-24,PollsterD,3.6,Mixed,WI,Likely Voters,Democrat,Trump,41.3
-45,2024-04-17,PollsterA,1.9,Mixed,VT,Likely Voters,Republican,Harris,57.4
-46,2024-09-17,PollsterE,1.6,Mixed,IA,Registered Voters,Democrat,Trump,53.6
-47,2024-07-26,PollsterB,4.1,Online,DE,Likely Voters,Republican,Trump,42.2
-48,2024-05-10,PollsterC,3.4,Mixed,VA,Registered Voters,Democrat,Trump,41.4
-49,2024-06-01,PollsterE,2.5,Mixed,NH,Likely Voters,Democrat,Harris,57.7
-50,2024-07-29,PollsterC,4.6,Mixed,NY,Likely Voters,Democrat,Harris,54.1
-51,2024-07-07,PollsterB,1.8,Online,IA,Registered Voters,Republican,Harris,59.3
-52,2024-09-15,PollsterB,1.9,Online,OR,Likely Voters,Republican,Trump,46.7
-53,2024-01-29,PollsterD,3.2,Mixed,UT,Registered Voters,Democrat,Trump,41.8
-54,2024-08-22,PollsterC,1.2,Mixed,AR,Likely Voters,Republican,Trump,57.3
-55,2024-10-02,PollsterD,3.5,Mixed,NM,Likely Voters,Democrat,Trump,56.7
-56,2024-01-16,PollsterD,4.5,Phone,AR,Likely Voters,Democrat,Harris,55.9
-57,2024-02-05,PollsterD,2.6,Mixed,VA,Likely Voters,Republican,Trump,40.2
-58,2024-07-27,PollsterD,2.6,Online,WY,Registered Voters,Republican,Harris,46.1
-59,2024-03-13,PollsterD,2.9,Online,AK,Registered Voters,Democrat,Harris,51.7
-60,2024-10-02,PollsterE,1.3,Mixed,IA,Likely Voters,Republican,Trump,42.6
-61,2024-08-27,PollsterC,1.3,Mixed,PA,Likely Voters,Democrat,Harris,58.7
-62,2024-04-27,PollsterB,1.3,Mixed,SC,Likely Voters,Democrat,Harris,48.7
-63,2024-06-10,PollsterA,1.5,Online,CO,Registered Voters,Republican,Harris,49.8
-64,2024-05-26,PollsterA,4.6,Online,OR,Likely Voters,Republican,Trump,45.2
-65,2024-05-19,PollsterD,2.8,Online,OR,Registered Voters,Democrat,Trump,42.7
-66,2024-09-28,PollsterB,3,Phone,NC,Registered Voters,Republican,Trump,57.8
-67,2024-06-21,PollsterC,4.1,Phone,MT,Likely Voters,Democrat,Harris,56.3
-68,2024-07-08,PollsterB,3.2,Mixed,NC,Likely Voters,Democrat,Harris,55.1
-69,2024-03-08,PollsterA,1.9,Mixed,LA,Registered Voters,Republican,Trump,44.9
-70,2024-01-31,PollsterE,4.1,Mixed,MO,Registered Voters,Democrat,Trump,52.3
-71,2024-10-09,PollsterE,2.1,Online,MS,Likely Voters,Democrat,Trump,40.7
-72,2024-04-22,PollsterB,4,Mixed,NM,Likely Voters,Democrat,Trump,52.4
-73,2024-07-23,PollsterA,2,Phone,NV,Likely Voters,Democrat,Harris,58.4
-74,2024-08-11,PollsterC,1.9,Mixed,NV,Registered Voters,Democrat,Harris,43
-75,2024-05-02,PollsterD,2.9,Online,CT,Likely Voters,Democrat,Harris,58
-76,2024-03-08,PollsterD,1,Online,PA,Likely Voters,Democrat,Harris,50
-77,2024-04-03,PollsterD,3.1,Phone,NC,Registered Voters,Republican,Trump,46.2
-78,2024-09-09,PollsterA,3.8,Online,AZ,Registered Voters,Republican,Harris,52.5
-79,2024-09-26,PollsterD,1.8,Mixed,OK,Likely Voters,Republican,Harris,55.5
-80,2024-07-21,PollsterA,1.6,Mixed,SC,Likely Voters,Republican,Harris,44.1
-81,2024-05-28,PollsterC,4.7,Online,WA,Registered Voters,Democrat,Trump,55.1
-82,2024-07-12,PollsterD,1.5,Mixed,VT,Likely Voters,Democrat,Trump,48
-83,2024-09-22,PollsterC,1.5,Phone,UT,Likely Voters,Democrat,Harris,49.7
-84,2024-05-26,PollsterD,4.2,Mixed,MD,Likely Voters,Republican,Harris,53.4
-85,2024-02-03,PollsterC,4.3,Online,VT,Registered Voters,Republican,Harris,57.9
-86,2024-04-22,PollsterB,2.4,Mixed,AL,Registered Voters,Democrat,Harris,46.4
-87,2024-07-05,PollsterC,5,Mixed,ID,Likely Voters,Democrat,Harris,47.2
-88,2024-03-06,PollsterA,2.4,Online,ND,Registered Voters,Republican,Harris,57.9
-89,2024-07-31,PollsterA,1.1,Online,HI,Registered Voters,Democrat,Trump,52.7
-90,2024-04-27,PollsterC,1.6,Mixed,MO,Likely Voters,Democrat,Trump,50.4
-91,2024-08-12,PollsterE,3.7,Online,NM,Registered Voters,Democrat,Trump,53.6
-92,2024-09-14,PollsterC,3.8,Online,AL,Likely Voters,Republican,Trump,44.4
-93,2024-04-08,PollsterB,4.2,Online,IA,Likely Voters,Democrat,Harris,46.5
-94,2024-04-18,PollsterC,2,Phone,MO,Registered Voters,Republican,Trump,49.1
-95,2024-02-06,PollsterB,3.7,Phone,IL,Likely Voters,Democrat,Trump,43
-96,2024-06-10,PollsterA,2.1,Phone,NC,Registered Voters,Democrat,Trump,47.6
-97,2024-04-28,PollsterD,3.1,Online,MN,Likely Voters,Republican,Harris,44.8
-98,2024-02-25,PollsterA,3.5,Online,MA,Registered Voters,Democrat,Trump,44.4
-99,2024-10-03,PollsterD,2.3,Phone,VA,Likely Voters,Republican,Harris,59.6
-100,2024-06-12,PollsterC,1.7,Phone,ID,Likely Voters,Republican,Trump,52.8
-101,2024-03-04,PollsterE,1.8,Online,WI,Likely Voters,Democrat,Trump,55.6
-102,2024-09-10,PollsterB,3.7,Online,MI,Registered Voters,Democrat,Harris,41.4
-103,2024-03-20,PollsterE,1.5,Phone,TX,Likely Voters,Democrat,Harris,56.6
-104,2024-01-31,PollsterA,2.3,Online,KY,Likely Voters,Republican,Trump,46.1
-105,2024-10-04,PollsterA,1.7,Phone,NM,Likely Voters,Republican,Harris,54.2
-106,2024-05-28,PollsterD,4.1,Phone,VA,Likely Voters,Democrat,Trump,45.9
-107,2024-05-09,PollsterA,4.2,Mixed,ME,Likely Voters,Republican,Trump,57.1
-108,2024-09-25,PollsterA,3.4,Online,PA,Likely Voters,Democrat,Harris,50.5
-109,2024-03-14,PollsterC,4.1,Phone,CT,Likely Voters,Democrat,Harris,48.8
-110,2024-02-20,PollsterB,1.8,Online,IN,Likely Voters,Republican,Harris,40.6
-111,2024-09-05,PollsterC,3.9,Phone,MD,Likely Voters,Democrat,Trump,55.8
-112,2024-08-12,PollsterB,1.7,Mixed,MI,Registered Voters,Republican,Harris,51.5
-113,2024-07-03,PollsterE,3.1,Online,MI,Registered Voters,Republican,Harris,57.5
-114,2024-05-08,PollsterE,2.1,Phone,VA,Registered Voters,Republican,Harris,55.7
-115,2024-09-03,PollsterB,1.6,Mixed,NV,Likely Voters,Republican,Trump,43.7
-116,2024-09-20,PollsterB,3.2,Mixed,CO,Registered Voters,Republican,Harris,56.3
-117,2024-01-16,PollsterB,3.1,Online,CA,Registered Voters,Democrat,Harris,42.5
-118,2024-04-15,PollsterA,1.8,Online,CO,Registered Voters,Republican,Trump,49.9
-119,2024-05-12,PollsterB,2,Online,TX,Registered Voters,Republican,Trump,46.5
-120,2024-06-15,PollsterC,1.6,Mixed,NJ,Likely Voters,Democrat,Harris,54.3
-121,2024-01-01,PollsterD,4.8,Mixed,IL,Likely Voters,Democrat,Harris,55.6
-122,2024-07-24,PollsterC,2.9,Phone,WI,Likely Voters,Democrat,Trump,54.5
-123,2024-01-24,PollsterB,3.8,Phone,VT,Likely Voters,Republican,Trump,57.8
-124,2024-03-28,PollsterE,2.3,Online,IA,Likely Voters,Republican,Harris,47.3
-125,2024-05-16,PollsterC,4.6,Online,WI,Registered Voters,Democrat,Trump,46.6
-126,2024-04-28,PollsterB,2.4,Online,MI,Registered Voters,Republican,Harris,49.6
-127,2024-01-29,PollsterE,3,Online,PA,Likely Voters,Republican,Trump,59.4
-128,2024-02-29,PollsterD,4,Mixed,AL,Likely Voters,Democrat,Harris,48.2
-129,2024-06-02,PollsterE,3.8,Online,OK,Registered Voters,Democrat,Trump,46.8
-130,2024-06-20,PollsterC,2.6,Online,AR,Registered Voters,Democrat,Trump,51.4
-131,2024-10-18,PollsterB,2.8,Mixed,AK,Likely Voters,Democrat,Harris,43.1
-132,2024-10-01,PollsterC,4.7,Phone,NJ,Registered Voters,Democrat,Harris,59.7
-133,2024-05-31,PollsterC,4.1,Online,NV,Registered Voters,Democrat,Trump,50.5
-134,2024-06-11,PollsterB,4.1,Phone,NC,Likely Voters,Republican,Trump,48.8
-135,2024-09-26,PollsterA,4.6,Mixed,AR,Likely Voters,Republican,Harris,57.7
-136,2024-01-25,PollsterE,2.4,Phone,RI,Registered Voters,Republican,Harris,54.5
-137,2024-07-18,PollsterA,3.2,Online,NH,Registered Voters,Republican,Harris,52.8
-138,2024-06-02,PollsterC,4.1,Phone,AL,Registered Voters,Democrat,Trump,58.4
-139,2024-01-08,PollsterB,1.3,Mixed,ND,Likely Voters,Democrat,Trump,55
-140,2024-07-05,PollsterC,3.9,Mixed,AZ,Registered Voters,Democrat,Harris,43.1
-141,2024-03-17,PollsterC,3.2,Mixed,NY,Registered Voters,Republican,Trump,46.9
-142,2024-03-05,PollsterD,1.2,Phone,NE,Registered Voters,Democrat,Trump,55.8
-143,2024-02-10,PollsterD,2.2,Phone,PA,Likely Voters,Republican,Trump,44.2
-144,2024-09-22,PollsterC,4.6,Phone,IL,Likely Voters,Democrat,Trump,45.6
-145,2024-04-12,PollsterC,2.5,Phone,WV,Registered Voters,Democrat,Trump,54.2
-146,2024-06-07,PollsterC,2,Online,VA,Registered Voters,Republican,Harris,41.2
-147,2024-06-01,PollsterC,3.1,Online,FL,Likely Voters,Republican,Trump,45.6
-148,2024-06-09,PollsterE,2.8,Online,OK,Likely Voters,Democrat,Harris,54.9
-149,2024-09-21,PollsterA,2,Online,ME,Likely Voters,Republican,Trump,43.5
-150,2024-08-29,PollsterC,2.9,Online,NJ,Registered Voters,Democrat,Trump,58.8
-151,2024-04-24,PollsterE,3.3,Phone,WV,Registered Voters,Republican,Harris,49.8
-152,2024-02-28,PollsterA,4.9,Mixed,ME,Registered Voters,Democrat,Harris,54.6
-153,2024-02-21,PollsterE,4.1,Phone,UT,Likely Voters,Democrat,Harris,58.5
-154,2024-08-12,PollsterD,1.7,Mixed,IN,Likely Voters,Republican,Trump,42.6
-155,2024-02-20,PollsterE,3,Online,AL,Likely Voters,Democrat,Harris,49.8
-156,2024-07-15,PollsterD,3.2,Online,WA,Registered Voters,Republican,Harris,59.3
-157,2024-08-11,PollsterA,3.4,Mixed,PA,Registered Voters,Republican,Trump,52.3
-158,2024-05-05,PollsterD,2.3,Mixed,MN,Likely Voters,Republican,Harris,43.3
-159,2024-06-23,PollsterE,3.2,Mixed,TN,Likely Voters,Democrat,Harris,53.6
-160,2024-01-09,PollsterE,3.8,Online,KS,Likely Voters,Democrat,Harris,45
-161,2024-10-07,PollsterC,1.5,Phone,SD,Registered Voters,Democrat,Trump,58.9
-162,2024-04-04,PollsterD,1.4,Mixed,NH,Registered Voters,Republican,Trump,45.1
-163,2024-08-31,PollsterA,2.9,Online,CO,Likely Voters,Republican,Trump,50.5
-164,2024-10-08,PollsterE,2.5,Mixed,OK,Likely Voters,Republican,Trump,41.9
-165,2024-07-22,PollsterB,4,Mixed,MA,Registered Voters,Democrat,Trump,56.9
-166,2024-06-05,PollsterA,4,Phone,NY,Likely Voters,Democrat,Trump,51.9
-167,2024-09-22,PollsterE,4.7,Online,ID,Likely Voters,Republican,Harris,41.9
-168,2024-07-05,PollsterD,2.4,Mixed,NV,Likely Voters,Republican,Trump,43.3
-169,2024-04-16,PollsterE,3.4,Phone,CO,Registered Voters,Democrat,Trump,56.9
-170,2024-09-01,PollsterA,1.8,Online,AL,Registered Voters,Republican,Trump,45.2
-171,2024-05-01,PollsterD,2.7,Phone,SD,Likely Voters,Republican,Trump,59.8
-172,2024-05-18,PollsterB,1.3,Online,KS,Likely Voters,Democrat,Harris,55.1
-173,2024-05-07,PollsterB,1.8,Online,GA,Likely Voters,Republican,Trump,41.7
-174,2024-05-23,PollsterC,1.5,Online,IL,Registered Voters,Democrat,Harris,40.6
-175,2024-04-10,PollsterD,2.3,Online,MD,Registered Voters,Democrat,Harris,47.8
-176,2024-05-14,PollsterC,3.3,Mixed,KS,Registered Voters,Democrat,Trump,45.5
-177,2024-05-01,PollsterD,2.9,Phone,MI,Likely Voters,Democrat,Trump,50.3
-178,2024-01-23,PollsterE,4.5,Mixed,CO,Likely Voters,Republican,Harris,54.1
-179,2024-01-19,PollsterD,3.9,Phone,IA,Likely Voters,Republican,Trump,49.2
-180,2024-09-01,PollsterA,4.9,Online,CO,Likely Voters,Republican,Harris,56.4
-181,2024-09-26,PollsterA,1.7,Mixed,PA,Likely Voters,Democrat,Trump,45.5
-182,2024-04-17,PollsterD,4.7,Online,KS,Likely Voters,Republican,Trump,46.3
-183,2024-03-30,PollsterA,2.3,Phone,MT,Registered Voters,Democrat,Harris,46.2
-184,2024-06-24,PollsterC,2.6,Phone,IA,Likely Voters,Republican,Trump,49.5
-185,2024-06-26,PollsterD,2.3,Phone,MS,Registered Voters,Republican,Harris,57.2
-186,2024-06-27,PollsterE,2.9,Mixed,UT,Registered Voters,Democrat,Trump,43.9
-187,2024-04-07,PollsterD,3.3,Mixed,TX,Registered Voters,Republican,Trump,46.3
-188,2024-04-13,PollsterC,4.6,Online,NJ,Likely Voters,Republican,Harris,55.1
-189,2024-09-19,PollsterC,3.5,Mixed,WV,Likely Voters,Democrat,Trump,48.1
-190,2024-03-27,PollsterE,4,Online,NE,Registered Voters,Republican,Trump,43.3
-191,2024-08-29,PollsterE,2.8,Mixed,WY,Registered Voters,Democrat,Trump,49.4
-192,2024-01-31,PollsterD,1.5,Mixed,MS,Registered Voters,Republican,Harris,54.8
-193,2024-03-11,PollsterA,1.8,Phone,CT,Registered Voters,Republican,Harris,56.2
-194,2024-03-19,PollsterA,4.8,Phone,CA,Registered Voters,Democrat,Trump,41.4
-195,2024-10-17,PollsterD,2.3,Phone,MN,Registered Voters,Democrat,Harris,52.9
-196,2024-08-07,PollsterD,2.3,Mixed,FL,Likely Voters,Republican,Trump,51.3
-197,2024-03-22,PollsterD,3.6,Mixed,LA,Registered Voters,Democrat,Harris,49.1
-198,2024-01-15,PollsterD,1.1,Online,FL,Likely Voters,Democrat,Harris,55.1
-199,2024-08-15,PollsterB,1,Mixed,DE,Likely Voters,Democrat,Harris,46.7
-200,2024-03-21,PollsterC,4.2,Phone,NV,Registered Voters,Republican,Harris,59.6
-201,2024-08-06,PollsterA,3,Phone,ID,Registered Voters,Republican,Trump,45.5
-202,2024-07-26,PollsterE,3.8,Online,CO,Registered Voters,Republican,Harris,52.6
-203,2024-04-13,PollsterC,1.5,Online,AK,Likely Voters,Republican,Trump,55.2
-204,2024-04-08,PollsterC,1.2,Online,SD,Likely Voters,Democrat,Trump,43
-205,2024-06-08,PollsterE,4.6,Mixed,AR,Likely Voters,Democrat,Trump,51.8
-206,2024-09-24,PollsterB,1.3,Phone,NM,Likely Voters,Republican,Trump,49.2
-207,2024-07-22,PollsterA,3.2,Phone,AR,Registered Voters,Democrat,Trump,48.8
-208,2024-03-17,PollsterA,3.3,Online,WA,Likely Voters,Republican,Harris,47.1
-209,2024-05-29,PollsterC,3.3,Mixed,NY,Registered Voters,Democrat,Harris,49.2
-210,2024-04-12,PollsterE,4.2,Online,IN,Registered Voters,Democrat,Harris,53.8
-211,2024-08-09,PollsterC,1.1,Mixed,GA,Likely Voters,Democrat,Trump,59.3
-212,2024-10-15,PollsterD,4.8,Online,IA,Registered Voters,Republican,Trump,47.2
-213,2024-10-01,PollsterA,4.5,Mixed,AK,Registered Voters,Republican,Trump,41.3
-214,2024-03-06,PollsterD,1.6,Phone,SC,Likely Voters,Democrat,Harris,43.3
-215,2024-03-19,PollsterB,4,Online,NH,Registered Voters,Republican,Harris,51
-216,2024-09-11,PollsterC,3.1,Online,MD,Registered Voters,Democrat,Harris,59.1
-217,2024-07-20,PollsterA,2.8,Mixed,CA,Registered Voters,Republican,Harris,51.1
-218,2024-03-18,PollsterB,1.7,Mixed,AZ,Likely Voters,Republican,Harris,57.9
-219,2024-05-22,PollsterB,1.9,Online,CA,Likely Voters,Republican,Harris,47.1
-220,2024-03-10,PollsterE,1.6,Mixed,WY,Likely Voters,Democrat,Harris,58.6
-221,2024-02-10,PollsterA,2.1,Online,WY,Likely Voters,Republican,Trump,50.9
-222,2024-05-25,PollsterE,1.4,Online,NY,Likely Voters,Republican,Harris,41.4
-223,2024-04-02,PollsterE,4.4,Online,IN,Registered Voters,Democrat,Harris,56.5
-224,2024-09-29,PollsterD,1.4,Mixed,MS,Registered Voters,Republican,Trump,51.9
-225,2024-02-14,PollsterC,4.1,Mixed,ME,Registered Voters,Republican,Harris,56.2
-226,2024-06-21,PollsterC,1.3,Mixed,LA,Likely Voters,Republican,Harris,42.2
-227,2024-08-03,PollsterD,3.9,Phone,AK,Likely Voters,Republican,Harris,50.3
-228,2024-04-05,PollsterE,4.5,Phone,ID,Likely Voters,Republican,Trump,59.9
-229,2024-08-22,PollsterC,3.5,Mixed,IA,Likely Voters,Democrat,Harris,49.2
-230,2024-10-03,PollsterE,4.7,Phone,MD,Likely Voters,Democrat,Harris,42.3
-231,2024-08-27,PollsterD,2.3,Phone,NJ,Likely Voters,Democrat,Trump,46.8
-232,2024-07-28,PollsterE,2.2,Mixed,AL,Registered Voters,Democrat,Trump,49.5
-233,2024-02-27,PollsterE,2.4,Mixed,NY,Likely Voters,Republican,Harris,40.8
-234,2024-07-27,PollsterD,4.9,Mixed,NC,Registered Voters,Republican,Trump,49.6
-235,2024-07-18,PollsterD,4,Online,SC,Likely Voters,Democrat,Harris,42.5
-236,2024-02-26,PollsterB,2.7,Phone,WI,Likely Voters,Democrat,Harris,41.7
-237,2024-07-31,PollsterA,1.5,Online,NH,Likely Voters,Republican,Trump,43.5
-238,2024-08-24,PollsterE,1.1,Phone,IL,Likely Voters,Republican,Trump,59.4
-239,2024-07-14,PollsterD,2.3,Online,AK,Registered Voters,Democrat,Harris,50.7
-240,2024-03-24,PollsterA,3.2,Online,CA,Registered Voters,Republican,Harris,43.6
-241,2024-06-21,PollsterA,2.9,Phone,OH,Likely Voters,Democrat,Harris,50.7
-242,2024-06-12,PollsterE,2.5,Mixed,VT,Registered Voters,Democrat,Harris,51.6
-243,2024-07-04,PollsterA,3.6,Phone,IL,Likely Voters,Democrat,Trump,42.9
-244,2024-03-02,PollsterB,2.5,Online,WY,Registered Voters,Democrat,Trump,56.7
-245,2024-06-20,PollsterD,1.5,Phone,NC,Likely Voters,Republican,Harris,48.5
-246,2024-02-07,PollsterC,2.7,Online,MD,Likely Voters,Republican,Trump,43
-247,2024-03-12,PollsterD,2.9,Online,NV,Likely Voters,Democrat,Trump,46.8
-248,2024-05-04,PollsterD,4.6,Mixed,CO,Registered Voters,Democrat,Harris,51.7
-249,2024-07-18,PollsterB,4.8,Online,ID,Registered Voters,Republican,Harris,55.8
-250,2024-09-11,PollsterA,1.8,Phone,IL,Likely Voters,Democrat,Harris,57.3
-251,2024-01-31,PollsterE,1.1,Online,AL,Likely Voters,Democrat,Trump,58.6
-252,2024-02-11,PollsterC,3.8,Online,VT,Registered Voters,Republican,Harris,60
-253,2024-02-11,PollsterB,1.2,Online,ID,Likely Voters,Republican,Harris,47.5
-254,2024-09-19,PollsterA,4.4,Phone,PA,Registered Voters,Republican,Trump,52.8
-255,2024-06-20,PollsterB,2.5,Mixed,NE,Likely Voters,Democrat,Harris,51.7
-256,2024-05-09,PollsterC,1.9,Phone,WY,Likely Voters,Republican,Trump,47.1
-257,2024-02-20,PollsterA,4.4,Mixed,VA,Likely Voters,Republican,Harris,50.4
-258,2024-01-31,PollsterD,1.1,Online,NM,Likely Voters,Republican,Harris,42.3
-259,2024-09-26,PollsterA,3.2,Online,DE,Likely Voters,Democrat,Harris,51.5
-260,2024-07-10,PollsterB,1.6,Online,MI,Registered Voters,Democrat,Harris,45.8
-261,2024-08-03,PollsterE,1.4,Mixed,WV,Likely Voters,Democrat,Harris,58.2
-262,2024-05-07,PollsterB,1.8,Online,HI,Registered Voters,Democrat,Harris,40.2
-263,2024-04-04,PollsterE,3.4,Phone,HI,Registered Voters,Democrat,Trump,49.3
-264,2024-06-23,PollsterE,2.7,Phone,MN,Likely Voters,Republican,Harris,41
-265,2024-04-28,PollsterE,3.4,Phone,VT,Likely Voters,Republican,Trump,45.1
-266,2024-02-23,PollsterD,1.2,Online,NE,Likely Voters,Democrat,Trump,40.6
-267,2024-07-02,PollsterD,2.1,Mixed,NV,Registered Voters,Democrat,Harris,47.1
-268,2024-02-08,PollsterC,1.6,Online,MA,Registered Voters,Republican,Trump,59.5
-269,2024-09-10,PollsterB,1.5,Online,ID,Likely Voters,Democrat,Trump,58.2
-270,2024-06-30,PollsterB,3.9,Online,HI,Registered Voters,Democrat,Harris,58.5
-271,2024-01-28,PollsterA,4.5,Mixed,IA,Likely Voters,Republican,Trump,45.5
-272,2024-07-19,PollsterE,3.8,Phone,SC,Registered Voters,Democrat,Harris,47.7
-273,2024-02-18,PollsterB,2.6,Online,NY,Registered Voters,Democrat,Harris,40.6
-274,2024-07-06,PollsterB,4.1,Online,SD,Registered Voters,Republican,Harris,52.5
-275,2024-09-08,PollsterD,4.2,Phone,MS,Likely Voters,Republican,Harris,41.9
-276,2024-08-19,PollsterC,4.3,Online,ND,Likely Voters,Democrat,Harris,49.2
-277,2024-07-28,PollsterD,2.9,Online,KY,Registered Voters,Democrat,Harris,57.9
-278,2024-02-19,PollsterE,5,Mixed,TN,Registered Voters,Republican,Trump,51.2
-279,2024-07-21,PollsterD,2.3,Phone,LA,Registered Voters,Republican,Harris,55.9
-280,2024-06-09,PollsterB,3.2,Phone,RI,Registered Voters,Republican,Trump,52.5
-281,2024-01-09,PollsterB,3.6,Mixed,MT,Registered Voters,Republican,Trump,57.2
-282,2024-01-30,PollsterC,5,Phone,TX,Likely Voters,Republican,Trump,46.8
-283,2024-07-24,PollsterE,2.2,Mixed,VA,Likely Voters,Democrat,Harris,59.9
-284,2024-02-18,PollsterE,2.7,Online,ME,Likely Voters,Republican,Harris,48
-285,2024-10-18,PollsterE,1.5,Phone,MN,Registered Voters,Republican,Trump,52.3
-286,2024-04-19,PollsterC,3.7,Mixed,NJ,Registered Voters,Republican,Harris,58
-287,2024-07-22,PollsterE,3.8,Phone,DE,Likely Voters,Republican,Trump,40.6
-288,2024-05-09,PollsterD,1.8,Online,MD,Likely Voters,Democrat,Harris,43.4
-289,2024-04-06,PollsterA,4.9,Mixed,GA,Registered Voters,Democrat,Trump,46.9
-290,2024-01-12,PollsterA,2.3,Online,NM,Registered Voters,Democrat,Harris,46.3
-291,2024-05-14,PollsterC,1.3,Mixed,MI,Likely Voters,Republican,Harris,47.3
-292,2024-09-22,PollsterE,5,Online,MT,Registered Voters,Democrat,Harris,53.7
-293,2024-09-05,PollsterC,2,Mixed,NY,Likely Voters,Democrat,Harris,40.7
-294,2024-04-22,PollsterC,1.1,Phone,RI,Registered Voters,Republican,Trump,51.2
-295,2024-08-24,PollsterB,1.5,Phone,AZ,Registered Voters,Republican,Trump,57.6
-296,2024-07-18,PollsterB,4.1,Mixed,IA,Registered Voters,Republican,Trump,43.7
-297,2024-08-21,PollsterD,3.8,Phone,UT,Registered Voters,Democrat,Harris,47.4
-298,2024-09-26,PollsterE,2.1,Mixed,UT,Likely Voters,Democrat,Harris,40.6
-299,2024-09-29,PollsterC,4.7,Online,MS,Registered Voters,Republican,Harris,55.5
-300,2024-06-18,PollsterA,3.5,Phone,SC,Registered Voters,Democrat,Trump,55.5
-301,2024-08-27,PollsterA,4.8,Phone,UT,Likely Voters,Republican,Harris,46.7
-302,2024-10-13,PollsterE,4.1,Phone,IA,Likely Voters,Democrat,Harris,59.1
-303,2024-05-09,PollsterE,3.6,Mixed,ID,Likely Voters,Republican,Trump,51.2
-304,2024-10-11,PollsterA,2.4,Online,OK,Registered Voters,Democrat,Harris,55.5
-305,2024-03-26,PollsterC,1.9,Mixed,NC,Likely Voters,Republican,Trump,47.7
-306,2024-05-26,PollsterC,2.7,Mixed,MN,Registered Voters,Democrat,Harris,56.1
-307,2024-02-27,PollsterB,3.5,Mixed,AZ,Likely Voters,Democrat,Harris,57.2
-308,2024-05-24,PollsterB,3.5,Mixed,TX,Likely Voters,Republican,Trump,45.5
-309,2024-09-09,PollsterB,2.4,Online,RI,Likely Voters,Democrat,Trump,43.1
-310,2024-05-15,PollsterC,1.6,Online,OH,Registered Voters,Democrat,Trump,42
-311,2024-04-23,PollsterB,3.2,Online,OK,Likely Voters,Republican,Harris,50.6
-312,2024-05-29,PollsterB,2,Mixed,NC,Likely Voters,Democrat,Harris,48.1
-313,2024-09-09,PollsterD,5,Online,TX,Registered Voters,Republican,Trump,59.2
-314,2024-09-04,PollsterC,4.6,Mixed,MA,Likely Voters,Republican,Harris,45.6
-315,2024-10-18,PollsterA,4.3,Mixed,MA,Registered Voters,Democrat,Trump,54.1
-316,2024-09-04,PollsterD,3.9,Mixed,LA,Registered Voters,Republican,Harris,56.9
-317,2024-02-28,PollsterC,2.6,Online,LA,Registered Voters,Democrat,Trump,52.8
-318,2024-10-10,PollsterA,3.7,Phone,VT,Registered Voters,Republican,Trump,45.9
-319,2024-05-03,PollsterD,4.9,Mixed,UT,Likely Voters,Democrat,Harris,53.3
-320,2024-04-03,PollsterC,2.3,Mixed,DE,Likely Voters,Democrat,Trump,47.4
-321,2024-01-25,PollsterB,4.6,Online,WY,Likely Voters,Democrat,Harris,56.2
-322,2024-07-09,PollsterE,3.4,Online,WA,Registered Voters,Republican,Trump,54
-323,2024-05-16,PollsterD,3.2,Phone,RI,Likely Voters,Republican,Harris,51.7
-324,2024-03-06,PollsterA,4.5,Mixed,NC,Likely Voters,Republican,Trump,46.1
-325,2024-02-07,PollsterA,3.1,Phone,KS,Likely Voters,Democrat,Trump,49
-326,2024-03-27,PollsterD,1.2,Mixed,PA,Registered Voters,Democrat,Trump,47.6
-327,2024-06-13,PollsterA,4.3,Mixed,MA,Likely Voters,Republican,Harris,59.8
-328,2024-07-29,PollsterA,1.5,Mixed,DE,Registered Voters,Democrat,Harris,57.3
-329,2024-06-22,PollsterE,1.8,Mixed,VA,Likely Voters,Democrat,Harris,41.3
-330,2024-09-09,PollsterD,2.8,Mixed,RI,Registered Voters,Republican,Trump,51
-331,2024-05-14,PollsterA,3.3,Phone,OR,Likely Voters,Republican,Harris,58.7
-332,2024-04-13,PollsterA,1.7,Online,NC,Registered Voters,Republican,Harris,43
-333,2024-10-11,PollsterE,2.3,Online,NH,Likely Voters,Democrat,Trump,55.8
-334,2024-09-20,PollsterA,3.1,Online,TN,Likely Voters,Republican,Harris,54.2
-335,2024-05-21,PollsterA,1.7,Phone,NE,Likely Voters,Republican,Harris,51.2
-336,2024-01-28,PollsterB,4.8,Online,IL,Registered Voters,Republican,Harris,51.6
-337,2024-07-12,PollsterB,1.5,Online,MD,Registered Voters,Republican,Trump,57
-338,2024-09-19,PollsterA,3.5,Mixed,CA,Likely Voters,Democrat,Trump,54.1
-339,2024-01-10,PollsterE,4.7,Online,VA,Registered Voters,Republican,Trump,49.6
-340,2024-05-04,PollsterB,2.3,Phone,DE,Likely Voters,Republican,Trump,50.5
-341,2024-07-11,PollsterA,1.9,Mixed,GA,Registered Voters,Republican,Trump,51
-342,2024-06-05,PollsterA,2.1,Online,MN,Likely Voters,Democrat,Trump,53.2
-343,2024-01-03,PollsterA,3.8,Mixed,CT,Likely Voters,Republican,Trump,54.4
-344,2024-04-29,PollsterE,4.8,Online,WV,Registered Voters,Republican,Harris,58.1
-345,2024-10-01,PollsterD,4.1,Online,RI,Registered Voters,Republican,Harris,43.5
-346,2024-01-11,PollsterA,2.6,Phone,OK,Registered Voters,Democrat,Harris,51.6
-347,2024-09-25,PollsterA,4.1,Mixed,AR,Registered Voters,Republican,Trump,46.6
-348,2024-05-02,PollsterE,3.2,Online,ME,Registered Voters,Republican,Trump,42
-349,2024-08-31,PollsterB,2.3,Phone,CT,Likely Voters,Democrat,Trump,54.9
-350,2024-05-14,PollsterD,2.3,Online,TN,Likely Voters,Democrat,Harris,57.7
-351,2024-04-26,PollsterE,1.3,Online,CT,Registered Voters,Republican,Trump,49.2
-352,2024-01-19,PollsterB,3.6,Online,NH,Registered Voters,Republican,Harris,44.7
-353,2024-03-18,PollsterD,4.8,Phone,CA,Likely Voters,Republican,Trump,56.5
-354,2024-04-10,PollsterB,4.4,Mixed,VT,Registered Voters,Republican,Harris,53.9
-355,2024-09-15,PollsterE,4.2,Online,MO,Likely Voters,Republican,Trump,55.5
-356,2024-09-06,PollsterA,2.2,Online,IA,Likely Voters,Republican,Harris,45.9
-357,2024-05-02,PollsterA,4.3,Mixed,HI,Likely Voters,Republican,Trump,57.7
-358,2024-05-02,PollsterB,2.3,Online,VA,Registered Voters,Democrat,Harris,59.3
-359,2024-03-09,PollsterE,4.4,Online,NC,Likely Voters,Democrat,Trump,55.9
-360,2024-01-07,PollsterD,2.7,Phone,OH,Likely Voters,Democrat,Trump,41.5
-361,2024-07-26,PollsterE,2.8,Phone,MD,Likely Voters,Democrat,Harris,53.8
-362,2024-02-06,PollsterD,1.7,Online,MO,Likely Voters,Republican,Harris,53.9
-363,2024-07-02,PollsterB,3.2,Mixed,LA,Likely Voters,Republican,Harris,50.2
-364,2024-02-17,PollsterB,2.3,Online,NE,Registered Voters,Democrat,Harris,54.9
-365,2024-02-08,PollsterB,4,Mixed,NM,Registered Voters,Democrat,Harris,40.5
-366,2024-07-05,PollsterC,2.4,Phone,WI,Registered Voters,Democrat,Harris,45.7
-367,2024-08-27,PollsterA,4.9,Online,NC,Registered Voters,Republican,Harris,42.7
-368,2024-05-13,PollsterB,3.6,Mixed,CT,Registered Voters,Republican,Harris,43.2
-369,2024-06-09,PollsterB,4.9,Mixed,WY,Likely Voters,Republican,Trump,47.1
-370,2024-03-11,PollsterD,2.5,Mixed,MD,Likely Voters,Democrat,Harris,44.4
-371,2024-06-20,PollsterC,4.9,Mixed,RI,Likely Voters,Republican,Trump,45.3
-372,2024-01-08,PollsterB,2.8,Phone,CO,Registered Voters,Republican,Trump,59.5
-373,2024-09-10,PollsterD,1.2,Mixed,FL,Likely Voters,Democrat,Trump,52.2
-374,2024-01-25,PollsterE,4.5,Phone,ID,Registered Voters,Republican,Trump,58.5
-375,2024-10-14,PollsterA,1.6,Phone,AL,Registered Voters,Republican,Harris,56.9
-376,2024-01-15,PollsterC,2.3,Mixed,MS,Registered Voters,Democrat,Harris,44.4
-377,2024-08-25,PollsterD,4.8,Online,WA,Registered Voters,Democrat,Harris,50.1
-378,2024-04-08,PollsterA,2.5,Online,RI,Registered Voters,Democrat,Harris,41.9
-379,2024-05-09,PollsterA,2,Online,MA,Registered Voters,Democrat,Harris,51.8
-380,2024-08-24,PollsterE,4.8,Mixed,LA,Registered Voters,Republican,Harris,59.2
-381,2024-05-17,PollsterC,2,Online,LA,Likely Voters,Republican,Trump,56.9
-382,2024-01-25,PollsterE,1.5,Mixed,SC,Registered Voters,Republican,Trump,45.8
-383,2024-08-08,PollsterE,4.2,Phone,NE,Likely Voters,Republican,Harris,49.1
-384,2024-07-19,PollsterE,3,Phone,IL,Registered Voters,Republican,Trump,57.8
-385,2024-09-02,PollsterC,4.3,Mixed,AK,Registered Voters,Democrat,Trump,51.7
-386,2024-09-08,PollsterC,2.4,Online,ME,Registered Voters,Republican,Trump,54.3
-387,2024-03-13,PollsterC,4.4,Online,AK,Likely Voters,Republican,Trump,43.5
-388,2024-06-05,PollsterD,3.7,Online,GA,Registered Voters,Republican,Trump,42.9
-389,2024-02-12,PollsterB,3,Online,ND,Registered Voters,Republican,Harris,47.6
-390,2024-08-07,PollsterA,1.8,Mixed,AK,Likely Voters,Democrat,Harris,45.1
-391,2024-08-08,PollsterA,3.3,Online,ND,Likely Voters,Republican,Harris,56.9
-392,2024-03-19,PollsterD,3,Mixed,ME,Registered Voters,Republican,Harris,49.3
-393,2024-08-14,PollsterA,4.7,Online,NC,Likely Voters,Republican,Trump,56.6
-394,2024-03-05,PollsterE,4.3,Phone,MO,Registered Voters,Republican,Trump,42.9
-395,2024-09-11,PollsterC,3,Phone,NM,Registered Voters,Democrat,Trump,54.4
-396,2024-08-18,PollsterA,2.9,Phone,UT,Registered Voters,Republican,Trump,56.4
-397,2024-03-15,PollsterB,2.1,Mixed,KS,Likely Voters,Democrat,Harris,40.9
-398,2024-05-19,PollsterB,4.5,Online,TN,Registered Voters,Republican,Harris,40.8
-399,2024-08-06,PollsterD,3.5,Phone,AR,Registered Voters,Republican,Trump,50.9
-400,2024-01-29,PollsterD,1.9,Online,NE,Registered Voters,Republican,Trump,43.4
-401,2024-08-09,PollsterA,2.3,Phone,KY,Likely Voters,Republican,Trump,56
-402,2024-01-01,PollsterD,2.3,Online,MI,Registered Voters,Republican,Harris,59.9
-403,2024-05-09,PollsterE,1,Phone,WA,Likely Voters,Republican,Harris,44.8
-404,2024-05-12,PollsterA,3.8,Mixed,AR,Registered Voters,Republican,Trump,50.2
-405,2024-08-19,PollsterD,4.1,Mixed,HI,Registered Voters,Democrat,Harris,55.6
-406,2024-10-09,PollsterB,4.5,Phone,LA,Likely Voters,Republican,Trump,46.8
-407,2024-07-23,PollsterD,3.6,Online,NE,Registered Voters,Republican,Trump,45.4
-408,2024-03-06,PollsterE,3.5,Phone,HI,Registered Voters,Democrat,Trump,55.8
-409,2024-09-30,PollsterA,3,Phone,KY,Likely Voters,Republican,Harris,42.4
-410,2024-05-24,PollsterD,2.4,Mixed,NJ,Likely Voters,Republican,Trump,54.8
-411,2024-04-12,PollsterE,1.2,Online,UT,Registered Voters,Republican,Trump,42.1
-412,2024-08-13,PollsterB,1.9,Mixed,AK,Registered Voters,Democrat,Trump,54.8
-413,2024-02-21,PollsterC,2.2,Online,NE,Registered Voters,Republican,Trump,48.4
-414,2024-02-17,PollsterB,2.9,Mixed,AZ,Likely Voters,Democrat,Harris,52.7
-415,2024-01-30,PollsterB,4.2,Online,AK,Likely Voters,Democrat,Harris,54.8
-416,2024-04-02,PollsterB,3.5,Online,IN,Likely Voters,Democrat,Trump,59.3
-417,2024-03-20,PollsterC,2.7,Online,CA,Registered Voters,Republican,Trump,57.1
-418,2024-08-15,PollsterA,1.6,Mixed,UT,Registered Voters,Republican,Harris,41.5
-419,2024-04-04,PollsterE,4.1,Phone,VT,Likely Voters,Republican,Harris,52.2
-420,2024-03-24,PollsterE,3.3,Online,MT,Registered Voters,Democrat,Harris,41.1
-421,2024-05-30,PollsterA,4.9,Online,NC,Registered Voters,Republican,Trump,52.7
-422,2024-10-04,PollsterB,4.6,Phone,NJ,Likely Voters,Democrat,Trump,40.1
-423,2024-01-15,PollsterD,3.2,Phone,VA,Registered Voters,Democrat,Trump,54.2
-424,2024-01-18,PollsterA,3.3,Phone,TX,Likely Voters,Democrat,Harris,52.2
-425,2024-02-02,PollsterB,2.7,Phone,NE,Registered Voters,Republican,Harris,58.6
-426,2024-06-17,PollsterD,4.7,Online,VA,Registered Voters,Democrat,Harris,40.4
-427,2024-04-07,PollsterD,2.5,Mixed,AR,Registered Voters,Republican,Trump,41.1
-428,2024-07-09,PollsterE,1.7,Mixed,CT,Registered Voters,Republican,Harris,56.1
-429,2024-03-24,PollsterE,4.3,Online,UT,Registered Voters,Democrat,Harris,59.5
-430,2024-07-29,PollsterE,4.2,Online,NC,Registered Voters,Republican,Harris,49
-431,2024-09-08,PollsterB,3.9,Mixed,SC,Registered Voters,Republican,Trump,40
-432,2024-09-03,PollsterC,2.8,Online,CO,Likely Voters,Republican,Trump,40.4
-433,2024-10-03,PollsterD,2.7,Phone,AL,Likely Voters,Democrat,Harris,54.3
-434,2024-05-29,PollsterC,1.7,Phone,TN,Registered Voters,Democrat,Harris,45.2
-435,2024-01-25,PollsterC,2.2,Online,DE,Likely Voters,Democrat,Harris,46.9
-436,2024-09-22,PollsterE,4.9,Phone,NC,Likely Voters,Democrat,Harris,54.9
-437,2024-07-27,PollsterD,3.3,Online,MT,Likely Voters,Democrat,Trump,59
-438,2024-05-31,PollsterA,1.3,Online,ID,Likely Voters,Republican,Harris,46.3
-439,2024-09-14,PollsterD,4,Online,OH,Likely Voters,Republican,Trump,56.6
-440,2024-07-15,PollsterA,2.8,Online,OK,Likely Voters,Democrat,Harris,40.1
-441,2024-06-25,PollsterD,4,Mixed,LA,Registered Voters,Republican,Harris,55.8
-442,2024-07-29,PollsterB,2.2,Mixed,IN,Likely Voters,Democrat,Trump,40.9
-443,2024-06-18,PollsterC,3,Mixed,VT,Likely Voters,Democrat,Trump,44.9
-444,2024-04-02,PollsterE,1.1,Phone,VA,Likely Voters,Democrat,Harris,42.8
-445,2024-01-06,PollsterB,1.3,Mixed,SD,Registered Voters,Democrat,Trump,47
-446,2024-05-26,PollsterB,3.9,Phone,VT,Registered Voters,Republican,Trump,56.2
-447,2024-08-27,PollsterD,2,Online,RI,Registered Voters,Democrat,Harris,46.9
-448,2024-06-08,PollsterA,2.6,Phone,OK,Likely Voters,Republican,Harris,48.8
-449,2024-07-23,PollsterA,1.5,Mixed,WY,Registered Voters,Republican,Harris,47.4
-450,2024-06-27,PollsterC,2.4,Online,KY,Likely Voters,Democrat,Trump,48.3
-451,2024-09-25,PollsterB,2.6,Phone,AK,Likely Voters,Democrat,Harris,45
-452,2024-09-27,PollsterE,3.6,Mixed,LA,Registered Voters,Democrat,Trump,55.3
-453,2024-08-14,PollsterD,3.8,Mixed,ME,Registered Voters,Republican,Harris,45.4
-454,2024-08-29,PollsterC,2.5,Online,PA,Registered Voters,Republican,Harris,44.1
-455,2024-01-27,PollsterE,2.8,Mixed,ND,Likely Voters,Democrat,Trump,57.8
-456,2024-05-13,PollsterD,3.9,Online,UT,Likely Voters,Democrat,Harris,55
-457,2024-03-01,PollsterC,1.3,Online,NE,Registered Voters,Democrat,Harris,50.7
-458,2024-08-04,PollsterB,4.8,Mixed,KY,Registered Voters,Democrat,Trump,42.7
-459,2024-04-04,PollsterC,3.1,Mixed,ID,Registered Voters,Republican,Harris,47.4
-460,2024-05-26,PollsterC,3.7,Online,TX,Registered Voters,Democrat,Trump,46.4
-461,2024-02-05,PollsterE,1,Online,AK,Registered Voters,Democrat,Harris,51
-462,2024-04-25,PollsterA,1.9,Phone,NC,Registered Voters,Democrat,Trump,50
-463,2024-03-28,PollsterD,2.3,Phone,OH,Registered Voters,Democrat,Trump,53.3
-464,2024-05-17,PollsterE,4.9,Mixed,NC,Likely Voters,Democrat,Harris,57.7
-465,2024-01-06,PollsterE,4.3,Mixed,MD,Likely Voters,Republican,Trump,46
-466,2024-05-06,PollsterC,3.1,Phone,AZ,Registered Voters,Republican,Harris,50.5
-467,2024-08-10,PollsterA,3.8,Mixed,SC,Registered Voters,Democrat,Harris,55.3
-468,2024-05-25,PollsterD,3.5,Phone,WA,Likely Voters,Republican,Harris,47.4
-469,2024-06-05,PollsterC,4.2,Online,VT,Likely Voters,Republican,Trump,40.5
-470,2024-08-28,PollsterE,2,Phone,TX,Registered Voters,Democrat,Harris,46.5
-471,2024-01-22,PollsterC,4.8,Online,MO,Likely Voters,Democrat,Trump,50.3
-472,2024-02-16,PollsterC,1.3,Mixed,VT,Registered Voters,Republican,Trump,44.2
-473,2024-08-18,PollsterB,3,Mixed,SD,Likely Voters,Democrat,Harris,43.6
-474,2024-05-08,PollsterE,3.8,Online,AZ,Likely Voters,Republican,Harris,55.6
-475,2024-01-21,PollsterB,4.4,Mixed,CA,Likely Voters,Democrat,Harris,44.6
-476,2024-02-07,PollsterB,2,Online,AZ,Likely Voters,Democrat,Trump,50.9
-477,2024-07-04,PollsterC,2.7,Mixed,WY,Likely Voters,Democrat,Harris,52.8
-478,2024-03-30,PollsterE,3.7,Mixed,LA,Registered Voters,Democrat,Harris,56.9
-479,2024-09-23,PollsterE,2.5,Online,WA,Registered Voters,Democrat,Trump,52.6
-480,2024-02-02,PollsterD,3.4,Mixed,IL,Likely Voters,Republican,Trump,44.4
-481,2024-08-16,PollsterB,2.2,Mixed,FL,Registered Voters,Democrat,Trump,49
-482,2024-02-22,PollsterE,1.4,Phone,MO,Likely Voters,Republican,Trump,55
-483,2024-04-01,PollsterB,3.4,Online,OK,Likely Voters,Democrat,Harris,46.2
-484,2024-09-02,PollsterD,4.9,Phone,CT,Registered Voters,Democrat,Harris,52.2
-485,2024-04-25,PollsterB,3.9,Online,SC,Registered Voters,Republican,Harris,49.1
-486,2024-09-21,PollsterB,1.3,Phone,ID,Registered Voters,Republican,Trump,53.3
-487,2024-02-24,PollsterD,2.2,Mixed,NV,Registered Voters,Republican,Harris,52
-488,2024-05-14,PollsterA,2.8,Online,MS,Registered Voters,Democrat,Harris,41.2
-489,2024-09-20,PollsterE,3.6,Phone,AZ,Registered Voters,Republican,Harris,41.4
-490,2024-06-10,PollsterA,4.7,Online,PA,Likely Voters,Republican,Trump,43.3
-491,2024-05-21,PollsterB,1.7,Mixed,IA,Registered Voters,Democrat,Trump,58
-492,2024-05-21,PollsterC,1.4,Online,NC,Likely Voters,Republican,Trump,44.4
-493,2024-08-30,PollsterC,5,Phone,TX,Registered Voters,Democrat,Harris,51.6
-494,2024-07-12,PollsterD,3.1,Mixed,NJ,Likely Voters,Democrat,Harris,43.9
-495,2024-04-25,PollsterD,4.7,Mixed,NV,Likely Voters,Republican,Harris,52.9
-496,2024-06-24,PollsterA,3.1,Online,NY,Registered Voters,Republican,Harris,40.6
-497,2024-09-12,PollsterB,2.1,Mixed,SC,Registered Voters,Republican,Trump,57.7
-498,2024-10-02,PollsterB,1.5,Online,FL,Likely Voters,Republican,Trump,46.7
-499,2024-02-11,PollsterD,2.8,Mixed,IA,Likely Voters,Republican,Trump,48.5
-500,2024-05-06,PollsterB,3.8,Phone,DE,Likely Voters,Democrat,Trump,59.4
-501,2024-05-13,PollsterC,1.6,Phone,NC,Registered Voters,Republican,Harris,58.7
-502,2024-07-03,PollsterD,4.6,Phone,SC,Registered Voters,Republican,Harris,41.8
-503,2024-02-12,PollsterD,1.3,Phone,CO,Likely Voters,Democrat,Trump,59.7
-504,2024-09-11,PollsterE,2.3,Mixed,ID,Registered Voters,Democrat,Harris,45.6
-505,2024-02-16,PollsterC,2.7,Mixed,HI,Registered Voters,Democrat,Trump,41.4
-506,2024-01-06,PollsterC,4,Online,VT,Registered Voters,Democrat,Harris,58.1
-507,2024-08-09,PollsterA,4.5,Mixed,CT,Likely Voters,Democrat,Trump,49.2
-508,2024-03-08,PollsterD,1.5,Phone,FL,Registered Voters,Republican,Trump,48.6
-509,2024-06-14,PollsterC,4,Mixed,MI,Registered Voters,Democrat,Trump,45.4
-510,2024-07-19,PollsterE,2.1,Mixed,PA,Likely Voters,Republican,Trump,59.2
-511,2024-03-15,PollsterB,1.9,Online,ND,Registered Voters,Republican,Trump,41.5
-512,2024-09-01,PollsterC,3.9,Phone,NH,Likely Voters,Republican,Harris,40.5
-513,2024-05-27,PollsterB,2.8,Phone,CO,Registered Voters,Democrat,Trump,57.5
-514,2024-06-17,PollsterB,3.4,Mixed,ME,Registered Voters,Democrat,Trump,58.2
-515,2024-01-11,PollsterB,1.4,Online,MO,Likely Voters,Republican,Trump,56.6
-516,2024-08-11,PollsterC,1.9,Mixed,GA,Likely Voters,Democrat,Harris,42.6
-517,2024-08-08,PollsterE,1.5,Online,NJ,Registered Voters,Democrat,Harris,41.1
-518,2024-09-01,PollsterA,2.1,Mixed,OH,Registered Voters,Democrat,Harris,51.6
-519,2024-02-24,PollsterD,4.3,Mixed,MS,Registered Voters,Republican,Harris,51.9
-520,2024-01-02,PollsterD,4.8,Online,KS,Registered Voters,Democrat,Harris,43.8
-521,2024-03-25,PollsterB,3.7,Online,IA,Likely Voters,Democrat,Harris,59.4
-522,2024-07-30,PollsterE,4.3,Phone,WY,Registered Voters,Republican,Harris,47.7
-523,2024-02-16,PollsterD,2.5,Mixed,VA,Registered Voters,Republican,Harris,54.2
-524,2024-02-06,PollsterE,2.1,Online,IL,Likely Voters,Democrat,Trump,43.6
-525,2024-02-29,PollsterC,4.6,Phone,AZ,Registered Voters,Republican,Trump,54.3
-526,2024-05-03,PollsterE,2.3,Mixed,VA,Likely Voters,Republican,Harris,49.2
-527,2024-08-22,PollsterD,1.3,Phone,OR,Registered Voters,Democrat,Harris,49.9
-528,2024-07-18,PollsterB,4.9,Online,ND,Likely Voters,Democrat,Trump,43.7
-529,2024-04-03,PollsterD,3.3,Mixed,SD,Registered Voters,Democrat,Trump,55.4
-530,2024-01-05,PollsterC,1.5,Online,NV,Likely Voters,Democrat,Harris,41.6
-531,2024-02-05,PollsterB,3.7,Mixed,AL,Likely Voters,Republican,Trump,58.5
-532,2024-02-19,PollsterD,1.8,Phone,DE,Registered Voters,Democrat,Trump,58.9
-533,2024-09-14,PollsterC,2.9,Phone,MS,Registered Voters,Democrat,Harris,51.7
-534,2024-09-13,PollsterD,4,Mixed,LA,Likely Voters,Democrat,Harris,44.1
-535,2024-09-12,PollsterC,2.7,Online,NV,Likely Voters,Republican,Trump,43.2
-536,2024-09-23,PollsterB,1.3,Mixed,OH,Registered Voters,Democrat,Trump,45
-537,2024-06-21,PollsterD,1.8,Online,NH,Registered Voters,Republican,Trump,53.9
-538,2024-02-27,PollsterE,2,Online,HI,Registered Voters,Republican,Trump,48.5
-539,2024-04-05,PollsterA,3.2,Phone,KY,Registered Voters,Democrat,Trump,42.9
-540,2024-09-12,PollsterE,4.4,Mixed,KY,Registered Voters,Democrat,Harris,49.1
-541,2024-05-31,PollsterD,3.1,Mixed,AK,Likely Voters,Democrat,Harris,54.1
-542,2024-09-09,PollsterA,3.5,Phone,UT,Likely Voters,Republican,Trump,54.9
-543,2024-06-07,PollsterB,4.8,Mixed,ME,Registered Voters,Democrat,Trump,40.1
-544,2024-01-15,PollsterD,4.6,Mixed,NH,Likely Voters,Republican,Trump,54.7
-545,2024-07-15,PollsterE,3.5,Mixed,FL,Likely Voters,Democrat,Harris,53.3
-546,2024-03-16,PollsterA,3.2,Mixed,LA,Likely Voters,Republican,Trump,48.9
-547,2024-07-18,PollsterE,4.9,Mixed,CT,Registered Voters,Democrat,Harris,44.4
-548,2024-07-22,PollsterA,1.7,Mixed,AL,Registered Voters,Republican,Harris,57.7
-549,2024-04-07,PollsterD,2.6,Mixed,SD,Likely Voters,Democrat,Trump,56.4
-550,2024-03-23,PollsterB,4.5,Mixed,NE,Registered Voters,Republican,Trump,42.8
-551,2024-08-08,PollsterD,1.5,Mixed,WA,Likely Voters,Democrat,Harris,56.1
-552,2024-05-21,PollsterB,2.3,Online,IL,Registered Voters,Democrat,Harris,44.6
-553,2024-03-19,PollsterA,1.7,Online,WV,Likely Voters,Democrat,Harris,53.2
-554,2024-09-08,PollsterE,3.5,Phone,CA,Likely Voters,Republican,Trump,41.6
-555,2024-10-08,PollsterE,3.2,Online,FL,Likely Voters,Republican,Trump,58.2
-556,2024-02-16,PollsterB,2,Phone,NY,Registered Voters,Republican,Harris,55
-557,2024-09-03,PollsterC,1.1,Online,TN,Likely Voters,Democrat,Trump,49.8
-558,2024-01-27,PollsterA,4.2,Online,NJ,Likely Voters,Republican,Harris,52.2
-559,2024-04-30,PollsterB,4.9,Mixed,NV,Registered Voters,Democrat,Harris,45.2
-560,2024-08-11,PollsterB,3.5,Mixed,IN,Likely Voters,Democrat,Harris,42.9
-561,2024-01-09,PollsterE,3.4,Online,ME,Likely Voters,Republican,Harris,41.7
-562,2024-03-24,PollsterB,3,Phone,WY,Likely Voters,Democrat,Harris,52.6
-563,2024-01-12,PollsterB,4.4,Mixed,MS,Likely Voters,Democrat,Trump,40.3
-564,2024-02-11,PollsterC,4.8,Phone,MA,Registered Voters,Republican,Harris,49
-565,2024-07-11,PollsterC,1.2,Mixed,AL,Registered Voters,Democrat,Trump,46.6
-566,2024-02-24,PollsterE,4.6,Mixed,WA,Registered Voters,Republican,Harris,57.8
-567,2024-07-10,PollsterB,4.5,Phone,ME,Likely Voters,Democrat,Harris,54.9
-568,2024-08-22,PollsterA,2.8,Mixed,MA,Likely Voters,Democrat,Trump,46.7
-569,2024-10-05,PollsterC,4.3,Phone,TX,Registered Voters,Democrat,Harris,56.1
-570,2024-09-11,PollsterC,3.1,Phone,MD,Likely Voters,Republican,Trump,54.3
-571,2024-06-11,PollsterE,2.1,Online,ME,Likely Voters,Democrat,Harris,57.2
-572,2024-06-29,PollsterE,4.2,Phone,RI,Likely Voters,Republican,Trump,43.8
-573,2024-03-06,PollsterA,3.6,Online,SD,Likely Voters,Democrat,Trump,52.9
-574,2024-07-16,PollsterC,2.4,Phone,ID,Registered Voters,Democrat,Trump,58.9
-575,2024-02-12,PollsterA,2.3,Online,CA,Registered Voters,Republican,Trump,44.5
-576,2024-02-09,PollsterD,4.9,Phone,KY,Likely Voters,Republican,Trump,49
-577,2024-04-07,PollsterC,3.6,Online,SC,Likely Voters,Democrat,Harris,41.9
-578,2024-05-21,PollsterC,1.7,Mixed,KS,Registered Voters,Republican,Harris,56.8
-579,2024-08-01,PollsterE,1.5,Mixed,MN,Registered Voters,Democrat,Harris,51
-580,2024-04-30,PollsterE,3.4,Online,CT,Registered Voters,Democrat,Harris,47.4
-581,2024-01-28,PollsterE,1,Online,MI,Registered Voters,Democrat,Harris,53.5
-582,2024-06-06,PollsterE,4.4,Phone,OR,Registered Voters,Democrat,Harris,50.2
-583,2024-03-15,PollsterD,2.5,Online,RI,Likely Voters,Democrat,Harris,58.7
-584,2024-04-08,PollsterE,1.7,Online,SD,Registered Voters,Democrat,Trump,59.3
-585,2024-10-02,PollsterE,4.5,Online,MS,Likely Voters,Republican,Harris,55.3
-586,2024-05-06,PollsterD,3,Phone,SC,Likely Voters,Democrat,Harris,42
-587,2024-05-07,PollsterB,1.1,Online,AK,Registered Voters,Republican,Harris,56
-588,2024-10-14,PollsterB,4.4,Online,IA,Registered Voters,Republican,Trump,57.7
-589,2024-07-03,PollsterC,2.8,Online,UT,Likely Voters,Republican,Harris,57.6
-590,2024-01-26,PollsterA,4.6,Phone,CA,Registered Voters,Republican,Trump,56.9
-591,2024-05-11,PollsterB,3.6,Online,NC,Likely Voters,Republican,Harris,48.2
-592,2024-07-08,PollsterD,2.4,Mixed,SD,Registered Voters,Democrat,Harris,52.9
-593,2024-04-18,PollsterA,3.3,Online,FL,Likely Voters,Republican,Trump,56.7
-594,2024-03-02,PollsterD,2.5,Online,IN,Registered Voters,Republican,Trump,52.4
-595,2024-05-06,PollsterA,1.5,Online,ND,Likely Voters,Democrat,Harris,45
-596,2024-07-06,PollsterD,1.4,Mixed,MO,Registered Voters,Republican,Trump,59
-597,2024-02-15,PollsterA,1.5,Phone,VA,Registered Voters,Republican,Trump,46
-598,2024-06-24,PollsterD,4.6,Mixed,AR,Registered Voters,Democrat,Trump,48.8
-599,2024-01-25,PollsterE,2.2,Mixed,ME,Likely Voters,Republican,Trump,58.4
-600,2024-03-21,PollsterA,4,Mixed,AL,Likely Voters,Democrat,Harris,59.7
-601,2024-06-17,PollsterD,4.4,Phone,GA,Likely Voters,Democrat,Trump,41.7
-602,2024-02-01,PollsterA,1.5,Mixed,MS,Likely Voters,Republican,Harris,51.4
-603,2024-06-21,PollsterA,3.5,Phone,NE,Registered Voters,Republican,Harris,59.5
-604,2024-10-05,PollsterA,3.4,Online,AL,Likely Voters,Democrat,Trump,59.4
-605,2024-01-04,PollsterE,1.9,Online,ND,Likely Voters,Democrat,Trump,57.4
-606,2024-07-30,PollsterD,2.7,Mixed,VA,Likely Voters,Democrat,Harris,51.7
-607,2024-07-11,PollsterC,3.2,Online,MD,Registered Voters,Democrat,Harris,51.8
-608,2024-02-02,PollsterA,3.4,Online,MD,Likely Voters,Democrat,Harris,42.4
-609,2024-03-12,PollsterC,3.6,Phone,CT,Registered Voters,Republican,Trump,46.9
-610,2024-09-06,PollsterE,4.6,Mixed,KS,Likely Voters,Republican,Harris,42.7
-611,2024-05-24,PollsterE,2.4,Online,LA,Registered Voters,Republican,Harris,54.8
-612,2024-01-14,PollsterD,2.1,Phone,DE,Likely Voters,Republican,Trump,59
-613,2024-03-10,PollsterC,2.8,Online,MA,Registered Voters,Democrat,Harris,59.3
-614,2024-06-16,PollsterD,3.8,Phone,NM,Likely Voters,Republican,Harris,52.9
-615,2024-06-25,PollsterA,3,Online,TN,Registered Voters,Republican,Harris,42.2
-616,2024-09-17,PollsterE,4.4,Mixed,CA,Likely Voters,Democrat,Harris,43.7
-617,2024-03-26,PollsterB,3.2,Online,MD,Likely Voters,Democrat,Harris,42.2
-618,2024-09-09,PollsterE,4.6,Mixed,MD,Registered Voters,Republican,Trump,52.3
-619,2024-07-29,PollsterB,2.5,Phone,RI,Registered Voters,Republican,Trump,50.9
-620,2024-06-24,PollsterC,2.2,Online,OR,Likely Voters,Democrat,Trump,47.5
-621,2024-04-03,PollsterE,4.6,Online,DE,Registered Voters,Republican,Harris,44.8
-622,2024-05-31,PollsterB,1.5,Phone,CT,Registered Voters,Democrat,Trump,47.9
-623,2024-04-07,PollsterA,2.4,Online,IA,Registered Voters,Republican,Harris,54.1
-624,2024-02-27,PollsterD,4.2,Online,AZ,Likely Voters,Democrat,Trump,55.3
-625,2024-01-01,PollsterD,4.4,Phone,CT,Registered Voters,Democrat,Trump,52.6
-626,2024-06-23,PollsterD,2.3,Phone,ND,Likely Voters,Republican,Harris,47.8
-627,2024-07-27,PollsterA,4.2,Mixed,ID,Likely Voters,Democrat,Harris,45.5
-628,2024-05-10,PollsterB,4.5,Online,IN,Likely Voters,Democrat,Trump,49.2
-629,2024-07-15,PollsterE,3.7,Mixed,WI,Likely Voters,Republican,Harris,47.7
-630,2024-03-08,PollsterC,4.4,Online,IL,Registered Voters,Democrat,Trump,50.9
-631,2024-02-23,PollsterD,2.9,Mixed,GA,Registered Voters,Republican,Harris,46
-632,2024-09-03,PollsterD,1.7,Phone,FL,Likely Voters,Democrat,Harris,56.7
-633,2024-02-17,PollsterE,1.7,Mixed,VT,Registered Voters,Democrat,Harris,46.4
-634,2024-03-24,PollsterD,4.7,Online,MI,Registered Voters,Democrat,Harris,53.7
-635,2024-05-20,PollsterE,2.1,Online,WV,Likely Voters,Republican,Harris,52.4
-636,2024-09-12,PollsterE,3,Phone,NY,Registered Voters,Republican,Trump,53.4
-637,2024-04-26,PollsterA,4.5,Online,MN,Registered Voters,Republican,Harris,59.6
-638,2024-05-21,PollsterE,1.9,Online,MS,Likely Voters,Democrat,Trump,53.9
-639,2024-02-05,PollsterB,4.4,Phone,UT,Likely Voters,Republican,Harris,58.7
-640,2024-06-16,PollsterA,3.9,Online,ID,Registered Voters,Republican,Harris,49
-641,2024-09-01,PollsterE,1.8,Phone,DE,Likely Voters,Democrat,Harris,46.5
-642,2024-02-25,PollsterC,1.4,Online,WY,Registered Voters,Republican,Harris,47.7
-643,2024-03-08,PollsterB,4.9,Online,PA,Likely Voters,Republican,Harris,40.2
-644,2024-10-05,PollsterB,1.7,Mixed,AZ,Likely Voters,Republican,Harris,58.8
-645,2024-03-17,PollsterB,1.7,Mixed,MA,Registered Voters,Republican,Trump,47.2
-646,2024-01-03,PollsterE,3.9,Mixed,OK,Registered Voters,Republican,Harris,48.4
-647,2024-01-05,PollsterA,1.2,Phone,TN,Likely Voters,Democrat,Trump,49.8
-648,2024-07-19,PollsterE,2.8,Mixed,LA,Likely Voters,Democrat,Harris,40.2
-649,2024-08-20,PollsterC,1.2,Phone,WI,Registered Voters,Republican,Trump,45.7
-650,2024-04-01,PollsterE,4,Phone,GA,Registered Voters,Democrat,Trump,56.1
-651,2024-04-05,PollsterB,1.6,Online,TX,Likely Voters,Democrat,Harris,43.1
-652,2024-09-29,PollsterA,4.3,Mixed,TN,Likely Voters,Democrat,Trump,51
-653,2024-02-28,PollsterA,3.4,Online,KY,Likely Voters,Democrat,Harris,45.2
-654,2024-01-11,PollsterA,4.8,Phone,MA,Registered Voters,Democrat,Harris,59.5
-655,2024-03-16,PollsterA,3.6,Mixed,RI,Likely Voters,Democrat,Trump,44.7
-656,2024-08-09,PollsterA,4,Online,IL,Likely Voters,Republican,Harris,49.3
-657,2024-09-14,PollsterE,3.6,Mixed,AK,Registered Voters,Republican,Trump,45.9
-658,2024-02-21,PollsterE,4.2,Mixed,NJ,Likely Voters,Democrat,Harris,52.8
-659,2024-04-02,PollsterD,2.2,Online,AL,Registered Voters,Republican,Harris,56.3
-660,2024-04-06,PollsterD,2,Mixed,MI,Registered Voters,Republican,Trump,53.8
-661,2024-02-12,PollsterB,3.3,Mixed,WI,Registered Voters,Republican,Harris,47.6
-662,2024-03-29,PollsterD,2.7,Mixed,FL,Registered Voters,Democrat,Harris,44.1
-663,2024-01-05,PollsterB,4.5,Online,MD,Likely Voters,Republican,Harris,46.6
-664,2024-05-25,PollsterA,4.6,Online,CA,Registered Voters,Democrat,Trump,50
-665,2024-09-29,PollsterD,3.6,Mixed,NE,Registered Voters,Democrat,Harris,45
-666,2024-09-20,PollsterA,2.3,Online,AL,Registered Voters,Republican,Trump,41.7
-667,2024-07-04,PollsterA,1.9,Online,SD,Registered Voters,Republican,Harris,52.1
-668,2024-05-14,PollsterA,3.2,Phone,RI,Likely Voters,Democrat,Harris,50.5
-669,2024-02-10,PollsterD,4.4,Phone,MD,Registered Voters,Republican,Harris,57.7
-670,2024-01-13,PollsterA,1.1,Online,WI,Likely Voters,Republican,Trump,55.5
-671,2024-02-12,PollsterD,1.4,Phone,ID,Registered Voters,Democrat,Trump,58.5
-672,2024-02-10,PollsterD,1.2,Phone,IA,Registered Voters,Democrat,Harris,41.3
-673,2024-02-10,PollsterA,2.1,Phone,MI,Registered Voters,Republican,Trump,50.9
-674,2024-09-25,PollsterD,2.1,Online,SD,Registered Voters,Republican,Trump,46.2
-675,2024-06-28,PollsterC,1,Phone,AK,Registered Voters,Democrat,Trump,57.4
-676,2024-05-24,PollsterB,4.5,Mixed,NY,Likely Voters,Republican,Harris,47
-677,2024-01-03,PollsterA,2.4,Phone,VT,Likely Voters,Democrat,Trump,44.8
-678,2024-06-15,PollsterD,2.8,Online,OK,Likely Voters,Republican,Trump,44.6
-679,2024-09-11,PollsterD,1.1,Phone,ID,Likely Voters,Democrat,Harris,46.4
-680,2024-09-08,PollsterA,4,Online,CA,Likely Voters,Democrat,Trump,48.8
-681,2024-06-29,PollsterB,4.3,Online,CO,Registered Voters,Democrat,Harris,40.2
-682,2024-06-17,PollsterC,2.9,Online,OH,Likely Voters,Republican,Trump,47.1
-683,2024-04-12,PollsterD,4.5,Online,ID,Registered Voters,Republican,Harris,49.7
-684,2024-01-30,PollsterB,1.7,Mixed,SD,Likely Voters,Democrat,Trump,51.2
-685,2024-07-14,PollsterA,1.4,Mixed,CO,Likely Voters,Democrat,Trump,48.9
-686,2024-01-27,PollsterC,1.4,Mixed,PA,Likely Voters,Republican,Trump,56.1
-687,2024-08-02,PollsterE,1.7,Mixed,TX,Likely Voters,Democrat,Harris,50.7
-688,2024-04-17,PollsterD,1.5,Phone,NC,Registered Voters,Republican,Harris,40.2
-689,2024-10-02,PollsterE,1.4,Online,VA,Registered Voters,Democrat,Trump,57.8
-690,2024-07-30,PollsterE,5,Mixed,IL,Registered Voters,Republican,Trump,54.3
-691,2024-01-04,PollsterA,2,Mixed,AR,Likely Voters,Republican,Harris,56.5
-692,2024-08-28,PollsterC,3.5,Mixed,TN,Registered Voters,Republican,Trump,57.6
-693,2024-04-08,PollsterB,4.6,Online,MS,Likely Voters,Republican,Trump,53.4
-694,2024-09-18,PollsterC,2.8,Phone,WA,Likely Voters,Republican,Harris,49
-695,2024-05-08,PollsterA,4.5,Online,MA,Registered Voters,Republican,Trump,46.2
-696,2024-10-08,PollsterE,1.8,Phone,MT,Registered Voters,Democrat,Trump,41.1
-697,2024-04-23,PollsterE,2.5,Online,MI,Likely Voters,Republican,Harris,44.5
-698,2024-02-27,PollsterE,4,Mixed,KS,Registered Voters,Democrat,Trump,57.8
-699,2024-04-26,PollsterC,2.7,Mixed,TX,Likely Voters,Republican,Harris,52.8
-700,2024-01-30,PollsterD,2.6,Mixed,CA,Registered Voters,Democrat,Harris,57
-701,2024-02-23,PollsterD,2.3,Mixed,NV,Likely Voters,Republican,Trump,57.8
-702,2024-03-30,PollsterA,2.2,Mixed,RI,Likely Voters,Democrat,Harris,53.7
-703,2024-06-16,PollsterB,3.1,Mixed,MA,Registered Voters,Democrat,Trump,43.1
-704,2024-03-18,PollsterE,4.8,Mixed,MS,Registered Voters,Democrat,Harris,55.3
-705,2024-05-02,PollsterE,2.2,Phone,CT,Registered Voters,Republican,Harris,48.6
-706,2024-02-17,PollsterC,1.7,Phone,CT,Likely Voters,Republican,Harris,50.4
-707,2024-01-27,PollsterE,3,Online,AR,Likely Voters,Republican,Harris,52.7
-708,2024-10-04,PollsterB,2.8,Phone,NJ,Registered Voters,Republican,Trump,49.1
-709,2024-05-03,PollsterE,2.8,Mixed,MT,Registered Voters,Republican,Trump,49.5
-710,2024-07-03,PollsterC,4.1,Online,GA,Likely Voters,Republican,Trump,58.4
-711,2024-10-09,PollsterC,4.8,Phone,IN,Registered Voters,Republican,Trump,58.7
-712,2024-01-29,PollsterA,1.8,Online,NM,Registered Voters,Democrat,Trump,55.7
-713,2024-03-19,PollsterE,1.3,Mixed,ND,Likely Voters,Democrat,Trump,50.1
-714,2024-04-14,PollsterA,4.2,Mixed,AZ,Registered Voters,Democrat,Harris,58.5
-715,2024-05-24,PollsterE,3.9,Mixed,AK,Registered Voters,Republican,Harris,45.1
-716,2024-06-09,PollsterA,1.5,Online,OR,Likely Voters,Democrat,Harris,49
-717,2024-06-05,PollsterD,3.4,Phone,MA,Registered Voters,Democrat,Harris,58.8
-718,2024-05-25,PollsterC,1.3,Phone,NV,Registered Voters,Democrat,Harris,44.5
-719,2024-03-19,PollsterB,2,Online,IL,Likely Voters,Republican,Trump,51.9
-720,2024-01-16,PollsterB,1.9,Phone,RI,Registered Voters,Republican,Harris,40.7
-721,2024-04-08,PollsterA,2.3,Mixed,NH,Likely Voters,Democrat,Harris,51.5
-722,2024-10-12,PollsterD,3,Phone,NV,Likely Voters,Democrat,Harris,40.8
-723,2024-06-06,PollsterE,4.3,Phone,NM,Registered Voters,Republican,Harris,50.6
-724,2024-09-21,PollsterC,2.5,Mixed,VA,Likely Voters,Democrat,Harris,45.5
-725,2024-03-17,PollsterD,3,Phone,MT,Likely Voters,Democrat,Harris,47.5
-726,2024-10-09,PollsterB,4,Online,IN,Registered Voters,Democrat,Harris,59.4
-727,2024-05-16,PollsterB,4.1,Phone,KY,Likely Voters,Democrat,Trump,43.4
-728,2024-01-28,PollsterD,2,Mixed,ND,Registered Voters,Republican,Trump,52.9
-729,2024-08-24,PollsterB,3.2,Phone,MS,Likely Voters,Republican,Trump,56.4
-730,2024-02-26,PollsterB,4,Online,DE,Likely Voters,Republican,Trump,44.7
-731,2024-07-06,PollsterD,1.3,Phone,MT,Registered Voters,Republican,Trump,41.9
-732,2024-06-15,PollsterB,1.1,Mixed,SC,Registered Voters,Democrat,Trump,57.4
-733,2024-08-12,PollsterE,2.7,Phone,AZ,Likely Voters,Democrat,Harris,58.9
-734,2024-10-12,PollsterC,2.9,Phone,WY,Likely Voters,Democrat,Trump,44.9
-735,2024-07-17,PollsterA,4.9,Mixed,AK,Registered Voters,Democrat,Trump,45.1
-736,2024-03-28,PollsterE,3.8,Phone,NJ,Registered Voters,Republican,Harris,46
-737,2024-05-23,PollsterA,1.6,Mixed,IN,Likely Voters,Republican,Harris,52.5
-738,2024-04-08,PollsterD,5,Online,NV,Likely Voters,Democrat,Harris,50.1
-739,2024-06-28,PollsterB,4.7,Mixed,MA,Likely Voters,Republican,Harris,45.8
-740,2024-07-12,PollsterE,4.1,Phone,NM,Registered Voters,Democrat,Trump,57.1
-741,2024-07-03,PollsterD,4.2,Phone,WV,Likely Voters,Democrat,Trump,50
-742,2024-01-29,PollsterE,1.8,Mixed,RI,Registered Voters,Democrat,Harris,50.3
-743,2024-08-17,PollsterD,4,Phone,SD,Registered Voters,Democrat,Trump,55.9
-744,2024-04-05,PollsterA,4.6,Online,CA,Likely Voters,Republican,Trump,46.1
-745,2024-06-22,PollsterC,3.4,Online,OH,Likely Voters,Republican,Harris,42.1
-746,2024-06-13,PollsterC,2.1,Mixed,MS,Likely Voters,Republican,Trump,53.5
-747,2024-09-09,PollsterD,4.3,Online,IN,Likely Voters,Democrat,Harris,53.3
-748,2024-10-06,PollsterE,4.4,Online,PA,Registered Voters,Republican,Harris,58.7
-749,2024-07-08,PollsterD,3.7,Online,IA,Likely Voters,Republican,Harris,48.8
-750,2024-01-15,PollsterE,2.6,Online,MO,Registered Voters,Democrat,Harris,52.1
-751,2024-07-16,PollsterE,4.1,Mixed,ID,Likely Voters,Democrat,Harris,58.7
-752,2024-07-30,PollsterB,3.6,Mixed,MA,Registered Voters,Democrat,Harris,49
-753,2024-01-01,PollsterD,1.6,Online,WY,Likely Voters,Republican,Trump,59
-754,2024-07-08,PollsterE,4.4,Online,HI,Likely Voters,Republican,Trump,43.9
-755,2024-07-10,PollsterE,1.8,Phone,PA,Registered Voters,Republican,Trump,45.2
-756,2024-05-05,PollsterA,3.1,Mixed,VT,Likely Voters,Democrat,Harris,42.9
-757,2024-03-13,PollsterD,4.2,Phone,WA,Likely Voters,Democrat,Trump,54.5
-758,2024-08-23,PollsterD,3.5,Online,ME,Likely Voters,Republican,Harris,41.8
-759,2024-04-10,PollsterA,1.5,Online,IN,Registered Voters,Republican,Harris,41
-760,2024-01-13,PollsterD,2.8,Mixed,NC,Registered Voters,Democrat,Trump,41.2
-761,2024-02-16,PollsterE,2.6,Phone,WY,Registered Voters,Republican,Harris,51.5
-762,2024-01-27,PollsterA,1.1,Online,WI,Likely Voters,Republican,Trump,57.4
-763,2024-05-01,PollsterB,4.9,Online,OH,Likely Voters,Democrat,Trump,43.3
-764,2024-05-18,PollsterB,3.9,Phone,AL,Registered Voters,Democrat,Harris,41.8
-765,2024-04-01,PollsterA,2.2,Phone,NC,Registered Voters,Democrat,Harris,41.2
-766,2024-03-29,PollsterA,2.4,Online,MT,Registered Voters,Republican,Harris,44.5
-767,2024-09-17,PollsterD,3.3,Mixed,ID,Registered Voters,Democrat,Trump,59
-768,2024-08-21,PollsterA,3.9,Phone,NV,Registered Voters,Republican,Trump,47.7
-769,2024-07-09,PollsterE,5,Phone,NE,Registered Voters,Republican,Harris,59.1
-770,2024-06-13,PollsterD,1.7,Phone,WI,Registered Voters,Democrat,Harris,47.7
-771,2024-08-19,PollsterB,4.9,Online,AR,Registered Voters,Republican,Harris,54.5
-772,2024-09-02,PollsterC,3.2,Mixed,OH,Likely Voters,Republican,Trump,51.4
-773,2024-05-12,PollsterB,1.8,Online,WV,Registered Voters,Republican,Trump,41.7
-774,2024-09-24,PollsterD,2.8,Phone,WA,Registered Voters,Republican,Harris,59.7
-775,2024-10-17,PollsterD,2.7,Online,ID,Likely Voters,Republican,Trump,48.8
-776,2024-04-06,PollsterB,3.7,Online,IN,Registered Voters,Democrat,Harris,57.9
-777,2024-01-22,PollsterC,4.4,Phone,NY,Registered Voters,Republican,Trump,58.7
-778,2024-07-11,PollsterD,2,Phone,PA,Likely Voters,Democrat,Harris,48.7
-779,2024-04-29,PollsterC,3.9,Mixed,MI,Registered Voters,Republican,Trump,45.1
-780,2024-05-29,PollsterA,1.7,Phone,KS,Registered Voters,Democrat,Harris,42.4
-781,2024-01-02,PollsterC,1.9,Phone,PA,Likely Voters,Republican,Trump,42.3
-782,2024-04-23,PollsterC,1.6,Mixed,UT,Registered Voters,Republican,Harris,49
-783,2024-08-31,PollsterA,2.6,Mixed,IL,Likely Voters,Republican,Trump,50.5
-784,2024-05-09,PollsterA,1.8,Online,CT,Likely Voters,Democrat,Trump,49.2
-785,2024-03-07,PollsterD,3.5,Mixed,MS,Likely Voters,Democrat,Trump,44.7
-786,2024-09-01,PollsterA,2.9,Online,MI,Registered Voters,Republican,Harris,46.1
-787,2024-09-14,PollsterD,2.5,Phone,AZ,Registered Voters,Democrat,Trump,44.4
-788,2024-08-07,PollsterD,4.9,Online,WI,Registered Voters,Republican,Harris,42.4
-789,2024-04-25,PollsterE,4,Phone,NE,Likely Voters,Democrat,Trump,58.9
-790,2024-03-25,PollsterE,3,Online,AK,Likely Voters,Democrat,Harris,46.1
-791,2024-07-03,PollsterC,4,Mixed,NH,Registered Voters,Democrat,Harris,51.2
-792,2024-06-17,PollsterE,4.9,Mixed,NE,Likely Voters,Republican,Harris,53.5
-793,2024-09-03,PollsterD,3.9,Mixed,CA,Registered Voters,Republican,Trump,45.3
-794,2024-06-13,PollsterD,3.4,Phone,CA,Registered Voters,Republican,Harris,51.9
-795,2024-07-07,PollsterE,4.5,Mixed,IN,Likely Voters,Democrat,Harris,43.5
-796,2024-04-20,PollsterB,2.3,Phone,NE,Likely Voters,Republican,Trump,43.1
-797,2024-01-15,PollsterB,1.3,Online,LA,Registered Voters,Republican,Trump,59.9
-798,2024-05-06,PollsterA,2.5,Online,MO,Registered Voters,Democrat,Harris,50.5
-799,2024-06-01,PollsterA,3,Mixed,OH,Registered Voters,Republican,Harris,48.9
-800,2024-09-29,PollsterA,2.4,Mixed,MD,Registered Voters,Democrat,Harris,51.3
-801,2024-05-16,PollsterB,2.3,Online,MT,Likely Voters,Republican,Trump,57.1
-802,2024-04-06,PollsterC,1.9,Mixed,AK,Registered Voters,Republican,Harris,46.5
-803,2024-01-20,PollsterC,2.4,Online,MD,Likely Voters,Democrat,Trump,40.2
-804,2024-08-30,PollsterB,4.6,Phone,AK,Registered Voters,Republican,Harris,57.4
-805,2024-01-06,PollsterE,1.4,Mixed,NY,Likely Voters,Democrat,Trump,47
-806,2024-10-10,PollsterE,3.2,Online,WI,Likely Voters,Democrat,Harris,56.6
-807,2024-08-23,PollsterD,2,Online,HI,Registered Voters,Republican,Trump,44.9
-808,2024-09-12,PollsterC,2.8,Mixed,AZ,Likely Voters,Democrat,Harris,50.5
-809,2024-01-28,PollsterB,1.6,Mixed,CT,Likely Voters,Democrat,Harris,59.1
-810,2024-08-03,PollsterE,3.2,Mixed,SD,Registered Voters,Republican,Harris,40.4
-811,2024-06-06,PollsterD,1.9,Online,ID,Likely Voters,Democrat,Trump,44.9
-812,2024-06-14,PollsterB,1.4,Online,RI,Likely Voters,Republican,Trump,40.2
-813,2024-07-21,PollsterC,1.4,Online,NJ,Likely Voters,Democrat,Trump,53.2
-814,2024-01-02,PollsterC,1.6,Mixed,VT,Likely Voters,Republican,Harris,56.3
-815,2024-01-06,PollsterC,4.9,Online,KS,Registered Voters,Republican,Harris,52.3
-816,2024-01-19,PollsterE,4.9,Phone,OH,Registered Voters,Democrat,Trump,51.4
-817,2024-03-09,PollsterA,4.8,Mixed,NE,Likely Voters,Democrat,Harris,58.4
-818,2024-01-30,PollsterA,4.1,Mixed,SD,Registered Voters,Democrat,Trump,46.9
-819,2024-05-24,PollsterC,2.8,Phone,WA,Registered Voters,Republican,Trump,45.5
-820,2024-06-05,PollsterE,2.8,Mixed,IN,Likely Voters,Republican,Trump,49.9
-821,2024-07-12,PollsterE,2.7,Mixed,AZ,Likely Voters,Republican,Harris,49.5
-822,2024-10-03,PollsterA,1.9,Mixed,ME,Likely Voters,Democrat,Trump,43.8
-823,2024-08-25,PollsterD,4.3,Mixed,MT,Registered Voters,Republican,Harris,44.9
-824,2024-02-15,PollsterB,2.6,Phone,KS,Registered Voters,Republican,Harris,40.3
-825,2024-07-04,PollsterE,3.4,Online,KY,Registered Voters,Democrat,Trump,51.2
-826,2024-01-05,PollsterD,2.7,Mixed,MS,Likely Voters,Republican,Harris,45.6
-827,2024-08-31,PollsterA,2.4,Online,IA,Registered Voters,Democrat,Trump,41.4
-828,2024-01-06,PollsterC,3.9,Phone,WI,Likely Voters,Democrat,Trump,50
-829,2024-04-15,PollsterB,1.6,Mixed,MA,Likely Voters,Republican,Harris,48.5
-830,2024-06-24,PollsterA,1.5,Online,NV,Registered Voters,Republican,Trump,59.5
-831,2024-08-22,PollsterD,1.2,Mixed,ME,Likely Voters,Democrat,Harris,49.7
-832,2024-07-10,PollsterD,1,Mixed,AK,Likely Voters,Democrat,Trump,40.4
-833,2024-02-08,PollsterD,2.8,Phone,UT,Likely Voters,Democrat,Harris,41.9
-834,2024-08-03,PollsterD,4.1,Online,TN,Registered Voters,Republican,Harris,57.3
-835,2024-09-21,PollsterE,4.5,Mixed,IN,Likely Voters,Democrat,Trump,50.2
-836,2024-03-06,PollsterB,2.7,Phone,NJ,Likely Voters,Republican,Harris,46
-837,2024-06-13,PollsterD,2.2,Mixed,MN,Likely Voters,Republican,Trump,57.4
-838,2024-03-08,PollsterD,4.7,Online,IL,Registered Voters,Republican,Harris,52.4
-839,2024-09-09,PollsterE,4.7,Mixed,VT,Likely Voters,Democrat,Harris,54.4
-840,2024-05-31,PollsterE,1.3,Online,FL,Likely Voters,Republican,Harris,47.5
-841,2024-07-24,PollsterA,2.6,Online,WI,Likely Voters,Republican,Harris,47.1
-842,2024-05-28,PollsterB,4.1,Mixed,OH,Likely Voters,Republican,Trump,43.8
-843,2024-04-07,PollsterD,3.7,Mixed,ID,Likely Voters,Democrat,Trump,59
-844,2024-08-02,PollsterE,2.9,Mixed,NM,Likely Voters,Republican,Trump,40.1
-845,2024-06-28,PollsterA,3.3,Online,MT,Registered Voters,Republican,Trump,49.6
-846,2024-01-28,PollsterD,3.9,Mixed,NH,Likely Voters,Republican,Harris,42.2
-847,2024-09-13,PollsterE,3.4,Online,WI,Likely Voters,Republican,Trump,43.6
-848,2024-06-30,PollsterD,3.8,Online,TN,Registered Voters,Democrat,Trump,58.8
-849,2024-03-25,PollsterB,2.4,Online,HI,Registered Voters,Democrat,Harris,51.9
-850,2024-04-04,PollsterD,2.1,Mixed,MT,Likely Voters,Republican,Trump,57.9
-851,2024-09-18,PollsterE,3.2,Online,AR,Likely Voters,Democrat,Harris,59.7
-852,2024-01-13,PollsterA,2.5,Online,MD,Likely Voters,Democrat,Harris,59.4
-853,2024-06-03,PollsterA,1.1,Phone,ME,Likely Voters,Democrat,Trump,51.9
-854,2024-05-01,PollsterE,4,Online,SD,Likely Voters,Democrat,Trump,53.5
-855,2024-01-20,PollsterA,2.3,Phone,ME,Registered Voters,Democrat,Harris,47.1
-856,2024-10-12,PollsterB,4.5,Online,MA,Registered Voters,Democrat,Harris,47.3
-857,2024-02-16,PollsterB,4.2,Mixed,WI,Registered Voters,Democrat,Harris,53.5
-858,2024-01-21,PollsterE,1.3,Phone,NJ,Registered Voters,Republican,Trump,59.6
-859,2024-02-23,PollsterB,2.9,Mixed,WV,Registered Voters,Democrat,Trump,53.3
-860,2024-04-29,PollsterA,2.4,Online,MO,Likely Voters,Democrat,Trump,40.9
-861,2024-09-09,PollsterE,2.1,Online,KS,Likely Voters,Republican,Harris,56.7
-862,2024-07-13,PollsterA,3.6,Phone,MA,Likely Voters,Democrat,Harris,59.5
-863,2024-04-02,PollsterC,4.7,Mixed,NY,Registered Voters,Democrat,Harris,55.4
-864,2024-04-23,PollsterE,1.9,Mixed,WI,Registered Voters,Republican,Trump,48.8
-865,2024-10-07,PollsterB,1.5,Mixed,VT,Likely Voters,Democrat,Harris,46
-866,2024-08-21,PollsterC,1.8,Online,NH,Likely Voters,Republican,Trump,58.6
-867,2024-08-03,PollsterA,2.6,Mixed,OH,Likely Voters,Democrat,Trump,45.1
-868,2024-06-08,PollsterA,4.5,Mixed,ND,Registered Voters,Democrat,Harris,59.4
-869,2024-02-11,PollsterD,2.9,Phone,GA,Likely Voters,Democrat,Harris,44.3
-870,2024-03-28,PollsterD,4.8,Online,AK,Registered Voters,Republican,Harris,46.4
-871,2024-09-02,PollsterC,1.2,Mixed,MI,Registered Voters,Democrat,Harris,51.6
-872,2024-04-04,PollsterA,2.9,Online,VT,Registered Voters,Democrat,Trump,43.8
-873,2024-03-06,PollsterE,4.5,Phone,NH,Likely Voters,Republican,Harris,58.7
-874,2024-07-04,PollsterB,4.3,Mixed,VA,Likely Voters,Republican,Harris,50.4
-875,2024-01-31,PollsterE,4.4,Mixed,OR,Registered Voters,Democrat,Harris,40.1
-876,2024-08-03,PollsterC,1,Phone,DE,Likely Voters,Democrat,Trump,51.5
-877,2024-10-10,PollsterD,1.6,Mixed,ID,Likely Voters,Democrat,Harris,44.4
-878,2024-06-13,PollsterD,3.8,Phone,IN,Likely Voters,Republican,Trump,45.2
-879,2024-07-14,PollsterD,2.5,Mixed,KS,Registered Voters,Democrat,Trump,58.1
-880,2024-08-13,PollsterD,2.4,Online,CT,Registered Voters,Republican,Trump,43.7
-881,2024-03-03,PollsterE,3.4,Mixed,RI,Likely Voters,Democrat,Trump,40.8
-882,2024-01-21,PollsterB,2.7,Mixed,MN,Likely Voters,Democrat,Harris,42.4
-883,2024-07-23,PollsterA,4.9,Mixed,OH,Likely Voters,Republican,Trump,57.5
-884,2024-02-25,PollsterE,2.2,Online,NV,Likely Voters,Democrat,Trump,56.4
-885,2024-04-25,PollsterC,1.6,Phone,OH,Likely Voters,Republican,Trump,52.1
-886,2024-06-11,PollsterE,2.2,Phone,KY,Registered Voters,Democrat,Harris,57.6
-887,2024-09-16,PollsterA,2.6,Phone,FL,Registered Voters,Republican,Harris,48.6
-888,2024-04-19,PollsterE,2.3,Mixed,NM,Registered Voters,Republican,Trump,40.1
-889,2024-07-06,PollsterE,2.2,Mixed,CT,Registered Voters,Democrat,Harris,44.3
-890,2024-06-28,PollsterC,3.3,Online,NH,Registered Voters,Democrat,Harris,51.8
-891,2024-10-08,PollsterC,3.9,Online,AK,Likely Voters,Republican,Trump,41.6
-892,2024-01-31,PollsterD,3.5,Mixed,NJ,Likely Voters,Democrat,Trump,50.5
-893,2024-06-24,PollsterB,4.3,Phone,TX,Registered Voters,Republican,Harris,42.9
-894,2024-06-13,PollsterC,2.1,Phone,ME,Likely Voters,Republican,Harris,44
-895,2024-09-19,PollsterD,3.3,Mixed,OR,Registered Voters,Republican,Harris,57.3
-896,2024-10-08,PollsterA,3.3,Online,CA,Likely Voters,Republican,Trump,40.5
-897,2024-04-26,PollsterC,1.8,Mixed,HI,Likely Voters,Democrat,Harris,45.9
-898,2024-07-03,PollsterD,3.8,Phone,OH,Registered Voters,Republican,Harris,42.6
-899,2024-06-21,PollsterD,4.2,Mixed,GA,Likely Voters,Democrat,Harris,59.7
-900,2024-08-12,PollsterE,3.1,Online,AZ,Registered Voters,Democrat,Harris,44.5
-901,2024-05-29,PollsterB,4.3,Mixed,MI,Likely Voters,Republican,Harris,50.1
-902,2024-04-25,PollsterE,2.4,Mixed,ME,Registered Voters,Republican,Trump,55.5
-903,2024-07-21,PollsterC,2.8,Phone,WA,Registered Voters,Republican,Harris,56
-904,2024-02-05,PollsterC,1.5,Online,OH,Likely Voters,Democrat,Trump,49.9
-905,2024-05-09,PollsterE,3.1,Mixed,OK,Registered Voters,Republican,Harris,51.6
-906,2024-05-22,PollsterC,3.5,Mixed,WY,Likely Voters,Republican,Trump,47.9
-907,2024-01-31,PollsterC,2.9,Online,MA,Likely Voters,Republican,Trump,52
-908,2024-10-06,PollsterB,2,Phone,GA,Registered Voters,Republican,Trump,54.6
-909,2024-07-15,PollsterE,4.2,Phone,MN,Registered Voters,Republican,Trump,45.9
-910,2024-07-17,PollsterB,3.8,Phone,RI,Registered Voters,Republican,Harris,52.2
-911,2024-08-26,PollsterD,3.2,Phone,UT,Likely Voters,Democrat,Harris,56.2
-912,2024-08-17,PollsterE,1.7,Mixed,VT,Registered Voters,Republican,Trump,47.5
-913,2024-09-02,PollsterA,3.8,Online,LA,Registered Voters,Republican,Trump,47.5
-914,2024-04-17,PollsterB,4.7,Mixed,CA,Likely Voters,Democrat,Harris,47.7
-915,2024-05-09,PollsterC,4.3,Phone,RI,Likely Voters,Republican,Trump,44.4
-916,2024-04-25,PollsterA,1.9,Mixed,VA,Registered Voters,Republican,Harris,52.9
-917,2024-05-30,PollsterD,4.6,Online,TN,Registered Voters,Republican,Harris,56.5
-918,2024-01-08,PollsterB,4.4,Phone,AR,Likely Voters,Republican,Trump,53.7
-919,2024-08-21,PollsterD,2.8,Online,AL,Likely Voters,Republican,Harris,43.3
-920,2024-09-15,PollsterC,2.3,Mixed,VA,Likely Voters,Republican,Trump,52.6
-921,2024-03-31,PollsterC,3.3,Mixed,IL,Registered Voters,Republican,Trump,58.5
-922,2024-05-02,PollsterE,4.6,Mixed,MA,Likely Voters,Democrat,Harris,48.6
-923,2024-01-07,PollsterD,2.8,Mixed,WI,Registered Voters,Democrat,Trump,45.8
-924,2024-08-13,PollsterD,3.6,Phone,ME,Likely Voters,Democrat,Harris,42.7
-925,2024-07-30,PollsterD,5,Phone,ND,Likely Voters,Republican,Trump,47
-926,2024-03-04,PollsterA,4.9,Online,ID,Likely Voters,Republican,Trump,55.3
-927,2024-07-29,PollsterD,1.9,Mixed,SC,Likely Voters,Democrat,Trump,56.6
-928,2024-09-25,PollsterE,3.6,Online,DE,Registered Voters,Republican,Trump,40.8
-929,2024-03-18,PollsterE,4.6,Phone,WV,Registered Voters,Republican,Trump,49.3
-930,2024-10-17,PollsterE,1.6,Online,VT,Registered Voters,Democrat,Harris,57.2
-931,2024-05-16,PollsterA,3.6,Online,LA,Registered Voters,Republican,Trump,48.7
-932,2024-09-10,PollsterA,2.1,Mixed,AK,Registered Voters,Democrat,Harris,58.4
-933,2024-03-20,PollsterE,4.2,Mixed,PA,Likely Voters,Democrat,Harris,49
-934,2024-02-04,PollsterE,1.8,Phone,ND,Registered Voters,Democrat,Trump,59
-935,2024-03-26,PollsterC,3.4,Online,MS,Registered Voters,Republican,Harris,42.9
-936,2024-06-30,PollsterD,4.1,Phone,MN,Registered Voters,Democrat,Harris,41.6
-937,2024-02-20,PollsterB,4.1,Mixed,MA,Likely Voters,Republican,Trump,41.7
-938,2024-03-22,PollsterA,1.2,Mixed,MA,Likely Voters,Democrat,Harris,58.8
-939,2024-06-25,PollsterE,2.5,Mixed,GA,Likely Voters,Republican,Trump,53
-940,2024-08-21,PollsterB,4.6,Online,RI,Likely Voters,Democrat,Trump,52.2
-941,2024-05-09,PollsterC,3.2,Online,OK,Likely Voters,Democrat,Harris,50.1
-942,2024-03-18,PollsterD,1.6,Phone,AK,Registered Voters,Democrat,Trump,45.2
-943,2024-03-29,PollsterC,2.3,Mixed,ND,Registered Voters,Democrat,Trump,56
-944,2024-07-05,PollsterA,1.3,Mixed,MS,Likely Voters,Republican,Harris,48.5
-945,2024-08-09,PollsterE,3.8,Phone,NY,Registered Voters,Democrat,Trump,51
-946,2024-01-18,PollsterB,4.2,Online,IA,Registered Voters,Democrat,Harris,58
-947,2024-03-10,PollsterB,4.4,Phone,VT,Likely Voters,Republican,Harris,52.4
-948,2024-01-10,PollsterA,4.3,Online,CO,Likely Voters,Democrat,Harris,53.9
-949,2024-09-28,PollsterC,1.1,Online,OH,Registered Voters,Republican,Harris,49.7
-950,2024-02-06,PollsterA,3.9,Phone,AK,Registered Voters,Democrat,Harris,59.8
-951,2024-03-15,PollsterD,4.9,Mixed,WY,Registered Voters,Republican,Trump,56.5
-952,2024-08-03,PollsterB,1.9,Phone,AL,Registered Voters,Democrat,Trump,53.5
-953,2024-09-14,PollsterD,4.7,Online,NC,Likely Voters,Democrat,Trump,52.7
-954,2024-07-28,PollsterB,1.5,Mixed,WI,Registered Voters,Republican,Trump,54.9
-955,2024-06-10,PollsterB,3.4,Mixed,AR,Likely Voters,Republican,Trump,56.7
-956,2024-09-29,PollsterC,4.2,Mixed,OH,Registered Voters,Republican,Trump,49.4
-957,2024-05-26,PollsterC,4.3,Phone,CO,Likely Voters,Republican,Trump,55.2
-958,2024-09-30,PollsterE,2.1,Online,NM,Likely Voters,Republican,Harris,49.8
-959,2024-02-20,PollsterD,1.5,Online,NV,Registered Voters,Republican,Harris,48.5
-960,2024-03-12,PollsterA,2,Mixed,SC,Registered Voters,Republican,Harris,40.9
-961,2024-05-15,PollsterA,3.8,Phone,KY,Registered Voters,Republican,Trump,56.2
-962,2024-09-11,PollsterA,1.9,Mixed,CA,Registered Voters,Republican,Harris,47.6
-963,2024-08-07,PollsterC,1.3,Mixed,CA,Likely Voters,Republican,Harris,55.5
-964,2024-04-11,PollsterB,4,Mixed,SD,Likely Voters,Democrat,Harris,42.8
-965,2024-10-04,PollsterE,2.4,Online,TN,Registered Voters,Republican,Trump,48.3
-966,2024-01-27,PollsterC,4.4,Mixed,CA,Likely Voters,Democrat,Trump,49.2
-967,2024-07-25,PollsterD,1.1,Online,TN,Registered Voters,Democrat,Harris,42.4
-968,2024-06-18,PollsterB,4.8,Online,ND,Registered Voters,Republican,Harris,48.9
-969,2024-03-28,PollsterC,2.6,Mixed,PA,Registered Voters,Republican,Trump,45.3
-970,2024-05-18,PollsterD,3,Phone,KY,Registered Voters,Democrat,Harris,45.4
-971,2024-07-12,PollsterE,1.7,Online,CA,Registered Voters,Democrat,Harris,52.7
-972,2024-04-16,PollsterA,2,Phone,WI,Likely Voters,Democrat,Trump,43.6
-973,2024-02-17,PollsterE,3.6,Online,WI,Likely Voters,Democrat,Trump,53.7
-974,2024-05-10,PollsterD,3,Online,WV,Likely Voters,Republican,Trump,57.6
-975,2024-03-28,PollsterD,1.9,Online,VT,Registered Voters,Republican,Harris,40.7
-976,2024-05-10,PollsterA,2.9,Online,OK,Likely Voters,Democrat,Harris,42
-977,2024-10-01,PollsterA,1.7,Online,IL,Likely Voters,Democrat,Harris,46.5
-978,2024-04-13,PollsterB,4,Phone,ME,Likely Voters,Democrat,Trump,42.3
-979,2024-09-14,PollsterD,3.4,Phone,KS,Registered Voters,Republican,Trump,53.6
-980,2024-04-16,PollsterA,4.8,Phone,VT,Likely Voters,Republican,Harris,49.5
-981,2024-05-29,PollsterE,2.3,Mixed,SD,Likely Voters,Republican,Harris,59.3
-982,2024-03-14,PollsterB,3,Mixed,ME,Registered Voters,Democrat,Trump,48.1
-983,2024-09-23,PollsterC,3.9,Mixed,LA,Likely Voters,Republican,Harris,50.7
-984,2024-07-24,PollsterA,3.4,Online,FL,Likely Voters,Democrat,Trump,42.3
-985,2024-02-07,PollsterB,4.2,Mixed,IN,Registered Voters,Republican,Harris,51.6
-986,2024-10-09,PollsterA,3.9,Phone,OK,Likely Voters,Democrat,Harris,59
-987,2024-04-12,PollsterC,3.6,Online,AR,Registered Voters,Republican,Trump,54.2
-988,2024-05-11,PollsterB,4.9,Phone,NE,Likely Voters,Democrat,Trump,43.6
-989,2024-01-06,PollsterD,2.3,Mixed,WI,Registered Voters,Democrat,Harris,45.4
-990,2024-06-07,PollsterB,4.1,Mixed,OH,Registered Voters,Democrat,Trump,46.3
-991,2024-04-20,PollsterA,3.7,Phone,AK,Likely Voters,Republican,Harris,42.2
-992,2024-02-17,PollsterE,4.6,Mixed,WI,Registered Voters,Republican,Harris,42.6
-993,2024-04-28,PollsterD,1.4,Phone,OH,Likely Voters,Republican,Harris,58.7
-994,2024-06-18,PollsterC,2.3,Phone,VT,Registered Voters,Republican,Harris,47.7
-995,2024-08-12,PollsterB,2.9,Online,ID,Registered Voters,Republican,Harris,48
-996,2024-03-05,PollsterE,1.9,Online,AZ,Registered Voters,Democrat,Harris,51.4
-997,2024-08-08,PollsterC,1,Mixed,ME,Registered Voters,Republican,Trump,58.9
-998,2024-02-06,PollsterE,1.2,Phone,MT,Registered Voters,Republican,Trump,59.1
-999,2024-04-16,PollsterC,4.7,Phone,ME,Likely Voters,Democrat,Harris,52.1
-1000,2024-05-22,PollsterE,3.3,Phone,ME,Likely Voters,Republican,Trump,56.3
+poll_id,date,pollster,state,method,voter_type,sample_size,margin_of_error,harris_pct,trump_pct,undecided
+1,2024-01-12,Emerson,NV,Mixed,LV,1080,3,44.7,50.5,4.8
+2,2024-01-15,Emerson,AZ,Mixed,LV,931,3.2,49.5,44.7,5.8
+3,2024-01-17,YouGov,MI,Online,RV,969,3.1,53.7,42.3,4
+4,2024-01-19,Siena College,MI,Phone,LV,961,3.2,51,45.5,3.5
+5,2024-01-19,Emerson,PA,Mixed,RV,1032,3.1,52.1,46.8,1.1
+6,2024-01-19,RMG Research,NAT,Mixed,RV,1033,3,46.7,48.2,5.1
+7,2024-01-20,RMG Research,WI,Mixed,RV,847,3.4,48.2,45,6.8
+8,2024-01-25,Siena College,AZ,Phone,RV,917,3.2,49.3,44.2,6.5
+9,2024-01-26,Emerson,NV,Mixed,RV,1095,3,47.6,48.1,4.3
+10,2024-01-27,Emerson,NV,Mixed,RV,1014,3.1,44.5,49.9,5.7
+11,2024-01-27,Morning Consult,PA,Online,RV,1022,3.1,50,45.2,4.8
+12,2024-01-27,Siena College,NAT,Phone,RV,940,3.2,48.7,45.4,6
+13,2024-01-28,Morning Consult,NAT,Online,RV,894,3.3,49.2,45.6,5.2
+14,2024-01-29,Emerson,NAT,Mixed,RV,831,3.4,48.5,47,4.5
+15,2024-01-29,Siena College,NAT,Phone,RV,1010,3.1,42.9,49.1,8
+16,2024-01-30,Emerson,AZ,Mixed,RV,1035,3,48.5,43.9,7.6
+17,2024-01-30,Siena College,NV,Phone,RV,1195,2.8,45.2,50.2,4.6
+18,2024-02-01,Emerson,PA,Mixed,RV,1126,2.9,50.5,45.2,4.3
+19,2024-02-01,Morning Consult,GA,Online,RV,893,3.3,50,42.6,7.4
+20,2024-02-04,Siena College,PA,Phone,LV,1003,3.1,47.3,48.1,4.6
+21,2024-02-09,Siena College,MI,Phone,RV,1079,3,51.3,46.7,2
+22,2024-02-11,Siena College,GA,Phone,LV,1035,3,42.9,47.8,9.3
+23,2024-02-12,RMG Research,MI,Mixed,LV,1038,3,50.2,47.8,2
+24,2024-02-13,Siena College,GA,Phone,RV,954,3.2,47.6,47.5,4.8
+25,2024-02-13,Siena College,MI,Phone,RV,1028,3.1,50.2,46,3.8
+26,2024-02-16,Morning Consult,MI,Online,RV,963,3.2,49.1,48.8,2.1
+27,2024-02-17,Emerson,PA,Mixed,RV,899,3.3,45.8,46.9,7.3
+28,2024-02-18,Siena College,NAT,Phone,LV,909,3.3,47.6,45.5,6.9
+29,2024-02-19,Siena College,PA,Phone,RV,1072,3,47.2,44.7,8.2
+30,2024-02-20,YouGov,WI,Online,RV,1080,3,52,43.5,4.5
+31,2024-02-21,YouGov,NAT,Online,RV,1109,2.9,48.3,50.5,1.2
+32,2024-02-21,RMG Research,NAT,Mixed,RV,875,3.3,47.6,48.5,3.9
+33,2024-02-23,Siena College,AZ,Phone,RV,1071,3,48.8,45,6.1
+34,2024-02-24,Emerson,NAT,Mixed,RV,1176,2.9,49.7,45.3,5
+35,2024-02-25,Morning Consult,NAT,Online,LV,980,3.1,47.9,45.6,6.5
+36,2024-02-25,RMG Research,GA,Mixed,LV,1070,3,43.6,48.5,7.9
+37,2024-02-26,RMG Research,GA,Mixed,LV,933,3.2,46.4,49.1,4.6
+38,2024-02-27,RMG Research,NV,Mixed,LV,1016,3.1,46.7,50.3,3
+39,2024-02-28,RMG Research,AZ,Mixed,LV,1103,3,48.2,45.7,6
+40,2024-02-29,Siena College,NV,Phone,RV,1030,3.1,49.9,47.2,2.9
+41,2024-02-29,RMG Research,NAT,Mixed,RV,1002,3.1,49.6,46.5,3.9
+42,2024-02-29,RMG Research,NAT,Mixed,RV,1001,3.1,51.3,48.7,0.1
+43,2024-02-29,RMG Research,WI,Mixed,RV,1029,3.1,47.6,48.3,4.1
+44,2024-03-01,RMG Research,WI,Mixed,RV,915,3.2,45.9,47.5,6.6
+45,2024-03-01,YouGov,GA,Online,LV,948,3.2,44.4,48.8,6.8
+46,2024-03-02,Emerson,MI,Mixed,RV,1012,3.1,45.7,51,3.3
+47,2024-03-04,Morning Consult,WI,Online,RV,845,3.4,48.3,47.6,4.2
+48,2024-03-04,RMG Research,MI,Mixed,LV,947,3.2,47.6,44.7,7.7
+49,2024-03-05,Emerson,PA,Mixed,RV,1251,2.8,44,51.1,5
+50,2024-03-05,RMG Research,WI,Mixed,LV,1025,3.1,44.9,48.9,6.3
+51,2024-03-06,RMG Research,MI,Mixed,RV,944,3.2,50.6,41.6,7.7
+52,2024-03-06,Morning Consult,NAT,Online,RV,1129,2.9,44.4,55,0.6
+53,2024-03-07,RMG Research,MI,Mixed,LV,911,3.2,49.2,46.7,4.1
+54,2024-03-07,Morning Consult,WI,Online,RV,1011,3.1,47.6,48.7,3.7
+55,2024-03-08,YouGov,NAT,Online,RV,1137,2.9,45.5,51.2,3.3
+56,2024-03-11,YouGov,MI,Online,LV,1105,2.9,50.8,46.3,2.9
+57,2024-03-11,Siena College,NAT,Phone,LV,1051,3,46.7,47.5,5.7
+58,2024-03-11,RMG Research,GA,Mixed,RV,1027,3.1,50.7,45.8,3.5
+59,2024-03-12,Siena College,GA,Phone,LV,917,3.2,47.7,44.7,7.6
+60,2024-03-12,YouGov,WI,Online,RV,933,3.2,41.2,54,4.7
+61,2024-03-13,Emerson,GA,Mixed,RV,1065,3,45.9,50,4.1
+62,2024-03-13,RMG Research,MI,Mixed,RV,1167,2.9,50,48,2
+63,2024-03-13,Morning Consult,WI,Online,LV,1014,3.1,46.8,49.7,3.6
+64,2024-03-13,YouGov,NAT,Online,LV,1107,2.9,48.7,48,3.3
+65,2024-03-13,Siena College,PA,Phone,RV,907,3.3,50.3,47.1,2.6
+66,2024-03-15,RMG Research,MI,Mixed,LV,987,3.1,47.1,47.5,5.5
+67,2024-03-16,YouGov,NAT,Online,RV,929,3.2,52.4,40.7,6.9
+68,2024-03-16,RMG Research,PA,Mixed,RV,1089,3,50.6,43,6.4
+69,2024-03-16,YouGov,PA,Online,RV,928,3.2,49.9,46.2,3.9
+70,2024-03-17,Siena College,MI,Phone,RV,999,3.1,50.1,42.1,7.8
+71,2024-03-17,Emerson,MI,Mixed,RV,1043,3,45.2,52.5,2.3
+72,2024-03-17,Siena College,NAT,Phone,RV,1073,3,48.3,50.6,1
+73,2024-03-18,Morning Consult,AZ,Online,RV,1002,3.1,45.5,47.3,7.3
+74,2024-03-19,Morning Consult,PA,Online,RV,938,3.2,50.6,44.9,4.5
+75,2024-03-20,Morning Consult,WI,Online,RV,808,3.4,45,50.8,4.2
+76,2024-03-20,YouGov,MI,Online,LV,935,3.2,49.6,46.7,3.7
+77,2024-03-21,Morning Consult,AZ,Online,LV,1066,3,49.2,49.4,1.4
+78,2024-03-21,Emerson,NV,Mixed,RV,1051,3,48.9,43.7,7.4
+79,2024-03-22,Morning Consult,PA,Online,RV,988,3.1,49.4,43.1,7.5
+80,2024-03-23,Morning Consult,GA,Online,RV,992,3.1,46.2,48.6,5.2
+81,2024-03-23,RMG Research,WI,Mixed,LV,983,3.1,50,43.6,6.4
+82,2024-03-23,Siena College,NV,Phone,RV,909,3.3,45.5,50.5,3.9
+83,2024-03-24,Morning Consult,NV,Online,LV,863,3.3,43.8,50.6,5.7
+84,2024-03-24,YouGov,AZ,Online,RV,941,3.2,45.3,48.5,6.2
+85,2024-03-27,Morning Consult,GA,Online,RV,982,3.1,47.7,46.7,5.6
+86,2024-03-27,YouGov,GA,Online,LV,1023,3.1,43.1,50.8,6
+87,2024-03-27,Morning Consult,AZ,Online,RV,1063,3,50.2,43.9,5.9
+88,2024-03-27,RMG Research,NV,Mixed,RV,935,3.2,47.7,47.9,4.4
+89,2024-03-27,Morning Consult,PA,Online,RV,1070,3,50.1,49.1,0.8
+90,2024-03-29,Morning Consult,GA,Online,RV,929,3.2,50.7,47.3,2
+91,2024-03-29,Siena College,NAT,Phone,LV,984,3.1,44.9,49.2,5.9
+92,2024-03-30,Morning Consult,WI,Online,RV,1086,3,45.7,44.7,9.6
+93,2024-03-30,YouGov,PA,Online,RV,1056,3,49.3,46.4,4.3
+94,2024-03-30,RMG Research,NAT,Mixed,RV,1007,3.1,48.7,46.3,5
+95,2024-03-31,YouGov,MI,Online,RV,988,3.1,46.9,49.2,3.9
+96,2024-03-31,YouGov,AZ,Online,LV,1186,2.8,44.5,48.5,7
+97,2024-03-31,Siena College,NV,Phone,RV,939,3.2,49,44.8,6.3
+98,2024-04-01,RMG Research,MI,Mixed,RV,1012,3.1,48.2,48.2,3.5
+99,2024-04-01,Siena College,PA,Phone,RV,1146,2.9,46.6,49.5,3.9
+100,2024-04-02,RMG Research,NV,Mixed,LV,1041,3,47.5,49.3,3.2
+101,2024-04-02,Emerson,MI,Mixed,LV,976,3.1,48,46.4,5.6
+102,2024-04-03,YouGov,PA,Online,RV,971,3.1,47.9,46.3,5.9
+103,2024-04-04,RMG Research,PA,Mixed,LV,962,3.2,49.5,44.2,6.3
+104,2024-04-05,Morning Consult,AZ,Online,RV,939,3.2,50.3,45.2,4.5
+105,2024-04-05,RMG Research,GA,Mixed,RV,1012,3.1,52.6,44.8,2.6
+106,2024-04-05,RMG Research,NAT,Mixed,LV,1052,3,44,48.1,7.9
+107,2024-04-05,RMG Research,PA,Mixed,LV,874,3.3,46,48.8,5.2
+108,2024-04-06,RMG Research,PA,Mixed,RV,872,3.3,45.8,47,7.2
+109,2024-04-06,YouGov,WI,Online,RV,1023,3.1,49.2,47.2,3.6
+110,2024-04-06,YouGov,MI,Online,LV,1042,3,47.6,46.4,5.9
+111,2024-04-06,Morning Consult,PA,Online,RV,1049,3,47.7,42.8,9.6
+112,2024-04-06,RMG Research,WI,Mixed,RV,1067,3,49.9,45,5.1
+113,2024-04-07,Siena College,NAT,Phone,RV,868,3.3,51.4,43.8,4.7
+114,2024-04-08,Siena College,NAT,Phone,RV,1041,3,47.4,47.8,4.8
+115,2024-04-08,Siena College,PA,Phone,RV,1015,3.1,44.2,48.4,7.4
+116,2024-04-08,YouGov,NV,Online,RV,1061,3,46.4,50.4,3.1
+117,2024-04-09,Morning Consult,GA,Online,RV,1068,3,48,46.1,5.9
+118,2024-04-10,Morning Consult,GA,Online,RV,1073,3,46.6,49.4,4
+119,2024-04-11,Morning Consult,AZ,Online,LV,1021,3.1,48.1,45.3,6.5
+120,2024-04-11,YouGov,NV,Online,RV,874,3.3,49.5,46.2,4.3
+121,2024-04-12,RMG Research,WI,Mixed,LV,1147,2.9,44.7,47.8,7.5
+122,2024-04-12,Siena College,NAT,Phone,RV,872,3.3,48.2,48.9,3
+123,2024-04-13,Emerson,NV,Mixed,RV,1108,2.9,47.4,47.2,5.3
+124,2024-04-14,YouGov,NAT,Online,RV,930,3.2,53.2,42.5,4.3
+125,2024-04-14,Siena College,NAT,Phone,RV,910,3.2,45.1,50,4.9
+126,2024-04-15,Emerson,NAT,Mixed,LV,827,3.4,49,43,8
+127,2024-04-15,Morning Consult,MI,Online,LV,1016,3.1,46.3,48.7,5
+128,2024-04-15,Emerson,PA,Mixed,RV,1016,3.1,45.1,48.6,6.3
+129,2024-04-15,Siena College,PA,Phone,RV,1156,2.9,50.6,47.5,1.9
+130,2024-04-16,Emerson,AZ,Mixed,RV,973,3.1,45.3,49.2,5.5
+131,2024-04-16,Morning Consult,GA,Online,RV,1026,3.1,46.6,48.7,4.6
+132,2024-04-17,Siena College,AZ,Phone,LV,1030,3.1,50.5,44.6,4.8
+133,2024-04-17,Emerson,NAT,Mixed,RV,861,3.3,44.9,49.4,5.6
+134,2024-04-17,YouGov,AZ,Online,RV,946,3.2,48.7,48.1,3.1
+135,2024-04-17,YouGov,MI,Online,RV,905,3.3,51.5,41.7,6.8
+136,2024-04-17,Morning Consult,NV,Online,LV,951,3.2,48,49.6,2.4
+137,2024-04-18,Morning Consult,NV,Online,RV,1058,3,44.6,53.6,1.8
+138,2024-04-18,Siena College,NV,Phone,RV,954,3.2,51.2,45.1,3.7
+139,2024-04-19,YouGov,PA,Online,RV,955,3.2,52.1,43.6,4.4
+140,2024-04-19,Morning Consult,AZ,Online,RV,1157,2.9,50.8,43.1,6.1
+141,2024-04-19,Siena College,WI,Phone,LV,920,3.2,50.5,44.5,5
+142,2024-04-20,Emerson,GA,Mixed,RV,760,3.6,48.7,44.7,6.6
+143,2024-04-20,YouGov,NV,Online,RV,1081,3,43.8,48.7,7.5
+144,2024-04-21,Morning Consult,NAT,Online,LV,971,3.1,46.7,49.1,4.1
+145,2024-04-22,Siena College,MI,Phone,LV,942,3.2,52.8,41.9,5.3
+146,2024-04-22,Siena College,AZ,Phone,LV,931,3.2,46,52,2
+147,2024-04-22,Siena College,MI,Phone,LV,1043,3,45.8,45.9,8.3
+148,2024-04-23,Emerson,MI,Mixed,RV,1010,3.1,48.1,48.2,3.7
+149,2024-04-24,Morning Consult,WI,Online,RV,1122,2.9,51,42.8,6.2
+150,2024-04-24,Emerson,NAT,Mixed,RV,1039,3,47.1,44.7,8.3
+151,2024-04-25,Emerson,NAT,Mixed,RV,1095,3,48.2,47.1,4.6
+152,2024-04-25,YouGov,GA,Online,RV,1219,2.8,45.4,51.5,3.1
+153,2024-04-25,YouGov,PA,Online,RV,1160,2.9,50.6,41.3,8.1
+154,2024-04-25,Emerson,WI,Mixed,LV,952,3.2,46.2,45.5,8.3
+155,2024-04-26,YouGov,NAT,Online,RV,795,3.5,52.5,45.9,1.6
+156,2024-04-26,Siena College,NAT,Phone,LV,934,3.2,48.7,47.5,3.8
+157,2024-04-27,YouGov,AZ,Online,LV,1242,2.8,48.5,49.3,2.3
+158,2024-04-27,Siena College,NAT,Phone,RV,1007,3.1,49.5,45.8,4.7
+159,2024-04-28,Emerson,PA,Mixed,RV,1100,3,44.3,47.7,8
+160,2024-04-28,YouGov,PA,Online,RV,830,3.4,51.4,44.9,3.7
+161,2024-04-28,Morning Consult,PA,Online,RV,871,3.3,50.7,46.7,2.6
+162,2024-04-28,RMG Research,GA,Mixed,RV,1023,3.1,49,45.8,5.1
+163,2024-04-28,RMG Research,NAT,Mixed,RV,930,3.2,48.5,47.9,3.5
+164,2024-04-29,RMG Research,AZ,Mixed,RV,994,3.1,46.6,49.9,3.5
+165,2024-04-29,Emerson,AZ,Mixed,RV,866,3.3,46.3,45.6,8.2
+166,2024-04-29,YouGov,NAT,Online,RV,1022,3.1,52.4,42.9,4.7
+167,2024-04-29,Emerson,GA,Mixed,RV,1050,3,45.7,50.6,3.7
+168,2024-04-29,YouGov,PA,Online,RV,1175,2.9,50.4,42.8,6.9
+169,2024-04-29,Morning Consult,NV,Online,RV,873,3.3,44,46,10.1
+170,2024-04-29,Siena College,NAT,Phone,RV,862,3.3,45.7,49,5.3
+171,2024-04-30,Emerson,MI,Mixed,LV,1014,3.1,45.8,47.1,7.1
+172,2024-04-30,RMG Research,NAT,Mixed,RV,952,3.2,48.3,51.3,0.4
+173,2024-05-01,YouGov,MI,Online,RV,1070,3,49.1,46.7,4.2
+174,2024-05-01,Siena College,NAT,Phone,LV,981,3.1,48.3,48.1,3.6
+175,2024-05-01,RMG Research,GA,Mixed,RV,959,3.2,47.8,50.7,1.6
+176,2024-05-02,RMG Research,NAT,Mixed,LV,1214,2.8,45.8,50.6,3.6
+177,2024-05-02,YouGov,GA,Online,LV,790,3.5,46.2,48,5.8
+178,2024-05-02,Siena College,NAT,Phone,RV,876,3.3,51.4,44.1,4.4
+179,2024-05-02,Siena College,WI,Phone,RV,1020,3.1,49.2,48.6,2.2
+180,2024-05-03,Siena College,AZ,Phone,RV,903,3.3,51.9,44.3,3.8
+181,2024-05-05,YouGov,WI,Online,RV,1046,3,49.9,45,5.1
+182,2024-05-05,Emerson,AZ,Mixed,RV,1089,3,44.7,49,6.4
+183,2024-05-06,Siena College,MI,Phone,RV,1014,3.1,47.5,47.2,5.3
+184,2024-05-06,YouGov,MI,Online,RV,1151,2.9,54.7,43.3,2
+185,2024-05-06,Emerson,NV,Mixed,RV,1037,3,44.4,50.2,5.4
+186,2024-05-06,RMG Research,AZ,Mixed,LV,921,3.2,48.8,46.2,5.1
+187,2024-05-06,YouGov,GA,Online,LV,778,3.5,44.3,48.1,7.6
+188,2024-05-08,Siena College,NV,Phone,RV,1097,3,45.1,49.9,5.1
+189,2024-05-08,Emerson,NAT,Mixed,LV,1022,3.1,43.9,48.8,7.2
+190,2024-05-08,RMG Research,NAT,Mixed,LV,1130,2.9,48.1,48.1,3.8
+191,2024-05-08,Emerson,MI,Mixed,RV,963,3.2,50.3,44,5.7
+192,2024-05-09,Morning Consult,PA,Online,RV,1197,2.8,45.9,45.8,8.3
+193,2024-05-09,Emerson,PA,Mixed,RV,1110,2.9,52.1,43,4.9
+194,2024-05-09,Morning Consult,NV,Online,LV,699,3.7,45.4,51.4,3.2
+195,2024-05-09,Siena College,WI,Phone,RV,1055,3,49.5,45.9,4.5
+196,2024-05-09,Siena College,NV,Phone,RV,860,3.3,50.3,49.1,0.6
+197,2024-05-10,YouGov,NAT,Online,LV,1041,3,46.3,48.2,5.5
+198,2024-05-10,RMG Research,NV,Mixed,RV,1020,3.1,47.5,46.7,5.7
+199,2024-05-11,RMG Research,PA,Mixed,RV,915,3.2,49.7,46.2,4.1
+200,2024-05-12,YouGov,AZ,Online,RV,896,3.3,45,49.2,5.8
+201,2024-05-12,Morning Consult,AZ,Online,RV,1025,3.1,48.8,48.1,3.1
+202,2024-05-13,YouGov,NAT,Online,RV,1020,3.1,47.7,48.7,3.5
+203,2024-05-13,Siena College,NAT,Phone,RV,1083,3,47.4,46.6,6
+204,2024-05-14,Siena College,WI,Phone,RV,919,3.2,47.6,48.7,3.7
+205,2024-05-14,RMG Research,NAT,Mixed,RV,932,3.2,50.8,42.7,6.6
+206,2024-05-14,Emerson,GA,Mixed,LV,1119,2.9,47.4,48,4.6
+207,2024-05-14,Siena College,NV,Phone,RV,973,3.1,45.3,52.8,2
+208,2024-05-14,Morning Consult,MI,Online,RV,1002,3.1,45.1,44.3,10.6
+209,2024-05-15,RMG Research,GA,Mixed,LV,1100,3,45.8,47.7,6.5
+210,2024-05-15,Morning Consult,NAT,Online,RV,944,3.2,42.3,50.1,7.6
+211,2024-05-15,Emerson,PA,Mixed,RV,973,3.1,53.8,44.7,1.5
+212,2024-05-15,Morning Consult,NAT,Online,RV,1055,3,48.8,43.9,7.3
+213,2024-05-16,RMG Research,NAT,Mixed,RV,897,3.3,49.5,45,5.5
+214,2024-05-16,RMG Research,NAT,Mixed,RV,980,3.1,48.4,46.3,5.3
+215,2024-05-16,Siena College,PA,Phone,LV,914,3.2,44.9,48.6,6.6
+216,2024-05-16,Morning Consult,NV,Online,RV,1111,2.9,48,49.8,2.2
+217,2024-05-16,RMG Research,WI,Mixed,LV,1023,3.1,47.1,45.8,7.1
+218,2024-05-17,Siena College,NAT,Phone,RV,1004,3.1,46.7,50.5,2.8
+219,2024-05-17,YouGov,MI,Online,LV,948,3.2,51.3,42.6,6.1
+220,2024-05-17,RMG Research,NAT,Mixed,RV,1137,2.9,47.1,52.3,0.7
+221,2024-05-17,Emerson,NAT,Mixed,RV,1048,3,47.7,47.3,5
+222,2024-05-18,Morning Consult,WI,Online,RV,1029,3.1,49.1,47.6,3.3
+223,2024-05-18,Emerson,AZ,Mixed,RV,1118,2.9,47.2,48.3,4.6
+224,2024-05-18,RMG Research,WI,Mixed,LV,1060,3,46.4,48.1,5.5
+225,2024-05-18,YouGov,NV,Online,RV,1076,3,46.1,50,3.9
+226,2024-05-18,YouGov,GA,Online,RV,1057,3,47.1,49.6,3.3
+227,2024-05-18,Emerson,GA,Mixed,RV,1097,3,47.7,48,4.4
+228,2024-05-19,Emerson,GA,Mixed,RV,922,3.2,50.3,46.2,3.5
+229,2024-05-19,RMG Research,NV,Mixed,RV,1029,3.1,45.7,51.2,3.1
+230,2024-05-19,Siena College,AZ,Phone,LV,922,3.2,44.6,48.5,7
+231,2024-05-20,RMG Research,NV,Mixed,RV,926,3.2,45.1,47,7.9
+232,2024-05-21,RMG Research,PA,Mixed,RV,1029,3.1,48.7,47.4,3.9
+233,2024-05-21,Emerson,WI,Mixed,LV,970,3.1,51.2,44.6,4.2
+234,2024-05-22,Morning Consult,AZ,Online,LV,987,3.1,49.7,43.4,6.9
+235,2024-05-22,Emerson,MI,Mixed,RV,1023,3.1,49.4,45.8,4.8
+236,2024-05-22,Siena College,NV,Phone,LV,1004,3.1,46.4,48.9,4.7
+237,2024-05-22,Emerson,NAT,Mixed,RV,993,3.1,45.6,49.2,5.2
+238,2024-05-22,YouGov,WI,Online,RV,1053,3,46.1,46.8,7.1
+239,2024-05-23,RMG Research,WI,Mixed,RV,1081,3,49.9,47.8,2.3
+240,2024-05-23,RMG Research,NAT,Mixed,RV,1008,3.1,45,49.2,5.8
+241,2024-05-23,RMG Research,AZ,Mixed,RV,935,3.2,45.4,49.6,5
+242,2024-05-23,RMG Research,MI,Mixed,RV,1042,3,46.8,46.5,6.7
+243,2024-05-23,Morning Consult,NAT,Online,RV,1101,3,48.5,46.3,5.2
+244,2024-05-25,YouGov,AZ,Online,LV,1040,3,43.4,52.2,4.4
+245,2024-05-25,Emerson,MI,Mixed,RV,875,3.3,47.9,47,5.1
+246,2024-05-26,Emerson,NAT,Mixed,LV,1047,3,46.2,46.9,6.9
+247,2024-05-26,Morning Consult,NAT,Online,RV,1109,2.9,44.9,49.4,5.7
+248,2024-05-26,RMG Research,GA,Mixed,RV,1220,2.8,47,46.1,7
+249,2024-05-27,Morning Consult,WI,Online,RV,779,3.5,48.6,45,6.4
+250,2024-05-27,YouGov,MI,Online,LV,848,3.4,51.2,43.5,5.4
+251,2024-05-27,Morning Consult,AZ,Online,RV,962,3.2,48.8,44.5,6.7
+252,2024-05-27,RMG Research,WI,Mixed,RV,1173,2.9,51.9,44.6,3.5
+253,2024-05-27,Siena College,AZ,Phone,RV,1071,3,49.6,45.8,4.6
+254,2024-05-27,YouGov,GA,Online,RV,970,3.1,50.7,42,7.4
+255,2024-05-28,RMG Research,WI,Mixed,LV,871,3.3,49,47.2,3.7
+256,2024-05-28,Morning Consult,NV,Online,LV,857,3.3,45.2,50.5,4.3
+257,2024-05-28,Morning Consult,MI,Online,RV,776,3.5,50.4,43.6,6
+258,2024-05-28,YouGov,NV,Online,LV,942,3.2,41.4,50,8.6
+259,2024-05-28,Siena College,WI,Phone,RV,1024,3.1,45.5,48.6,5.9
+260,2024-05-28,Morning Consult,WI,Online,LV,1066,3,49.4,44.6,5.9
+261,2024-05-29,RMG Research,NV,Mixed,LV,905,3.3,42.6,56.1,1.3
+262,2024-05-29,RMG Research,NAT,Mixed,RV,1060,3,45.7,49.4,4.8
+263,2024-05-29,RMG Research,PA,Mixed,LV,1016,3.1,49.6,45.8,4.6
+264,2024-05-29,Siena College,MI,Phone,RV,939,3.2,49.4,44.5,6.1
+265,2024-05-29,Siena College,AZ,Phone,RV,1300,2.7,48,45.8,6.2
+266,2024-05-30,Emerson,AZ,Mixed,LV,1091,3,49.2,43.3,7.5
+267,2024-05-30,Morning Consult,GA,Online,RV,926,3.2,46.2,51.8,1.9
+268,2024-05-31,Siena College,WI,Phone,RV,1026,3.1,44.6,49.9,5.5
+269,2024-05-31,Siena College,NV,Phone,RV,1108,2.9,49.5,42.4,8.2
+270,2024-05-31,Morning Consult,WI,Online,RV,994,3.1,46.2,49.3,4.5
+271,2024-05-31,YouGov,AZ,Online,RV,852,3.4,48,46.2,5.8
+272,2024-05-31,Emerson,MI,Mixed,RV,958,3.2,52.2,45.6,2.2
+273,2024-06-01,Emerson,AZ,Mixed,RV,895,3.3,51.8,43.3,4.9
+274,2024-06-01,YouGov,PA,Online,RV,967,3.2,47,46.4,6.6
+275,2024-06-01,Siena College,PA,Phone,RV,1111,2.9,45.1,49.2,5.7
+276,2024-06-01,Morning Consult,AZ,Online,LV,1040,3,44.1,52.3,3.6
+277,2024-06-01,Morning Consult,PA,Online,LV,947,3.2,48.4,45.7,5.9
+278,2024-06-02,Siena College,NAT,Phone,RV,993,3.1,50.1,45.1,4.9
+279,2024-06-02,Emerson,GA,Mixed,LV,1074,3,49.3,47.9,2.9
+280,2024-06-02,RMG Research,NAT,Mixed,LV,863,3.3,49.2,44.8,6
+281,2024-06-02,Morning Consult,NAT,Online,LV,1060,3,50.1,44.2,5.8
+282,2024-06-02,Morning Consult,NV,Online,LV,977,3.1,43,50.6,6.4
+283,2024-06-02,YouGov,PA,Online,LV,1102,3,44.1,52.6,3.3
+284,2024-06-02,Emerson,NAT,Mixed,RV,1164,2.9,53.3,46.2,0.5
+285,2024-06-02,Siena College,MI,Phone,RV,978,3.1,47.1,48.3,4.7
+286,2024-06-03,Morning Consult,PA,Online,RV,1036,3,52.3,41.6,6.1
+287,2024-06-03,RMG Research,NAT,Mixed,RV,974,3.1,48.1,45.2,6.7
+288,2024-06-04,RMG Research,AZ,Mixed,RV,954,3.2,51,43.9,5.1
+289,2024-06-04,Siena College,NAT,Phone,LV,917,3.2,46.9,45.6,7.5
+290,2024-06-04,Morning Consult,WI,Online,RV,921,3.2,44.4,48.6,6.9
+291,2024-06-05,Morning Consult,AZ,Online,LV,1086,3,46.2,44.8,9
+292,2024-06-05,Siena College,NV,Phone,RV,1007,3.1,45.6,48.8,5.6
+293,2024-06-05,Morning Consult,MI,Online,LV,1126,2.9,46.9,48.3,4.8
+294,2024-06-05,Emerson,MI,Mixed,RV,970,3.1,50.2,42,7.7
+295,2024-06-05,YouGov,WI,Online,LV,979,3.1,45.3,51.1,3.6
+296,2024-06-05,Siena College,AZ,Phone,RV,1102,3,49.9,44.9,5.1
+297,2024-06-06,YouGov,GA,Online,RV,1014,3.1,46.4,50,3.6
+298,2024-06-06,Siena College,NV,Phone,RV,1080,3,47.1,49.2,3.7
+299,2024-06-06,Emerson,GA,Mixed,RV,1083,3,44.3,47.8,7.9
+300,2024-06-06,Emerson,PA,Mixed,LV,997,3.1,45.9,48.6,5.6
+301,2024-06-07,Emerson,NV,Mixed,RV,964,3.2,44,49.7,6.2
+302,2024-06-07,Morning Consult,MI,Online,RV,1101,3,50.8,43.7,5.5
+303,2024-06-07,Emerson,NAT,Mixed,LV,1072,3,49.2,49.2,1.6
+304,2024-06-08,RMG Research,WI,Mixed,RV,948,3.2,48.9,45.3,5.9
+305,2024-06-08,YouGov,AZ,Online,RV,1052,3,47.3,44.3,8.4
+306,2024-06-08,YouGov,GA,Online,RV,974,3.1,45.7,50.7,3.6
+307,2024-06-08,RMG Research,GA,Mixed,RV,952,3.2,46.8,48.5,4.7
+308,2024-06-09,Siena College,MI,Phone,RV,1203,2.8,46.1,47.1,6.8
+309,2024-06-09,RMG Research,GA,Mixed,LV,1109,2.9,49.6,45.3,5.1
+310,2024-06-10,Siena College,MI,Phone,RV,897,3.3,49.3,47.7,3
+311,2024-06-10,YouGov,GA,Online,LV,804,3.5,47.3,47.9,4.7
+312,2024-06-10,Siena College,NV,Phone,LV,1079,3,48.5,48.2,3.4
+313,2024-06-11,YouGov,NV,Online,RV,1072,3,45.9,52.7,1.4
+314,2024-06-12,YouGov,NAT,Online,RV,1031,3.1,49.4,46.1,4.5
+315,2024-06-12,Morning Consult,PA,Online,RV,1023,3.1,49.8,43.2,7
+316,2024-06-12,RMG Research,NV,Mixed,RV,943,3.2,46.2,48.6,5.2
+317,2024-06-12,YouGov,GA,Online,RV,1117,2.9,47.9,45.7,6.4
+318,2024-06-12,Emerson,NV,Mixed,LV,967,3.2,50.3,46.2,3.4
+319,2024-06-12,RMG Research,AZ,Mixed,RV,845,3.4,51.2,45.3,3.5
+320,2024-06-12,YouGov,WI,Online,RV,1095,3,45.3,46.5,8.2
+321,2024-06-13,YouGov,AZ,Online,LV,926,3.2,46.8,46.6,6.6
+322,2024-06-13,YouGov,NV,Online,RV,944,3.2,50.3,44.4,5.3
+323,2024-06-13,Emerson,AZ,Mixed,RV,1014,3.1,40.8,49.1,10.2
+324,2024-06-13,YouGov,NV,Online,RV,941,3.2,44.8,50,5.2
+325,2024-06-13,Siena College,NAT,Phone,RV,1118,2.9,51.2,44.5,4.3
+326,2024-06-14,YouGov,AZ,Online,RV,998,3.1,46,46.6,7.4
+327,2024-06-14,RMG Research,NAT,Mixed,RV,929,3.2,47.1,47.5,5.4
+328,2024-06-15,RMG Research,MI,Mixed,LV,1159,2.9,48.1,47.6,4.4
+329,2024-06-15,Morning Consult,AZ,Online,RV,911,3.2,46.1,50.9,3
+330,2024-06-15,RMG Research,NV,Mixed,LV,1193,2.8,43.2,51.3,5.5
+331,2024-06-15,Emerson,MI,Mixed,RV,1022,3.1,43.3,49.3,7.3
+332,2024-06-16,Emerson,AZ,Mixed,RV,1124,2.9,51.1,47,1.9
+333,2024-06-16,Emerson,MI,Mixed,RV,945,3.2,52.6,41.7,5.8
+334,2024-06-16,Emerson,NAT,Mixed,RV,828,3.4,47,46.8,6.2
+335,2024-06-16,Emerson,GA,Mixed,LV,1139,2.9,45.8,48.8,5.4
+336,2024-06-16,YouGov,PA,Online,RV,955,3.2,45.3,49.2,5.6
+337,2024-06-16,YouGov,GA,Online,RV,945,3.2,47.4,49.3,3.3
+338,2024-06-16,RMG Research,NV,Mixed,RV,1130,2.9,47.3,46,6.8
+339,2024-06-17,Morning Consult,GA,Online,RV,1021,3.1,50.4,45.8,3.8
+340,2024-06-17,Emerson,WI,Mixed,LV,996,3.1,45.5,49.3,5.2
+341,2024-06-17,YouGov,PA,Online,RV,856,3.3,48.9,44.4,6.7
+342,2024-06-17,Morning Consult,NAT,Online,RV,1070,3,47.3,49.1,3.6
+343,2024-06-17,Siena College,PA,Phone,LV,1155,2.9,42.7,50.1,7.1
+344,2024-06-17,Emerson,PA,Mixed,RV,1017,3.1,48,45.4,6.7
+345,2024-06-19,Emerson,AZ,Mixed,RV,988,3.1,49.9,47.5,2.5
+346,2024-06-19,Siena College,GA,Phone,RV,1087,3,45.6,47.7,6.7
+347,2024-06-19,RMG Research,PA,Mixed,RV,916,3.2,51,43.3,5.7
+348,2024-06-19,Emerson,PA,Mixed,LV,1091,3,48.8,45.9,5.3
+349,2024-06-19,Morning Consult,MI,Online,RV,987,3.1,48.2,45.8,6.1
+350,2024-06-19,YouGov,AZ,Online,RV,821,3.4,56.2,39.8,4
+351,2024-06-19,YouGov,WI,Online,RV,843,3.4,51.5,47.3,1.2
+352,2024-06-19,RMG Research,MI,Mixed,LV,829,3.4,45.5,49.2,5.3
+353,2024-06-20,RMG Research,NV,Mixed,RV,1179,2.9,44.9,49,6.1
+354,2024-06-20,Emerson,MI,Mixed,RV,955,3.2,49.7,47.8,2.5
+355,2024-06-20,Morning Consult,NAT,Online,RV,837,3.4,48.7,49.1,2.2
+356,2024-06-20,YouGov,WI,Online,RV,946,3.2,49.6,45.9,4.5
+357,2024-06-20,Siena College,GA,Phone,RV,1082,3,43.5,50,6.4
+358,2024-06-20,Siena College,AZ,Phone,RV,1018,3.1,48,44.5,7.5
+359,2024-06-20,Siena College,WI,Phone,LV,1070,3,51.4,45.6,3
+360,2024-06-20,Morning Consult,WI,Online,RV,1022,3.1,49.5,47.8,2.7
+361,2024-06-21,Morning Consult,PA,Online,LV,1166,2.9,58.1,39.1,2.7
+362,2024-06-21,RMG Research,NV,Mixed,RV,1078,3,41.9,51.8,6.4
+363,2024-06-21,Siena College,NAT,Phone,LV,977,3.1,49.6,44,6.4
+364,2024-06-21,Morning Consult,MI,Online,RV,932,3.2,48.9,47.2,3.9
+365,2024-06-21,Emerson,MI,Mixed,LV,1074,3,51.1,42.5,6.3
+366,2024-06-22,Emerson,PA,Mixed,RV,953,3.2,46.4,48.1,5.6
+367,2024-06-22,Siena College,GA,Phone,RV,1014,3.1,50.3,46.1,3.6
+368,2024-06-22,Morning Consult,WI,Online,RV,1046,3,50.2,45,4.8
+369,2024-06-22,Siena College,NV,Phone,LV,1066,3,45.8,45.7,8.5
+370,2024-06-22,RMG Research,NAT,Mixed,RV,915,3.2,51.6,44.7,3.6
+371,2024-06-23,YouGov,GA,Online,LV,1056,3,47.4,48.4,4.2
+372,2024-06-23,YouGov,PA,Online,LV,1122,2.9,49.4,46.2,4.4
+373,2024-06-23,Morning Consult,AZ,Online,RV,978,3.1,44.8,51.7,3.5
+374,2024-06-23,YouGov,AZ,Online,RV,1065,3,49.8,46.6,3.6
+375,2024-06-23,Siena College,PA,Phone,LV,1071,3,48.5,48.8,2.7
+376,2024-06-24,YouGov,PA,Online,RV,951,3.2,50.5,44.6,4.9
+377,2024-06-24,Morning Consult,NV,Online,RV,1071,3,45.1,46.3,8.6
+378,2024-06-24,RMG Research,AZ,Mixed,LV,940,3.2,49.5,45.2,5.3
+379,2024-06-24,Morning Consult,NV,Online,RV,975,3.1,46.8,48,5.2
+380,2024-06-24,Emerson,NAT,Mixed,RV,895,3.3,51.9,46.8,1.3
+381,2024-06-25,Siena College,GA,Phone,RV,1001,3.1,44.7,52,3.2
+382,2024-06-25,YouGov,GA,Online,RV,1024,3.1,51.8,44.5,3.7
+383,2024-06-25,RMG Research,WI,Mixed,RV,978,3.1,45.5,49.2,5.4
+384,2024-06-25,Emerson,NV,Mixed,RV,863,3.3,44.1,49.3,6.6
+385,2024-06-25,YouGov,NV,Online,LV,860,3.3,44.9,45.4,9.7
+386,2024-06-25,Emerson,NAT,Mixed,RV,1027,3.1,49.9,44.9,5.2
+387,2024-06-26,YouGov,MI,Online,RV,1113,2.9,45.7,47.2,7.2
+388,2024-06-26,Siena College,AZ,Phone,RV,1045,3,49.6,47.1,3.2
+389,2024-06-26,Siena College,PA,Phone,RV,994,3.1,49.6,47.1,3.2
+390,2024-06-27,YouGov,NAT,Online,RV,965,3.2,46.7,51.1,2.2
+391,2024-06-27,YouGov,GA,Online,LV,1083,3,43.7,49.6,6.6
+392,2024-06-27,Morning Consult,NV,Online,RV,915,3.2,46.8,46.3,6.9
+393,2024-06-27,Siena College,GA,Phone,RV,1154,2.9,48.3,42.5,9.2
+394,2024-06-28,Emerson,MI,Mixed,RV,860,3.3,46.1,46.4,7.4
+395,2024-06-28,YouGov,PA,Online,LV,915,3.2,52.3,41.5,6.2
+396,2024-06-28,Emerson,NAT,Mixed,RV,818,3.4,45.8,49.1,5.1
+397,2024-06-28,YouGov,NAT,Online,RV,913,3.2,47,44.7,8.3
+398,2024-06-28,Emerson,WI,Mixed,LV,891,3.3,47.7,48.1,4.2
+399,2024-06-28,Morning Consult,MI,Online,RV,1001,3.1,53,43.4,3.5
+400,2024-06-29,YouGov,NV,Online,LV,1108,2.9,46.5,48.6,4.9
+401,2024-06-29,Morning Consult,NAT,Online,LV,957,3.2,47.6,45,7.5
+402,2024-06-29,Morning Consult,NV,Online,LV,895,3.3,43.7,52.7,3.6
+403,2024-06-29,Emerson,NV,Mixed,RV,889,3.3,50.6,45.3,4.1
+404,2024-06-29,RMG Research,WI,Mixed,RV,1023,3.1,52.2,45.1,2.6
+405,2024-06-30,Emerson,WI,Mixed,LV,951,3.2,49.6,44,6.3
+406,2024-06-30,Siena College,NV,Phone,LV,873,3.3,47.7,48.7,3.6
+407,2024-06-30,Morning Consult,NV,Online,RV,1169,2.9,50.2,46.6,3.3
+408,2024-07-01,Emerson,WI,Mixed,RV,970,3.1,45.8,48.4,5.8
+409,2024-07-01,RMG Research,NAT,Mixed,LV,1222,2.8,45.9,48.6,5.5
+410,2024-07-01,RMG Research,AZ,Mixed,LV,1250,2.8,49.9,44.4,5.7
+411,2024-07-01,RMG Research,PA,Mixed,RV,897,3.3,52.2,44.5,3.4
+412,2024-07-01,Siena College,WI,Phone,LV,1016,3.1,51,44,5
+413,2024-07-01,Siena College,NAT,Phone,RV,1010,3.1,50.7,44.1,5.2
+414,2024-07-02,Morning Consult,MI,Online,RV,1177,2.9,46.6,47.7,5.7
+415,2024-07-02,RMG Research,MI,Mixed,RV,1017,3.1,48.5,45.4,6.1
+416,2024-07-02,YouGov,AZ,Online,RV,924,3.2,45.4,49.5,5.1
+417,2024-07-03,YouGov,GA,Online,RV,911,3.2,44.4,52.8,2.8
+418,2024-07-03,Emerson,PA,Mixed,RV,968,3.1,53.4,45.9,0.7
+419,2024-07-03,Emerson,WI,Mixed,LV,957,3.2,47.1,50.9,2
+420,2024-07-03,YouGov,WI,Online,RV,1050,3,50.2,44.6,5.2
+421,2024-07-04,YouGov,GA,Online,LV,1005,3.1,39.8,56.9,3.3
+422,2024-07-04,Morning Consult,MI,Online,LV,1139,2.9,47.9,49.1,2.9
+423,2024-07-04,Emerson,AZ,Mixed,RV,1141,2.9,44.6,48.4,7
+424,2024-07-04,Siena College,NAT,Phone,LV,957,3.2,49.3,45.8,4.8
+425,2024-07-04,YouGov,PA,Online,LV,866,3.3,48.1,46.7,5.2
+426,2024-07-05,Emerson,WI,Mixed,LV,1146,2.9,50.3,43.8,6
+427,2024-07-05,Siena College,GA,Phone,RV,1092,3,46,48.1,5.9
+428,2024-07-05,RMG Research,MI,Mixed,RV,857,3.3,51.7,44.1,4.2
+429,2024-07-06,Emerson,NV,Mixed,LV,921,3.2,45.4,52.5,2.1
+430,2024-07-06,YouGov,WI,Online,RV,988,3.1,44.2,49.1,6.7
+431,2024-07-06,Emerson,NV,Mixed,LV,987,3.1,44.1,52.4,3.5
+432,2024-07-06,RMG Research,PA,Mixed,LV,1107,2.9,46.9,48.2,4.9
+433,2024-07-06,Siena College,MI,Phone,RV,1115,2.9,51.3,43.9,4.8
+434,2024-07-07,RMG Research,NAT,Mixed,RV,775,3.5,46.9,46.4,6.7
+435,2024-07-07,Siena College,PA,Phone,RV,1069,3,48.2,43.3,8.4
+436,2024-07-07,YouGov,AZ,Online,RV,954,3.2,48.7,48.5,2.8
+437,2024-07-07,YouGov,WI,Online,RV,1074,3,46.8,46.9,6.4
+438,2024-07-08,Emerson,NAT,Mixed,RV,986,3.1,47.7,49.8,2.5
+439,2024-07-08,YouGov,MI,Online,RV,1072,3,53.8,42.8,3.4
+440,2024-07-08,RMG Research,NV,Mixed,RV,1052,3,43,50.1,6.9
+441,2024-07-08,Emerson,WI,Mixed,RV,1008,3.1,48.6,45.9,5.5
+442,2024-07-08,Morning Consult,AZ,Online,LV,944,3.2,43.9,53.8,2.3
+443,2024-07-08,Morning Consult,NAT,Online,RV,1029,3.1,46.9,48.6,4.5
+444,2024-07-09,Siena College,NAT,Phone,RV,888,3.3,49.2,45,5.8
+445,2024-07-09,YouGov,AZ,Online,LV,900,3.3,46.1,49.1,4.8
+446,2024-07-09,Emerson,PA,Mixed,RV,963,3.2,47.6,45.1,7.3
+447,2024-07-09,Emerson,AZ,Mixed,LV,1045,3,46.6,45.7,7.6
+448,2024-07-09,Morning Consult,PA,Online,RV,1017,3.1,49,47.2,3.8
+449,2024-07-09,YouGov,MI,Online,RV,813,3.4,45,49.8,5.1
+450,2024-07-09,Siena College,NAT,Phone,RV,890,3.3,48,48.7,3.3
+451,2024-07-09,Morning Consult,NV,Online,RV,1095,3,46.9,44.5,8.6
+452,2024-07-10,Morning Consult,WI,Online,RV,1129,2.9,44.4,49.2,6.4
+453,2024-07-10,RMG Research,NAT,Mixed,LV,803,3.5,46.8,47.7,5.5
+454,2024-07-10,Morning Consult,AZ,Online,RV,996,3.1,45.7,50.8,3.4
+455,2024-07-10,YouGov,NAT,Online,LV,894,3.3,48.3,47.3,4.4
+456,2024-07-11,Siena College,MI,Phone,RV,1075,3,51.1,42,6.9
+457,2024-07-12,Morning Consult,NV,Online,RV,1022,3.1,48.5,48.5,3
+458,2024-07-12,Siena College,GA,Phone,RV,1130,2.9,47.5,50.3,2.2
+459,2024-07-12,RMG Research,AZ,Mixed,RV,992,3.1,44.4,50.4,5.2
+460,2024-07-12,RMG Research,NAT,Mixed,RV,825,3.4,46.9,47.2,6
+461,2024-07-12,Morning Consult,GA,Online,LV,983,3.1,44.4,50.9,4.8
+462,2024-07-12,RMG Research,MI,Mixed,RV,994,3.1,45.9,44.7,9.3
+463,2024-07-12,RMG Research,MI,Mixed,LV,1016,3.1,49.1,45.1,5.8
+464,2024-07-13,RMG Research,WI,Mixed,RV,919,3.2,46,51.8,2.2
+465,2024-07-13,RMG Research,NV,Mixed,LV,994,3.1,47.5,47.4,5.1
+466,2024-07-13,Morning Consult,WI,Online,LV,1041,3,48.2,46.2,5.6
+467,2024-07-13,Morning Consult,NAT,Online,LV,1066,3,46.4,47.1,6.4
+468,2024-07-13,Morning Consult,MI,Online,RV,1031,3.1,46.1,48.4,5.5
+469,2024-07-14,Siena College,NAT,Phone,LV,1042,3,50.9,45.1,4
+470,2024-07-14,Morning Consult,MI,Online,RV,933,3.2,46.4,49.4,4.2
+471,2024-07-14,RMG Research,GA,Mixed,RV,887,3.3,42.7,48.6,8.7
+472,2024-07-14,RMG Research,AZ,Mixed,LV,962,3.2,48.3,46.4,5.3
+473,2024-07-14,Emerson,WI,Mixed,LV,867,3.3,47.3,47.5,5.2
+474,2024-07-14,Morning Consult,GA,Online,RV,924,3.2,48.1,46.5,5.4
+475,2024-07-15,Morning Consult,NV,Online,LV,946,3.2,47.8,47,5.3
+476,2024-07-15,Emerson,MI,Mixed,LV,940,3.2,46.1,49.8,4.2
+477,2024-07-15,Siena College,AZ,Phone,RV,1121,2.9,47.3,47.3,5.4
+478,2024-07-16,Morning Consult,MI,Online,RV,983,3.1,46,45.3,8.7
+479,2024-07-16,Morning Consult,NAT,Online,RV,1022,3.1,49.4,45.3,5.3
+480,2024-07-16,Morning Consult,AZ,Online,RV,937,3.2,49.1,48,2.9
+481,2024-07-16,YouGov,PA,Online,RV,1072,3,47.2,48.1,4.7
+482,2024-07-16,Emerson,NAT,Mixed,RV,1004,3.1,45.7,49.6,4.7
+483,2024-07-16,RMG Research,WI,Mixed,RV,944,3.2,46.1,48.5,5.3
+484,2024-07-16,Morning Consult,NAT,Online,RV,856,3.3,52.1,41,6.9
+485,2024-07-16,Morning Consult,PA,Online,RV,1112,2.9,48.2,46.1,5.7
+486,2024-07-16,Morning Consult,GA,Online,RV,1021,3.1,45.5,50.1,4.4
+487,2024-07-16,Siena College,NV,Phone,RV,971,3.1,42.9,50.6,6.5
+488,2024-07-16,Morning Consult,NAT,Online,RV,1078,3,51.9,43.3,4.9
+489,2024-07-17,Emerson,MI,Mixed,RV,1042,3,47.7,48.4,4
+490,2024-07-17,Morning Consult,MI,Online,RV,1150,2.9,47.2,47.5,5.3
+491,2024-07-18,Siena College,PA,Phone,LV,934,3.2,45.3,48.6,6.1
+492,2024-07-19,Morning Consult,GA,Online,RV,1009,3.1,43.8,51.2,5
+493,2024-07-19,Morning Consult,PA,Online,RV,964,3.2,48.6,47.6,3.8
+494,2024-07-19,Siena College,WI,Phone,RV,933,3.2,48.7,47.3,3.9
+495,2024-07-20,Emerson,AZ,Mixed,LV,820,3.4,43.4,51.6,5
+496,2024-07-20,YouGov,AZ,Online,RV,884,3.3,44.6,49.4,6
+497,2024-07-20,Siena College,WI,Phone,RV,1009,3.1,47.9,46.6,5.5
+498,2024-07-20,Emerson,PA,Mixed,RV,985,3.1,47,42.9,10.1
+499,2024-07-20,RMG Research,AZ,Mixed,RV,990,3.1,49.9,44.3,5.8
+500,2024-07-20,RMG Research,NAT,Mixed,RV,1173,2.9,47.5,47.6,4.9
+501,2024-07-21,RMG Research,NV,Mixed,RV,783,3.5,43.6,50.3,6
+502,2024-07-21,Emerson,AZ,Mixed,LV,1032,3.1,44.8,51.2,4
+503,2024-07-21,YouGov,NAT,Online,RV,906,3.3,51.1,48.1,0.7
+504,2024-07-21,Emerson,MI,Mixed,RV,1056,3,54.8,36,9.2
+505,2024-07-21,Siena College,NAT,Phone,LV,1081,3,45.6,48.5,5.9
+506,2024-07-22,Morning Consult,WI,Online,LV,829,3.4,44.5,47.8,7.7
+507,2024-07-22,YouGov,PA,Online,RV,1120,2.9,48.3,46.4,5.3
+508,2024-07-23,YouGov,MI,Online,RV,1008,3.1,50.6,44.2,5.3
+509,2024-07-24,Emerson,NAT,Mixed,RV,950,3.2,47.7,48.3,4
+510,2024-07-24,Siena College,GA,Phone,RV,1109,2.9,44.9,46.2,8.9
+511,2024-07-25,YouGov,AZ,Online,LV,951,3.2,48.2,48.5,3.3
+512,2024-07-25,Morning Consult,WI,Online,LV,952,3.2,47.2,49.6,3.2
+513,2024-07-25,YouGov,WI,Online,RV,1037,3,49.7,44.7,5.6
+514,2024-07-25,Siena College,PA,Phone,RV,989,3.1,47.2,49.6,3.2
+515,2024-07-25,Morning Consult,GA,Online,LV,930,3.2,44.2,48,7.8
+516,2024-07-26,Emerson,AZ,Mixed,RV,904,3.3,42.5,55.3,2.2
+517,2024-07-26,Emerson,NAT,Mixed,LV,1226,2.8,45.5,53.6,0.9
+518,2024-07-26,Morning Consult,AZ,Online,LV,1020,3.1,47.6,51.8,0.6
+519,2024-07-26,YouGov,AZ,Online,RV,916,3.2,43.8,49.6,6.6
+520,2024-07-26,YouGov,NV,Online,RV,914,3.2,44.1,52.5,3.4
+521,2024-07-26,Emerson,GA,Mixed,RV,1030,3.1,43.6,49.1,7.3
+522,2024-07-26,Morning Consult,PA,Online,RV,1112,2.9,48.2,45.8,6.1
+523,2024-07-26,Siena College,MI,Phone,RV,1011,3.1,52.3,40.2,7.4
+524,2024-07-26,RMG Research,GA,Mixed,RV,1159,2.9,45.8,51.1,3.1
+525,2024-07-27,Morning Consult,WI,Online,RV,1137,2.9,52,44.2,3.8
+526,2024-07-27,YouGov,NV,Online,LV,948,3.2,45.5,48,6.6
+527,2024-07-27,Emerson,MI,Mixed,RV,994,3.1,47,48.3,4.7
+528,2024-07-27,Siena College,AZ,Phone,RV,894,3.3,44.8,50.2,5.1
+529,2024-07-27,Morning Consult,WI,Online,RV,984,3.1,48.7,43.6,7.7
+530,2024-07-27,Morning Consult,NAT,Online,RV,904,3.3,46.7,48.6,4.7
+531,2024-07-27,RMG Research,NAT,Mixed,RV,1018,3.1,47.7,49.9,2.4
+532,2024-07-28,Morning Consult,PA,Online,LV,1117,2.9,46.3,47.4,6.3
+533,2024-07-28,Morning Consult,NAT,Online,RV,1153,2.9,49.8,44.3,5.9
+534,2024-07-28,Morning Consult,GA,Online,RV,1119,2.9,50.7,43.7,5.6
+535,2024-07-29,Emerson,NV,Mixed,RV,1068,3,45.4,45.9,8.7
+536,2024-07-29,Emerson,NAT,Mixed,RV,926,3.2,41.9,55.3,2.8
+537,2024-07-29,YouGov,GA,Online,RV,1074,3,50.2,45.7,4.1
+538,2024-07-29,RMG Research,PA,Mixed,RV,985,3.1,48.7,45.2,6.2
+539,2024-07-29,YouGov,NAT,Online,RV,1027,3.1,45.8,50.6,3.6
+540,2024-07-29,RMG Research,GA,Mixed,RV,927,3.2,47.9,44.3,7.8
+541,2024-07-30,YouGov,NV,Online,RV,1030,3.1,41.7,49.4,8.8
+542,2024-07-30,YouGov,AZ,Online,RV,814,3.4,46.7,47.7,5.6
+543,2024-07-30,YouGov,WI,Online,RV,1050,3,46.5,48.8,4.8
+544,2024-07-30,Siena College,NV,Phone,RV,926,3.2,45.6,49.4,5.1
+545,2024-07-30,RMG Research,PA,Mixed,RV,1208,2.8,47.8,44.6,7.6
+546,2024-07-30,YouGov,NV,Online,RV,1076,3,47.9,51.9,0.3
+547,2024-07-30,Emerson,NAT,Mixed,RV,960,3.2,43.9,48.8,7.3
+548,2024-07-31,Emerson,NAT,Mixed,RV,973,3.1,48,47,5
+549,2024-07-31,RMG Research,NAT,Mixed,RV,1213,2.8,55.9,42.6,1.5
+550,2024-07-31,RMG Research,AZ,Mixed,RV,1018,3.1,45.8,48.5,5.7
+551,2024-07-31,YouGov,MI,Online,RV,1033,3,49.3,47.2,3.5
+552,2024-07-31,YouGov,GA,Online,LV,1042,3,46.6,46.7,6.7
+553,2024-08-01,Morning Consult,GA,Online,LV,742,3.6,48.8,45.9,5.3
+554,2024-08-01,Siena College,NAT,Phone,LV,1056,3,48.4,48,3.7
+555,2024-08-01,YouGov,WI,Online,LV,1087,3,45.8,49.5,4.8
+556,2024-08-01,Morning Consult,PA,Online,LV,1132,2.9,45.1,46.5,8.4
+557,2024-08-01,Morning Consult,MI,Online,RV,1182,2.9,49,46.5,4.5
+558,2024-08-02,YouGov,NV,Online,RV,937,3.2,44.7,52.8,2.5
+559,2024-08-02,Emerson,PA,Mixed,RV,1066,3,52.1,45.3,2.5
+560,2024-08-02,Emerson,PA,Mixed,LV,1191,2.8,48.1,45.2,6.7
+561,2024-08-02,YouGov,WI,Online,LV,908,3.3,47.7,46.4,5.9
+562,2024-08-02,Siena College,AZ,Phone,LV,882,3.3,45.7,48.6,5.6
+563,2024-08-03,Siena College,NV,Phone,LV,981,3.1,46.7,50.9,2.4
+564,2024-08-03,Morning Consult,MI,Online,LV,1036,3,48.4,48.6,2.9
+565,2024-08-03,Morning Consult,NV,Online,RV,695,3.7,47.5,47.4,5.1
+566,2024-08-03,Siena College,WI,Phone,RV,998,3.1,50.2,44.4,5.4
+567,2024-08-03,YouGov,PA,Online,LV,937,3.2,47.7,46.1,6.2
+568,2024-08-03,RMG Research,GA,Mixed,LV,1078,3,50,43.8,6.2
+569,2024-08-03,Morning Consult,PA,Online,RV,874,3.3,46.3,45.4,8.3
+570,2024-08-03,Emerson,AZ,Mixed,LV,1095,3,47.8,46.6,5.5
+571,2024-08-03,Emerson,NV,Mixed,LV,1116,2.9,46.4,48.9,4.7
+572,2024-08-03,Emerson,MI,Mixed,RV,963,3.2,51.1,46.4,2.5
+573,2024-08-04,RMG Research,AZ,Mixed,LV,1070,3,49.2,46.6,4.2
+574,2024-08-04,Emerson,NAT,Mixed,LV,1057,3,43.4,52.5,4.1
+575,2024-08-04,YouGov,NV,Online,RV,992,3.1,46.2,50,3.8
+576,2024-08-04,RMG Research,GA,Mixed,LV,864,3.3,45.1,47.8,7.1
+577,2024-08-05,Emerson,GA,Mixed,LV,1118,2.9,48.8,44.5,6.7
+578,2024-08-05,Emerson,MI,Mixed,LV,1020,3.1,45.9,48.3,5.9
+579,2024-08-05,RMG Research,GA,Mixed,LV,1044,3,46,47.2,6.8
+580,2024-08-05,RMG Research,GA,Mixed,RV,1082,3,48.4,48.6,2.9
+581,2024-08-05,YouGov,WI,Online,RV,858,3.3,47.1,45.7,7.2
+582,2024-08-05,Morning Consult,GA,Online,RV,987,3.1,47.8,47.5,4.8
+583,2024-08-06,Emerson,PA,Mixed,LV,1020,3.1,49.4,49.2,1.4
+584,2024-08-06,YouGov,NAT,Online,LV,885,3.3,52,45.7,2.3
+585,2024-08-06,Morning Consult,NAT,Online,RV,991,3.1,44.6,46.4,9
+586,2024-08-06,Siena College,AZ,Phone,RV,823,3.4,45.9,48.1,6
+587,2024-08-06,YouGov,MI,Online,LV,997,3.1,47.5,46.2,6.3
+588,2024-08-07,RMG Research,PA,Mixed,LV,1159,2.9,48.8,45.4,5.9
+589,2024-08-07,YouGov,AZ,Online,LV,986,3.1,45.3,49.4,5.3
+590,2024-08-07,Siena College,MI,Phone,RV,938,3.2,50.1,44.3,5.6
+591,2024-08-09,RMG Research,GA,Mixed,RV,1006,3.1,49.8,47.2,3.1
+592,2024-08-09,Siena College,WI,Phone,LV,963,3.2,44.1,46.4,9.5
+593,2024-08-09,Siena College,NAT,Phone,LV,1191,2.8,47.2,48.2,4.7
+594,2024-08-10,Siena College,NAT,Phone,LV,755,3.6,39.8,53.5,6.7
+595,2024-08-10,Morning Consult,AZ,Online,LV,1034,3,45.8,47.6,6.5
+596,2024-08-11,YouGov,NAT,Online,RV,832,3.4,51.4,43.6,5
+597,2024-08-11,Siena College,NAT,Phone,RV,1077,3,48.3,48.5,3.2
+598,2024-08-12,Morning Consult,WI,Online,RV,1073,3,47.2,44.5,8.4
+599,2024-08-12,Emerson,NAT,Mixed,LV,1064,3,53.6,43,3.4
+600,2024-08-12,YouGov,NV,Online,LV,1126,2.9,51.3,46.3,2.4
+601,2024-08-12,RMG Research,NAT,Mixed,LV,942,3.2,46.3,48.3,5.4
+602,2024-08-12,Emerson,GA,Mixed,LV,761,3.6,45.3,46.7,8
+603,2024-08-12,Emerson,NAT,Mixed,LV,840,3.4,46.1,49.5,4.4
+604,2024-08-12,Siena College,GA,Phone,LV,1178,2.9,47.2,47.1,5.7
+605,2024-08-12,Morning Consult,PA,Online,RV,882,3.3,47.7,46.4,5.8
+606,2024-08-13,YouGov,AZ,Online,LV,1097,3,46.4,49.6,4
+607,2024-08-13,Morning Consult,WI,Online,LV,833,3.4,44.6,49.8,5.6
+608,2024-08-14,YouGov,GA,Online,LV,1020,3.1,50.9,47,2.1
+609,2024-08-14,Siena College,WI,Phone,RV,1079,3,51,44.2,4.8
+610,2024-08-14,Siena College,GA,Phone,LV,928,3.2,48.2,49.7,2.2
+611,2024-08-15,Siena College,MI,Phone,RV,811,3.4,48.8,42.5,8.7
+612,2024-08-15,YouGov,MI,Online,RV,1012,3.1,46.7,50.9,2.4
+613,2024-08-16,Morning Consult,PA,Online,LV,884,3.3,52.2,41.6,6.1
+614,2024-08-16,YouGov,NV,Online,RV,1041,3,45.3,48.5,6.2
+615,2024-08-16,RMG Research,AZ,Mixed,RV,932,3.2,49.1,48,2.9
+616,2024-08-16,YouGov,AZ,Online,LV,882,3.3,46.6,51.9,1.6
+617,2024-08-16,RMG Research,WI,Mixed,LV,960,3.2,44.3,46.7,9
+618,2024-08-17,RMG Research,MI,Mixed,LV,993,3.1,45.9,48.1,6
+619,2024-08-17,Siena College,MI,Phone,LV,1048,3,45.6,51.3,3.2
+620,2024-08-17,Morning Consult,PA,Online,RV,1160,2.9,53.1,45.2,1.7
+621,2024-08-17,Emerson,GA,Mixed,LV,1084,3,48,45.2,6.8
+622,2024-08-17,Emerson,NAT,Mixed,LV,961,3.2,48.9,43.7,7.4
+623,2024-08-18,Morning Consult,NAT,Online,LV,1046,3,47,46.8,6.2
+624,2024-08-18,Morning Consult,NAT,Online,LV,1004,3.1,46.6,47.6,5.8
+625,2024-08-18,RMG Research,MI,Mixed,LV,923,3.2,46.4,47.8,5.8
+626,2024-08-18,Emerson,MI,Mixed,RV,960,3.2,50.9,40.6,8.5
+627,2024-08-18,Siena College,NAT,Phone,RV,852,3.4,53.3,39.9,6.8
+628,2024-08-18,Morning Consult,AZ,Online,RV,772,3.5,45.8,43.8,10.5
+629,2024-08-18,YouGov,NV,Online,LV,1111,2.9,49.7,42.9,7.4
+630,2024-08-18,Morning Consult,NV,Online,RV,1203,2.8,42.5,51.3,6.1
+631,2024-08-19,Morning Consult,NAT,Online,RV,976,3.1,44.8,50.5,4.7
+632,2024-08-20,Siena College,GA,Phone,LV,899,3.3,48.1,49,2.9
+633,2024-08-20,Emerson,GA,Mixed,LV,1147,2.9,43,50.6,6.4
+634,2024-08-21,Morning Consult,PA,Online,LV,1042,3,49.9,44.9,5.2
+635,2024-08-21,YouGov,AZ,Online,RV,950,3.2,47.2,50.7,2.1
+636,2024-08-21,RMG Research,NAT,Mixed,RV,1038,3,50.8,46.1,3.1
+637,2024-08-21,Emerson,NAT,Mixed,LV,738,3.6,45.5,48.5,6
+638,2024-08-21,Morning Consult,NAT,Online,RV,1190,2.8,50.2,43.5,6.3
+639,2024-08-21,Emerson,NAT,Mixed,LV,856,3.3,46.6,50.3,3.1
+640,2024-08-21,Siena College,NAT,Phone,RV,849,3.4,48.2,44.2,7.6
+641,2024-08-21,RMG Research,NAT,Mixed,RV,941,3.2,53.2,44.2,2.6
+642,2024-08-22,Morning Consult,AZ,Online,LV,924,3.2,46.7,49.2,4.1
+643,2024-08-22,Emerson,MI,Mixed,LV,923,3.2,50,45.7,4.3
+644,2024-08-22,Morning Consult,WI,Online,LV,934,3.2,52.8,45.7,1.5
+645,2024-08-22,Morning Consult,AZ,Online,LV,1094,3,50.9,46.7,2.4
+646,2024-08-23,Morning Consult,NV,Online,LV,862,3.3,44.1,53.3,2.6
+647,2024-08-23,YouGov,AZ,Online,RV,1031,3.1,48.2,47,4.8
+648,2024-08-23,YouGov,NAT,Online,LV,984,3.1,44.1,49.1,6.9
+649,2024-08-23,YouGov,NV,Online,LV,909,3.3,40.2,51.4,8.3
+650,2024-08-23,YouGov,GA,Online,LV,1081,3,43.1,52.5,4.4
+651,2024-08-23,YouGov,NV,Online,LV,964,3.2,47.5,43.4,9.1
+652,2024-08-24,Emerson,NV,Mixed,LV,907,3.3,46.8,47.7,5.5
+653,2024-08-24,Emerson,MI,Mixed,LV,923,3.2,47.3,48.3,4.3
+654,2024-08-24,Morning Consult,MI,Online,LV,952,3.2,45.6,50.5,3.8
+655,2024-08-24,YouGov,PA,Online,RV,894,3.3,51.4,42.9,5.6
+656,2024-08-24,Emerson,AZ,Mixed,LV,986,3.1,43.9,47,9.1
+657,2024-08-25,RMG Research,MI,Mixed,RV,995,3.1,48.8,47.8,3.4
+658,2024-08-25,RMG Research,NAT,Mixed,LV,988,3.1,47.8,48.3,3.9
+659,2024-08-25,RMG Research,PA,Mixed,RV,1021,3.1,47.1,47.2,5.6
+660,2024-08-25,YouGov,NV,Online,LV,1168,2.9,43.5,48.3,8.2
+661,2024-08-25,RMG Research,NV,Mixed,RV,991,3.1,46.1,47.4,6.5
+662,2024-08-26,YouGov,GA,Online,LV,1082,3,46,51,3
+663,2024-08-26,Siena College,AZ,Phone,LV,980,3.1,45.6,53.2,1.2
+664,2024-08-26,RMG Research,MI,Mixed,LV,975,3.1,45.1,50.3,4.6
+665,2024-08-26,Emerson,NAT,Mixed,LV,994,3.1,47,45.3,7.7
+666,2024-08-27,YouGov,GA,Online,LV,1014,3.1,43.5,52.7,3.9
+667,2024-08-27,Emerson,GA,Mixed,LV,936,3.2,49.2,47.5,3.3
+668,2024-08-27,Siena College,NAT,Phone,LV,1146,2.9,40.1,55.1,4.8
+669,2024-08-27,Siena College,PA,Phone,LV,1076,3,48.9,46.7,4.4
+670,2024-08-27,Emerson,NAT,Mixed,LV,1036,3,46.6,49.4,4.1
+671,2024-08-27,RMG Research,MI,Mixed,LV,846,3.4,49,44.8,6.2
+672,2024-08-27,RMG Research,MI,Mixed,RV,1037,3,49.5,41.8,8.7
+673,2024-08-28,Emerson,MI,Mixed,LV,1043,3,49.3,46.2,4.5
+674,2024-08-28,RMG Research,PA,Mixed,RV,946,3.2,46.3,50.6,3.1
+675,2024-08-28,Emerson,GA,Mixed,RV,1103,3,52.8,45.4,1.8
+676,2024-08-28,Emerson,NV,Mixed,LV,1290,2.7,46,48.4,5.6
+677,2024-08-28,RMG Research,PA,Mixed,LV,1059,3,47.9,49.8,2.3
+678,2024-08-28,Morning Consult,GA,Online,RV,1148,2.9,49.4,46.4,4.2
+679,2024-08-28,Morning Consult,GA,Online,LV,953,3.2,51.8,41.6,6.6
+680,2024-08-28,Siena College,MI,Phone,LV,1078,3,48.4,47.5,4.1
+681,2024-08-28,Morning Consult,PA,Online,LV,975,3.1,51.2,45.6,3.2
+682,2024-08-28,Siena College,GA,Phone,LV,1206,2.8,46.7,48.9,4.4
+683,2024-08-29,Siena College,NAT,Phone,LV,1039,3,45.2,48.9,5.9
+684,2024-08-29,YouGov,NAT,Online,LV,1146,2.9,47.8,48.6,3.6
+685,2024-08-29,Siena College,NV,Phone,LV,899,3.3,48.2,46.4,5.4
+686,2024-08-29,Morning Consult,PA,Online,LV,925,3.2,46.9,48.3,4.8
+687,2024-08-29,YouGov,AZ,Online,RV,868,3.3,50.3,43.8,5.9
+688,2024-08-29,Siena College,WI,Phone,RV,1178,2.9,45.7,48.6,5.6
+689,2024-08-29,Emerson,NAT,Mixed,RV,1145,2.9,46.5,47.6,5.9
+690,2024-08-29,Emerson,AZ,Mixed,RV,987,3.1,45.8,51.6,2.6
+691,2024-08-29,RMG Research,AZ,Mixed,LV,900,3.3,46.5,46.9,6.6
+692,2024-08-29,Emerson,GA,Mixed,LV,1056,3,47.7,50.3,2
+693,2024-08-30,RMG Research,GA,Mixed,LV,1035,3,45.4,48.6,6
+694,2024-08-30,Siena College,MI,Phone,LV,1133,2.9,44.9,49.1,6
+695,2024-08-30,YouGov,GA,Online,LV,869,3.3,47.5,47.6,4.9
+696,2024-08-30,YouGov,AZ,Online,LV,891,3.3,48.7,45.2,6.1
+697,2024-08-30,Siena College,PA,Phone,LV,846,3.4,46.6,50.2,3.2
+698,2024-08-31,YouGov,MI,Online,LV,1123,2.9,51.3,43.6,5.2
+699,2024-08-31,Morning Consult,GA,Online,LV,1119,2.9,44.6,49.7,5.7
+700,2024-08-31,YouGov,GA,Online,LV,1067,3,45.6,49.8,4.7
+701,2024-08-31,Siena College,WI,Phone,LV,989,3.1,48.4,47.1,4.6
+702,2024-08-31,RMG Research,NV,Mixed,RV,999,3.1,45.5,46.3,8.2
+703,2024-08-31,Siena College,GA,Phone,LV,1140,2.9,47.9,49.3,2.7
+704,2024-09-01,Emerson,WI,Mixed,LV,1008,3.1,48,47.5,4.5
+705,2024-09-01,Morning Consult,NAT,Online,LV,918,3.2,47.9,47.8,4.3
+706,2024-09-01,Morning Consult,GA,Online,LV,858,3.3,44.6,51.2,4.2
+707,2024-09-01,Emerson,NAT,Mixed,LV,1068,3,49.4,45.8,4.8
+708,2024-09-01,Emerson,PA,Mixed,LV,1038,3,47.8,46.8,5.4
+709,2024-09-01,YouGov,GA,Online,RV,1087,3,48.4,46.4,5.2
+710,2024-09-01,RMG Research,WI,Mixed,LV,1013,3.1,51,49,0
+711,2024-09-01,RMG Research,NAT,Mixed,LV,897,3.3,50.7,44.9,4.4
+712,2024-09-02,Morning Consult,NV,Online,LV,857,3.3,46.4,48.7,4.8
+713,2024-09-02,Siena College,NV,Phone,LV,845,3.4,47.4,46.3,6.3
+714,2024-09-02,Emerson,NAT,Mixed,LV,1006,3.1,48,49.1,2.9
+715,2024-09-02,Emerson,AZ,Mixed,RV,971,3.1,47.5,48,4.6
+716,2024-09-02,Emerson,WI,Mixed,RV,819,3.4,46.7,47.1,6.1
+717,2024-09-02,RMG Research,MI,Mixed,LV,892,3.3,46.7,45.3,8.1
+718,2024-09-02,Morning Consult,NV,Online,RV,936,3.2,45.1,50.4,4.5
+719,2024-09-03,RMG Research,PA,Mixed,LV,1037,3,45.8,46.1,8.1
+720,2024-09-03,RMG Research,WI,Mixed,RV,1016,3.1,46.7,45.1,8.2
+721,2024-09-03,Siena College,AZ,Phone,RV,1080,3,43.2,49.9,6.9
+722,2024-09-03,RMG Research,NAT,Mixed,LV,840,3.4,46.6,47,6.4
+723,2024-09-04,YouGov,AZ,Online,LV,864,3.3,45.9,50.8,3.3
+724,2024-09-04,RMG Research,PA,Mixed,LV,890,3.3,44.2,49.2,6.6
+725,2024-09-04,Siena College,MI,Phone,RV,1062,3,48.1,48,3.9
+726,2024-09-04,RMG Research,NV,Mixed,LV,1001,3.1,46.6,50.1,3.3
+727,2024-09-04,Siena College,NV,Phone,LV,1013,3.1,48.3,44.7,7
+728,2024-09-04,YouGov,WI,Online,LV,1032,3.1,48.7,48.1,3.1
+729,2024-09-05,Siena College,GA,Phone,RV,934,3.2,49,44.2,6.7
+730,2024-09-05,Morning Consult,MI,Online,LV,882,3.3,45.2,50,4.8
+731,2024-09-05,Siena College,GA,Phone,RV,959,3.2,48,43.1,8.9
+732,2024-09-05,Emerson,NAT,Mixed,LV,981,3.1,46.5,52.7,0.8
+733,2024-09-05,Siena College,MI,Phone,LV,959,3.2,49.6,44.1,6.3
+734,2024-09-06,Emerson,NAT,Mixed,RV,1028,3.1,45.7,47.7,6.6
+735,2024-09-06,RMG Research,NV,Mixed,RV,1197,2.8,48.7,43.4,7.9
+736,2024-09-06,YouGov,NAT,Online,LV,1016,3.1,47.2,50.5,2.3
+737,2024-09-06,RMG Research,WI,Mixed,LV,988,3.1,47.5,48.2,4.3
+738,2024-09-06,Siena College,PA,Phone,RV,1006,3.1,45.2,48.8,6
+739,2024-09-07,YouGov,NV,Online,LV,1124,2.9,48.4,45.8,5.8
+740,2024-09-07,RMG Research,AZ,Mixed,LV,842,3.4,45,46.5,8.5
+741,2024-09-07,Siena College,GA,Phone,LV,893,3.3,52.1,47.1,0.7
+742,2024-09-07,Morning Consult,PA,Online,RV,1002,3.1,51.6,48,0.4
+743,2024-09-07,Morning Consult,GA,Online,RV,1037,3,46.8,48.4,4.8
+744,2024-09-07,Morning Consult,AZ,Online,RV,852,3.4,48.4,47.4,4.2
+745,2024-09-07,Emerson,WI,Mixed,LV,1244,2.8,42.1,49.4,8.5
+746,2024-09-08,YouGov,PA,Online,LV,1104,2.9,49.4,46.8,3.8
+747,2024-09-08,YouGov,AZ,Online,LV,873,3.3,44.1,52.1,3.8
+748,2024-09-08,Siena College,MI,Phone,LV,1001,3.1,48.4,46,5.6
+749,2024-09-08,Morning Consult,NAT,Online,RV,1050,3,51.4,39.9,8.7
+750,2024-09-08,YouGov,NV,Online,LV,971,3.1,45.1,49.7,5.2
+751,2024-09-08,RMG Research,PA,Mixed,LV,1078,3,44.3,48,7.6
+752,2024-09-09,Emerson,NV,Mixed,LV,1017,3.1,50.2,45.1,4.7
+753,2024-09-09,RMG Research,MI,Mixed,RV,1105,2.9,49.6,45.7,4.7
+754,2024-09-09,Emerson,MI,Mixed,RV,1005,3.1,48,48.4,3.5
+755,2024-09-09,Morning Consult,NV,Online,LV,1134,2.9,44.4,46.6,9
+756,2024-09-09,RMG Research,AZ,Mixed,LV,952,3.2,47.6,47.7,4.7
+757,2024-09-09,RMG Research,NAT,Mixed,LV,1125,2.9,51.4,43,5.6
+758,2024-09-09,Morning Consult,PA,Online,LV,1003,3.1,53.2,45.1,1.7
+759,2024-09-09,Siena College,MI,Phone,LV,1011,3.1,50.2,46.3,3.6
+760,2024-09-09,Siena College,NV,Phone,LV,898,3.3,43.2,52.4,4.5
+761,2024-09-09,RMG Research,NAT,Mixed,RV,1103,3,46.3,46.5,7.2
+762,2024-09-09,Siena College,PA,Phone,LV,965,3.2,48,48,4
+763,2024-09-09,Morning Consult,MI,Online,RV,978,3.1,47.9,47,5.1
+764,2024-09-10,RMG Research,NAT,Mixed,LV,1031,3.1,46.4,51.5,2
+765,2024-09-10,RMG Research,NAT,Mixed,LV,846,3.4,45.2,52.3,2.6
+766,2024-09-10,YouGov,NAT,Online,RV,953,3.2,48.2,46.9,4.9
+767,2024-09-10,Morning Consult,AZ,Online,LV,916,3.2,50.9,46.8,2.3
+768,2024-09-10,YouGov,AZ,Online,RV,1031,3.1,46.8,50.2,3
+769,2024-09-11,RMG Research,AZ,Mixed,RV,801,3.5,48.4,49.7,1.9
+770,2024-09-11,Siena College,GA,Phone,LV,880,3.3,45.4,48.5,6.1
+771,2024-09-11,YouGov,NV,Online,LV,1089,3,44.7,51,4.4
+772,2024-09-11,Siena College,NV,Phone,LV,993,3.1,48.5,46.1,5.4
+773,2024-09-11,RMG Research,NV,Mixed,RV,866,3.3,47,53,0
+774,2024-09-12,YouGov,MI,Online,LV,904,3.3,49.3,48,2.8
+775,2024-09-12,Morning Consult,GA,Online,LV,1088,3,46.8,47.8,5.4
+776,2024-09-12,RMG Research,NV,Mixed,LV,985,3.1,41.5,51.5,7
+777,2024-09-12,Siena College,WI,Phone,LV,969,3.1,46.6,46.7,6.7
+778,2024-09-12,Morning Consult,NV,Online,LV,829,3.4,43.6,48.5,8
+779,2024-09-13,YouGov,NV,Online,LV,1011,3.1,46.3,53.7,0
+780,2024-09-13,Morning Consult,WI,Online,LV,1025,3.1,48.6,45,6.5
+781,2024-09-13,Emerson,NAT,Mixed,LV,958,3.2,48.5,47.6,3.9
+782,2024-09-13,Emerson,NAT,Mixed,LV,1100,3,46.8,47.3,5.9
+783,2024-09-13,Siena College,NAT,Phone,LV,1022,3.1,47.9,50.1,2
+784,2024-09-13,Siena College,NAT,Phone,RV,951,3.2,49.2,47.3,3.5
+785,2024-09-13,YouGov,NV,Online,RV,1171,2.9,44.6,47.9,7.5
+786,2024-09-13,RMG Research,GA,Mixed,LV,1051,3,47.8,44.5,7.7
+787,2024-09-13,Emerson,AZ,Mixed,LV,996,3.1,46.4,48.1,5.5
+788,2024-09-14,RMG Research,NV,Mixed,LV,931,3.2,46.4,51,2.5
+789,2024-09-14,Siena College,MI,Phone,LV,1079,3,48.7,44.9,6.5
+790,2024-09-14,Siena College,AZ,Phone,LV,1121,2.9,47.4,45.1,7.5
+791,2024-09-14,Siena College,AZ,Phone,LV,979,3.1,49,45.7,5.3
+792,2024-09-14,Morning Consult,NAT,Online,LV,1223,2.8,45.1,50.2,4.7
+793,2024-09-14,Siena College,NV,Phone,LV,1044,3,43.6,52.2,4.2
+794,2024-09-14,RMG Research,GA,Mixed,RV,1023,3.1,44.1,52.2,3.8
+795,2024-09-14,Emerson,WI,Mixed,RV,930,3.2,45,50.6,4.3
+796,2024-09-14,Siena College,PA,Phone,LV,1094,3,44.2,51.9,3.9
+797,2024-09-15,Morning Consult,PA,Online,LV,930,3.2,45.1,50.4,4.4
+798,2024-09-15,Siena College,WI,Phone,LV,893,3.3,50.1,45.3,4.6
+799,2024-09-15,YouGov,PA,Online,LV,1007,3.1,44.1,54,1.9
+800,2024-09-15,YouGov,WI,Online,LV,977,3.1,45.7,46.6,7.7
+801,2024-09-16,YouGov,NV,Online,RV,922,3.2,41.6,51.7,6.7
+802,2024-09-16,Emerson,MI,Mixed,LV,1130,2.9,46.9,44.4,8.7
+803,2024-09-16,Emerson,PA,Mixed,LV,1080,3,45.2,49.4,5.4
+804,2024-09-16,RMG Research,NV,Mixed,LV,985,3.1,42.6,49.8,7.6
+805,2024-09-16,Siena College,NAT,Phone,LV,1045,3,45.9,48.9,5.3
+806,2024-09-16,RMG Research,GA,Mixed,LV,1171,2.9,44.2,55.5,0.3
+807,2024-09-16,Emerson,NV,Mixed,LV,1095,3,42.1,51.7,6.1
+808,2024-09-16,Siena College,AZ,Phone,LV,1155,2.9,44.6,51.4,3.9
+809,2024-09-17,YouGov,GA,Online,RV,990,3.1,45.3,49.8,4.9
+810,2024-09-17,Morning Consult,NAT,Online,RV,967,3.2,46.9,50.2,2.8
+811,2024-09-17,RMG Research,NV,Mixed,RV,1000,3.1,50.1,49.9,0
+812,2024-09-17,YouGov,NV,Online,LV,1029,3.1,46.7,49.6,3.7
+813,2024-09-17,Morning Consult,MI,Online,LV,1053,3,45.8,49.4,4.8
+814,2024-09-17,Morning Consult,WI,Online,LV,983,3.1,47.8,46,6.2
+815,2024-09-17,YouGov,AZ,Online,LV,1017,3.1,47.8,46.8,5.4
+816,2024-09-17,Morning Consult,MI,Online,LV,1086,3,48.8,44.3,6.9
+817,2024-09-18,RMG Research,NAT,Mixed,LV,928,3.2,48,45.6,6.4
+818,2024-09-18,Emerson,MI,Mixed,RV,828,3.4,47.9,50.5,1.6
+819,2024-09-18,YouGov,NV,Online,LV,1002,3.1,46.5,46.3,7.3
+820,2024-09-18,YouGov,AZ,Online,RV,1032,3.1,40.3,50.4,9.3
+821,2024-09-19,RMG Research,PA,Mixed,LV,918,3.2,49.4,44.7,5.8
+822,2024-09-19,Siena College,AZ,Phone,LV,925,3.2,46.5,51.8,1.7
+823,2024-09-20,Emerson,NAT,Mixed,RV,1058,3,44.8,47.1,8.1
+824,2024-09-20,RMG Research,PA,Mixed,RV,921,3.2,52.3,46,1.6
+825,2024-09-21,Siena College,AZ,Phone,LV,1006,3.1,47.4,47.4,5.2
+826,2024-09-21,YouGov,GA,Online,LV,871,3.3,48.2,46.6,5.2
+827,2024-09-21,YouGov,GA,Online,LV,898,3.3,43.6,51.2,5.3
+828,2024-09-21,RMG Research,NAT,Mixed,LV,1071,3,46.1,50.2,3.7
+829,2024-09-21,Siena College,NAT,Phone,LV,1068,3,50,44.3,5.7
+830,2024-09-22,Morning Consult,WI,Online,LV,946,3.2,47,49.1,3.9
+831,2024-09-22,Siena College,NV,Phone,RV,1079,3,45.8,52.9,1.4
+832,2024-09-22,YouGov,NV,Online,LV,1110,2.9,48.6,46,5.4
+833,2024-09-22,RMG Research,WI,Mixed,LV,1031,3.1,45.8,47.7,6.5
+834,2024-09-22,Emerson,NV,Mixed,RV,893,3.3,50.6,44.8,4.6
+835,2024-09-22,Siena College,AZ,Phone,LV,818,3.4,47.4,50.1,2.5
+836,2024-09-22,Siena College,MI,Phone,LV,1124,2.9,52.8,45.3,1.9
+837,2024-09-22,YouGov,NAT,Online,LV,869,3.3,47.5,46.9,5.6
+838,2024-09-22,RMG Research,MI,Mixed,LV,987,3.1,46.3,49.6,4.1
+839,2024-09-22,Siena College,NV,Phone,LV,861,3.3,46.5,51.5,2
+840,2024-09-22,RMG Research,MI,Mixed,LV,1024,3.1,48.9,43.5,7.7
+841,2024-09-22,Siena College,MI,Phone,RV,887,3.3,45.1,44.7,10.2
+842,2024-09-23,RMG Research,PA,Mixed,LV,1038,3,45.6,48.4,6
+843,2024-09-23,Morning Consult,WI,Online,LV,895,3.3,48.5,45.8,5.8
+844,2024-09-23,RMG Research,WI,Mixed,LV,957,3.2,45.4,48,6.6
+845,2024-09-23,Emerson,GA,Mixed,RV,1098,3,43.9,50.6,5.5
+846,2024-09-24,Siena College,MI,Phone,RV,1110,2.9,49,46.5,4.6
+847,2024-09-24,RMG Research,PA,Mixed,LV,981,3.1,43.4,49,7.5
+848,2024-09-24,Emerson,PA,Mixed,RV,1094,3,47.2,46.1,6.7
+849,2024-09-24,RMG Research,NAT,Mixed,LV,866,3.3,46.6,45,8.4
+850,2024-09-24,RMG Research,WI,Mixed,LV,948,3.2,47.1,49.3,3.6
+851,2024-09-24,Morning Consult,GA,Online,LV,1152,2.9,50.3,44.8,4.9
+852,2024-09-24,Siena College,PA,Phone,LV,1005,3.1,50.2,48.8,1
+853,2024-09-24,Emerson,GA,Mixed,LV,934,3.2,48.9,46.2,4.9
+854,2024-09-24,Siena College,NV,Phone,RV,1150,2.9,47.6,44.6,7.8
+855,2024-09-25,Morning Consult,NV,Online,LV,1048,3,48.7,47,4.3
+856,2024-09-25,RMG Research,NAT,Mixed,RV,1099,3,52.3,41.5,6.2
+857,2024-09-25,RMG Research,PA,Mixed,LV,906,3.3,42.6,47.9,9.6
+858,2024-09-25,Siena College,WI,Phone,RV,1136,2.9,48.9,47.5,3.5
+859,2024-09-25,RMG Research,PA,Mixed,RV,898,3.3,46.4,45.3,8.3
+860,2024-09-25,RMG Research,MI,Mixed,RV,901,3.3,48.6,46.7,4.7
+861,2024-09-26,RMG Research,GA,Mixed,RV,992,3.1,43.7,48.7,7.6
+862,2024-09-26,RMG Research,WI,Mixed,RV,923,3.2,48.5,46.1,5.4
+863,2024-09-26,Siena College,PA,Phone,LV,980,3.1,45.7,49.8,4.6
+864,2024-09-26,Morning Consult,NAT,Online,LV,1223,2.8,45.3,47.3,7.4
+865,2024-09-26,YouGov,WI,Online,LV,827,3.4,47.3,48.4,4.3
+866,2024-09-26,Morning Consult,AZ,Online,RV,841,3.4,48.6,49.6,1.8
+867,2024-09-26,YouGov,GA,Online,RV,1078,3,44.6,51,4.4
+868,2024-09-26,Siena College,MI,Phone,RV,1104,2.9,46.2,45.6,8.2
+869,2024-09-26,Emerson,AZ,Mixed,RV,1098,3,49.1,49.2,1.7
+870,2024-09-27,RMG Research,GA,Mixed,LV,1018,3.1,46.6,46.8,6.7
+871,2024-09-27,YouGov,NV,Online,LV,1065,3,43.4,49.3,7.3
+872,2024-09-27,YouGov,MI,Online,LV,1053,3,50.7,45,4.3
+873,2024-09-27,Siena College,PA,Phone,LV,867,3.3,48.4,46.3,5.3
+874,2024-09-27,RMG Research,AZ,Mixed,LV,959,3.2,45.3,46.7,8
+875,2024-09-27,YouGov,NV,Online,RV,1080,3,46,48.7,5.3
+876,2024-09-28,YouGov,WI,Online,RV,858,3.3,51.7,43,5.3
+877,2024-09-28,Siena College,AZ,Phone,LV,1089,3,42.9,50.7,6.4
+878,2024-09-28,RMG Research,AZ,Mixed,LV,866,3.3,47.3,48.6,4.2
+879,2024-09-28,YouGov,MI,Online,LV,931,3.2,48.2,46.6,5.2
+880,2024-09-28,RMG Research,WI,Mixed,LV,943,3.2,49.5,47.6,2.9
+881,2024-09-28,RMG Research,AZ,Mixed,RV,1194,2.8,47.2,47.4,5.4
+882,2024-09-28,YouGov,NAT,Online,LV,777,3.5,45,49.2,5.8
+883,2024-09-28,Emerson,WI,Mixed,LV,1005,3.1,45.2,49.3,5.5
+884,2024-09-29,Siena College,MI,Phone,RV,1080,3,48,45.9,6.1
+885,2024-09-29,Emerson,GA,Mixed,LV,985,3.1,45.8,47.5,6.7
+886,2024-09-29,Emerson,NAT,Mixed,LV,1035,3,46.3,48,5.8
+887,2024-09-29,YouGov,PA,Online,LV,1236,2.8,51.8,42.6,5.6
+888,2024-09-29,Emerson,GA,Mixed,LV,1143,2.9,49.5,46.3,4.2
+889,2024-09-29,Morning Consult,GA,Online,LV,1198,2.8,43.8,50.4,5.9
+890,2024-09-29,Emerson,NAT,Mixed,LV,1158,2.9,46.6,46.8,6.5
+891,2024-09-30,RMG Research,NV,Mixed,LV,1214,2.8,44.9,48.4,6.7
+892,2024-09-30,Morning Consult,AZ,Online,LV,1221,2.8,46.3,52.3,1.4
+893,2024-09-30,Emerson,PA,Mixed,LV,851,3.4,47.8,46,6.2
+894,2024-09-30,Siena College,NAT,Phone,LV,1130,2.9,47.7,49.5,2.7
+895,2024-10-01,YouGov,MI,Online,RV,1036,3,47.5,49.1,3.4
+896,2024-10-01,Morning Consult,NAT,Online,LV,886,3.3,52.8,45.3,1.9
+897,2024-10-01,YouGov,WI,Online,LV,797,3.5,47.7,46.2,6.1
+898,2024-10-01,Siena College,GA,Phone,LV,836,3.4,44.8,48,7.2
+899,2024-10-01,Emerson,GA,Mixed,LV,914,3.2,46,48.5,5.5
+900,2024-10-01,Morning Consult,GA,Online,LV,1021,3.1,47.4,50.7,1.9
+901,2024-10-01,Morning Consult,NAT,Online,RV,1031,3.1,45.4,51.8,2.8
+902,2024-10-01,RMG Research,WI,Mixed,RV,1000,3.1,47.4,47.8,4.8
+903,2024-10-02,Emerson,AZ,Mixed,LV,923,3.2,45,48.8,6.3
+904,2024-10-02,Siena College,MI,Phone,LV,1096,3,48.4,44.5,7.1
+905,2024-10-02,Siena College,AZ,Phone,RV,1022,3.1,49.9,44.3,5.8
+906,2024-10-02,YouGov,NAT,Online,LV,1055,3,45.2,47.7,7.1
+907,2024-10-02,RMG Research,WI,Mixed,LV,1010,3.1,52.3,43.3,4.3
+908,2024-10-03,RMG Research,GA,Mixed,LV,904,3.3,49.3,45.3,5.4
+909,2024-10-03,Morning Consult,GA,Online,LV,1113,2.9,42,50,8
+910,2024-10-03,RMG Research,MI,Mixed,LV,874,3.3,45.2,46.8,8
+911,2024-10-03,RMG Research,NAT,Mixed,LV,1130,2.9,52.1,46.6,1.2
+912,2024-10-04,RMG Research,MI,Mixed,LV,1092,3,42,52.7,5.3
+913,2024-10-04,Morning Consult,WI,Online,RV,1015,3.1,49.2,47.8,3
+914,2024-10-04,RMG Research,MI,Mixed,LV,1096,3,44.9,51.8,3.2
+915,2024-10-04,Siena College,NAT,Phone,LV,1090,3,47,48.7,4.3
+916,2024-10-04,Siena College,GA,Phone,RV,1057,3,46.9,47.6,5.5
+917,2024-10-04,Emerson,NV,Mixed,LV,914,3.2,50.1,44.8,5.1
+918,2024-10-04,RMG Research,GA,Mixed,LV,986,3.1,48.3,45.1,6.6
+919,2024-10-05,RMG Research,NAT,Mixed,LV,996,3.1,47.2,45.5,7.2
+920,2024-10-05,YouGov,AZ,Online,RV,1047,3,47,51.5,1.5
+921,2024-10-05,YouGov,NV,Online,LV,866,3.3,47.1,48.3,4.6
+922,2024-10-05,Siena College,PA,Phone,RV,1055,3,47.7,46,6.3
+923,2024-10-06,Siena College,NAT,Phone,LV,920,3.2,48.8,50.1,1.1
+924,2024-10-06,Siena College,MI,Phone,RV,1013,3.1,46.9,49.8,3.3
+925,2024-10-06,Morning Consult,WI,Online,LV,1138,2.9,43,47.7,9.3
+926,2024-10-06,Morning Consult,PA,Online,RV,946,3.2,48.8,48.2,3
+927,2024-10-06,RMG Research,MI,Mixed,LV,1018,3.1,54.4,43.5,2
+928,2024-10-06,Emerson,PA,Mixed,RV,1010,3.1,49.7,46.2,4.1
+929,2024-10-06,Morning Consult,NAT,Online,RV,875,3.3,48.7,46.8,4.4
+930,2024-10-06,Siena College,GA,Phone,LV,953,3.2,44.7,48.9,6.4
+931,2024-10-06,RMG Research,WI,Mixed,LV,972,3.1,44.7,48.8,6.5
+932,2024-10-07,YouGov,AZ,Online,RV,1004,3.1,48.7,50.5,0.8
+933,2024-10-07,YouGov,NV,Online,LV,1049,3,45.3,49.1,5.6
+934,2024-10-07,YouGov,PA,Online,LV,868,3.3,42.5,52.8,4.7
+935,2024-10-07,YouGov,WI,Online,RV,1184,2.8,49.3,42.4,8.3
+936,2024-10-07,YouGov,PA,Online,RV,889,3.3,46.7,53.3,0
+937,2024-10-07,YouGov,GA,Online,LV,663,3.8,46.8,45.3,8
+938,2024-10-07,RMG Research,WI,Mixed,RV,1027,3.1,46.3,47,6.7
+939,2024-10-08,Siena College,WI,Phone,LV,795,3.5,48.5,43.7,7.8
+940,2024-10-08,RMG Research,AZ,Mixed,LV,1114,2.9,48.1,49.1,2.9
+941,2024-10-08,Morning Consult,MI,Online,RV,1014,3.1,48.3,45.5,6.2
+942,2024-10-08,YouGov,GA,Online,LV,964,3.2,46.7,46.3,7
+943,2024-10-08,RMG Research,WI,Mixed,LV,982,3.1,48.6,44.2,7.2
+944,2024-10-08,YouGov,AZ,Online,RV,1009,3.1,44.6,47.4,8
+945,2024-10-08,Siena College,NAT,Phone,LV,984,3.1,51.7,48.3,0
+946,2024-10-08,YouGov,MI,Online,LV,960,3.2,46.9,45.2,8
+947,2024-10-08,Siena College,PA,Phone,LV,891,3.3,49.3,44.1,6.5
+948,2024-10-09,RMG Research,MI,Mixed,RV,1025,3.1,48.7,43,8.3
+949,2024-10-09,Siena College,NAT,Phone,LV,983,3.1,51.7,45.7,2.6
+950,2024-10-09,Emerson,NAT,Mixed,LV,891,3.3,50.9,46.6,2.5
+951,2024-10-09,RMG Research,AZ,Mixed,LV,917,3.2,46.2,49.4,4.4
+952,2024-10-09,Siena College,PA,Phone,RV,954,3.2,48.4,47.6,4
+953,2024-10-09,RMG Research,GA,Mixed,LV,1176,2.9,51.2,44.2,4.6
+954,2024-10-09,YouGov,NV,Online,LV,898,3.3,49.4,47.4,3.2
+955,2024-10-09,Emerson,GA,Mixed,LV,1003,3.1,45.9,50,4.1
+956,2024-10-10,RMG Research,AZ,Mixed,LV,947,3.2,47.5,51.5,1
+957,2024-10-10,Siena College,NV,Phone,LV,901,3.3,46.8,48.8,4.4
+958,2024-10-10,RMG Research,NAT,Mixed,LV,1075,3,45.3,50.1,4.6
+959,2024-10-10,YouGov,AZ,Online,LV,977,3.1,47.6,48.5,3.9
+960,2024-10-10,Siena College,NV,Phone,LV,939,3.2,46.5,50.9,2.6
+961,2024-10-10,RMG Research,MI,Mixed,LV,859,3.3,50.1,43.2,6.7
+962,2024-10-11,RMG Research,NAT,Mixed,LV,883,3.3,48.7,48,3.3
+963,2024-10-11,Emerson,NAT,Mixed,RV,1286,2.7,48.2,47,4.9
+964,2024-10-11,YouGov,NV,Online,LV,1109,2.9,45,52.9,2.1
+965,2024-10-11,Morning Consult,MI,Online,LV,1091,3,50.2,46.4,3.4
+966,2024-10-11,RMG Research,NV,Mixed,LV,968,3.1,43.4,51.5,5
+967,2024-10-11,RMG Research,WI,Mixed,RV,969,3.1,51.8,47.1,1.1
+968,2024-10-11,Emerson,NV,Mixed,LV,1031,3.1,47.3,47.8,5
+969,2024-10-12,Morning Consult,PA,Online,LV,944,3.2,51.7,42.7,5.6
+970,2024-10-12,RMG Research,NAT,Mixed,LV,988,3.1,46.9,46.2,6.9
+971,2024-10-12,Siena College,GA,Phone,LV,934,3.2,47.9,46.3,5.8
+972,2024-10-12,Siena College,NV,Phone,LV,981,3.1,45.9,45.8,8.3
+973,2024-10-12,YouGov,AZ,Online,LV,1211,2.8,45.9,50.4,3.6
+974,2024-10-13,Morning Consult,NV,Online,RV,1072,3,44.6,50.8,4.6
+975,2024-10-13,Emerson,GA,Mixed,LV,997,3.1,48.7,45.5,5.8
+976,2024-10-13,YouGov,NAT,Online,LV,1070,3,44.5,50.2,5.3
+977,2024-10-14,Morning Consult,MI,Online,LV,1111,2.9,47.7,46.4,6
+978,2024-10-14,Emerson,NV,Mixed,LV,1170,2.9,45.1,51.5,3.4
+979,2024-10-14,Siena College,MI,Phone,LV,820,3.4,52.2,44.8,3
+980,2024-10-14,Morning Consult,WI,Online,LV,1004,3.1,47.3,48.7,4
+981,2024-10-14,YouGov,NV,Online,LV,874,3.3,47.5,49.2,3.3
+982,2024-10-14,Emerson,MI,Mixed,LV,1039,3,50.2,45.3,4.5
+983,2024-10-15,Siena College,MI,Phone,LV,842,3.4,43.9,48.6,7.5
+984,2024-10-15,Siena College,AZ,Phone,LV,970,3.1,44.4,53,2.6
+985,2024-10-15,RMG Research,PA,Mixed,LV,952,3.2,44.2,52.8,3
+986,2024-10-16,Emerson,PA,Mixed,RV,1074,3,39.8,53,7.2
+987,2024-10-16,Emerson,GA,Mixed,LV,1041,3,44.7,49.7,5.6
+988,2024-10-16,RMG Research,WI,Mixed,RV,1007,3.1,49,47.2,3.8
+989,2024-10-16,Siena College,MI,Phone,LV,881,3.3,53.8,43.6,2.6
+990,2024-10-16,Siena College,WI,Phone,LV,901,3.3,50.4,45.9,3.8
+991,2024-10-16,Morning Consult,PA,Online,LV,1083,3,46.4,49.4,4.3
+992,2024-10-16,Emerson,NAT,Mixed,RV,1005,3.1,44.4,47.5,8.1
+993,2024-10-16,YouGov,NAT,Online,LV,697,3.7,45.7,47.3,7
+994,2024-10-16,Emerson,PA,Mixed,LV,913,3.2,49.2,46.4,4.3
+995,2024-10-17,Emerson,PA,Mixed,RV,1062,3,48.9,46.4,4.7
+996,2024-10-17,RMG Research,MI,Mixed,RV,980,3.1,48.2,43,8.7
+997,2024-10-17,YouGov,NAT,Online,LV,1099,3,47.9,45,7.1
+998,2024-10-17,Siena College,MI,Phone,LV,957,3.2,51,43,6
+999,2024-10-17,RMG Research,WI,Mixed,RV,1037,3,46.7,47.2,6.1
+1000,2024-10-17,Morning Consult,MI,Online,RV,1035,3,47.5,43.9,8.5
