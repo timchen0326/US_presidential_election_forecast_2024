@@ -413,6 +413,7 @@ This methodology presents a feasible and thorough plan to forecast the US presid
 
 # Appendix 
 
+
 ```{r}
 #| echo: false
 #| message: false
