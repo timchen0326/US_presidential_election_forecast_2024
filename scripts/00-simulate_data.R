@@ -1,7 +1,8 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of US pollster polling outcomes
+# Purpose: Simulates polling data for the 2024 US presidential election between
+# Kamala Harris and Donald Trump, incorporating realistic polling features
 # Authors: Tim Chen, Steven Li, Tommy Fu
-# Date: 18 October 2024
+# Date: 31 October 2024
 # Contacts: 
 # - Tim Chen: timwt.chen@mail.utoronto.ca
 # - Steven Li: stevency.li@mail.utoronto.ca
@@ -13,83 +14,123 @@
 #### Workspace setup ####
 library(tidyverse)
 library(lubridate)
+set.seed(2024) # For reproducibility
 
-#### Data expectations ####
-# Pollster Data:
-# - Columns: poll_id, pollster, pollster_rating, method, state, voter_type, party, winner, percentage
-# - poll_id should be unique
-# - Date should be between 2024-01-01 and 2024-10-18
-# - pollster_rating should be between 1 and 5
-# - method should be one of: "Online", "Phone", "Mixed"
-# - state should be valid US state abbreviations
-# - voter_type should be one of: "Likely Voters", "Registered Voters", "All Adults"
-# - party should be one of: "Republican", "Democrat"
-# - winner should be one of: "Trump", "Harris"
-# - percentage should be between 0 and 100
+######################## Define simulation parameters ########################
+# Key polling parameters based on historical patterns
+BASE_HARRIS_SUPPORT <- 51.0  # Starting point for Harris support
+POLL_ERROR <- 2.5           # Standard deviation for polling errors
+DEM_BIAS <- -1.0           # Historical pro-Democrat bias in polls
 
-set.seed(2024)
-
-########################### Simulate Pollster Data ############################ 
-num_polls <- 1000
-
-pollster_data <- tibble(
-  poll_id = seq(1, num_polls),
-  date = sample(seq(as.Date('2024-01-01'), as.Date('2024-10-18'), by="day"), 
-                num_polls, replace=TRUE),
-  pollster = sample(c("PollsterA", "PollsterB", "PollsterC", 
-                      "PollsterD", "PollsterE"), num_polls, replace=TRUE),
-  pollster_rating = round(runif(num_polls, 1, 5), 1),
-  method = sample(c("Online", "Phone", "Mixed"), num_polls, replace=TRUE),
-  state = sample(state.abb, num_polls, replace=TRUE),
-  voter_type = sample(c("Likely Voters", "Registered Voters"), 
-                      num_polls, replace=TRUE),
-  party = sample(c("Republican", "Democrat"), num_polls, replace=TRUE),
-  winner = sample(c("Trump", "Harris"), num_polls, replace=TRUE),
-  percentage = round(runif(num_polls, 40, 60), 1)
+# Define a few pollsters and their ratings and method
+pollsters <- tribble(
+  ~name,           ~rating,  ~method,
+  "YouGov",        4.5,     "Online",
+  "RMG Research",  4.2,     "Mixed",
+  "Siena College", 4.8,     "Phone",
+  "Morning Consult",4.3,    "Online",
+  "Emerson",       4.0,     "Mixed"
 )
 
-# Adjust percentages based on winner
-pollster_data <- pollster_data %>%
-  mutate(percentage = case_when(
-    winner == "Trump" ~ percentage,
-    winner == "Harris" ~ 100 - percentage
-  ))
+# Define swing states with their baseline characteristics
+swing_states <- tribble(
+  ~state,  ~harris_margin,
+  "AZ",     0.5,
+  "GA",    -0.3,
+  "MI",     2.1,
+  "NV",    -0.8,
+  "PA",     1.4,
+  "WI",     0.9
+)
 
-############################## Visualizations  ##############################
-# Poll results over time
-pollster_data %>%
-  ggplot(aes(x = date, y = percentage, color = winner)) +
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "loess", se = FALSE) +
-  labs(title = "Poll Results Over Time",
+############################ Generate simulated data ########################
+# Generate 1000 polls with more frequent polling closer to election
+num_polls <- 1000
+dates <- as.Date('2024-01-01') + sort(rbeta(num_polls, 2, 1) * 
+                                        as.numeric(as.Date('2024-10-18') - as.Date('2024-01-01')))
+
+# Create base dataset
+simulated_polls <- tibble(
+  poll_id = seq_len(num_polls),
+  date = dates,
+  # Sample pollsters (more polls from higher-rated pollsters)
+  pollster = sample(pollsters$name, num_polls, 
+                    prob = pollsters$rating, replace = TRUE),
+  # Include both state and national polls
+  state = sample(c(swing_states$state, "NAT"), num_polls, 
+                 prob = c(rep(2, nrow(swing_states)), 3), replace = TRUE),
+  # Generate sample sizes
+  sample_size = round(rnorm(num_polls, mean = 1000, sd = 100)),
+  # Generate more 'likely voters' closer to election
+  voter_type = if_else(
+    date > as.Date("2024-08-01"),
+    sample(c("LV", "RV"), num_polls, prob = c(0.7, 0.3), replace = TRUE),
+    sample(c("LV", "RV"), num_polls, prob = c(0.3, 0.7), replace = TRUE)
+  )
+)
+
+# Add pollster characteristics
+simulated_polls <- simulated_polls %>%
+  left_join(pollsters, by = c("pollster" = "name"))
+
+# Add polling results
+simulated_polls <- simulated_polls %>%
+  left_join(swing_states, by = "state") %>%
+  mutate(
+    # Calculate base support level
+    base_support = case_when(
+      state == "NAT" ~ BASE_HARRIS_SUPPORT,
+      !is.na(harris_margin) ~ 50 + harris_margin,
+      TRUE ~ BASE_HARRIS_SUPPORT
+    ),
+    
+    # Add time trends (slight tightening as election approaches)
+    days_to_election = as.numeric(as.Date('2024-11-05') - date),
+    time_effect = days_to_election / 300,
+    
+    # Calculate final percentages with various effects
+    harris_pct = base_support + 
+      time_effect +
+      rnorm(num_polls, 0, POLL_ERROR) +
+      DEM_BIAS,
+    
+    # Ensure percentages are within realistic bounds
+    harris_pct = pmax(pmin(harris_pct, 62), 38),
+    trump_pct = 100 - harris_pct,
+    
+    # Add undecided voters
+    undecided = pmax(0, rnorm(num_polls, 5, 2)),
+    harris_pct = round(harris_pct * (100 - undecided) / 100, 1),
+    trump_pct = round(trump_pct * (100 - undecided) / 100, 1),
+    undecided = round(undecided, 1),
+    
+    # Calculate margin of error (95% confidence level)
+    margin_of_error = round(1.96 * sqrt(0.5 * 0.5 / sample_size) * 100, 1)
+  )
+
+# Create final dataset
+final_polls <- simulated_polls %>%
+  select(poll_id, date, pollster, state, method, voter_type,
+         sample_size, margin_of_error, harris_pct, trump_pct, undecided)
+
+# Save the simulated data
+write_csv(final_polls, "data/00-simulated_data/simulated_pollster_data.csv")
+
+############################ Create validation plots ########################
+# Polling trends
+ggplot(final_polls, aes(x = date, y = harris_pct)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(method = "loess") +
+  facet_wrap(~state) +
+  labs(title = "Harris Support by State Over Time",
        x = "Date",
-       y = "Percentage",
-       color = "Candidate") +
+       y = "Support (%)") +
   theme_minimal()
 
-# Distribution of poll methods
-pollster_data %>%
-  count(method) %>%
-  ggplot(aes(x = method, y = n, fill = method)) +
-  geom_col() +
-  labs(title = "Distribution of Poll Methods",
+# Method distribution
+ggplot(final_polls, aes(x = method, fill = voter_type)) +
+  geom_bar(position = "dodge") +
+  labs(title = "Poll Distribution by Method and Voter Type",
        x = "Method",
        y = "Count") +
   theme_minimal()
-
-# Average poll results by state
-pollster_data %>%
-  group_by(state, winner) %>%
-  summarise(avg_percentage = mean(percentage)) %>%
-  ggplot(aes(x = reorder(state, avg_percentage), y = avg_percentage, 
-             fill = winner)) +
-  geom_col() +
-  coord_flip() +
-  labs(title = "Average Poll Results by State",
-       x = "State",
-       y = "Average Percentage",
-       fill = "Candidate") +
-  theme_minimal()
-
-# Save the simulated data
-write_csv(pollster_data, "data/00-simulated_data/simulated_pollster_data.csv")
