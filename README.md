@@ -58,4 +58,4 @@ The repository is structured as follows:
 
 ## Statement on LLM Usage
 
-Aspects of the code were written with the assistance of ChatGPT-4o. The abstract and introduction were crafted using ChatGPT-4o and ChatGPT-o1. The entire chat history is saved in other/llm_usage/usage.txt.
+Aspects of the code were written with the assistance of ChatGPT-4o. The abstract and introduction were crafted using ChatGPT-4o. The entire chat history is saved in other/llm_usage/usage.txt.
