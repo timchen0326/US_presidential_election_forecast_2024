@@ -35,6 +35,11 @@ library(here)
 library(dplyr)
 library(knitr)
 library(car)
+library(maps)
+library(stringr)
+library(reshape2)
+library(patchwork)
+
 
 # Load the dataset
 data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
@@ -126,7 +131,6 @@ To analyze factors influencing candidate support, we use a linear regression mod
 #| message: false
 #| warning: false
 # Load necessary library
-library(ggplot2)
 
 # Filter the data for only "Kamala Harris"
 harris_data <- subset(data, candidate_name == "Kamala Harris")
@@ -147,7 +151,6 @@ Figures @fig-harris-samplesize-supportpct and @fig-trump-samplesize-supportpct i
 #| message: false
 #| warning: false
 # Load necessary library
-library(ggplot2)
 
 # Filter the data for only "Kamala Harris"
 trump_data <- subset(data, candidate_name == "Donald Trump")
@@ -229,8 +232,6 @@ We then trained the models on the training subset and generated predictions for 
 #| message: false
 #| warning: false
 # Load necessary libraries
-library(reshape2)
-library(ggplot2)
 
 # Load final models for Harris and Trump
 mlr_harris_model_final <- readRDS(here::here("models/mlr_harris_model_final.rds"))
@@ -345,13 +346,6 @@ kable(electoral_votes_table, caption = "Electoral Votes for Each Candidate", col
 #| fig.height: 5
 #| fig.cap: "Predicted Vote Percentages by State"
 
-
-# Load necessary libraries
-library(ggplot2)
-library(reshape2)
-library(dplyr)
-library(patchwork)
-
 # Melt data for easier plotting
 prediction_melted <- melt(
   prediction_comparison, 
@@ -444,11 +438,12 @@ combined_plot
 
 ```
 
+
 To project the outcome of the 2024 U.S. Presidential election between Kamala Harris and Donald Trump, we conducted a statistical analysis that integrates predicted state-level polling percentages with the allocation of electoral votes. This methodology employs multiple linear regression models to estimate each candidate's support and translates these predictions into potential Electoral College results, adhering to the structure of the U.S. electoral system.
 
 1. **Prediction of State-Level Polling Percentages**: We utilized finalized multiple linear regression models for both Kamala Harris and Donald Trump. These models were applied to their respective datasets to generate predicted polling percentages for each candidate across various states. The predictions reflect the expected levels of support based on historical polling data and relevant covariates included in the models.
 
-2. **Aggregation of Predicted Support by State**: For each candidate, we computed the average predicted polling percentage within each state. This aggregation provides a concise state-level summary of anticipated support, facilitating direct comparisons between the candidates in each state (see Figure @fig-predicted-vote-pct).
+2. **Aggregation of Predicted Support by State**: For each candidate, we computed the average predicted polling percentage within each state. This aggregation provides a concise state-level summary of anticipated support, facilitating direct comparisons between the candidates in each state (see @fig-predicted-vote-pct).
 
 3. **Integration of Electoral Vote Allocations**: We established a dataset detailing the electoral vote distribution for each state, including the distinct allocations for Maine and Nebraska, which can split their electoral votes by congressional district. This dataset was merged with the state-level predicted support data to align electoral votes with the corresponding predicted support.
 
@@ -458,9 +453,71 @@ To project the outcome of the 2024 U.S. Presidential election between Kamala Har
 
 6. **Calculation of Total Electoral Votes**: We summed the electoral votes from all states won by each candidate to compute their total electoral vote counts. This calculation is critical, as securing at least 270 electoral votes is necessary to win the presidency under the U.S. electoral system.
 
-7. **Interpretation of Results**: The analysis indicated that Kamala Harris is projected to receive a total of **306 electoral votes**, while Donald Trump is projected to receive **232 electoral votes**. Harris surpasses the 270-vote threshold required for victory, suggesting a strong position in the Electoral College based on our predictions. This outcome implies that Harris is likely to win the election, given her substantial lead in projected electoral votes.
+7. **Interpretation of Results**: The analysis indicated that Kamala Harris is projected to receive a total of **306 electoral votes**, while Donald Trump is projected to receive **232 electoral votes**. Harris surpasses the 270-vote threshold required for victory, suggesting a strong position in the Electoral College based on our predictions. This outcome implies that Harris is likely to win the election, given her substantial lead in projected electoral votes (see @fig-map-state-winner).
 
 This statistical approach effectively connects state-level polling data to Electoral College projections. By employing multiple linear regression models to predict polling percentages and integrating these predictions with the electoral vote framework, we provide a detailed analysis of potential election results. This methodology reflects the structure of the U.S. electoral system and offers valuable insights into how predicted voter support may translate into electoral success.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-map-state-winner
+#| fig.cap: "Electoral College Predition Map"
+
+# Get US state map data
+us_states <- map_data("state")
+
+# Create a mapping of state names
+state_mapping <- data.frame(
+  state = c(
+    "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware",
+    "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa",
+    "Kansas", "Kentucky", "Louisiana", "Maine At-Large", "Maine CD-1", "Maine CD-2", "Maryland",
+    "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana",
+    "Nebraska At-Large", "Nebraska CD-1", "Nebraska CD-2", "Nebraska CD-3",
+    "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
+    "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
+    "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont",
+    "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+  ),
+  region = tolower(c(
+    "alabama", "alaska", "arizona", "arkansas", "california", "colorado", "connecticut", "delaware",
+    "district of columbia", "florida", "georgia", "hawaii", "idaho", "illinois", "indiana", "iowa",
+    "kansas", "kentucky", "louisiana", "maine", "maine", "maine", "maryland",
+    "massachusetts", "michigan", "minnesota", "mississippi", "missouri", "montana",
+    "nebraska", "nebraska", "nebraska", "nebraska",
+    "nevada", "new hampshire", "new jersey", "new mexico", "new york", "north carolina",
+    "north dakota", "ohio", "oklahoma", "oregon", "pennsylvania", "rhode island",
+    "south carolina", "south dakota", "tennessee", "texas", "utah", "vermont",
+    "virginia", "washington", "west virginia", "wisconsin", "wyoming"
+  ))
+)
+
+# Simplify prediction data for mapping
+map_data <- prediction_comparison %>%
+  select(state, winner) %>%
+  left_join(state_mapping, by = "state")
+
+# Merge with map data
+map_data_final <- us_states %>%
+  left_join(map_data, by = "region")
+
+# Create the basic map without projection
+ggplot(data = map_data_final) +
+  geom_polygon(aes(x = long, y = lat, group = group, fill = winner), 
+               color = "white", size = 0.2) +
+  coord_fixed(1.3) +  # This replaces coord_map() with a simpler aspect ratio adjustment
+  scale_fill_manual(values = c("Harris" = "#87CEFA", "Trump" = "#F08080"),
+                    name = "Predicted Winner") +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank(),
+    plot.title = element_text(hjust = 0.5, size = 16),
+    legend.position = "bottom"
+  )
+```
 
 # Discussion {#sec-discuss}
 
