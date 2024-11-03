@@ -57,7 +57,7 @@ Recent history has highlighted the complexities of election forecasting. The pol
 
 Survey methodology plays a crucial role in addressing these challenges. Well-designed surveys require careful consideration of sampling strategies, questionnaire design, and data collection methods to ensure representative results. As Keeter [-@keeter2024] emphasizes, pollsters must now employ sophisticated weighting procedures and rigorous quality controls to overcome declining response rates and potential partisan non-response bias. Understanding the strengths and limitations of different polling approaches—from traditional probability sampling to newer online panels—is essential for accurate electoral forecasting.
 
-This paper develops statistical models to forecast the outcome of the 2024 presidential election between Kamala Harris and Donald Trump. By leveraging multi-linear regression models, we predict the percentage of support for each candidate across different states, incorporating key variables such as pollster rating, sample size, and state-level demographics. Through aggregating these state-level predictions, we simulate Electoral College outcomes to provide insights into each candidate's probability of securing the required 270 electoral votes. Our analysis also includes a detailed examination of YouGov's polling methodology and proposes an idealized survey approach that could enhance the accuracy of election forecasting.
+This paper develops statistical models to forecast the outcome of the 2024 presidential election between Kamala Harris and Donald Trump. By leveraging multi-linear regression models, we predict the percentage of support for each candidate across different states, incorporating key variables such as pollster rating, sample size, and state-level demographics. Through aggregating these state-level predictions, we simulate Electoral College outcomes to provide insights into each candidate's probability of securing the required 270 electoral votes. Our analysis also includes a detailed examination of [@YouGov] polling methodology and proposes an idealized survey approach that could enhance the accuracy of election forecasting.
 
 The remainder of this paper is structured as follows. @sec-data discusses the data used for this analysis, including key variables and sources, with particular attention to the quality metrics that affect polling accuracy. @sec-model outlines our modeling approach for each candidate, incorporating lessons learned from recent electoral cycles. @sec-predict presents our Electoral College predictions based on the model outputs. @sec-discuss discusses the implications of our findings and suggests directions for future research. Finally, @sec-appendix evaluates YouGov's polling methodology, and our idealized survey methodology.
 
@@ -145,7 +145,7 @@ We began with simple linear regression models to examine the relationship betwee
 
 Figures @fig-harris-samplesize-supportpct and @fig-trump-samplesize-supportpct illustrate the relationship between sample size and support percentage for Kamala Harris and Donald Trump, respectively. These plots provide a visual representation of the trends observed in the linear regression models for each candidate.
 
-
+ 
 ```{r}
 #| echo: false
 #| message: false
@@ -585,16 +585,18 @@ To enhance the accuracy of electoral forecasts, future research should consider 
 # Appendix {#sec-appendix}
 
 ## YouGov Pollster Methodology Overview and Evaluation
-YouGov conducts online surveys through their proprietary panel of U.S. adults, using nonprobability sampling methods combined with sophisticated weighting procedures to achieve representative results. Their approach balances speed and cost-effectiveness with statistical rigor through careful sample selection and data quality controls.
+YouGov[@YouGov] utilizes an online panel with non-probability sampling, adjusting for demographic imbalances through weighting techniques. This approach ensures that survey results are representative of the broader population, despite the limitations of non-random sampling.
+
+The primary strength of YouGov's methodology lies in its efficiency and cost-effectiveness, enabling rapid data collection. However, the reliance on non-probability sampling can introduce biases, which are partially mitigated by their rigorous weighting process. While effective in providing timely insights, this method requires careful consideration of its limitations in representativeness.
 
 ### Survey Population and Sampling
-YouGov's target population typically comprises all U.S. adults or adult citizens, with their sampling frame consisting of their opt-in online panel covering approximately 95% of Americans. For general population surveys, they aim for 1,000-2,000 respondents, selected based on demographic and political characteristics to match the target population.
+YouGov’s surveys target U.S. adults, utilizing an opt-in online panel that covers approximately 95% of the population. For general population surveys, they typically sample between 1,000 and 2,000 respondents. These participants are selected to reflect key demographic and political characteristics, ensuring the sample is representative of the broader population.
 
 ### Panel Recruitment and Participation
-Panel members are recruited through advertising and website partnerships, with surveys offered in multiple languages including Spanish to ensure broad representation. Participants receive points exchangeable for small monetary rewards, though many report being motivated by the desire to contribute to research.
+YouGov[@YouGov] recruits panel members through targeted advertising and partnerships with various websites. Surveys are available in multiple languages, including Spanish, to ensure inclusivity and broad demographic representation. Participants are incentivized with points redeemable for small monetary rewards, though many join to contribute to research efforts.
 
 ### Quality Control
-YouGov employs several measures to maintain data quality:
+YouGov[@YouGov] employs several measures to maintain data quality:
 
 - Verification of panelist identity through email and IP checks
 - Response quality surveys to gauge reliability
@@ -603,14 +605,14 @@ YouGov employs several measures to maintain data quality:
 - Question randomization to reduce bias
 
 ### Non-response and Weighting
-To address potential biases, YouGov applies statistical weighting based on demographics (age, gender, race, education) and political factors (voting behavior, party identification). Their weighting process considers multiple characteristics simultaneously to better reflect real-world demographic intersections.
+To address potential biases, [@YouGov] applies statistical weighting based on demographics (age, gender, race, education) and political factors (voting behavior, party identification). Their weighting process considers multiple characteristics simultaneously to better reflect real-world demographic intersections.
 
 ### Strengths and Limitations
-The methodology's primary strengths include rapid data collection, cost-effectiveness, and the ability to track opinions over time. However, the nonprobability sampling approach may introduce biases, and the online-only format could underrepresent certain populations. While weighting helps address these limitations, it cannot fully account for all potential sources of bias.
+The key strengths of YouGov’s methodology are its rapid data collection, cost-effectiveness, and capacity to track public opinion trends over time. However, the reliance on non-probability sampling can introduce biases, and the online-only format may lead to underrepresentation of certain populations. While sophisticated weighting techniques mitigate some of these issues, they cannot fully eliminate all potential biases.
 
 \newpage
 ## Idealized Survey Methodology
-This idealized survey methodology outlines a comprehensive plan for forecasting the US presidential election within a budget of $100,000. The approach is designed to be statistically sound, practical, and capable of accurately predicting election outcomes by considering both the popular vote and electoral college implications.
+This idealized survey methodology presents a structured plan for forecasting the U.S. presidential election within a $100,000 budget. It balances statistical rigor with practicality to ensure accurate predictions of both the popular vote and Electoral College outcomes. The methodology includes advanced sampling techniques, robust survey design, and comprehensive data analysis to capture key demographic and political variables. By addressing potential biases and focusing on cost-effective data collection, this plan ensures reliable and representative insights into voter behavior.
 
 ### Sampling Strategy
 The target population for this survey is eligible voters across the United States who are likely to participate in the upcoming presidential election. To achieve a representative sample:
@@ -686,6 +688,9 @@ data_overview <- data_overview %>%
 # Display the transposed table
 kable(data_overview)
 ```
+@tbl-overview_data provides an overview of key variables from different polls conducted by various organizations, including Washington Post/George Mason University, CNN/SSRS, Siena/NYT, and YouGov. It highlights differences in methodologies, such as live phone interviews, online panels, and mixed methods, as well as sample sizes ranging from 708 to 1,142 respondents. Pollscores, which reflect pollster reliability, vary from -1.5 (indicating higher reliability for Siena/NYT) to -0.6 (for CNN/SSRS). Transparency scores show that YouGov and CNN/SSRS exhibit full transparency with perfect scores of 10.
+
+The table also includes data on candidate support percentages, with Donald Trump polling between 42% and 48% across various states and Kamala Harris receiving 48% in Michigan. This snapshot reveals the diversity in poll designs, geographical focus, and methodological rigor, which are crucial for understanding the variability in polling data.
 
 ```{r}
 #| echo: false
@@ -716,6 +721,9 @@ data %>%
   mutate(across(-Statistic, ~round(.x, 2))) %>%
   kable()
 ```
+@tbl-poll-metrics presents the summary statistics for key poll metrics, including sample size, pollscore (pollster reliability), numeric grade, and transparency score. The average sample size across polls is 1,114.76 respondents, with a standard deviation of 583.72, indicating variability in the number of participants. The median sample size is 1,000, with a minimum of 450 and a maximum of 4,253 respondents.
+
+The average pollscore is -1.06, with a median of -1.10, reflecting generally high reliability across pollsters (lower scores indicate greater reliability). The numeric grade, which measures methodological rigor, averages 2.89 with minimal variability (SD of 0.10). The transparency score averages 8.59, suggesting most polls are transparent about their methods, though scores range from 6.00 to 10.00. These statistics highlight the overall quality and variation in polling practices used in the analysis.
 
 ```{r}
 #| echo: false
@@ -733,6 +741,7 @@ data %>%
        y = "Count") +
   theme(axis.text.y = element_text(size = 8))
 ```
+@fig-methodology-dist illustrates the distribution of various polling methodologies used in the dataset. The most frequently employed methods include "Live Phone," "Online Panel," and "Live Phone/Text-to-Web," highlighting a preference for direct communication methods combined with online components. Less common methodologies, such as "Live Phone/Online Panel/Text" and "Live Phone/Email," appear at the lower end of the distribution. This diversity in polling methods reflects the varied approaches taken by pollsters to gather representative data, balancing traditional techniques with modern, web-based options.
 
 ```{r}
 #| echo: false
@@ -750,6 +759,7 @@ ggplot(data, aes(x = pct, fill = candidate_name)) +
   theme_minimal() +
   theme(legend.position = "bottom")
 ```
+@fig-candidate-support shows the distribution of support percentages for Donald Trump and Kamala Harris. Both distributions are centered around the mid-40% to mid-50% range, reflecting a competitive race. Trump's support is more concentrated around the 45-50% range, indicating relatively consistent polling results. Harris’s distribution is slightly more varied, suggesting greater fluctuation in her polling support. This visualization highlights the close contest between the two candidates, with neither consistently achieving overwhelming support across polls.
 
 ```{r}
 #| echo: false
@@ -765,6 +775,7 @@ data %>%
          "Number of Polls" = n) %>%
   kable(format = "latex", booktabs = TRUE)
 ```
+@tbl-state-polls illustrates the number of polls conducted over time, showing weekly fluctuations in polling activity. There is a noticeable increase in the number of polls around mid-September, peaking at over 160 polls in a week, followed by a decline as the election date approaches. This pattern suggests heightened polling activity during key points in the campaign, likely driven by major events or debates, before tapering off closer to the election. The variability highlights how polling frequency can change in response to the evolving political landscape.
 
 ```{r}
 #| echo: false
@@ -785,6 +796,7 @@ data %>%
        y = "Number of Polls") +
   scale_x_date(date_breaks = "2 weeks", date_labels = "%b %d")
 ```
+@fig-temporal-polling provides the polling frequency by state, highlighting where polling efforts were concentrated. National polls dominate with 261 instances, while key battleground states like Pennsylvania (86 polls), Wisconsin (82 polls), and North Carolina (64 polls) also see significant attention. These states are critical for determining election outcomes, explaining the higher frequency. Conversely, states like Missouri, Montana, and Nebraska show fewer polls (4 each), reflecting less competitive races or a perceived lower impact on the overall election result. This distribution underscores the strategic focus on swing states in polling efforts.
 
 ```{r}
 #| echo: false
@@ -802,6 +814,7 @@ data %>%
   scale_x_continuous(breaks = seq(0, max(data$sample_size), by = 500))
 ```
 
+@fig-sample-size shows the distribution of sample sizes across the polls in the dataset. The majority of polls have sample sizes clustered around 1,000 respondents, which is a typical size for achieving a balance between precision and cost. A few polls have significantly larger sample sizes, extending beyond 2,000, with some even exceeding 4,000 respondents. This suggests that while most polls aim for a moderate sample size, there are instances where more extensive sampling is conducted, possibly for greater accuracy or in critical regions. The distribution reflects the common practice of balancing statistical reliability with logistical constraints.
 
 ```{r}
 #| echo: false
