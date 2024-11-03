@@ -18,7 +18,7 @@ library(testthat)
 library(lubridate)
 
 # Read in the data
-pollster_data <- read_csv(here::here("data/02-analysis_data/analysis_data.csv"))
+pollster_data <- read_parquet(here("data/02-analysis_data/analysis_data.parquet"))
 
 ############################ Test Data Structure ############################
 test_that("Data has correct structure and identifiers", {

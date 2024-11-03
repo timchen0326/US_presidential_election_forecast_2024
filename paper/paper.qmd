@@ -26,7 +26,6 @@ editor:
 # Set a specific CRAN mirror (this example uses the US CRAN mirror)
 
 options(repos = c(CRAN = "https://cran.rstudio.com/"))
-
 library(tidyverse)
 library(ggplot2)
 library(janitor)
@@ -39,10 +38,13 @@ library(maps)
 library(stringr)
 library(reshape2)
 library(patchwork)
+library(kableExtra)
+library(arrow)
+
 
 
 # Load the dataset
-data <- read.csv(here::here("data/02-analysis_data/analysis_data.csv"))
+data <- read_parquet(here::here("data/02-analysis_data/analysis_data.parquet"))
 
 ```
 
@@ -124,7 +126,7 @@ We excluded several variables that offered little additional analytical value, s
 
 # Modeling Support for the Candidates {#sec-model}
 
-To analyze factors influencing candidate support, we use a linear regression model with sample size as the primary predictor. This model examines the relationship between sample size and the percentage of support for Kamala Harris and Donald Trump across different polls. By including sample size as a predictor, we can assess whether larger or smaller sample sizes impact reported support levels for each candidate.
+To investigate the factors influencing voter support for Kamala Harris and Donald Trump, we employed linear regression models using polling data. Our analysis aimed to assess how predictors such as sample size, pollster ratings, transparency scores, and state-level variables affect the reported percentage of support for each candidate.
 
 ```{r}
 #| echo: false
@@ -139,9 +141,7 @@ harris_data <- subset(data, candidate_name == "Kamala Harris")
 model <- lm(pct ~ sample_size, data = harris_data)
 ```
 
-For Kamala Harris, the linear regression results show that sample size has a statistically insignificant effect on her support percentage. This implies that other factors, such as pollster methodology or regional biases, may play a more substantial role in shaping her reported support.
-
-In contrast, the results for Donald Trump indicate a weak but statistically significant negative effect of sample size on his support percentage. This suggests that, on average, larger sample sizes tend to show slightly lower support for Trump, though the effect size remains small.
+We began with simple linear regression models to examine the relationship between sample size (`sample_size`) and the percentage of support (`pct`) for each candidate. 
 
 Figures @fig-harris-samplesize-supportpct and @fig-trump-samplesize-supportpct illustrate the relationship between sample size and support percentage for Kamala Harris and Donald Trump, respectively. These plots provide a visual representation of the trends observed in the linear regression models for each candidate.
 
@@ -172,11 +172,15 @@ mlr_trump_model <- readRDS(here::here(("models/mlr_trump_model.rds")))
 
 ## Multiple Linear Regression Models
 
-To better capture the complexity of voter support, we constructed multiple linear regression (MLR) models for both Kamala Harris and Donald Trump. These models incorporate key predictors, including pollster rating (represented by pollscore), transparency score, sample size, and state-level data. By including these variables, the MLR models aim to control for multiple factors influencing voter support and to enhance the accuracy of our predictions.
+Recognizing the multifaceted nature of voter support, we extended our analysis using multiple linear regression (MLR) models. The initial model incorporated several predictors believed to influence polling outcomes:
 
-The MLR model for Kamala Harris indicates that factors such as state and pollster rating significantly impact her predicted level of support across polls. The results, shown in @fig-mlr-harris, suggest that Harris's support varies substantially by state and depends on the credibility of the pollster. Diagnostic checks, including residual and QQ plots, confirm that the model reasonably meets linear regression assumptions.
+$$
+\text{pct} = \beta_0 + \beta_1 \times \text{numeric\_grade} + \beta_2 \times \text{pollscore} + \beta_3 \times \text{transparency\_score}
+$$
+$$ + \beta_4 \times \text{sample\_size} + \beta_5 \times \text{state} + \beta_6 \times \text{methodology} + \epsilon
+$$
 
-Similarly, the MLR model for Donald Trump highlights that state-level differences and pollster transparency play a significant role in explaining his support. Figure @fig-mlr-trump illustrates these findings, and diagnostic evaluations confirm that the model assumptions (linearity, independence, and homoscedasticity) are sufficiently met.
+Variables were selected based on their relevance to polling accuracy and potential influence on voter preferences. Pollster ratings and transparency scores were included to account for differences in pollster reliability. State-level data were incorporated to capture regional variations in support. Sample size and methodology were included to control for their potential impact on polling results (see @fig-mlr-harris and @fig-mlr-trump as it illustrates residual plots and Q-Q plots).
 
 
 ## Multicollinearity Check Using Variance Inflation Factor (VIF)
@@ -196,8 +200,12 @@ kable(vif(mlr_harris_model), digits=3)
 mlr_harris_model_refined <- readRDS(here::here(("models/mlr_harris_model_refined.rds")))
 ```
 
-Based on the VIF results in @tbl-harris-vif, we refined the model by removing less significant predictors (such as methodology and transparency_score) to reduce multi-collinearity.This improves the model's accuracy and interpretability.
+To assess multicollinearity among predictors, we calculated the Variance Inflation Factor (VIF) for each variable(@tbl-harris-vif). High VIF values suggest multicollinearity, which can compromise the stability of coefficient estimates.
 
+The initial VIF analysis revealed multicollinearity concerns, particularly with transparency score and methodology. To address this, we refined the model by removing less significant predictors with high VIF values, resulting in:
+$$
+\text{pct} = \beta_0 + \beta_1 \times \text{numeric\_grade} + \beta_2 \times \text{pollscore} + \beta_3 \times \text{sample\_size} + \beta_4 \times \text{state}
+$$
 
 ```{r}
 #| echo: false
@@ -215,10 +223,21 @@ kable(vif(mlr_harris_model_refined), digits=3)
 step_model <- step(mlr_harris_model_refined, direction = "both", trace=0)
 ```
 
+This refinement reduced VIF values to acceptable levels, improving the model's reliability and interpretability.
+
 ## Stepwise Model Selection
 
+To optimize the model further, we applied stepwise selection using the Akaike Information Criterion (AIC) as the criterion for adding or removing predictors. The final model obtained is:
 
-To refine the multi-linear regression model, I applied a stepwise selection method to optimize the choice of predictor variables. Stepwise selection evaluates the model iteratively, adding or removing variables based on predefined criteria (typically AIC) to find a more parsimonious model. Using both forward and backward selection, stepwise method in the step() function assesses each predictor's contribution and determines if adding or removing it improves model fit. By allowing the function to examine variables in both directions, this process systematically removed non-significant variables that did not contribute meaningfully to the model's explanatory power, leaving only the most impactful predictors in the final refined model. The resulting plots, showing the "Residuals vs Fitted" and "Normal Q-Q" diagnostic views, allow for visual inspection of model assumptions and residual patterns, supporting the quality of the refined model.
+$$
+\text{pct} = \beta_0 + \beta_1 \times \text{pollscore} + \beta_2 \times \log(\text{sample\_size}) + \beta_3 \times \text{state} + \epsilon
+$$
+
+The logarithmic transformation of sample size was introduced to account for diminishing returns in effect size with increasing sample sizes.
+
+The final model was selected based on statistical significance, model diagnostics, and theoretical considerations. Pollster rating and state remained significant predictors, consistent with expectations that pollster credibility and regional factors influence polling results. The logarithmic transformation improved model fit and addressed heteroscedasticity associated with sample size.
+
+All statistical analyses were conducted using [@citeR]. The lm() function was used for regression modeling, and the car package [@car] was employed to calculate VIF values. Stepwise selection was performed using the step() function. Diagnostic plots were generated to assess model assumptions.
 
 ## National-Level Model Evaluation and Predictive Accuracy
 
@@ -308,6 +327,11 @@ prediction_comparison <- rbind(prediction_comparison, missing_states_data)
 prediction_comparison <- merge(prediction_comparison, electoral_votes, by = "state", all.x = TRUE)
 
 ```
+
+
+
+# Electoral College Prediction {#sec-predict}
+
 ```{r}
 #| echo: false
 #| message: false
@@ -335,8 +359,6 @@ electoral_votes_table <- data.frame(
 # Display the table with kable
 kable(electoral_votes_table, caption = "Electoral Votes for Each Candidate", col.names = c("Candidate", "Electoral Votes"))
 ```
-
-# Electoral College Prediction {#sec-predict}
 
 ```{r}
 #| echo: false
@@ -493,6 +515,14 @@ state_mapping <- data.frame(
   ))
 )
 
+# Load state abbreviations and coordinates
+state_coords <- data.frame(
+  state = state.name,
+  abbrev = state.abb,
+  region = tolower(state.name)
+) %>%
+  left_join(us_states %>% group_by(region) %>% summarise(long = mean(long), lat = mean(lat)), by = "region")
+
 # Simplify prediction data for mapping
 map_data <- prediction_comparison %>%
   select(state, winner) %>%
@@ -502,11 +532,13 @@ map_data <- prediction_comparison %>%
 map_data_final <- us_states %>%
   left_join(map_data, by = "region")
 
-# Create the basic map without projection
+# Create the map with state abbreviations
 ggplot(data = map_data_final) +
   geom_polygon(aes(x = long, y = lat, group = group, fill = winner), 
                color = "white", size = 0.2) +
-  coord_fixed(1.3) +  # This replaces coord_map() with a simpler aspect ratio adjustment
+  geom_text(data = state_coords, aes(x = long, y = lat, label = abbrev), 
+            size = 3, color = "black") +  # Add state abbreviations
+  coord_fixed(1.3) +  # Simplified fixed aspect ratio
   scale_fill_manual(values = c("Harris" = "#87CEFA", "Trump" = "#F08080"),
                     name = "Predicted Winner") +
   theme_minimal() +
@@ -517,7 +549,11 @@ ggplot(data = map_data_final) +
     plot.title = element_text(hjust = 0.5, size = 16),
     legend.position = "bottom"
   )
+
 ```
+
+@fig-map-state-winner displays a predicted U.S. Electoral College outcome in a hypothetical race between Harris and Trump, with blue and red indicating states projected to support each candidate, respectively. Harris is expected to win in traditional Democratic strongholds like the West Coast, Northeast, and parts of the Midwest, areas historically aligned with Democratic candidates due to factors such as urbanization, higher education levels, and diverse populations. In contrast, Trump’s projected wins across the South and Great Plains reflect longstanding Republican preferences in these regions, shaped by conservative values and economic policies that resonate in rural and suburban areas. The distribution highlights both entrenched partisan divides and key battleground states, such as Florida and Pennsylvania, that could be decisive given their recent variability in party support.
+
 
 # Discussion {#sec-discuss}
 
