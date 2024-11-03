@@ -1,10 +1,15 @@
 #### Preamble ####
 # Purpose: Perform Exploratory Data Analysis (EDA) on polling data for Kamala Harris and Donald Trump, and save the plots as images.
-# Author: [Your Name]
-# Date: [Today's Date]
-# Contact: [Your Email]
-# License: MIT
-# Pre-requisites: Requires cleaned 'analysis_data.csv' with filtered data for Harris and Trump
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 3 November 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites: 
+# - Requires cleaned 'analysis_data.csv' with filtered data for Harris and Trump in the 'data/02-analysis_data/' directory
+# - The following R packages must be installed: 'dplyr', 'knitr', 'caret', 'tidyverse', 'Metrics'
+# - This script performs model training on national polling data for both candidates and calculates RMSE performance metrics
 
 # Install and load the caret package if you haven't already
 install.packages("caret")

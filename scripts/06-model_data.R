@@ -1,11 +1,15 @@
 #### Preamble ####
-# Purpose: Models... [...UPDATE THIS...]
-# Author: Rohan Alexander [...UPDATE THIS...]
-# Date: 11 February 2023 [...UPDATE THIS...]
-# Contact: rohan.alexander@utoronto.ca [...UPDATE THIS...]
-# License: MIT
-# Pre-requisites: [...UPDATE THIS...]
-# Any other information needed? [...UPDATE THIS...]
+# Purpose: Build multiple linear regression (MLR) models to predict polling percentages for Kamala Harris and Donald Trump.
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 3 November 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites: 
+# - Requires the 'analysis_data.csv' file located in 'data/02-analysis_data/'
+# - The following R packages must be installed: 'tidyverse', 'rstanarm'
+# - This script builds and refines MLR models for both candidates using relevant predictors and saves the models as .rds files for future use.
 
 
 #### Workspace setup ####

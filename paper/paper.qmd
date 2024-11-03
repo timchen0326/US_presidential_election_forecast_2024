@@ -343,95 +343,95 @@ kable(electoral_votes_table, caption = "Electoral Votes for Each Candidate", col
 #| fig.height: 5
 #| fig.cap: "Predicted Vote Percentages by State"
 
-# # Melt data for easier plotting
-# prediction_melted <- melt(
-#   prediction_comparison, 
-#   id.vars = c("state", "electoral_votes", "winner"),
-#   measure.vars = c("predicted_pct_harris", "predicted_pct_trump")
-# )
-# 
-# # Rename melted variables for readability
-# colnames(prediction_melted)[colnames(prediction_melted) == "variable"] <- "candidate"
-# prediction_melted$candidate <- ifelse(
-#   prediction_melted$candidate == "predicted_pct_harris", 
-#   "Harris", 
-#   "Trump"
-# )
-# 
-# # Calculate the midpoint to split the states
-# n_states <- length(unique(prediction_melted$state))
-# midpoint <- ceiling(n_states / 2)
-# 
-# # Order states by electoral votes in descending order for better visualization
-# states_order <- prediction_melted %>%
-#   distinct(state, electoral_votes) %>%
-#   arrange(desc(electoral_votes)) %>%
-#   pull(state)
-# 
-# # Split the states into two groups
-# left_states <- states_order[1:midpoint]
-# right_states <- states_order[(midpoint + 1):length(states_order)]
-# 
-# # Create two separate datasets
-# prediction_left <- prediction_melted %>%
-#   filter(state %in% left_states) %>%
-#   mutate(state = factor(state, levels = left_states))  # Ensure consistent ordering
-# 
-# prediction_right <- prediction_melted %>%
-#   filter(state %in% right_states) %>%
-#   mutate(state = factor(state, levels = right_states))  # Ensure consistent ordering
-# 
-# # Function to create individual plots to avoid repetition
-# create_plot <- function(data, show_legend = FALSE) {
-#   ggplot(data, aes(x = reorder(state, electoral_votes), y = value, fill = candidate)) +
-#     geom_bar(
-#       stat = "identity", 
-#       position = position_dodge(width = 0.9), 
-#       width = 0.5  # Reduced bar width for more spacing
-#     ) +
-#     coord_flip() +
-#     labs(
-#       x = NULL,
-#       y = "Predicted Vote Percentage (%)"
-#     ) +
-#     scale_fill_manual(values = c("Harris" = "#87CEFA", "Trump" = "#F08080")) +
-#     theme_minimal() +
-#     theme(
-#       text = element_text(size = 9),  # Reduced overall text size
-#       axis.text.y = element_text(size = 8, margin = margin(r = 5)),  # Smaller state labels
-#       axis.text.x = element_text(size = 9),
-#       legend.title = element_blank(),
-#       legend.position = ifelse(show_legend, "top", "none"),  # Place legend only for the first plot
-#       legend.text = element_text(size = 9),
-#       panel.grid.major.y = element_blank(),
-#       plot.margin = margin(l = 10, r = 15, t = 10, b = 10)  # Adjusted margins
-#     ) +
-#     geom_text(
-#       aes(label = round(value, 1)),
-#       position = position_dodge(width = 0.9),
-#       hjust = -0.2,    # Adjusted horizontal position for labels
-#       size = 1.5,      # Smaller label size
-#       show.legend = FALSE
-#     ) +
-#     scale_y_continuous(
-#       expand = expansion(mult = c(0, 0.2)),  # Increased expansion for labels
-#       limits = c(0, 75)  # Adjust based on your data
-#     )
-# }
-# 
-# # Create the left plot with legend
-# plot_left <- create_plot(prediction_left, show_legend = TRUE)
-# 
-# # Create the right plot without legend
-# plot_right <- create_plot(prediction_right, show_legend = FALSE)
-# 
-# # Combine the plots side by side with legend on top
-# combined_plot <- plot_left + plot_right +
-#   plot_layout(guides = "collect") &  # Collects the legend at the top
-#   theme(legend.position = "top")  # Places the combined legend at the top
-# 
-# # Print the combined plot
-# combined_plot
+# Melt data for easier plotting
+prediction_melted <- melt(
+  prediction_comparison, 
+  id.vars = c("state", "electoral_votes", "winner"),
+  measure.vars = c("predicted_pct_harris", "predicted_pct_trump")
+)
+
+# Rename melted variables for readability
+colnames(prediction_melted)[colnames(prediction_melted) == "variable"] <- "candidate"
+prediction_melted$candidate <- ifelse(
+  prediction_melted$candidate == "predicted_pct_harris", 
+  "Harris", 
+  "Trump"
+)
+
+# Calculate the midpoint to split the states
+n_states <- length(unique(prediction_melted$state))
+midpoint <- ceiling(n_states / 2)
+
+# Order states by electoral votes in descending order for better visualization
+states_order <- prediction_melted %>%
+  distinct(state, electoral_votes) %>%
+  arrange(desc(electoral_votes)) %>%
+  pull(state)
+
+# Split the states into two groups
+left_states <- states_order[1:midpoint]
+right_states <- states_order[(midpoint + 1):length(states_order)]
+
+# Create two separate datasets
+prediction_left <- prediction_melted %>%
+  filter(state %in% left_states) %>%
+  mutate(state = factor(state, levels = left_states))  # Ensure consistent ordering
+
+prediction_right <- prediction_melted %>%
+  filter(state %in% right_states) %>%
+  mutate(state = factor(state, levels = right_states))  # Ensure consistent ordering
+
+# Function to create individual plots to avoid repetition
+create_plot <- function(data, show_legend = FALSE) {
+  ggplot(data, aes(x = reorder(state, electoral_votes), y = value, fill = candidate)) +
+    geom_bar(
+      stat = "identity", 
+      position = position_dodge(width = 0.9), 
+      width = 0.5  # Reduced bar width for more spacing
+    ) +
+    coord_flip() +
+    labs(
+      x = NULL,
+      y = "Predicted Vote Percentage (%)"
+    ) +
+    scale_fill_manual(values = c("Harris" = "#87CEFA", "Trump" = "#F08080")) +
+    theme_minimal() +
+    theme(
+      text = element_text(size = 9),  # Reduced overall text size
+      axis.text.y = element_text(size = 8, margin = margin(r = 5)),  # Smaller state labels
+      axis.text.x = element_text(size = 9),
+      legend.title = element_blank(),
+      legend.position = ifelse(show_legend, "top", "none"),  # Place legend only for the first plot
+      legend.text = element_text(size = 9),
+      panel.grid.major.y = element_blank(),
+      plot.margin = margin(l = 10, r = 15, t = 10, b = 10)  # Adjusted margins
+    ) +
+    geom_text(
+      aes(label = round(value, 1)),
+      position = position_dodge(width = 0.9),
+      hjust = -0.2,    # Adjusted horizontal position for labels
+      size = 1.5,      # Smaller label size
+      show.legend = FALSE
+    ) +
+    scale_y_continuous(
+      expand = expansion(mult = c(0, 0.2)),  # Increased expansion for labels
+      limits = c(0, 75)  # Adjust based on your data
+    )
+}
+
+# Create the left plot with legend
+plot_left <- create_plot(prediction_left, show_legend = TRUE)
+
+# Create the right plot without legend
+plot_right <- create_plot(prediction_right, show_legend = FALSE)
+
+# Combine the plots side by side with legend on top
+combined_plot <- plot_left + plot_right +
+  plot_layout(guides = "collect") &  # Collects the legend at the top
+  theme(legend.position = "top")  # Places the combined legend at the top
+
+# Print the combined plot
+combined_plot
 
 ```
 

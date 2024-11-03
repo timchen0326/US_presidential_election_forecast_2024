@@ -17,6 +17,7 @@ library(tidyverse)
 library(testthat)
 library(lubridate)
 
+
 # Read in the data
 pollster_data <- read_parquet(here("data/02-analysis_data/analysis_data.parquet"))
 

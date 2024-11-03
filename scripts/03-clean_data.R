@@ -1,11 +1,15 @@
 #### Preamble ####
-# Purpose: Prepare polling data and build a linear regression model to predict popular vote for Kamala Harris and Donald Trump.
-# Author: [Your Name]
-# Date: [Today's Date]
-# Contact: [Your Email]
-# License: MIT
-# Pre-requisites: Requires 'president_polls.csv' file in 'data/01-raw_data/'
-# Any other information needed? This script builds an MLR model for Harris vs Trump using polling data.
+# Purpose: Prepare and filter polling data to build a multiple linear regression model predicting popular vote percentages for Kamala Harris and Donald Trump.
+# Author: Tim Chen, Steven Li, Tommy Fu
+# Date: 3 November 2024
+# Contact: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites: 
+# - Ensure the 'president_polls.csv' file is located in 'data/01-raw_data/'
+# - The following R packages must be installed: 'dplyr', 'tidyverse', 'janitor', 'lubridate', 'arrow', 'here'
+# - Polling data will be filtered for high-quality entries and limited to Harris and Trump, with necessary data transformations for modeling.
 
 #### Workspace setup ####
 # Load necessary libraries
