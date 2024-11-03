@@ -9,10 +9,14 @@
 
 #### Workspace setup ####
 # Load necessary libraries
+
 library(dplyr)
 library(tidyverse)
 library(janitor)
 library(lubridate)
+library(arrow)
+library(here)
+
 
 ########################### Data Import and Cleaning########################### 
 # Read the dataset and clean column names
@@ -45,6 +49,6 @@ filtered_data <- data |>
   ) |>
   drop_na()
 
-# Save the cleaned dataset as a new CSV file
-write.csv(filtered_data, "data/02-analysis_data/analysis_data.csv", row.names = FALSE)
+write_parquet(filtered_data,
+  here("data", "02-analysis_data", "analysis_data.parquet"))
 
