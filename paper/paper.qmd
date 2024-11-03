@@ -50,7 +50,7 @@ Recent history has highlighted the complexities of election forecasting. The pol
 
 Survey methodology plays a crucial role in addressing these challenges. Well-designed surveys require careful consideration of sampling strategies, questionnaire design, and data collection methods to ensure representative results. As Keeter [-@keeter2024] emphasizes, pollsters must now employ sophisticated weighting procedures and rigorous quality controls to overcome declining response rates and potential partisan non-response bias. Understanding the strengths and limitations of different polling approaches—from traditional probability sampling to newer online panels—is essential for accurate electoral forecasting.
 
-This paper develops statistical models to forecast the outcome of the 2024 presidential election between Kamala Harris and Donald Trump. By leveraging multi-linear regression models, we predict the percentage of support for each candidate across different states, incorporating key variables such as pollster rating, sample size, and state-level demographics. Through aggregating these state-level predictions, we simulate Electoral College outcomes to provide insights into each candidate's probability of securing the required 270 electoral votes. Our analysis also includes a detailed examination of YouGov's polling methodology and proposes an idealized survey approach that could enhance the accuracy of election forecasting.
+This paper develops statistical models to forecast the outcome of the 2024 presidential election between Kamala Harris and Donald Trump. By leveraging multi-linear regression models, we predict the percentage of support for each candidate across different states, incorporating key variables such as pollster rating, sample size, and state-level demographics. Through aggregating these state-level predictions, we simulate Electoral College outcomes to provide insights into each candidate's probability of securing the required 270 electoral votes. Our analysis also includes a detailed examination of [@YouGov] polling methodology and proposes an idealized survey approach that could enhance the accuracy of election forecasting.
 
 The remainder of this paper is structured as follows. @sec-data discusses the data used for this analysis, including key variables and sources, with particular attention to the quality metrics that affect polling accuracy. @sec-model outlines our modeling approach for each candidate, incorporating lessons learned from recent electoral cycles. @sec-predict presents our Electoral College predictions based on the model outputs. @sec-discuss discusses the implications of our findings and suggests directions for future research. Finally, @sec-appendix evaluates YouGov's polling methodology, and our idealized survey methodology.
 
@@ -333,16 +333,18 @@ To enhance the predictive power and accuracy of election forecasting models, fut
 # Appendix {#sec-appendix}
 
 ## YouGov Pollster Methodology Overview and Evaluation
-YouGov conducts online surveys through their proprietary panel of U.S. adults, using nonprobability sampling methods combined with sophisticated weighting procedures to achieve representative results. Their approach balances speed and cost-effectiveness with statistical rigor through careful sample selection and data quality controls.
+YouGov utilizes an online panel with non-probability sampling, adjusting for demographic imbalances through weighting techniques. This approach ensures that survey results are representative of the broader population, despite the limitations of non-random sampling.
+
+The primary strength of YouGov's methodology lies in its efficiency and cost-effectiveness, enabling rapid data collection. However, the reliance on non-probability sampling can introduce biases, which are partially mitigated by their rigorous weighting process. While effective in providing timely insights, this method requires careful consideration of its limitations in representativeness.
 
 ### Survey Population and Sampling
-YouGov's target population typically comprises all U.S. adults or adult citizens, with their sampling frame consisting of their opt-in online panel covering approximately 95% of Americans. For general population surveys, they aim for 1,000-2,000 respondents, selected based on demographic and political characteristics to match the target population.
+YouGov’s surveys target U.S. adults, utilizing an opt-in online panel that covers approximately 95% of the population. For general population surveys, they typically sample between 1,000 and 2,000 respondents. These participants are selected to reflect key demographic and political characteristics, ensuring the sample is representative of the broader population.
 
 ### Panel Recruitment and Participation
-Panel members are recruited through advertising and website partnerships, with surveys offered in multiple languages including Spanish to ensure broad representation. Participants receive points exchangeable for small monetary rewards, though many report being motivated by the desire to contribute to research.
+[@YouGov] recruits panel members through targeted advertising and partnerships with various websites. Surveys are available in multiple languages, including Spanish, to ensure inclusivity and broad demographic representation. Participants are incentivized with points redeemable for small monetary rewards, though many join to contribute to research efforts.
 
 ### Quality Control
-YouGov employs several measures to maintain data quality:
+[@YouGov] employs several measures to maintain data quality:
 
 - Verification of panelist identity through email and IP checks
 - Response quality surveys to gauge reliability
@@ -351,14 +353,14 @@ YouGov employs several measures to maintain data quality:
 - Question randomization to reduce bias
 
 ### Non-response and Weighting
-To address potential biases, YouGov applies statistical weighting based on demographics (age, gender, race, education) and political factors (voting behavior, party identification). Their weighting process considers multiple characteristics simultaneously to better reflect real-world demographic intersections.
+To address potential biases, [@YouGov] applies statistical weighting based on demographics (age, gender, race, education) and political factors (voting behavior, party identification). Their weighting process considers multiple characteristics simultaneously to better reflect real-world demographic intersections.
 
 ### Strengths and Limitations
-The methodology's primary strengths include rapid data collection, cost-effectiveness, and the ability to track opinions over time. However, the nonprobability sampling approach may introduce biases, and the online-only format could underrepresent certain populations. While weighting helps address these limitations, it cannot fully account for all potential sources of bias.
+The key strengths of YouGov’s methodology are its rapid data collection, cost-effectiveness, and capacity to track public opinion trends over time. However, the reliance on non-probability sampling can introduce biases, and the online-only format may lead to underrepresentation of certain populations. While sophisticated weighting techniques mitigate some of these issues, they cannot fully eliminate all potential biases.
 
 \newpage
 ## Idealized Survey Methodology
-This idealized survey methodology outlines a comprehensive plan for forecasting the US presidential election within a budget of $100,000. The approach is designed to be statistically sound, practical, and capable of accurately predicting election outcomes by considering both the popular vote and electoral college implications.
+This idealized survey methodology presents a structured plan for forecasting the U.S. presidential election within a $100,000 budget. It balances statistical rigor with practicality to ensure accurate predictions of both the popular vote and Electoral College outcomes. The methodology includes advanced sampling techniques, robust survey design, and comprehensive data analysis to capture key demographic and political variables. By addressing potential biases and focusing on cost-effective data collection, this plan ensures reliable and representative insights into voter behavior.
 
 ### Sampling Strategy
 The target population for this survey is eligible voters across the United States who are likely to participate in the upcoming presidential election. To achieve a representative sample:
