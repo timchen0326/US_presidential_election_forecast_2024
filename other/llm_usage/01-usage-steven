@@ -1,0 +1,1041 @@
+LLM: ChatGPT-4o
+
+Usage 1 - Simulating and Testing Script Creation
+User: For the simulation part of my paper, I need you to help me write an R script that simulates the data. Here are the variables I want you to simulate, which contains only trump and Harris: pollster, pollster_rating, method, state, voter type, party, winner, and percentage. 
+Refer to the example simualation script in your content, by following the same structure and guidance, but in the context of pollster data
+
+LLM: Certainly! I'll create an R script to simulate pollster data for the 2024 US presidential election between Trump and Harris, following the structure and guidance of the example you provided. Here's the script:
+rCopy#### Preamble ####
+# Purpose: Simulates pollster data for the 2024 US presidential election (Trump vs Harris)
+# Author: [Your Name]
+# Date: 18 October 2024
+# Contact: [Your Email]
+
+#### Workspace setup ####
+library(tidyverse)
+library(lubridate)
+
+#### Data expectations ####
+# Pollster Data:
+# - Columns: poll_id, pollster, pollster_rating, method, state, voter_type, party, winner, percentage
+# - poll_id should be unique
+# - Date should be between 2024-01-01 and 2024-10-18
+# - pollster_rating should be between 1 and 5
+# - method should be one of: "Online", "Phone", "Mixed"
+# - state should be valid US state abbreviations
+# - voter_type should be one of: "Likely Voters", "Registered Voters", "All Adults"
+# - party should be one of: "Republican", "Democrat"
+# - winner should be one of: "Trump", "Harris"
+# - percentage should be between 0 and 100
+
+set.seed(2024)
+
+#### Simulate Pollster Data ####
+num_polls <- 1000
+
+pollster_data <- tibble(
+  poll_id = seq(1, num_polls),
+  date = sample(seq(as.Date('2024-01-01'), as.Date('2024-10-18'), by="day"), num_polls, replace=TRUE),
+  pollster = sample(c("Gallup", "Rasmussen", "YouGov", "Ipsos", "Quinnipiac"), num_polls, replace=TRUE),
+  pollster_rating = round(runif(num_polls, 1, 5), 1),
+  method = sample(c("Online", "Phone", "Mixed"), num_polls, replace=TRUE, prob=c(0.5, 0.3, 0.2)),
+  state = sample(state.abb, num_polls, replace=TRUE),
+  voter_type = sample(c("Likely Voters", "Registered Voters", "All Adults"), num_polls, replace=TRUE, prob=c(0.6, 0.3, 0.1)),
+  party = sample(c("Republican", "Democrat"), num_polls, replace=TRUE),
+  winner = sample(c("Trump", "Harris"), num_polls, replace=TRUE, prob=c(0.52, 0.48)),
+  percentage = round(runif(num_polls, 40, 60), 1)
+)
+
+# Adjust percentages based on winner
+pollster_data <- pollster_data %>%
+  mutate(percentage = case_when(
+    winner == "Trump" ~ percentage,
+    winner == "Harris" ~ 100 - percentage
+  ))
+
+#### Visualizations ####
+# Poll results over time
+pollster_data %>%
+  ggplot(aes(x = date, y = percentage, color = winner)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "loess", se = FALSE) +
+  labs(title = "Poll Results Over Time",
+       x = "Date",
+       y = "Percentage",
+       color = "Candidate") +
+  theme_minimal()
+
+# Distribution of poll methods
+pollster_data %>%
+  count(method) %>%
+  ggplot(aes(x = method, y = n, fill = method)) +
+  geom_col() +
+  labs(title = "Distribution of Poll Methods",
+       x = "Method",
+       y = "Count") +
+  theme_minimal()
+
+# Average poll results by state
+pollster_data %>%
+  group_by(state, winner) %>%
+  summarise(avg_percentage = mean(percentage)) %>%
+  ggplot(aes(x = reorder(state, avg_percentage), y = avg_percentage, fill = winner)) +
+  geom_col() +
+  coord_flip() +
+  labs(title = "Average Poll Results by State",
+       x = "State",
+       y = "Average Percentage",
+       fill = "Candidate") +
+  theme_minimal()
+
+# Save the simulated data
+write_csv(pollster_data, "simulated_pollster_data.csv")
+This script simulates pollster data for the 2024 US presidential election between Trump and Harris. Here's a breakdown of what the script does:
+
+It sets up the workspace and loads necessary libraries.
+It defines the data expectations, including the structure and constraints of the simulated data.
+It simulates 1000 polls with various attributes such as pollster, rating, method, state, voter type, party, winner, and percentage.
+It adjusts the percentages to ensure they make sense based on the winner.
+It creates three visualizations:
+
+Poll results over time
+Distribution of poll methods
+Average poll results by state
+
+
+Finally, it saves the simulated data to a CSV file.
+
+You can run this script to generate a dataset of simulated pollster data for your paper. Remember to adjust the author name, date, and contact information in the preamble to match your details.
+
+User: Now, can you write a set of tests using libary testthat, to write a set of tests for this simulated data
+
+LLM: Certainly! I'll create a test script for the simulated pollster data based on the examples you've provided. Here's a script that tests various aspects of the simulated data:
+#### Workspace setup ####
+library(tidyverse)
+library(testthat)
+library(lubridate)
+
+# Read in the data
+pollster_data <- read_csv("simulated_pollster_data.csv")
+
+#### Tests for Pollster Data ####
+
+test_that("Pollster data has correct structure", {
+  expected_cols <- c("poll_id", "date", "pollster", "pollster_rating", "method", 
+                     "state", "voter_type", "party", "winner", "percentage")
+  expect_equal(colnames(pollster_data), expected_cols)
+  expect_true(is.numeric(pollster_data$poll_id))
+  expect_true(inherits(pollster_data$date, "Date"))
+  expect_true(is.character(pollster_data$pollster))
+  expect_true(is.numeric(pollster_data$pollster_rating))
+  expect_true(is.character(pollster_data$method))
+  expect_true(is.character(pollster_data$state))
+  expect_true(is.character(pollster_data$voter_type))
+  expect_true(is.character(pollster_data$party))
+  expect_true(is.character(pollster_data$winner))
+  expect_true(is.numeric(pollster_data$percentage))
+})
+
+test_that("Pollster data has valid values", {
+  expect_true(all(!is.na(pollster_data)))
+  expect_true(all(pollster_data$date >= as.Date("2024-01-01") & 
+                  pollster_data$date <= as.Date("2024-10-18")))
+  expect_true(all(pollster_data$pollster_rating >= 1 & pollster_data$pollster_rating <= 5))
+  expect_true(all(pollster_data$percentage >= 0 & pollster_data$percentage <= 100))
+})
+
+test_that("Poll IDs are unique", {
+  expect_equal(length(unique(pollster_data$poll_id)), nrow(pollster_data))
+})
+
+test_that("Method values are valid", {
+  valid_methods <- c("Online", "Phone", "Mixed")
+  expect_true(all(pollster_data$method %in% valid_methods))
+})
+
+test_that("State values are valid", {
+  expect_true(all(pollster_data$state %in% state.abb))
+})
+
+test_that("Voter type values are valid", {
+  valid_voter_types <- c("Likely Voters", "Registered Voters", "All Adults")
+  expect_true(all(pollster_data$voter_type %in% valid_voter_types))
+})
+
+test_that("Party values are valid", {
+  valid_parties <- c("Republican", "Democrat")
+  expect_true(all(pollster_data$party %in% valid_parties))
+})
+
+test_that("Winner values are valid", {
+  valid_winners <- c("Trump", "Harris")
+  expect_true(all(pollster_data$winner %in% valid_winners))
+})
+
+test_that("Percentage values are consistent with winner", {
+  expect_true(all(pollster_data$percentage >= 50 & pollster_data$winner == "Trump" |
+                  pollster_data$percentage < 50 & pollster_data$winner == "Harris"))
+})
+
+test_that("Dataset has expected number of rows", {
+  expect_equal(nrow(pollster_data), 1000)
+})
+
+test_that("Dataset has expected number of columns", {
+  expect_equal(ncol(pollster_data), 10)
+})
+
+test_that("There are no empty strings in character columns", {
+  char_cols <- c("pollster", "method", "state", "voter_type", "party", "winner")
+  expect_true(all(pollster_data[char_cols] != ""))
+})
+
+test_that("Pollster column has at least two unique values", {
+  expect_true(n_distinct(pollster_data$pollster) >= 2)
+})
+
+# Run all tests
+test_results <- test_file("path_to_this_test_script.R")
+
+# Print test results
+print(test_results)
+
+User: Can you improve my data simulation script to fulfill the Simulation component of the rubric, and adhering to the paper instructions?
+
+LLM: I'll help improve the simulation script to better fulfill the rubric requirements and paper instructions. The simulation should be sophisticated, clearly commented, and reflect realistic polling scenarios based on the provided context documents.
+#### Preamble ####
+# Purpose: Simulates a dataset of US presidential election polling outcomes that reflects
+#          real-world polling characteristics, biases, and methodological variations
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contact: timwt.chen@mail.utoronto.ca, stevency.li@mail.utoronto.ca, tommy.fu@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: Packages `tidyverse`, `lubridate`
+
+#### Workspace setup ####
+library(tidyverse)
+library(lubridate)
+
+#### Simulation parameters ####
+set.seed(2024) # For reproducibility
+
+# Define key parameters based on historical polling patterns
+BASE_HARRIS_SUPPORT <- 51.2  # Based on recent polling averages
+POLL_VOLATILITY <- 2.5      # Standard deviation of daily changes
+SYSTEMATIC_BIAS <- -1.1     # Historical pro-Democrat bias in polls
+RESPONSE_RATE_R <- 0.15     # Lower Republican response rate
+RESPONSE_RATE_D <- 0.20     # Higher Democrat response rate
+
+# Define pollster characteristics
+pollster_characteristics <- tribble(
+  ~pollster,        ~bias,    ~reliability, ~primary_method,
+  "YouGov",         0.5,      4.5,         "Online Panel",
+  "RMG Research",   -0.8,     4.2,         "Mixed Mode",
+  "Siena College",  0.2,      4.8,         "Phone",
+  "Emerson",        -0.3,     4.0,         "Mixed Mode",
+  "Morning Consult", 0.4,     4.3,         "Online Panel"
+)
+
+# Define swing states and their characteristics
+swing_states <- tribble(
+  ~state, ~electoral_votes, ~base_harris_margin, ~volatility,
+  "AZ",   11,               0.5,                2.0,
+  "GA",   16,              -0.3,                2.2,
+  "MI",   16,               2.1,                1.8,
+  "NV",    6,              -0.8,                2.5,
+  "NC",   15,              -1.2,                1.5,
+  "PA",   19,               1.4,                1.9,
+  "WI",   10,               0.9,                2.3
+)
+
+#### Helper functions ####
+#' Generate realistic poll sample sizes
+#' @param n Number of sample sizes to generate
+#' @return Vector of sample sizes
+generate_sample_sizes <- function(n) {
+  # Most polls have between 800-1200 respondents
+  round(rnorm(n, mean = 1000, sd = 200)) %>%
+    pmax(400) %>%  # Minimum sample size
+    pmin(2000)     # Maximum sample size
+}
+
+#' Calculate margin of error
+#' @param sample_size Poll sample size
+#' @return Margin of error
+calculate_moe <- function(sample_size) {
+  # Standard formula for margin of error at 95% confidence level
+  1.96 * sqrt(0.5 * 0.5 / sample_size) * 100
+}
+
+#' Simulate polling error
+#' @param n Number of polls
+#' @param reliability Pollster reliability score (1-5)
+#' @return Vector of polling errors
+simulate_polling_error <- function(n, reliability) {
+  # More reliable pollsters have smaller errors
+  base_error_sd <- (6 - reliability) * 1.5
+  rnorm(n, mean = 0, sd = base_error_sd)
+}
+
+#### Generate simulated data ####
+# Generate dates ensuring more polls closer to election
+num_polls <- 1000
+dates <- as.Date('2024-01-01') + sort(rbeta(num_polls, 2, 1) * 
+                as.numeric(as.Date('2024-10-18') - as.Date('2024-01-01')))
+
+# Create base dataset
+simulated_polls <- tibble(
+  poll_id = seq_len(num_polls),
+  date = dates,
+  pollster = sample(pollster_characteristics$pollster, num_polls, replace = TRUE),
+  state = sample(c(swing_states$state, "NAT"), num_polls, 
+                prob = c(rep(2, nrow(swing_states)), 3), replace = TRUE)
+)
+
+# Add pollster-specific characteristics
+simulated_polls <- simulated_polls %>%
+  left_join(pollster_characteristics, by = "pollster") %>%
+  mutate(
+    sample_size = generate_sample_sizes(num_polls),
+    margin_of_error = calculate_moe(sample_size),
+    methodology = primary_method,
+    voter_type = sample(c("Likely Voters", "Registered Voters", "All Adults"),
+                       num_polls, prob = c(0.6, 0.3, 0.1), replace = TRUE)
+  )
+
+# Simulate support levels with realistic variations
+simulated_polls <- simulated_polls %>%
+  left_join(swing_states, by = "state") %>%
+  mutate(
+    # Base support varies by state and time
+    days_to_election = as.numeric(as.Date('2024-11-05') - date),
+    base_support = case_when(
+      state == "NAT" ~ BASE_HARRIS_SUPPORT,
+      !is.na(base_harris_margin) ~ 50 + base_harris_margin,
+      TRUE ~ BASE_HARRIS_SUPPORT
+    ),
+    
+    # Add time-based trends and volatility
+    temporal_effect = sin(days_to_election/30) * 1.5,
+    state_volatility = coalesce(volatility, 2.0),
+    
+    # Calculate final percentages with various effects
+    harris_pct = base_support + 
+                 temporal_effect +
+                 simulate_polling_error(num_polls, reliability) +
+                 bias + 
+                 SYSTEMATIC_BIAS +
+                 rnorm(num_polls, 0, state_volatility),
+    
+    # Ensure percentages are within realistic bounds
+    harris_pct = pmax(pmin(harris_pct, 65), 35),
+    trump_pct = 100 - harris_pct,
+    
+    # Add undecided voters
+    undecided_pct = abs(rnorm(num_polls, 5, 2)),
+    harris_pct = harris_pct * (100 - undecided_pct) / 100,
+    trump_pct = trump_pct * (100 - undecided_pct) / 100
+  )
+
+# Format final dataset
+final_polls <- simulated_polls %>%
+  select(poll_id, date, pollster, state, methodology, voter_type,
+         sample_size, margin_of_error, harris_pct, trump_pct, undecided_pct) %>%
+  mutate(across(ends_with("_pct"), ~round(., 1)))
+
+# Save the simulated data
+write_csv(final_polls, "data/00-simulated_data/simulated_pollster_data.csv")
+
+#### Validation visualizations ####
+# Time series of polling results
+ggplot(final_polls, aes(x = date)) +
+  geom_point(aes(y = harris_pct, color = "Harris"), alpha = 0.3) +
+  geom_smooth(aes(y = harris_pct, color = "Harris"), method = "loess", se = FALSE) +
+  geom_point(aes(y = trump_pct, color = "Trump"), alpha = 0.3) +
+  geom_smooth(aes(y = trump_pct, color = "Trump"), method = "loess", se = FALSE) +
+  facet_wrap(~state) +
+  labs(title = "Polling Trends by State",
+       x = "Date",
+       y = "Support Percentage",
+       color = "Candidate") +
+  theme_minimal() +
+  theme(legend.position = "top")
+
+# Distribution of sample sizes
+ggplot(final_polls, aes(x = sample_size)) +
+  geom_histogram(bins = 30) +
+  labs(title = "Distribution of Poll Sample Sizes",
+       x = "Sample Size",
+       y = "Count") +
+  theme_minimal()
+
+# Methodology distribution by pollster
+ggplot(final_polls, aes(x = pollster, fill = methodology)) +
+  geom_bar() +
+  coord_flip() +
+  labs(title = "Poll Methodology by Pollster",
+       x = "Pollster",
+       y = "Number of Polls") +
+  theme_minimal()
+
+User: With this simulated data script, write a test simulated data script using testthat library, ensuring that you adhere to paper instructions, and fulfill full marks on the Tests-simulation portion of the rubric. Here is some starter code:
+#### Preamble ####
+# Purpose: Testing simulated pollster data for the 2024 US presidential election
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites: 
+# - 00-simulate_data.R must have been run
+# - The tidyverse, lubridate, and testthat package must be installed and loaded
+#### Workspace setup ####
+library(tidyverse)
+library(testthat)
+library(lubridate)
+# Read in the data
+pollster_data <- read_csv("data/00-simulated_data/simulated_pollster_data.csv")
+
+LLM: I'll help create a comprehensive test script that will ensure the simulated data meets all requirements and achieve full marks on the Tests-simulation portion of the rubric.
+#### Preamble ####
+# Purpose: Testing simulated pollster data for the 2024 US presidential election
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contact: timwt.chen@mail.utoronto.ca, stevency.li@mail.utoronto.ca, 
+#          tommy.fu@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - 00-simulate_data.R must have been run
+# - The `tidyverse`, `lubridate`, and `testthat` packages must be installed
+
+#### Workspace setup ####
+library(tidyverse)
+library(testthat)
+library(lubridate)
+
+# Read in the simulated data
+pollster_data <- read_csv("data/00-simulated_data/simulated_pollster_data.csv")
+
+#### Test basic data structure ####
+test_that("Data has correct structure", {
+  # Test presence of required columns
+  expected_columns <- c("poll_id", "date", "pollster", "state", "method", 
+                       "voter_type", "sample_size", "margin_of_error", 
+                       "harris_pct", "trump_pct", "undecided")
+  expect_true(all(expected_columns %in% colnames(pollster_data)))
+  
+  # Test number of rows
+  expect_equal(nrow(pollster_data), 1000)
+  
+  # Test for unique poll IDs
+  expect_equal(length(unique(pollster_data$poll_id)), 1000)
+  expect_false(any(duplicated(pollster_data$poll_id)))
+})
+
+#### Test data types and ranges ####
+test_that("Variables have correct types and ranges", {
+  # Test date range
+  expect_true(all(pollster_data$date >= as.Date("2024-01-01")))
+  expect_true(all(pollster_data$date <= as.Date("2024-10-18")))
+  
+  # Test sample sizes
+  expect_true(all(pollster_data$sample_size >= 600))
+  expect_true(all(pollster_data$sample_size <= 1500))
+  expect_true(all(pollster_data$sample_size %% 1 == 0))  # integers only
+  
+  # Test percentage values
+  expect_true(all(pollster_data$harris_pct >= 0))
+  expect_true(all(pollster_data$harris_pct <= 100))
+  expect_true(all(pollster_data$trump_pct >= 0))
+  expect_true(all(pollster_data$trump_pct <= 100))
+  expect_true(all(pollster_data$undecided >= 0))
+  expect_true(all(pollster_data$undecided <= 100))
+  
+  # Test margin of error
+  expect_true(all(pollster_data$margin_of_error > 0))
+  expect_true(all(pollster_data$margin_of_error < 10))  # realistic MoE range
+})
+
+#### Test categorical variables ####
+test_that("Categorical variables have correct values", {
+  # Test pollster names
+  expected_pollsters <- c("YouGov", "RMG Research", "Siena College", 
+                         "Morning Consult", "Emerson")
+  expect_true(all(pollster_data$pollster %in% expected_pollsters))
+  
+  # Test methods
+  expected_methods <- c("Online", "Mixed", "Phone")
+  expect_true(all(pollster_data$method %in% expected_methods))
+  
+  # Test voter types
+  expected_voter_types <- c("LV", "RV")
+  expect_true(all(pollster_data$voter_type %in% expected_voter_types))
+  
+  # Test states
+  expected_states <- c("AZ", "GA", "MI", "NV", "PA", "WI", "NAT")
+  expect_true(all(pollster_data$state %in% expected_states))
+})
+
+#### Test logical relationships ####
+test_that("Data exhibits logical relationships", {
+  # Test percentages sum to approximately 100
+  total_pct <- pollster_data$harris_pct + pollster_data$trump_pct + 
+               pollster_data$undecided
+  expect_true(all(abs(total_pct - 100) < 0.2))  # allowing for rounding
+  
+  # Test relationship between sample size and margin of error
+  # Larger sample sizes should have smaller margins of error
+  correlation <- cor(pollster_data$sample_size, pollster_data$margin_of_error)
+  expect_true(correlation < -0.9)  # strong negative correlation
+  
+  # Test more likely voter polls closer to election
+  late_polls <- pollster_data %>% 
+    filter(date >= as.Date("2024-08-01"))
+  early_polls <- pollster_data %>% 
+    filter(date < as.Date("2024-08-01"))
+  
+  expect_true(
+    mean(late_polls$voter_type == "LV") > 
+    mean(early_polls$voter_type == "LV")
+  )
+})
+
+#### Test statistical properties ####
+test_that("Data exhibits expected statistical properties", {
+  # Test reasonable distribution of support
+  harris_mean <- mean(pollster_data$harris_pct)
+  expect_true(harris_mean > 45 && harris_mean < 55)
+  
+  # Test reasonable standard deviation
+  harris_sd <- sd(pollster_data$harris_pct)
+  expect_true(harris_sd > 1 && harris_sd < 5)
+  
+  # Test distribution of sample sizes
+  size_mean <- mean(pollster_data$sample_size)
+  expect_true(size_mean > 900 && size_mean < 1100)
+  
+  # Test undecided voter percentages
+  undecided_mean <- mean(pollster_data$undecided)
+  expect_true(undecided_mean > 2 && undecided_mean < 8)
+})
+
+#### Test temporal patterns ####
+test_that("Data shows reasonable temporal patterns", {
+  # Test increasing poll frequency closer to election
+  early_period <- sum(pollster_data$date <= as.Date("2024-05-01"))
+  late_period <- sum(pollster_data$date > as.Date("2024-05-01"))
+  expect_true(late_period > early_period)
+  
+  # Test poll volatility
+  weekly_volatility <- pollster_data %>%
+    mutate(week = floor_date(date, "week")) %>%
+    group_by(week) %>%
+    summarise(sd = sd(harris_pct)) %>%
+    pull(sd) %>%
+    mean()
+  expect_true(weekly_volatility > 0.5 && weekly_volatility < 5)
+})
+
+#### Test data quality ####
+test_that("Data quality meets requirements", {
+  # Test for missing values
+  expect_false(any(is.na(pollster_data)))
+  
+  # Test for proper rounding
+  expect_true(all(pollster_data$harris_pct %% 0.1 == 0))
+  expect_true(all(pollster_data$trump_pct %% 0.1 == 0))
+  expect_true(all(pollster_data$undecided %% 0.1 == 0))
+  
+  # Test for reasonable sample size distribution
+  quantiles <- quantile(pollster_data$sample_size, c(0.25, 0.75))
+  iqr <- quantiles[2] - quantiles[1]
+  expect_true(iqr > 100 && iqr < 500)  # reasonable spread
+})
+
+Usage 2 - Improving script for testing actual data
+User: I want you to improve my testing script on my actual data. Below is my current script, I want you to improve it using information you have on the variables from "Full Dataset Variables" in your project knowledge. Ensuring you adhere to paper instructions, and making sure the testing code gets full marks on the 'Tests-actual' component of the Rubric.
+#### Preamble ####
+# Purpose: Testing cleaned pollster data for the 2024 US presidential election
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contacts: 
+# - Tim Chen: timwt.chen@mail.utoronto.ca
+# - Steven Li: stevency.li@mail.utoronto.ca
+# - Tommy Fu: tommy.fu@mail.utoronto.ca
+# Pre-requisites: 
+# - 03-clean_data.R must have been run
+# - The tidyverse, lubridate, and testthat package must be installed and loaded
+#### Workspace setup ####
+library(tidyverse)
+library(testthat)
+library(lubridate)
+# Read in the data
+pollster_data <- read_csv("data/02-analysis_data/analysis_data.csv")
+########################### Tests for Pollster Data########################### 
+test_that("Pollster data has correct structure", {
+  expected_cols <- c("poll_id", "pollster_id", "pollster", "numeric_grade",
+                     "pollscore", "methodology", "transparency_score", 
+                     "sample_size", "population", "population_full", "party", 
+                     "answer", "pct", "state", "candidate_name", "end_date", 
+                     "candidate_binary", "num_supporters")
+  expect_equal(colnames(pollster_data), expected_cols)
+})
+test_that("Data types are correct", {
+  expect_true(is.numeric(pollster_data$poll_id))
+  expect_true(is.numeric(pollster_data$pollster_id))
+  expect_true(is.character(pollster_data$pollster))
+  expect_true(is.numeric(pollster_data$numeric_grade))
+  expect_true(is.numeric(pollster_data$pollscore))
+  expect_true(is.character(pollster_data$methodology))
+  expect_true(is.numeric(pollster_data$transparency_score))
+  expect_true(is.numeric(pollster_data$sample_size))
+  expect_true(is.character(pollster_data$population))
+  expect_true(is.character(pollster_data$population_full))
+  expect_true(is.character(pollster_data$party))
+  expect_true(is.character(pollster_data$answer))
+  expect_true(is.numeric(pollster_data$pct))
+  expect_true(is.character(pollster_data$state))
+  expect_true(is.character(pollster_data$candidate_name))
+  expect_true(inherits(pollster_data$end_date, "Date"))
+  expect_true(is.numeric(pollster_data$num_supporters))
+  expect_true(is.numeric(pollster_data$candidate_binary))
+})
+test_that("Numeric values are within expected ranges", {
+  expect_true(all(pollster_data$numeric_grade >= 0 & pollster_data$numeric_grade <= 5))
+  expect_true(all(pollster_data$pollscore >= -5 & pollster_data$pollscore <= 5))
+  expect_true(all(pollster_data$transparency_score >= 0 & pollster_data$transparency_score <= 10))
+  expect_true(all(pollster_data$sample_size > 0))
+  expect_true(all(pollster_data$pct >= 0 & pollster_data$pct <= 100))
+  expect_true(all(pollster_data$candidate_binary %in% c(0, 1)))
+})
+test_that("Character values are valid", {
+  expect_true(all(pollster_data$population %in% c("rv", "lv", "a")))
+  expect_true(all(pollster_data$party %in% c("DEM", "REP")))
+  expect_true(all(pollster_data$answer %in% c("Harris", "Trump")))
+})
+test_that("Dates are within expected range", {
+  expect_true(all(pollster_data$end_date >= as.Date("2024-01-01") & 
+                    pollster_data$end_date <= as.Date("2024-10-18")))
+})
+test_that("No missing values in critical columns", {
+  critical_cols <- c("poll_id", "pollster", "pct", "answer", "end_date")
+  expect_true(all(!is.na(pollster_data[critical_cols])))
+})
+test_that("Candidate binary values match answer names", {
+  expect_true(all((pollster_data$answer == "Harris" & pollster_data$candidate_binary == 1) |
+                    (pollster_data$answer == "Trump" & pollster_data$candidate_binary == 0)))
+})
+test_that("Number of supporters is consistent with percentage and sample size", {
+  pollster_data <- pollster_data %>%
+    mutate(calculated_supporters = round(pct * sample_size / 100))
+  expect_true(all(abs(pollster_data$num_supporters - pollster_data$calculated_supporters) <= 1))
+})
+
+LLM: I'll help improve your testing script to be more comprehensive and sophisticated, incorporating the detailed variable information from the "Full Dataset Variables" documentation.
+#### Preamble ####
+# Purpose: Testing cleaned pollster data for the 2024 US presidential election,
+#          ensuring data quality and consistency with expected formats
+# Authors: Tim Chen, Steven Li, Tommy Fu
+# Date: 18 October 2024
+# Contact: timwt.chen@mail.utoronto.ca, stevency.li@mail.utoronto.ca, 
+#          tommy.fu@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: 
+# - 03-clean_data.R must have been run
+# - The `tidyverse`, `lubridate`, and `testthat` packages must be installed
+
+#### Workspace setup ####
+library(tidyverse)
+library(testthat)
+library(lubridate)
+
+# Ensure we're in the right directory and file exists
+data_file <- "data/02-analysis_data/analysis_data.csv"
+if (!file.exists(data_file)) {
+  stop("Analysis data file not found. Please run clean_data.R first.")
+}
+
+# Read in the data
+pollster_data <- read_csv(data_file, show_col_types = FALSE)
+
+#### Test Data Structure ####
+test_that("Data has correct structure and identifiers", {
+  # Test for required columns
+  expected_cols <- c("poll_id", "pollster_id", "pollster", "numeric_grade",
+                    "pollscore", "methodology", "transparency_score", 
+                    "sample_size", "population", "population_full", "party", 
+                    "answer", "pct", "state", "candidate_name", "end_date", 
+                    "candidate_binary", "num_supporters")
+  expect_equal(colnames(pollster_data), expected_cols)
+  
+  # Test uniqueness of identifiers
+  expect_true(all(!duplicated(pollster_data$poll_id)))
+  
+  # Test relationship between poll_id and pollster_id
+  expect_true(all(!is.na(pollster_data$poll_id)))
+  expect_true(all(!is.na(pollster_data$pollster_id)))
+})
+
+#### Test Data Types and Formats ####
+test_that("Variables have correct data types", {
+  # Test numeric variables
+  numeric_vars <- c("poll_id", "pollster_id", "numeric_grade", "pollscore",
+                   "transparency_score", "sample_size", "pct", 
+                   "candidate_binary", "num_supporters")
+  for(var in numeric_vars) {
+    expect_true(is.numeric(pollster_data[[var]]), 
+                info = paste(var, "should be numeric"))
+  }
+  
+  # Test character variables
+  char_vars <- c("pollster", "methodology", "population", "population_full",
+                 "party", "answer", "state", "candidate_name")
+  for(var in char_vars) {
+    expect_true(is.character(pollster_data[[var]]), 
+                info = paste(var, "should be character"))
+  }
+  
+  # Test date variables
+  expect_true(inherits(pollster_data$end_date, "Date"))
+})
+
+#### Test Value Ranges and Categories ####
+test_that("Variables have valid values and categories", {
+  # Test numeric ranges
+  expect_true(all(pollster_data$numeric_grade >= 1 & 
+                  pollster_data$numeric_grade <= 5))
+  expect_true(all(pollster_data$transparency_score >= 0 & 
+                  pollster_data$transparency_score <= 10))
+  expect_true(all(pollster_data$pct >= 0 & pollster_data$pct <= 100))
+  expect_true(all(pollster_data$sample_size >= 100))  # reasonable minimum
+  
+  # Test categorical values
+  expect_true(all(pollster_data$population %in% c("rv", "lv", "a")))
+  expect_true(all(pollster_data$party %in% c("DEM", "REP")))
+  expect_true(all(pollster_data$answer %in% c("Harris", "Trump")))
+  
+  # Test state codes
+  valid_states <- c(state.abb, "NAT")  # Including national polls
+  expect_true(all(pollster_data$state %in% valid_states))
+})
+
+#### Test Data Consistency ####
+test_that("Data shows internal consistency", {
+  # Test population consistency
+  expect_true(all(pollster_data$population_full %in% 
+                  c("likely voters", "registered voters", "adults")))
+  expect_true(all((pollster_data$population == "lv" & 
+                   pollster_data$population_full == "likely voters") |
+                  (pollster_data$population == "rv" & 
+                   pollster_data$population_full == "registered voters") |
+                  (pollster_data$population == "a" & 
+                   pollster_data$population_full == "adults")))
+  
+  # Test party-candidate consistency
+  expect_true(all((pollster_data$party == "DEM" & 
+                   pollster_data$answer == "Harris") |
+                  (pollster_data$party == "REP" & 
+                   pollster_data$answer == "Trump")))
+  
+  # Test binary encoding
+  expect_true(all((pollster_data$answer == "Harris" & 
+                   pollster_data$candidate_binary == 1) |
+                  (pollster_data$answer == "Trump" & 
+                   pollster_data$candidate_binary == 0)))
+})
+
+#### Test Temporal Aspects ####
+test_that("Dates are logical and within expected range", {
+  # Test date range
+  expect_true(all(pollster_data$end_date >= as.Date("2024-01-01")))
+  expect_true(all(pollster_data$end_date <= as.Date("2024-10-18")))
+  
+  # Test date is before election
+  expect_true(all(pollster_data$end_date < as.Date("2024-11-05")))
+})
+
+#### Test Data Quality ####
+test_that("Data quality meets requirements", {
+  # Test for missing values in critical columns
+  critical_cols <- c("poll_id", "pollster", "pct", "answer", 
+                    "end_date", "state", "sample_size")
+  for(col in critical_cols) {
+    expect_false(any(is.na(pollster_data[[col]])),
+                info = paste("Missing values in", col))
+  }
+  
+  # Test pollscore consistency
+  expect_true(all(is.na(pollster_data$pollscore) | 
+                  (pollster_data$pollscore >= -5 & pollster_data$pollscore <= 5)))
+  
+  # Test number of supporters calculation
+  pollster_data <- pollster_data %>%
+    mutate(calculated_supporters = round(pct * sample_size / 100))
+  expect_true(all(abs(pollster_data$num_supporters - 
+                      pollster_data$calculated_supporters) <= 1))
+})
+
+#### Test Methodological Aspects ####
+test_that("Methodology information is consistent", {
+  # Test valid methodology types
+  valid_methods <- c("Online Panel", "Phone", "Mixed Mode")
+  expect_true(all(pollster_data$methodology %in% valid_methods))
+  
+  # Test transparency score relationship with methodology
+  # Higher transparency scores should have methodology information
+  high_transparency <- pollster_data$transparency_score >= 8
+  expect_true(all(!is.na(pollster_data$methodology[high_transparency])))
+})
+
+#### Test Statistical Properties ####
+test_that("Statistical properties are reasonable", {
+  # Test percentage distribution
+  state_means <- pollster_data %>%
+    group_by(state) %>%
+    summarise(mean_pct = mean(pct[answer == "Harris"]))
+  expect_true(all(state_means$mean_pct >= 35 & state_means$mean_pct <= 65))
+  
+  # Test sample size distribution
+  expect_true(median(pollster_data$sample_size) >= 500)
+  expect_true(quantile(pollster_data$sample_size, 0.95) <= 5000)
+})
+
+Usage 3 - Formatting tables and figures
+User: I have a table with a few issues:
+set.seed(778) # For reproducability
+
+data_overview <- data %>%
+  select(pollster, pollscore, numeric_grade, transparency_score, sample_size, 
+         methodology, pct, state, candidate_name, end_date)
+
+# Transpose the first 5 rows to display them vertically
+data_overview <- data_overview %>%
+  sample_n(5) %>%
+  t()
+
+# Display the transposed table
+kable(data_overview)
+How can I reduce the font size, since it's rotated, the values are overlapping. 
+
+LLM: To reduce the font size of your transposed table when displaying with kable, you can use the kableExtra package, which offers enhanced control over kable outputs. This package allows you to style tables, including font size adjustments.
+
+Here's how you can modify your code to reduce the font size:
+
+Ensure you have the kableExtra package installed:
+R
+Copy code
+install.packages("kableExtra")
+Adjust your code to include kable_styling() for font size control:
+r
+Copy code
+library(kableExtra)
+
+set.seed(778) # For reproducibility
+
+data_overview <- data %>%
+  select(pollster, pollscore, numeric_grade, transparency_score, sample_size, 
+         methodology, pct, state, candidate_name, end_date)
+
+# Transpose the first 5 rows to display them vertically
+data_overview <- data_overview %>%
+  sample_n(5) %>%
+  t()
+
+# Display the transposed table with reduced font size
+kable(data_overview) %>%
+  kable_styling(font_size = 10)
+You can adjust the font_size parameter as needed to prevent overlapping. The smaller the value, the smaller the font.
+
+User: how can I make the values wrap if its extremely long
+
+LLM: To make the values in a table wrap when they are too long, you can use the kableExtra package with the column_spec() function to set a specific width for the columns. This ensures that text wraps within the cell when it exceeds the specified width.
+
+Here's how you can modify your code:
+
+Ensure the kableExtra package is loaded.
+Use column_spec() to set the width of the columns, which forces text to wrap.
+Here's the updated code:
+
+r
+Copy code
+library(kableExtra)
+
+set.seed(778) # For reproducibility
+
+data_overview <- data %>%
+  select(pollster, pollscore, numeric_grade, transparency_score, sample_size, 
+         methodology, pct, state, candidate_name, end_date)
+
+# Transpose the first 5 rows to display them vertically
+data_overview <- data_overview %>%
+  sample_n(5) %>%
+  t()
+
+# Display the transposed table with text wrapping and reduced font size
+kable(data_overview) %>%
+  kable_styling(font_size = 10) %>%
+  column_spec(1:ncol(data_overview), width = "5cm")
+Explanation:
+column_spec(1:ncol(data_overview), width = "5cm"): This sets the width of all columns to 5 cm, causing the text to wrap when it exceeds this width. Adjust the width as necessary to fit your needs.
+kable_styling(font_size = 10): Reduces the font size to ensure more space.
+Feel free to adjust the width and font size to get the desired appearance for your table.
+
+Usage 4 - Creating idealized methodology
+User: Follow the instructions below to help me create an ideal Survey Methodology. Ensure that the structure and format is easy to read. This will be placed in the appendix of a research paper regarding predicting the US election, so it must concise and prose, without using too many bullet point formatting. Use bullet points only where necessary in improving the structure and flow of the writing.
+# Requirements for Idealized Survey Methodology
+## Core Requirements:
+1. Design a methodology for forecasting the US presidential election with a $100K budget
+2. Must detail:
+   - Sampling approach
+   - Respondent recruitment methods
+   - Data validation procedures
+   - Poll aggregation features
+3. Must implement the actual survey using a platform like Google Forms
+4. Include both:
+   - Link to the implemented survey
+   - Copy of the survey in the appendix
+
+Here is a rubric you must follow:
+ Idealized Methodology (10 points possible)
+The methodology must be:
+- Well-thought through
+- Realistic within budget constraints
+- Capable of achieving election forecasting goals
+- Comprehensive in approach
+
+Survey Design (4 points possible)
+Must include:
+1. Introductory section
+2. Contact person details
+3. Well-constructed questions appropriate to task
+4. Logical question ordering
+5. Thank you section for respondents
+
+Key Components to Address
+1. Sampling Strategy
+- Define target population
+- Explain sampling frame
+- Detail sampling method
+- Justify sample size calculations
+- Address potential sampling biases
+- Consider geographical distribution for electoral college
+
+2. Recruitment Plan
+- Methods for reaching respondents
+- Incentive structure (considering budget)
+- Strategies for ensuring representative sample
+- Methods for reducing non-response bias
+- Timeline for data collection
+
+3. Survey Design Elements
+- Question types and formats
+- Response options
+- Question order and flow
+- Demographic information collection
+- Political affiliation/history questions
+- Likely voter screens
+- Vote intention questions
+
+4. Quality Control
+- Data validation methods
+- Response quality checks
+- Duplicate response prevention
+- Bot/automated response detection
+- Invalid response filtering
+
+5. Data Processing
+- Weighting methodology
+- Missing data handling
+- Outlier detection
+- Response validation
+- Poll aggregation approach
+
+6. Budget Allocation
+- Recruitment costs
+- Incentive payments
+- Survey platform fees
+- Data analysis tools
+- Quality control measures
+- Administrative costs
+
+7. Implementation Requirements
+- Survey platform selection
+- Technical setup
+- Data collection timeline
+- Quality assurance procedures
+- Data storage and security
+
+Practical Implementation Steps
+1. Create comprehensive survey using Google Forms including:
+   - Professional introduction
+   - Clear contact information
+   - Well-structured questions
+   - Demographic sections
+   - Political behavior questions
+   - Vote intention questions
+   - Thank you message
+
+2. Document methodology in appendix:
+   - Detailed sampling approach
+   - Recruitment strategies
+   - Quality control procedures
+   - Data processing methods
+   - Budget allocation
+   - Timeline for implementation
+
+3. Provide:
+   - Active link to survey
+   - Full copy of survey questions in appendix
+   - Justification for methodological choices
+   - Discussion of limitations and mitigation strategies
+
+A Successful methodology will follow this Criteria
+1. Methodology is realistic within $100K budget
+2. Survey design follows best practices
+3. Sampling approach is statistically sound
+4. Quality control measures are robust
+5. Data processing plan is comprehensive
+6. Implementation is practical and achievable
+7. All required components are included and well-documented
+
+Remember to make all methodological choices with the goal of accurately forecasting the US presidential election, considering both popular vote and potentially electoral college implications.
+
+LLM: Appendix: Survey Methodology for Forecasting the US Presidential Election
+
+Introduction
+This survey methodology presents a comprehensive plan for forecasting the US presidential election within a $100,000 budget. Designed to be statistically sound and practical, it aims to accurately predict election outcomes by considering both the popular vote and electoral college implications.
+
+1. Sampling Strategy
+The target population comprises eligible voters across the United States who are likely to participate in the upcoming presidential election. Utilizing a stratified random sampling method ensures representation across key demographics such as age, gender, race, education level, and geographic location. By drawing from registered voter lists and demographic data from reputable sources like the US Census Bureau, we aim for a sample size of approximately 10,000 respondents. This size achieves a margin of error of ±1% at a 95% confidence level. Geographical distribution is proportionally allocated across all 50 states and the District of Columbia, with oversampling in swing states to better predict electoral college outcomes. Weighting adjustments address any underrepresented groups to ensure the sample mirrors the overall voter population.
+
+2. Recruitment Plan
+To recruit respondents effectively, we will leverage online panels, social media advertising, and partnerships with community organizations to reach a diverse audience. Offering modest incentives, such as $5 digital gift cards, encourages participation while managing costs. Quota sampling within strata maintains demographic balance, and follow-up reminders along with mobile-friendly survey formats help reduce non-response bias. The data collection will occur over a two-week period to capture timely opinions without introducing temporal biases.
+
+3. Survey Design Elements
+The survey is crafted to elicit accurate and meaningful responses. It employs a mix of closed-ended questions, Likert scales, and multiple-choice options for clarity and ease of analysis. Response options include balanced and neutral choices, with options for "Undecided" or "Prefer not to say." The question order begins with general inquiries to build rapport, followed by specific vote intention questions, and concludes with demographic queries. We collect information on age, gender, race, education, income, geographic location, political affiliation, past voting behavior, and political engagement. Likely voter screens gauge voting likelihood through questions about past voting frequency and current intention to vote. Confidential and anonymous vote intention questions directly ask which candidate the respondent intends to support.
+
+4. Quality Control
+To maintain data integrity, we implement several quality control measures. Real-time validation checks within the survey prevent inconsistent or illogical responses. Attention-check questions identify disengaged respondents. We use unique survey links and track IP addresses to prevent duplicate submissions, while CAPTCHA verification deters automated responses. Incomplete or suspicious responses are excluded during data cleaning to ensure the final dataset is robust and reliable.
+
+5. Data Processing
+Accurate analysis is ensured through careful data processing. Survey results are adjusted using weighting factors based on demographic proportions in the voting population. Missing data is handled by employing imputation techniques or excluding cases with significant gaps. Outliers that may skew results are identified and reviewed to determine whether to retain or discard them. Responses are cross-checked for consistency and plausibility. Additionally, we will combine our survey data with other reputable polls using meta-analytic techniques to enhance prediction accuracy.
+
+6. Budget Allocation
+The $100,000 budget is allocated to ensure all aspects are adequately funded:
+
+Recruitment Costs: $40,000 for advertising and partnerships.
+Incentive Payments: $50,000 for participant incentives ($5 x 10,000 respondents).
+Survey Platform Fees: $2,000 for premium features on a platform like Google Forms.
+Data Analysis Tools: $3,000 for statistical software licenses.
+Quality Control Measures: $3,000 for validation systems and CAPTCHA services.
+Administrative Costs: $2,000 for project management expenses.
+7. Implementation Requirements
+Execution involves selecting Google Forms for its accessibility and robust features, ensuring data security and ease of use. The technical setup includes customizing the survey with professional branding and configuring settings for optimal data collection. Data collection is scheduled over two weeks, with monitoring of response rates and adjustments as needed. Quality assurance procedures involve regular reviews of incoming data to address any issues promptly. Data is stored securely with encryption, complying with privacy regulations to protect respondent information.
+
+Practical Implementation Steps
+Survey Creation: Develop a comprehensive survey on Google Forms, including a professional introduction, clear contact information, structured questions covering demographics, political behavior, and vote intentions, and a closing thank-you message.
+Methodology Documentation: Include in the appendix a detailed explanation of the sampling approach, recruitment strategies, quality control procedures, data processing methods, budget allocation, and a realistic timeline for implementation.
+Survey Accessibility: Provide an active link to the survey and include a full copy of the survey questions in the appendix. Offer justifications for methodological decisions, along with a discussion of potential limitations and mitigation strategies.
+Conclusion
+This methodology offers a feasible and thorough plan to forecast the US presidential election within the specified budget. By adhering to best practices in survey design and execution, and considering both the popular vote and electoral college implications, the survey aims to provide accurate and reliable insights into voter intentions.
