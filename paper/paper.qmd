@@ -5,10 +5,10 @@ author:
   - Tim Chen
   - Steven Li
   - Tommy Fu
-thanks: "Code and data are available at: https://github.com/timchen0326/US_presidential_election_forecast_2024.git."
+thanks: "Code and data are available at: https://github.com/timchen0326/US_presidential_election_forecast_2024.git"
 date: today
 date-format: long
-abstract: "We forecast the outcome of the 2024 U.S. Presidential Election between Kamala Harris and Donald Trump by developing multiple linear regression models based on comprehensive polling data collected throughout the election cycle. Incorporating variables such as state-level demographics, pollster reliability scores, transparency scores, and sample sizes, we applied the same statistical model to both candidates to ensure consistent comparison. Our analysis predicts that Kamala Harris will receive 216 electoral votes, while Donald Trump is projected to secure 147 electoral votes. Neither candidate achieves the 270 electoral votes required to win the presidency, highlighting the potential for a closely contested election. These findings underscore the significant impact of state-specific factors on voter support and suggest that neither candidate currently holds a decisive advantage. We recommend that future research includes dynamic modeling techniques and additional predictive variables, such as economic indicators and voter turnout rates, to enhance the accuracy of election forecasts. Our study emphasizes the complexities involved in electoral predictions and the necessity of balancing multiple factors in policy design and electoral analysis."
+abstract: "We develop statistical models to forecast the 2024 U.S. presidential election outcome between Kamala Harris and Donald Trump using polling data from July through October 2024, incorporating pollster reliability metrics, sample sizes, and state-level effects to predict Electoral College results. Analyzing over 800 polls from diverse polling organizations, we find that pollster rating and state-level factors significantly influence reported candidate support, with our models predicting 306 electoral votes for Harris and 232 for Trump. Our analysis demonstrates that while national polling averages provide useful findings, state-specific predictions are essential for accurate Electoral College forecasting, particularly in battleground states where margins are historically narrow. These findings highlight the importance of incorporating methodological rigor in polling analysis and demonstrate how sophisticated statistical modeling can improve electoral predictions despite the challenges of modern polling."
 format: pdf
 number-sections: true
 toc: true
@@ -51,78 +51,50 @@ data <- read_parquet(here::here("data/02-analysis_data/analysis_data.parquet"))
 \newpage
 # Introduction
 
-The 2024 United States presidential election presents unprecedented challenges for electoral forecasting. As the country navigates increasing political polarization and evolving voting patterns, the reliability of traditional polling methods has come under intense scrutiny [@viala2024]. The task of predicting voter behavior in America's diverse electorate is complicated by numerous factors, including shifting public opinion, rapidly changing political landscapes, and varying levels of voter engagement across different demographic groups.
+The United States presidential election of 2024 presents unique challenges for electoral forecasting, particularly following notable polling inaccuracies in recent elections. The 2016 and 2020 elections demonstrated significant underestimation of Republican support in key states, leading to decreased public confidence in traditional polling methods. Research by the American Association for Public Opinion Research has identified several contributing factors, including difficulties in obtaining representative samples and predicting voter turnout amid increasing political polarization [@keeter2024].
 
-Recent history has highlighted the complexities of election forecasting. The polling failures in 2016 and 2020—where polls significantly underestimated Republican support in key states—have prompted a fundamental reassessment of polling methodologies [@keeter2024]. These challenges are particularly acute in swing states, where margins of victory are often razor-thin and can determine the outcome of the entire election. The American Association for Public Opinion Research (AAPOR) identified several critical factors contributing to these polling errors, including the underrepresentation of Republican voters and difficulties in predicting voter turnout patterns [@viala2024].
+Contemporary polling organizations have implemented methodological improvements to address these challenges. As documented by Keeter [-@keeter2024], modern electoral polling requires sophisticated weighting procedures and enhanced quality control mechanisms to counteract declining response rates and partisan non-response bias. These refinements are especially important in swing states, where narrow margins typically determine electoral outcomes and where previous polling errors have had the most significant impact [@viala2024]. This methodological evolution reflects the polling industry's adaptation to changing communication patterns and voter behavior.
 
-Survey methodology plays a crucial role in addressing these challenges. Well-designed surveys require careful consideration of sampling strategies, questionnaire design, and data collection methods to ensure representative results. As Keeter [-@keeter2024] emphasizes, pollsters must now employ sophisticated weighting procedures and rigorous quality controls to overcome declining response rates and potential partisan non-response bias. Understanding the strengths and limitations of different polling approaches—from traditional probability sampling to newer online panels—is essential for accurate electoral forecasting.
+This paper aims to forecast the winner of the 2024 United States presidential election between Kamala Harris and Donald Trump by predicting each candidate's Electoral College vote total. Specifically, our estimand is the number of Electoral College votes each candidate will receive, calculated by converting state-level popular vote predictions into electoral votes through each state's winner-take-all system. Using polling data from FiveThirtyEight's 2024 Presidential Election Forecast Database collected between July and October 2024 [@FiveThirtyEightPollingData2024], we develop multi-linear regression models that incorporate pollster reliability metrics, sample sizes, and state-specific effects. Our analysis predicts that Kamala Harris will receive 306 electoral votes compared to Donald Trump's 232, surpassing the 270-vote threshold required for victory. We also provide an evaluation of YouGov's [@YouGov] polling methodology and present an idealized survey approach for future election forecasting.
 
-This paper develops statistical models to forecast the outcome of the 2024 presidential election between Kamala Harris and Donald Trump. By leveraging multi-linear regression models, we predict the percentage of support for each candidate across different states, incorporating key variables such as pollster rating, sample size, and state-level demographics. Through aggregating these state-level predictions, we simulate Electoral College outcomes to provide insights into each candidate's probability of securing the required 270 electoral votes. Our analysis also includes a detailed examination of [@YouGov] polling methodology and proposes an idealized survey approach that could enhance the accuracy of election forecasting.
-
-The remainder of this paper is structured as follows. @sec-data discusses the data used for this analysis, including key variables and sources, with particular attention to the quality metrics that affect polling accuracy. @sec-model outlines our modeling approach for each candidate, incorporating lessons learned from recent electoral cycles. @sec-predict presents our Electoral College predictions based on the model outputs. @sec-discuss discusses the implications of our findings and suggests directions for future research. Finally, @sec-appendix evaluates YouGov's polling methodology, and our idealized survey methodology.
-
+The remainder of this paper is structured as follows. @sec-data examines our dataset and key variables. @sec-model details our statistical approach and model development. @sec-predict presents electoral college projections. @sec-discuss explores implications and limitations. @sec-appendix provide an in-depth evaluation of polling methodologies and our proposed ideal survey design.
 
 # Data {#sec-data}
 ## Overview
-Our study utilizes polling data from FiveThirtyEight's 2024 Presidential Election Forecast Database [@FiveThirtyEightPollingData2024], a comprehensive polling dataset maintained by ABC news. This database aggregates and standardizes polling results from various organizations, applying quality metrics and methodological assessments to each poll. In this section, we detail our selected variables, discuss key measurements, outline important limitations of our data, and our data cleaning process.
-
-Our analysis focuses on several key variables that directly influence polling accuracy and electoral predictions. @tbl-overview_data presents a sample of our dataset.
-
-## Poll Quality Variables
-
-@tbl-poll-metrics summarizes three primary metrics that assess poll quality in our dataset:
-
-- **Pollscore**: Represents "the error and bias attributable to a pollster, where negative numbers indicate better performance." Our data shows a mean pollscore of -1.06 (SD = 0.28), with values ranging from -1.50 to -0.50, indicating generally high-quality polling organizations in our sample.
-- **Numeric Grade**: A rating given to pollsters to indicate their quality and reliability. With a mean of 2.89 (SD = 0.10) and a range of 2.70 to 3.00, our dataset maintains high standards. We established a minimum threshold of 2.7 to ensure methodological rigor.
-- **Transparency Score**: A measure reflecting pollsters' transparency about their methodology, with 10 being the highest possible score. The data shows strong overall transparency with a mean of 8.59 (SD = 1.04), indicating that most polls in our sample maintain high standards of methodological disclosure.
-
-## Methodological Variables
-
-- **Methodology**: @fig-methodology-dist shows the distribution of polling approaches used to conduct the polls. Live Phone methods and Online Panels are the predominant methods, with hybrid approaches combining multiple methods (such as IVR/Online Panel/Text-to-Web) representing evolving polling techniques adapting to changing communication patterns.
-- **Sample Size**: @fig-sample-size illustrates the distribution of poll sample sizes, representing the total number of respondents participating in each poll. Our dataset shows considerable variation, with a mean of 1,114.76 respondents (SD = 583.72). The right-skewed distribution ranges from 450 to 4,253 respondents, with larger sample sizes typically associated with national polls.
-
-## Geographic and Temporal Variables
-
-- **State Coverage**: @tbl-state-polls reveals the distribution of polls across different U.S. states. National polls lead with 261 surveys, followed by concentrated polling in key battleground states: Pennsylvania (86), Wisconsin (82), and North Carolina (64). This distribution reflects strategic focus on states where the electoral outcome is less certain.
-- **End Date**: @fig-temporal-polling tracks polling frequency from July through October 2024. We observe increased activity during September and early October, with weekly poll counts peaking in late September. This pattern reflects intensified polling efforts as the election approaches.
+This study analyzes polling data from FiveThirtyEight's 2024 Presidential Election Forecast Database [@FiveThirtyEightPollingData2024]. The database, maintained by ABC News, provides standardized polling results from diverse polling organizations, with each poll receiving rigorous quality assessments and methodological evaluations. We examine both national and state-level polls conducted between July and October 2024, focusing on the presidential race between Kamala Harris and Donald Trump. @tbl-overview_data in the appendix presents a sample of our dataset.
 
 ## Outcome Variable
+Our primary dependent variable is candidate support percentage (`pct`), representing voter preferences between the two major candidates. @fig-candidate-support illustrates the distribution of support levels, indicating a competitive race where both Harris and Trump consistently receive between 40-50% support across polls. The relatively narrow range of these percentages underscores the importance of methodological precision in detecting meaningful differences in voter preference.
 
-- **Support Percentage**: @fig-candidate-support displays our primary dependent variable: the percentage of respondents expressing support for each candidate. The distribution reveals a competitive race between Donald Trump and Kamala Harris, with support levels typically ranging between 40-50% for both candidates.
+## Predictor Variables
+We identify several important predictors that influence polling accuracy and electoral predictions. These variables fall into two categories: poll quality metrics and survey characteristics.
 
+### Poll Quality Metrics
+@tbl-poll-metrics summarizes three fundamental quality metrics in our dataset:
+
+- **Pollscore**: A measure of polling organization performance, where negative values indicate better accuracy. Our data shows a mean pollscore of -1.06 (SD = 0.28, range: -1.50 to -0.50), suggesting consistently high-quality polling organizations in our sample.
+- **Numeric Grade**: An evaluation of pollster reliability on a standardized scale. With a mean of 2.89 (SD = 0.10, range: 2.70 to 3.00), our dataset maintains strong methodological standards. We established a minimum threshold of 2.7 to ensure rigor.
+- **Transparency Score**: A quantification of methodological disclosure (maximum: 10). Our sample demonstrates strong transparency practices with a mean of 8.59 (SD = 1.04), indicating thorough methodological documentation.
+
+### Survey Characteristics
+- **Methodology**: As shown in @fig-methodology-dist, polling approaches vary significantly. Traditional live phone interviews and online panels dominate, while hybrid methods combining multiple approaches (e.g., IVR/Online Panel/Text-to-Web) reflect adaptation to changing communication patterns.
+- **Sample Size**: @fig-sample-size illustrates substantial variation in respondent numbers, with polls averaging 1,114.76 respondents (SD = 583.72, range: 450-4,253). The right-skewed distribution reflects larger samples in national polls, with state-level polls typically using smaller, targeted samples.
+- **State**: @tbl-state-polls shows the distribution of polls across states, with 261 national surveys complemented by intensive polling in battleground states: Pennsylvania (86 polls), Wisconsin (82), and North Carolina (64). This distribution reflects strategic focus on electorally competitive regions.
+- **End Date**: @fig-temporal-polling tracks polling frequency over time, showing increased activity during September and early October 2024, with peak weekly frequencies in late September. This pattern captures intensified data collection as Election Day approaches.
 
 ## Measurement and Limitations
 There are several measurement and limitation considerations for our dataset:
 
 - **Poll Quality:** While our pollscore and numeric grade filters help ensure data quality, these metrics are based on historical performance and may not fully capture current methodological improvements or deterioration.
-- **Temporal Dynamics:** Our dataset provides discrete snapshots of voter preferences rather than continuous measurement. This limitation is particularly relevant given the rapid evolution of political narratives and voter sentiment during presidential campaigns.
+- **Temporal Dynamics:** Our dataset provides discrete snapshots of voter preferences rather than continuous measurement. This limitation is particularly relevant given the fast evolution of political narratives and voter sentiment during presidential campaigns.
 - **Geographic Coverage:** Although we have national and state-level polling data, coverage varies by state. Battleground states typically have more frequent polling, while safer states may have sparse data, potentially affecting our state-level predictions.
 - **Response Bias:** Despite careful methodology by pollsters, self-selection bias in survey participation and social desirability bias in responses remain potential concerns.
 
-## Cleaning Process and Analysis
+## Data Processing and Analysis
 
-The data cleaning process employed R [@citeR] along with several specialized packages: tidyverse [@tidyverse] for data manipulation, dplyr [@dplyr] for data transformation, janitor [@janitor] for consistent naming conventions, and lubridate [@lubridate] for date handling. 
+Our analysis employs R [@citeR] with specialized packages: tidyverse [@tidyverse] for data manipulation, dplyr [@dplyr] for transformation, janitor [@janitor] for naming standardization, and lubridate [@lubridate] for date handling. The data cleaning process, detailed in @sec-datacleaning, involved filtering for high-quality polls (numeric_grade $≥$ 2.7), standardizing geographic information, and creating consistent date formats and candidate indicators.
 
-Our cleaning process followed several key steps:
-
-1. Filtered for high-quality polls using a minimum threshold (*numeric_grade* $≥$ 2.7)
-2. Limited temporal coverage to post-campaign announcement period (after July 21, 2024)
-3. Standardized geographic data:
-
-  > i. Coded missing state information as "National" polls
-  > ii. Verified state names for consistency
-  
-4. Transformed key variables:
-
-  > i. Converted *End Date* values to standardized date format
-  > ii. Calculated absolute supporter numbers from percentages and sample sizes
-  > iii. Created binary candidate indicators (Harris = 1, Trump = 0)
-
-Other variable such as ... were not selected for our analysis because ...
-
-Our variable selection process prioritized measures essential for polling accuracy and electoral prediction while eliminating redundant or non-informative fields. We retained key poll quality metrics including *pollscore* and *numeric_grade*, which provide crucial information about the reliability of each survey. Sample characteristics such as *sample size* and *methodology* were preserved to account for differences in polling precision. *State* and polling *end_date* information were maintained to capture regional variations and time-dependent patterns in voter preferences. 
-
-We excluded several variables that offered little additional analytical value, such as *population_full*, which duplicated information available in other fields, and administrative data that did not directly influence predictions. This focused approach to variable selection allowed us to preserve all information necessary for accurate electoral forecasting.
+Our variable selection prioritized metrics that directly influence polling accuracy and electoral forecasting while excluding variables that could introduce noise or redundancy. We retained `pollscore` and `numeric_grade` as established measures of polling reliability, while excluding related but less precise metrics such as `pollster_rating_name`. Geographic and temporal variables (`state`, `end_date`) were essential for capturing regional variations and time-series patterns. We deliberately omitted variables that could introduce partisan bias (e.g., `sponsor_candidate`, `endorsed_candidate_name`) or duplicate existing information (e.g., `population_full`, `display_name`). Administrative identifiers (`poll_id`, `race_id`) and URLs were excluded as they didn't serve analytical purposes. This focused selection maintains analytical rigor while avoiding the risks of over-parameterization.
 
 # Modeling Support for the Candidates {#sec-model}
 
@@ -172,12 +144,14 @@ mlr_trump_model <- readRDS(here::here(("models/mlr_trump_model.rds")))
 
 ## Multiple Linear Regression Models
 
-Recognizing the multifaceted nature of voter support, we extended our analysis using multiple linear regression (MLR) models. The initial model incorporated several predictors believed to influence polling outcomes:
+Recognizing the complex nature of voter support, we extended our analysis using multiple linear regression (MLR) models. The initial model incorporated several predictors believed to influence polling outcomes:
 
 $$
 \text{pct} = \beta_0 + \beta_1 \times \text{numeric\_grade} + \beta_2 \times \text{pollscore} + \beta_3 \times \text{transparency\_score}
 $$
-$$ + \beta_4 \times \text{sample\_size} + \beta_5 \times \text{state} + \beta_6 \times \text{methodology} + \epsilon
+
+$$ 
++ \beta_4 \times \text{sample\_size} + \beta_5 \times \text{state} + \beta_6 \times \text{methodology} + \epsilon
 $$
 
 Variables were selected based on their relevance to polling accuracy and potential influence on voter preferences. Pollster ratings and transparency scores were included to account for differences in pollster reliability. State-level data were incorporated to capture regional variations in support. Sample size and methodology were included to control for their potential impact on polling results (see @fig-mlr-harris and @fig-mlr-trump as it illustrates residual plots and Q-Q plots).
@@ -202,7 +176,8 @@ mlr_harris_model_refined <- readRDS(here::here(("models/mlr_harris_model_refined
 
 To assess multicollinearity among predictors, we calculated the Variance Inflation Factor (VIF) for each variable(@tbl-harris-vif). High VIF values suggest multicollinearity, which can compromise the stability of coefficient estimates.
 
-The initial VIF analysis revealed multicollinearity concerns, particularly with transparency score and methodology. To address this, we refined the model by removing less significant predictors with high VIF values, resulting in:
+The initial VIF analysis demonstrates multicollinearity concerns, particularly with transparency score and methodology. To address this, we refined the model by removing less significant predictors with high VIF values, resulting in:
+
 $$
 \text{pct} = \beta_0 + \beta_1 \times \text{numeric\_grade} + \beta_2 \times \text{pollscore} + \beta_3 \times \text{sample\_size} + \beta_4 \times \text{state}
 $$
@@ -243,7 +218,7 @@ All statistical analyses were conducted using [@citeR]. The lm() function was us
 
 After finalizing the model selection process, we evaluated the predictive performance of our models for Kamala Harris and Donald Trump using national-level polling data. Focusing on national polls, we split the dataset into training and test sets, maintaining consistency with a fixed random seed to ensure reproducibility. For each candidate, we developed a multiple linear regression model using pollscore and a log-transformed sample_size as predictors, capturing factors pertinent to national-level polling dynamics.
 
-We then trained the models on the training subset and generated predictions for the test subset, evaluating model accuracy using the Root Mean Squared Error (RMSE). The RMSE metric quantifies the average prediction error in the test set, offering an indication of each model’s reliability in predicting future national poll outcomes. The Harris model yielded an RMSE of 3.12, while the Trump model’s RMSE was 2.40, indicating that both models provide reasonably accurate predictions, with the Trump model demonstrating slightly lower average error in predicting national polling support. These results reflect the models’ robustness and highlight their utility for assessing national-level candidate support.
+We then trained the models on the training subset and generated predictions for the test subset, evaluating model accuracy using the Root Mean Squared Error (RMSE). The RMSE metric quantifies the average prediction error in the test set, providing an indication of each model’s reliability in predicting future national poll outcomes. The Harris model yielded an RMSE of 3.12, while the Trump model’s RMSE was 2.40, indicating that both models provide reasonably accurate predictions, with the Trump model demonstrating slightly lower average error in predicting national polling support. These results reflect the models’ robustness and highlight their utility for assessing national-level candidate support.
 
 
 ```{r}
@@ -368,95 +343,95 @@ kable(electoral_votes_table, caption = "Electoral Votes for Each Candidate", col
 #| fig.height: 5
 #| fig.cap: "Predicted Vote Percentages by State"
 
-# Melt data for easier plotting
-prediction_melted <- melt(
-  prediction_comparison, 
-  id.vars = c("state", "electoral_votes", "winner"),
-  measure.vars = c("predicted_pct_harris", "predicted_pct_trump")
-)
-
-# Rename melted variables for readability
-colnames(prediction_melted)[colnames(prediction_melted) == "variable"] <- "candidate"
-prediction_melted$candidate <- ifelse(
-  prediction_melted$candidate == "predicted_pct_harris", 
-  "Harris", 
-  "Trump"
-)
-
-# Calculate the midpoint to split the states
-n_states <- length(unique(prediction_melted$state))
-midpoint <- ceiling(n_states / 2)
-
-# Order states by electoral votes in descending order for better visualization
-states_order <- prediction_melted %>%
-  distinct(state, electoral_votes) %>%
-  arrange(desc(electoral_votes)) %>%
-  pull(state)
-
-# Split the states into two groups
-left_states <- states_order[1:midpoint]
-right_states <- states_order[(midpoint + 1):length(states_order)]
-
-# Create two separate datasets
-prediction_left <- prediction_melted %>%
-  filter(state %in% left_states) %>%
-  mutate(state = factor(state, levels = left_states))  # Ensure consistent ordering
-
-prediction_right <- prediction_melted %>%
-  filter(state %in% right_states) %>%
-  mutate(state = factor(state, levels = right_states))  # Ensure consistent ordering
-
-# Function to create individual plots to avoid repetition
-create_plot <- function(data, show_legend = FALSE) {
-  ggplot(data, aes(x = reorder(state, electoral_votes), y = value, fill = candidate)) +
-    geom_bar(
-      stat = "identity", 
-      position = position_dodge(width = 0.9), 
-      width = 0.5  # Reduced bar width for more spacing
-    ) +
-    coord_flip() +
-    labs(
-      x = NULL,
-      y = "Predicted Vote Percentage (%)"
-    ) +
-    scale_fill_manual(values = c("Harris" = "#87CEFA", "Trump" = "#F08080")) +
-    theme_minimal() +
-    theme(
-      text = element_text(size = 9),  # Reduced overall text size
-      axis.text.y = element_text(size = 8, margin = margin(r = 5)),  # Smaller state labels
-      axis.text.x = element_text(size = 9),
-      legend.title = element_blank(),
-      legend.position = ifelse(show_legend, "top", "none"),  # Place legend only for the first plot
-      legend.text = element_text(size = 9),
-      panel.grid.major.y = element_blank(),
-      plot.margin = margin(l = 10, r = 15, t = 10, b = 10)  # Adjusted margins
-    ) +
-    geom_text(
-      aes(label = round(value, 1)),
-      position = position_dodge(width = 0.9),
-      hjust = -0.2,    # Adjusted horizontal position for labels
-      size = 1.5,      # Smaller label size
-      show.legend = FALSE
-    ) +
-    scale_y_continuous(
-      expand = expansion(mult = c(0, 0.2)),  # Increased expansion for labels
-      limits = c(0, 75)  # Adjust based on your data
-    )
-}
-
-# Create the left plot with legend
-plot_left <- create_plot(prediction_left, show_legend = TRUE)
-
-# Create the right plot without legend
-plot_right <- create_plot(prediction_right, show_legend = FALSE)
-
-# Combine the plots side by side with legend on top
-combined_plot <- plot_left + plot_right +
-  plot_layout(guides = "collect") &  # Collects the legend at the top
-  theme(legend.position = "top")  # Places the combined legend at the top
-
-# Print the combined plot
-combined_plot
+# # Melt data for easier plotting
+# prediction_melted <- melt(
+#   prediction_comparison, 
+#   id.vars = c("state", "electoral_votes", "winner"),
+#   measure.vars = c("predicted_pct_harris", "predicted_pct_trump")
+# )
+# 
+# # Rename melted variables for readability
+# colnames(prediction_melted)[colnames(prediction_melted) == "variable"] <- "candidate"
+# prediction_melted$candidate <- ifelse(
+#   prediction_melted$candidate == "predicted_pct_harris", 
+#   "Harris", 
+#   "Trump"
+# )
+# 
+# # Calculate the midpoint to split the states
+# n_states <- length(unique(prediction_melted$state))
+# midpoint <- ceiling(n_states / 2)
+# 
+# # Order states by electoral votes in descending order for better visualization
+# states_order <- prediction_melted %>%
+#   distinct(state, electoral_votes) %>%
+#   arrange(desc(electoral_votes)) %>%
+#   pull(state)
+# 
+# # Split the states into two groups
+# left_states <- states_order[1:midpoint]
+# right_states <- states_order[(midpoint + 1):length(states_order)]
+# 
+# # Create two separate datasets
+# prediction_left <- prediction_melted %>%
+#   filter(state %in% left_states) %>%
+#   mutate(state = factor(state, levels = left_states))  # Ensure consistent ordering
+# 
+# prediction_right <- prediction_melted %>%
+#   filter(state %in% right_states) %>%
+#   mutate(state = factor(state, levels = right_states))  # Ensure consistent ordering
+# 
+# # Function to create individual plots to avoid repetition
+# create_plot <- function(data, show_legend = FALSE) {
+#   ggplot(data, aes(x = reorder(state, electoral_votes), y = value, fill = candidate)) +
+#     geom_bar(
+#       stat = "identity", 
+#       position = position_dodge(width = 0.9), 
+#       width = 0.5  # Reduced bar width for more spacing
+#     ) +
+#     coord_flip() +
+#     labs(
+#       x = NULL,
+#       y = "Predicted Vote Percentage (%)"
+#     ) +
+#     scale_fill_manual(values = c("Harris" = "#87CEFA", "Trump" = "#F08080")) +
+#     theme_minimal() +
+#     theme(
+#       text = element_text(size = 9),  # Reduced overall text size
+#       axis.text.y = element_text(size = 8, margin = margin(r = 5)),  # Smaller state labels
+#       axis.text.x = element_text(size = 9),
+#       legend.title = element_blank(),
+#       legend.position = ifelse(show_legend, "top", "none"),  # Place legend only for the first plot
+#       legend.text = element_text(size = 9),
+#       panel.grid.major.y = element_blank(),
+#       plot.margin = margin(l = 10, r = 15, t = 10, b = 10)  # Adjusted margins
+#     ) +
+#     geom_text(
+#       aes(label = round(value, 1)),
+#       position = position_dodge(width = 0.9),
+#       hjust = -0.2,    # Adjusted horizontal position for labels
+#       size = 1.5,      # Smaller label size
+#       show.legend = FALSE
+#     ) +
+#     scale_y_continuous(
+#       expand = expansion(mult = c(0, 0.2)),  # Increased expansion for labels
+#       limits = c(0, 75)  # Adjust based on your data
+#     )
+# }
+# 
+# # Create the left plot with legend
+# plot_left <- create_plot(prediction_left, show_legend = TRUE)
+# 
+# # Create the right plot without legend
+# plot_right <- create_plot(prediction_right, show_legend = FALSE)
+# 
+# # Combine the plots side by side with legend on top
+# combined_plot <- plot_left + plot_right +
+#   plot_layout(guides = "collect") &  # Collects the legend at the top
+#   theme(legend.position = "top")  # Places the combined legend at the top
+# 
+# # Print the combined plot
+# combined_plot
 
 ```
 
@@ -473,11 +448,11 @@ To project the outcome of the 2024 U.S. Presidential election between Kamala Har
 
 5. **Determination of State Winners**: Based on the aggregated predicted percentages, we determined the projected winner in each state. A candidate was designated as the winner if their predicted polling percentage exceeded that of their opponent. In cases where the predicted percentages were equal, we randomly assigned the winner using a stochastic approach to reflect the uncertainty inherent in tied predictions.
 
-6. **Calculation of Total Electoral Votes**: We summed the electoral votes from all states won by each candidate to compute their total electoral vote counts. This calculation is critical, as securing at least 270 electoral votes is necessary to win the presidency under the U.S. electoral system.
+6. **Calculation of Total Electoral Votes**: We summed the electoral votes from all states won by each candidate to compute their total electoral vote counts. This calculation is necessary, as securing at least 270 electoral votes is necessary to win the presidency under the U.S. electoral system.
 
 7. **Interpretation of Results**: The analysis indicated that Kamala Harris is projected to receive a total of **306 electoral votes**, while Donald Trump is projected to receive **232 electoral votes**. Harris surpasses the 270-vote threshold required for victory, suggesting a strong position in the Electoral College based on our predictions. This outcome implies that Harris is likely to win the election, given her substantial lead in projected electoral votes (see @fig-map-state-winner).
 
-This statistical approach effectively connects state-level polling data to Electoral College projections. By employing multiple linear regression models to predict polling percentages and integrating these predictions with the electoral vote framework, we provide a detailed analysis of potential election results. This methodology reflects the structure of the U.S. electoral system and offers valuable insights into how predicted voter support may translate into electoral success.
+This statistical approach effectively connects state-level polling data to Electoral College projections. By employing multiple linear regression models to predict polling percentages and integrating these predictions with the electoral vote framework, we provide a detailed analysis of potential election results. This methodology reflects the structure of the U.S. electoral system and provides valuable results into how predicted voter support may translate into electoral success.
 
 ```{r}
 #| echo: false
@@ -561,7 +536,7 @@ ggplot(data = map_data_final) +
 
 In this paper, we developed statistical models to forecast the outcome of the 2024 United States presidential election between Kamala Harris and Donald Trump. Utilizing polling data from FiveThirtyEight's 2024 Presidential Election Forecast Database, we analyzed factors influencing candidate support through linear and multiple linear regression models. We incorporated variables such as pollster rating, transparency score, sample size, and state-level data to predict the percentage of support for each candidate across different states. By aggregating these state-level predictions and integrating electoral vote allocations, we projected that Kamala Harris would receive 306 electoral votes, surpassing the 270 required to win the presidency.
 
-## Insights on Polling Methodologies and Voter Support
+## Polling Methodologies and Voter Support
 
 Our analysis indicates that pollster rating and state-level factors significantly influence reported support for both candidates. For Kamala Harris, the multiple linear regression model shows that higher pollster ratings and certain states are associated with increased support percentages. This suggests that polls conducted by more reliable pollsters may report higher support for Harris, possibly due to methodological rigor or sampling techniques that capture her voter base more accurately. For Donald Trump, pollster transparency and state differences play a notable role, indicating that how openly pollsters disclose their methodologies can affect the reported support for Trump.
 
@@ -587,7 +562,7 @@ To enhance the accuracy of electoral forecasts, future research should consider 
 ## YouGov Pollster Methodology Overview and Evaluation
 YouGov[@YouGov] utilizes an online panel with non-probability sampling, adjusting for demographic imbalances through weighting techniques. This approach ensures that survey results are representative of the broader population, despite the limitations of non-random sampling.
 
-The primary strength of YouGov's methodology lies in its efficiency and cost-effectiveness, enabling rapid data collection. However, the reliance on non-probability sampling can introduce biases, which are partially mitigated by their rigorous weighting process. While effective in providing timely insights, this method requires careful consideration of its limitations in representativeness.
+The primary strength of YouGov's methodology lies in its efficiency and cost-effectiveness, enabling quick data collection. However, the reliance on non-probability sampling can introduce biases, which are partially mitigated by their rigorous weighting process. While effective in providing timely findings, this method requires careful consideration of its limitations in representativeness.
 
 ### Survey Population and Sampling
 YouGov’s surveys target U.S. adults, utilizing an opt-in online panel that covers approximately 95% of the population. For general population surveys, they typically sample between 1,000 and 2,000 respondents. These participants are selected to reflect key demographic and political characteristics, ensuring the sample is representative of the broader population.
@@ -608,11 +583,11 @@ YouGov[@YouGov] employs several measures to maintain data quality:
 To address potential biases, [@YouGov] applies statistical weighting based on demographics (age, gender, race, education) and political factors (voting behavior, party identification). Their weighting process considers multiple characteristics simultaneously to better reflect real-world demographic intersections.
 
 ### Strengths and Limitations
-The key strengths of YouGov’s methodology are its rapid data collection, cost-effectiveness, and capacity to track public opinion trends over time. However, the reliance on non-probability sampling can introduce biases, and the online-only format may lead to underrepresentation of certain populations. While sophisticated weighting techniques mitigate some of these issues, they cannot fully eliminate all potential biases.
+The key strengths of YouGov’s methodology are its efficient data collection, cost-effectiveness, and capacity to track public opinion trends over time. However, the reliance on non-probability sampling can introduce biases, and the online-only format may lead to underrepresentation of certain populations. While sophisticated weighting techniques mitigate some of these issues, they cannot fully eliminate all potential biases.
 
 \newpage
 ## Idealized Survey Methodology
-This idealized survey methodology presents a structured plan for forecasting the U.S. presidential election within a $100,000 budget. It balances statistical rigor with practicality to ensure accurate predictions of both the popular vote and Electoral College outcomes. The methodology includes advanced sampling techniques, robust survey design, and comprehensive data analysis to capture key demographic and political variables. By addressing potential biases and focusing on cost-effective data collection, this plan ensures reliable and representative insights into voter behavior.
+This idealized survey methodology presents a structured plan for forecasting the U.S. presidential election within a $100,000 budget. It balances statistical rigor with practicality to ensure accurate predictions of both the popular vote and Electoral College outcomes. The methodology includes developed sampling techniques, robust survey design, and detailed data analysis to capture key demographic and political variables. By addressing potential biases and focusing on cost-effective data collection, this plan ensures reliable and representative results into voter behavior.
 
 ### Sampling Strategy
 The target population for this survey is eligible voters across the United States who are likely to participate in the upcoming presidential election. To achieve a representative sample:
@@ -624,7 +599,7 @@ The target population for this survey is eligible voters across the United State
 - **Addressing Sampling Biases:** Apply weighting adjustments to account for underrepresented groups and ensure that the sample mirrors the overall voter population.
 
 ### Recruitment Plan
-To recruit respondents effectively, we will leverage online panels, social media advertising, and partnerships with community organizations to reach a diverse audience. Offering modest incentives, such as $5 digital gift cards, encourages participation while managing costs. Quota sampling within strata maintains demographic balance, and follow-up reminders along with mobile-friendly survey formats help reduce non-response bias. The data collection will occur over a two-week period to capture timely opinions without introducing temporal biases.
+To recruit respondents effectively, we will utilize online panels, social media advertising, and partnerships with community organizations to reach a diverse audience. Offering modest incentives, such as $5 digital gift cards, encourages participation while managing costs. Quota sampling within strata maintains demographic balance, and follow-up reminders along with mobile-friendly survey formats help reduce non-response bias. The data collection will occur over a two-week period to capture timely opinions without introducing temporal biases.
 
 ### Survey Design Elements
 The survey is crafted to elicit accurate and meaningful responses:
@@ -660,12 +635,31 @@ A budget allocation of $100,000 ensures all aspects are adequately funded:
 - **Administrative Costs:** $2,000 for project management and miscellaneous expenses.
 
 ### Conclusion
-This methodology presents a feasible and thorough plan to forecast the US presidential election within the specified budget. By adhering to best practices in survey design and execution, and by carefully considering both the popular vote and electoral college implications, the survey aims to provide accurate and reliable insights into voter intentions.
+This methodology presents a feasible and thorough plan to forecast the US presidential election within the specified budget. By adhering to best practices in survey design and execution, and by carefully considering both the popular vote and electoral college implications, the survey aims to provide accurate and reliable results into voter intentions.
 
 
 \newpage
 
 # Appendix 
+
+## Data Processing Steps {#sec-datacleaning}
+Our cleaning process followed several key steps:
+
+1. Filtered for high-quality polls using a minimum threshold (*numeric_grade* $≥$ 2.7)
+2. Limited temporal coverage to post-campaign announcement period (after July 21, 2024)
+3. Standardized geographic data:
+
+  > i. Coded missing state information as "National" polls
+  > ii. Verified state names for consistency
+  
+4. Transformed key variables:
+
+  > i. Converted *End Date* values to standardized date format
+  > ii. Calculated absolute supporter numbers from percentages and sample sizes
+  > iii. Created binary candidate indicators (Harris = 1, Trump = 0)
+  
+  
+## Data Tables and Figures
 
 ```{r}
 #| echo: false
@@ -685,12 +679,34 @@ data_overview <- data_overview %>%
   sample_n(5) %>%
   t()
 
+colnames(data_overview) <- paste("Row", 1:ncol(data_overview))
+
 # Display the transposed table
-kable(data_overview)
+kable(data_overview)%>%
+  kable_styling(font_size = 8) %>%
+  column_spec(1, width = "2.5cm") %>%
+  column_spec(2:ncol(data_overview), width = "2cm")
 ```
 @tbl-overview_data provides an overview of key variables from different polls conducted by various organizations, including Washington Post/George Mason University, CNN/SSRS, Siena/NYT, and YouGov. It highlights differences in methodologies, such as live phone interviews, online panels, and mixed methods, as well as sample sizes ranging from 708 to 1,142 respondents. Pollscores, which reflect pollster reliability, vary from -1.5 (indicating higher reliability for Siena/NYT) to -0.6 (for CNN/SSRS). Transparency scores show that YouGov and CNN/SSRS exhibit full transparency with perfect scores of 10.
 
-The table also includes data on candidate support percentages, with Donald Trump polling between 42% and 48% across various states and Kamala Harris receiving 48% in Michigan. This snapshot reveals the diversity in poll designs, geographical focus, and methodological rigor, which are crucial for understanding the variability in polling data.
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| label: fig-candidate-support
+#| fig-cap: Distribution of Support Percentages by Candidate
+
+ggplot(data, aes(x = pct, fill = candidate_name)) +
+  geom_histogram(bins = 30, position = "identity") +
+  facet_wrap(~ candidate_name) +
+  labs(x = "Percentage of Support",
+       y = "Count") +
+  scale_fill_discrete(name = "Candidates") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+@fig-candidate-support shows the distribution of support percentages for Donald Trump and Kamala Harris. Both distributions are centered around the mid-40% to mid-50% range, reflecting a competitive race. Trump's support is more concentrated around the 45-50% range, indicating relatively consistent polling results. Harris’s distribution is slightly more varied, suggesting greater fluctuation in her polling support. This visualization highlights the close contest between the two candidates, with neither consistently achieving overwhelming support across polls.
+
 
 ```{r}
 #| echo: false
@@ -725,6 +741,7 @@ data %>%
 
 The average pollscore is -1.06, with a median of -1.10, reflecting generally high reliability across pollsters (lower scores indicate greater reliability). The numeric grade, which measures methodological rigor, averages 2.89 with minimal variability (SD of 0.10). The transparency score averages 8.59, suggesting most polls are transparent about their methods, though scores range from 6.00 to 10.00. These statistics highlight the overall quality and variation in polling practices used in the analysis.
 
+
 ```{r}
 #| echo: false
 #| message: false
@@ -743,23 +760,24 @@ data %>%
 ```
 @fig-methodology-dist illustrates the distribution of various polling methodologies used in the dataset. The most frequently employed methods include "Live Phone," "Online Panel," and "Live Phone/Text-to-Web," highlighting a preference for direct communication methods combined with online components. Less common methodologies, such as "Live Phone/Online Panel/Text" and "Live Phone/Email," appear at the lower end of the distribution. This diversity in polling methods reflects the varied approaches taken by pollsters to gather representative data, balancing traditional techniques with modern, web-based options.
 
+
 ```{r}
 #| echo: false
 #| message: false
 #| warning: false
-#| label: fig-candidate-support
-#| fig-cap: Distribution of Support Percentages by Candidate
+#| label: fig-sample-size
+#| fig-cap: Distribution of Poll Sample Sizes
 
-ggplot(data, aes(x = pct, fill = candidate_name)) +
-  geom_histogram(bins = 30, position = "identity") +
-  facet_wrap(~ candidate_name) +
-  labs(x = "Percentage of Support",
-       y = "Count") +
-  scale_fill_discrete(name = "Candidates") +
+data %>%
+  ggplot(aes(x = sample_size)) +
+  geom_histogram(binwidth = 100) +
   theme_minimal() +
-  theme(legend.position = "bottom")
+  labs(x = "Sample Size",
+       y = "Count") +
+  scale_x_continuous(breaks = seq(0, max(data$sample_size), by = 500))
 ```
-@fig-candidate-support shows the distribution of support percentages for Donald Trump and Kamala Harris. Both distributions are centered around the mid-40% to mid-50% range, reflecting a competitive race. Trump's support is more concentrated around the 45-50% range, indicating relatively consistent polling results. Harris’s distribution is slightly more varied, suggesting greater fluctuation in her polling support. This visualization highlights the close contest between the two candidates, with neither consistently achieving overwhelming support across polls.
+
+@fig-sample-size shows the distribution of sample sizes across the polls in the dataset. The majority of polls have sample sizes clustered around 1,000 respondents, which is a typical size for achieving a balance between precision and cost. A few polls have significantly larger sample sizes, extending beyond 2,000, with some even exceeding 4,000 respondents. This suggests that while most polls aim for a moderate sample size, there are instances where more extensive sampling is conducted, possibly for greater accuracy or in significant regions. The distribution reflects the common practice of balancing statistical reliability with logistical constraints.
 
 ```{r}
 #| echo: false
@@ -774,8 +792,10 @@ data %>%
   rename("State" = state,
          "Number of Polls" = n) %>%
   kable(format = "latex", booktabs = TRUE)
+
 ```
-@tbl-state-polls illustrates the number of polls conducted over time, showing weekly fluctuations in polling activity. There is a noticeable increase in the number of polls around mid-September, peaking at over 160 polls in a week, followed by a decline as the election date approaches. This pattern suggests heightened polling activity during key points in the campaign, likely driven by major events or debates, before tapering off closer to the election. The variability highlights how polling frequency can change in response to the evolving political landscape.
+
+@tbl-state-polls illustrates the number of polls conducted over time, showing weekly fluctuations in polling activity. There is a noticeable increase in the number of polls around mid-September, peaking at over 160 polls in a week, followed by a decline as the election date approaches. This pattern suggests heightened polling activity during key points in the campaign, likely caused by major events or debates, before tapering off closer to the election. The variability highlights how polling frequency can change in response to the evolving political landscape.
 
 ```{r}
 #| echo: false
@@ -796,25 +816,8 @@ data %>%
        y = "Number of Polls") +
   scale_x_date(date_breaks = "2 weeks", date_labels = "%b %d")
 ```
-@fig-temporal-polling provides the polling frequency by state, highlighting where polling efforts were concentrated. National polls dominate with 261 instances, while key battleground states like Pennsylvania (86 polls), Wisconsin (82 polls), and North Carolina (64 polls) also see significant attention. These states are critical for determining election outcomes, explaining the higher frequency. Conversely, states like Missouri, Montana, and Nebraska show fewer polls (4 each), reflecting less competitive races or a perceived lower impact on the overall election result. This distribution underscores the strategic focus on swing states in polling efforts.
+@fig-temporal-polling provides the polling frequency by state, highlighting where polling efforts were concentrated. National polls dominate with 261 instances, while key battleground states like Pennsylvania (86 polls), Wisconsin (82 polls), and North Carolina (64 polls) also see significant attention. These states are important for determining election outcomes, explaining the higher frequency. Conversely, states like Missouri, Montana, and Nebraska show fewer polls (4 each), reflecting less competitive races or a perceived lower impact on the overall election result. This distribution underscores the strategic focus on swing states in polling efforts.
 
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-#| label: fig-sample-size
-#| fig-cap: Distribution of Poll Sample Sizes
-
-data %>%
-  ggplot(aes(x = sample_size)) +
-  geom_histogram(binwidth = 100) +
-  theme_minimal() +
-  labs(x = "Sample Size",
-       y = "Count") +
-  scale_x_continuous(breaks = seq(0, max(data$sample_size), by = 500))
-```
-
-@fig-sample-size shows the distribution of sample sizes across the polls in the dataset. The majority of polls have sample sizes clustered around 1,000 respondents, which is a typical size for achieving a balance between precision and cost. A few polls have significantly larger sample sizes, extending beyond 2,000, with some even exceeding 4,000 respondents. This suggests that while most polls aim for a moderate sample size, there are instances where more extensive sampling is conducted, possibly for greater accuracy or in critical regions. The distribution reflects the common practice of balancing statistical reliability with logistical constraints.
 
 ```{r}
 #| echo: false
