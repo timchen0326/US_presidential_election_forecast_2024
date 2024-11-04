@@ -39,10 +39,10 @@ This repository provides a forecast for the 2024 U.S. Presidential Election betw
 - **scripts/**: R scripts used in data simulation, processing, analysis, and modeling.
   - `00-simulate_data.R`: Script for generating simulated data.
   - `01-test_simulated_data.R`: Tests the integrity of simulated data.
-  - `03-clean_data.R`: Cleans the raw data for analysis.
-  - `04-test_analysis_data.R`: Tests the cleaned data for analysis readiness.
-  - `05-exploratory_data_analysis.R`: Performs exploratory data analysis (EDA).
-  - `06-model_data.R`: Builds and refines models for analysis.
+  - `02-clean_data.R`: Cleans the raw data for analysis.
+  - `03-test_analysis_data.R`: Tests the cleaned data for analysis readiness.
+  - `04-exploratory_data_analysis.R`: Performs exploratory data analysis (EDA).
+  - `05-model_data.R`: Builds and refines models for analysis.
 
 - `.gitignore`: Lists files and directories ignored by Git.
 - `README.md`: This file, providing an overview of the project structure.
