@@ -634,6 +634,101 @@ A budget allocation of $100,000 ensures all aspects are adequately funded:
 - **Quality Control Measures:** $3,000 for implementing validation systems and CAPTCHA services.
 - **Administrative Costs:** $2,000 for project management and miscellaneous expenses.
 
+### Google Survey Link
+https://forms.gle/81vCBvH8t7B9NfJ69
+
+### Google Survey 
+**U.S. Presidential Election Survey 2024**
+
+-This survey is part of a research study aimed at forecasting the 2024 U.S. Presidential Election. Your responses are confidential and will be used solely for research purposes. This survey will take approximately 5 minutes to complete.
+
+
+**Are you eligible to vote in the 2024 U.S. Presidential Election?**
+
+-Yes
+-No
+
+**Are you planning to vote in the upcoming 2024 U.S. Presidential Election?**
+
+-Yes
+-No
+-Maybe
+
+**What is your current party affiliation?**
+-Democratic Party
+-Republican Party
+-Independent
+-Other (please specify)
+-Prefer not to say
+
+**Did you vote in the 2020 U.S. Presidential Election?**
+-Yes
+-No
+-Prefer not to say
+
+**If the presidential election were held today, which candidate would you most likely vote for?**
+-Kamala Harris (Democratic Party)
+-Donald Trump (Republican Party)
+-Another candidate (please specify)
+-Undecided
+-Prefer not to say
+
+**How likely are you to vote in the 2024 U.S. Presidential Election?**
+
+Least likely | 1 | 2 | 3 | 4 | 5 | Most likely
+
+
+**What is your age?**
+
+
+**What is your gender?**
+-Male
+-Female
+-Non-binary/Third gender
+-Prefer not to say
+
+**What is your race/ethnicity?**
+-White
+-Black or African American
+-Hispanic or Latino
+-Asian
+-Native American or Alaska Native
+-Native Hawaiian or Pacific Islander
+-Prefer not to say
+-Other (please specify)
+
+**What is your highest level of education?**
+-Less than high school
+-High school graduate
+-Some college
+-Bachelor’s degree
+-Postgraduate degree
+-Prefer not to say
+
+**What is your approximate annual household income?**
+-Less than 25,000
+-25,000 to 49,999
+-50,000 to 74,999
+-75,000 to 99,999
+-100,000 or more
+-Prefer not to say
+
+**To ensure the quality of our data, please select "Blue" from the options below:**
+
+- Red
+- Blue
+- Green
+- Yellow
+
+---
+
+**Conclusion**
+
+Thank you for your participation!  
+Your responses have been recorded.
+
+
+
 ### Conclusion
 This methodology presents a feasible and thorough plan to forecast the US presidential election within the specified budget. By adhering to best practices in survey design and execution, and by carefully considering both the popular vote and electoral college implications, the survey aims to provide accurate and reliable results into voter intentions.
 
