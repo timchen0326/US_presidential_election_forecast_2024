@@ -634,6 +634,101 @@ A budget allocation of $100,000 ensures all aspects are adequately funded:
 - **Quality Control Measures:** $3,000 for implementing validation systems and CAPTCHA services.
 - **Administrative Costs:** $2,000 for project management and miscellaneous expenses.
 
+### Google Survey Link
+https://forms.gle/81vCBvH8t7B9NfJ69
+
+### Google Survey 
+**U.S. Presidential Election Survey 2024**
+
+-This survey is part of a research study aimed at forecasting the 2024 U.S. Presidential Election. Your responses are confidential and will be used solely for research purposes. This survey will take approximately 5 minutes to complete.
+
+
+**Are you eligible to vote in the 2024 U.S. Presidential Election?**
+
+-Yes
+-No
+
+**Are you planning to vote in the upcoming 2024 U.S. Presidential Election?**
+
+-Yes
+-No
+-Maybe
+
+**What is your current party affiliation?**
+-Democratic Party
+-Republican Party
+-Independent
+-Other (please specify)
+-Prefer not to say
+
+**Did you vote in the 2020 U.S. Presidential Election?**
+-Yes
+-No
+-Prefer not to say
+
+**If the presidential election were held today, which candidate would you most likely vote for?**
+-Kamala Harris (Democratic Party)
+-Donald Trump (Republican Party)
+-Another candidate (please specify)
+-Undecided
+-Prefer not to say
+
+**How likely are you to vote in the 2024 U.S. Presidential Election?**
+
+Least likely | 1 | 2 | 3 | 4 | 5 | Most likely
+
+
+**What is your age?**
+
+
+**What is your gender?**
+-Male
+-Female
+-Non-binary/Third gender
+-Prefer not to say
+
+**What is your race/ethnicity?**
+-White
+-Black or African American
+-Hispanic or Latino
+-Asian
+-Native American or Alaska Native
+-Native Hawaiian or Pacific Islander
+-Prefer not to say
+-Other (please specify)
+
+**What is your highest level of education?**
+-Less than high school
+-High school graduate
+-Some college
+-Bachelor’s degree
+-Postgraduate degree
+-Prefer not to say
+
+**What is your approximate annual household income?**
+-Less than 25,000
+-25,000 to 49,999
+-50,000 to 74,999
+-75,000 to 99,999
+-100,000 or more
+-Prefer not to say
+
+**To ensure the quality of our data, please select "Blue" from the options below:**
+
+- Red
+- Blue
+- Green
+- Yellow
+
+---
+
+**Conclusion**
+
+Thank you for your participation!  
+Your responses have been recorded.
+
+
+
 ### Conclusion
 This methodology presents a feasible and thorough plan to forecast the US presidential election within the specified budget. By adhering to best practices in survey design and execution, and by carefully considering both the popular vote and electoral college implications, the survey aims to provide accurate and reliable results into voter intentions.
 
@@ -833,7 +928,7 @@ ggplot(harris_data, aes(x = sample_size, y = pct)) +
   labs(x = "Sample Size",
        y = "Percentage")
 ```
-
+@fig-harris-samplesize-supportpct displays a scatter plot with a linear regression line showing the relationship between sample size and the percentage of support for Kamala Harris. The plot suggests a very weak positive correlation, as indicated by the near-flat regression line. This implies that variations in sample size have a minimal effect on the percentage of support for Harris. The spread of data points shows a consistent range of support percentages across different sample sizes, reinforcing the observation that larger sample sizes do not significantly alter her support levels in the polls.
 ```{r}
 #| echo: false
 #| message: false
@@ -848,6 +943,7 @@ ggplot(trump_data, aes(x = sample_size, y = pct)) +
   labs(x = "Sample Size",
        y = "Percentage")
 ```
+@fig-trump-samplesize-supportpct shows a weak negative relationship between poll sample size and Trump's support percentage, as indicated by the slight downward slope of the regression line. While larger sample sizes are associated with a marginal decrease in reported support, the scattered distribution of data points suggests considerable variability, implying that other factors like pollster methodology or regional differences significantly influence the results. The narrow confidence interval around the trend line reflects a modest level of certainty in this weak relationship, though the presence of outliers highlights exceptions where larger samples do not necessarily align with the general trend.
 ```{r}
 #| echo: false
 #| message: false
@@ -865,6 +961,9 @@ plot(mlr_harris_model, which = c(1, 2))  # 1: Residuals vs Fitted, 2: Normal Q-Q
 par(mfrow = c(1, 1))  # Reset plot layout
 
 ```
+@fig-mlr-harris The **Residuals vs Fitted** plot (left) for Kamala Harris's multi-linear regression model indicates that most residuals are evenly distributed around the horizontal axis (residuals = 0), suggesting that the model's predictions are unbiased across different fitted values. However, the slight curve near the middle of the plot implies potential non-linearity or missing variables. Additionally, some points (e.g., labeled 263, 352, 370) are noticeable outliers, which may affect the model's accuracy.
+
+The **Q-Q plot** (right) shows the standardized residuals against the theoretical quantiles. The residuals mostly follow the straight line, indicating that they are approximately normally distributed. However, deviations at both tails (particularly on the left) suggest the presence of some extreme values, which could impact the normality assumption and model reliability.
 
 ```{r}
 #| echo: false
@@ -884,6 +983,11 @@ plot(mlr_trump_model, which = c(1, 2))  # 1: Residuals vs Fitted, 2: Normal Q-Q
 par(mfrow = c(1, 1))  # Reset plot layout
 
 ```
+@fig-mlr-trump, we observe diagnostic plots for Donald Trump's multi-linear regression model.
+
+The Residuals vs Fitted plot (left) shows that the residuals are scattered fairly evenly around the horizontal line at zero, indicating no major patterns of bias across the range of fitted values. However, the slight curve in the middle suggests potential mild non-linearity or missing variables in the model. A few outliers, such as observations 245, 379, and 263, stand out and may warrant further investigation to assess their influence on the model's performance.
+
+The Q-Q plot (right) for standardized residuals displays a relatively straight line, implying that the residuals are approximately normally distributed. There are slight deviations at both extremes, indicating some outliers or deviations from normality at the tails. This could hint at potential issues in capturing extreme values accurately but generally suggests the model performs well in satisfying the normality assumption.
 
 ```{r}
 #| echo: false
@@ -904,6 +1008,11 @@ plot(mlr_harris_model_refined, which = c(1, 2))  # 1: Residuals vs Fitted, 2: No
 par(mfrow = c(1, 1))  # Reset plot layout
 
 ```
+@fig-harris-vif, we see diagnostic plots for the refined multi-linear regression model for Kamala Harris.
+
+The Residuals vs Fitted plot (left) shows that the residuals are relatively evenly distributed around the horizontal line at zero, indicating that there are no major issues with non-linearity or heteroscedasticity. The slight curve in the red line suggests minimal deviation from linearity, which could be due to the data's inherent characteristics or model limitations. There are a few noticeable outliers, like observations 245, 352, and 370, which might need further investigation to ensure they do not disproportionately influence the model.
+
+The Q-Q plot (right) demonstrates that the residuals generally follow a normal distribution, as indicated by the points aligning closely with the 45-degree line. However, some deviations at the tails suggest the presence of outliers or slight departures from normality. This generally supports the adequacy of the model but points to areas where model refinement or robust handling of outliers might improve fit.
 
 ```{r}
 #| echo: false
@@ -923,6 +1032,11 @@ plot(step_model, which = c(1, 2))  # 1: Residuals vs Fitted, 2: Normal Q-Q
 par(mfrow = c(1, 1))  # Reset plot layout
 
 ```
+@fig-harris-step, presents the diagnostic plots for the final multi-linear regression model for Kamala Harris.
+
+The Residuals vs Fitted plot (left) reveals a fairly uniform spread of residuals around the zero line, suggesting that the model captures the linear relationship well without major systematic errors. The red line, representing the smoothed residuals, remains close to zero, with slight deviations indicating minimal non-linearity. A few outliers, notably points 245, 352, and 370, are present but do not seem to heavily distort the overall pattern, though their influence may need checking.
+
+The Q-Q plot (right) shows that the residuals align closely with the theoretical quantiles of a normal distribution, confirming that the assumption of normally distributed errors holds reasonably well. The points at the extremes deviate slightly, indicating minor issues with the tails of the distribution, but these are not severe. This suggests that the model assumptions are largely satisfied, making the model robust for the intended analysis.
 
 \newpage
 
